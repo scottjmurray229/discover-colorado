@@ -16,8 +16,8 @@
 "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "trip-planner-cache",
-      "database_id": "45f42d68-0341-41f3-953e-0ebf6754ddd5"
+      "database_name": "trip-planner-cache-colorado",
+      "database_id": "TODO-CREATE-D1-FOR-COLORADO"
     }
   ]
 }
