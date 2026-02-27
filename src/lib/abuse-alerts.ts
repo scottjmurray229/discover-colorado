@@ -10,7 +10,7 @@ function abuseEmailHtml(title: string, details: Record<string, string>): string 
 <div style="max-width:520px;margin:24px auto;background:#161b22;border:1px solid #30363d;border-radius:12px;overflow:hidden;">
   <div style="background:linear-gradient(135deg,#991b1b,#dc2626);padding:16px 20px;">
     <div style="font-size:16px;font-weight:700;color:#fff;">${title}</div>
-    <div style="font-size:12px;color:rgba(255,255,255,0.7);margin-top:2px;">Discover Philippines &middot; AI Trip Planner</div>
+    <div style="font-size:12px;color:rgba(255,255,255,0.7);margin-top:2px;">Discover Colorado &middot; AI Trip Planner</div>
   </div>
   <table style="width:100%;border-collapse:collapse;margin:12px 0;">${rows}</table>
 </div></body></html>`;

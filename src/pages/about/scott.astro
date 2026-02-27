@@ -14,52 +14,48 @@ const breadcrumbs = [
 const schemaData = {
   name: 'Scott Murray',
   image: '/images/scott-murray.jpg',
-  bio: 'American travel writer with 23+ years of Philippines experience across 20+ trips. Healthcare IT professional by day. Based in San Diego, CA.',
-  url: 'https://discoverphilippines.info/about/scott/',
+  bio: 'Travel writer with 10+ years exploring Colorado — ski resorts, mountain towns, national parks, and the Western Slope. Healthcare IT professional by day. Based in San Diego, CA.',
+  url: 'https://discovercolorado.info/about/scott/',
   knowsAbout: [
-    'Philippines travel',
-    'Island hopping',
-    'Budget travel',
+    'Colorado travel',
+    'Ski resorts',
+    'Mountain hiking',
     'Travel logistics',
     'Travel videography',
     'Travel planning',
-    'Philippines transport routing',
+    'Rocky Mountain road trips',
   ],
   sameAs: [
-    'https://www.youtube.com/@DiscoverPhilippines',
-    'https://www.facebook.com/DiscoverPhilippinesTravel',
-    'https://www.instagram.com/discover.philippines',
+    'https://www.youtube.com/@DiscoverColorado',
+    'https://www.facebook.com/DiscoverColoradoTravel',
+    'https://www.instagram.com/discover.colorado',
   ],
 };
 
-const blogPosts = [
-  { slug: 'boracay-20-years-ago', title: 'Boracay 20 Years Ago: Before the Crowds Changed Everything' },
-  { slug: 'palawan-unspoiled-beauty', title: 'Palawan 2005: When the Underground River Still Felt Like a Secret' },
-  { slug: 'discover-baguio-city', title: 'Baguio City: The Mountain Escape That Doesn\'t Feel Like the Philippines' },
-];
+const blogPosts: { slug: string; title: string }[] = [];
 
 const destinations = [
-  { slug: 'boracay', title: 'Boracay' },
-  { slug: 'cebu', title: 'Cebu' },
-  { slug: 'el-nido', title: 'El Nido' },
-  { slug: 'siquijor', title: 'Siquijor' },
-  { slug: 'coron', title: 'Coron' },
-  { slug: 'bohol', title: 'Bohol' },
-  { slug: 'dumaguete', title: 'Dumaguete' },
-  { slug: 'clark', title: 'Clark' },
+  { slug: 'denver', title: 'Denver' },
+  { slug: 'boulder', title: 'Boulder' },
+  { slug: 'aspen', title: 'Aspen' },
+  { slug: 'vail', title: 'Vail' },
+  { slug: 'telluride', title: 'Telluride' },
+  { slug: 'colorado-springs', title: 'Colorado Springs' },
+  { slug: 'durango', title: 'Durango' },
+  { slug: 'estes-park', title: 'Estes Park' },
 ];
 
 const coverageAreas = [
-  { icon: '🗺️', title: 'Logistics & Transport', desc: 'Airport codes, ferry routes, bus connections, NLEX timing, and the transport details that turn a trip from stressful to seamless.' },
-  { icon: '💰', title: 'Budget Breakdowns', desc: 'Real prices in PHP and USD from trips we actually took. Daily budgets, hotel costs, food prices, transport fares.' },
-  { icon: '🎥', title: 'Video Content', desc: 'Destination videos from the places we\'ve been — waterfalls, coastal roads, street food markets, and ferry crossings.' },
-  { icon: '🛠️', title: 'Practical Guides', desc: 'ATM availability, SIM cards, scooter rental, visa tips, and the nuts-and-bolts details guidebooks skip.' },
+  { icon: '🗺️', title: 'Logistics & Transport', desc: 'Airport info, I-70 mountain corridor timing, shuttle services, and the transport details that make Colorado road trips seamless.' },
+  { icon: '💰', title: 'Budget Breakdowns', desc: 'Real prices in USD from trips I\'ve actually taken. Lift tickets, hotel costs, restaurant prices, and gear rental rates.' },
+  { icon: '🎥', title: 'Video Content', desc: 'Destination videos from the places I\'ve been — mountain passes, ski runs, hot springs, and downtown walking tours.' },
+  { icon: '🛠️', title: 'Practical Guides', desc: 'Altitude acclimation, ski pass comparisons, seasonal road closures, and the nuts-and-bolts details guidebooks skip.' },
 ];
 ---
 
 <BaseLayout
-  title="Scott Murray — Travel Writer | Discover Philippines"
-  description="Meet Scott Murray — 23+ years exploring the Philippines, 20+ trips across the archipelago, 40+ countries. The logistics brain behind Discover Philippines."
+  title="Scott Murray — Travel Writer | Discover Colorado"
+  description="Meet Scott Murray — 10+ years exploring Colorado's mountains, ski towns, and national parks. The logistics brain behind Discover Colorado."
   pageType="author"
   schemaData={schemaData}
   breadcrumbs={breadcrumbs}
@@ -82,7 +78,7 @@ const coverageAreas = [
     <p class="hero-role">Travel Writer & Logistics Expert</p>
     <p class="hero-location">San Diego, CA</p>
     <div class="hero-stats">
-      <div class="hero-stat"><div class="hero-stat-num">23+</div><div class="hero-stat-label">Years visiting PH</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">10+</div><div class="hero-stat-label">Years visiting CO</div></div>
       <div class="hero-stat"><div class="hero-stat-num">20+</div><div class="hero-stat-label">Trips & counting</div></div>
       <div class="hero-stat"><div class="hero-stat-num">40+</div><div class="hero-stat-label">Countries traveled</div></div>
     </div>
@@ -93,13 +89,12 @@ const coverageAreas = [
 <section class="bio-section">
   <div class="bio-inner">
     <div class="section-eyebrow">About Scott</div>
-    <h2 class="section-title">The Foreigner Who Keeps Coming Back</h2>
+    <h2 class="section-title">The Californian Who Can't Stop Coming Back</h2>
     <div class="bio-content">
-      <p>Travel has always been my escape from the rat race &mdash; and honestly, I enjoy the <strong>planning</strong> almost as much as being there. Researching destinations, mapping routes, finding that perfect beach town. It all started at a travel agency in LA where we'd get cheap tickets to fly LAX to Clark. One of my best friends had a web design business with a partner in the Philippines and told me I needed to get a passport and come see it for myself.</p>
-      <p>I'd never left the country. In February 2003, I landed in Boracay &mdash; White Beach before the world discovered it &mdash; and the Philippines addiction began.</p>
-      <p>I went back in 2004 and met Jenice. We started as Yahoo Messenger chatmates. That friendship turned into a relationship, and that relationship turned into a life built around exploring her home country together. Since then I've made 20+ trips across nearly every province outside of Mindanao &mdash; Cebu, Bohol, Siquijor, Palawan, Dumaguete, and dozens more.</p>
-      <p><strong>I'm not a travel blogger. I work in healthcare IT.</strong> But the Philippines keeps pulling me back, and I finally decided to put everything I've learned into something useful &mdash; a site with real local knowledge, honest prices, video content from the places we've actually been, and an AI trip planner that builds itineraries from our 50 combined years of experience.</p>
-      <p>It's the resource my friend and I talked about building 20 years ago. It just took this long to figure out how.</p>
+      <p>Colorado grabbed me on my first trip &mdash; driving I-70 west from Denver, watching the Front Range rise up, and realizing that this state has everything from world-class skiing to craft beer scenes that rival any city in America. Since then I've been back more times than I can count.</p>
+      <p>Each trip goes deeper: Telluride's box canyon, the sand dunes at Great Sand Dunes, the hot springs in Ouray, the empty highways of the Western Slope. I've driven Independence Pass in June, skied Vail in January, and hiked Maroon Bells in every season.</p>
+      <p><strong>I'm not a travel blogger. I work in healthcare IT.</strong> But Colorado keeps pulling me back, and I decided to put everything I've learned into something useful &mdash; a site with real logistics, honest prices, video content from places I've actually been, and an AI trip planner that builds itineraries from real experience.</p>
+      <p>It's the resource I wished existed when I was planning my first trip to the Rockies.</p>
     </div>
   </div>
 </section>
@@ -110,14 +105,13 @@ const coverageAreas = [
     <div class="section-eyebrow">Credentials</div>
     <h2 class="section-title">Why You Can Trust Scott's Advice</h2>
     <ul class="credential-list">
-      <li><strong>23+ years</strong> visiting the Philippines (first trip February 2003)</li>
-      <li><strong>20+ trips</strong> across Luzon, Visayas, and Mindanao</li>
-      <li><strong>40+ countries</strong> traveled &mdash; but the Philippines is always the first love</li>
-      <li><strong>Married to Jenice</strong> &mdash; a Filipina born in Bulacan, raised in Pampanga</li>
-      <li>Watched Clark Airport go from <strong>a terminal with no AC</strong> to a modern international hub</li>
-      <li>Taken the <strong>NLEX to Manila</strong> more times than he can count</li>
-      <li>Watched <strong>Grab replace taxis</strong> that never once ran their meters</li>
-      <li>Healthcare IT professional by day &mdash; <strong>Philippines travel obsessive</strong> by every other waking moment</li>
+      <li><strong>10+ years</strong> exploring Colorado (and still finding new gems)</li>
+      <li><strong>20+ trips</strong> across all four regions &mdash; Front Range, Ski Country, National Parks, Western Slope</li>
+      <li><strong>40+ countries</strong> traveled &mdash; but Colorado keeps pulling me back</li>
+      <li>Driven every major <strong>mountain pass</strong> &mdash; Independence, Loveland, Monarch, Wolf Creek</li>
+      <li>Skied <strong>10+ Colorado resorts</strong> from Vail to Telluride to Winter Park</li>
+      <li>Hiked the <strong>Maroon Bells, Hanging Lake, and Flatirons</strong> in every season</li>
+      <li>Healthcare IT professional by day &mdash; <strong>Colorado travel obsessive</strong> by every other waking moment</li>
     </ul>
   </div>
 </section>
@@ -175,13 +169,13 @@ const coverageAreas = [
 <section class="email-section">
   <div class="email-section-inner">
     <EmailCapture
-      leadMagnet="Get Scott's Philippines Travel Checklist"
-      description="The pre-trip checklist I use before every Philippines trip &mdash; packing, logistics, money, and the mistakes I've made so you don't have to."
+      leadMagnet="Get Scott's Colorado Travel Checklist"
+      description="The pre-trip checklist I use before every Colorado trip &mdash; packing, logistics, altitude prep, and the mistakes I've made so you don't have to."
       bullets={[
-        'Pre-departure logistics checklist',
-        'Budget planning worksheet (PHP & USD)',
-        'Transport routing tips for island hopping',
-        'Money & ATM guide by region',
+        'Pre-departure packing and altitude prep checklist',
+        'Budget planning worksheet (USD)',
+        'Mountain pass driving tips and seasonal closures',
+        'Ski pass comparison guide by resort',
       ]}
       guideTag="author-scott"
     />

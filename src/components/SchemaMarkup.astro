@@ -8,7 +8,7 @@ interface Props {
 
 const { pageType, data = {}, faqItems, breadcrumbs } = Astro.props;
 
-const baseUrl = (Astro.site || new URL('https://discoverphilippines.info')).toString().replace(/\/$/, '');
+const baseUrl = (Astro.site || new URL('https://discovercolorado.info')).toString().replace(/\/$/, '');
 const currentPath = Astro.url.pathname;
 const currentUrl = `${baseUrl}${currentPath}`;
 
@@ -18,16 +18,16 @@ function buildOrganization() {
   return {
     '@type': 'Organization',
     '@id': `${baseUrl}/#organization`,
-    name: 'Discover Philippines',
+    name: 'Discover Colorado',
     url: baseUrl,
     logo: {
       '@type': 'ImageObject',
       url: `${baseUrl}/favicon.svg`,
     },
     sameAs: [
-      'https://www.youtube.com/@DiscoverPhilippines',
-      'https://www.facebook.com/DiscoverPhilippinesTravel',
-      'https://www.instagram.com/discover.philippines',
+      'https://www.youtube.com/@DiscoverColorado',
+      'https://www.facebook.com/DiscoverColoradoTravel',
+      'https://www.instagram.com/discover.colorado',
     ],
   };
 }
@@ -36,7 +36,7 @@ function buildWebSite() {
   return {
     '@type': 'WebSite',
     '@id': `${baseUrl}/#website`,
-    name: 'Discover Philippines',
+    name: 'Discover Colorado',
     url: baseUrl,
     publisher: { '@id': `${baseUrl}/#organization` },
   };
@@ -77,8 +77,8 @@ function buildDestinationSchemas() {
       priceRange: budgetRange,
     }),
     containedInPlace: {
-      '@type': 'Country',
-      name: 'Philippines',
+      '@type': 'AdministrativeArea',
+      name: 'Colorado, United States',
     },
     isPartOf: {
       '@type': 'AdministrativeArea',
@@ -95,7 +95,7 @@ function buildDestinationSchemas() {
     address: {
       '@type': 'PostalAddress',
       addressRegion: data.region,
-      addressCountry: 'PH',
+      addressCountry: "US",
     },
   });
 
@@ -118,7 +118,7 @@ function buildDestinationSchemas() {
 }
 
 function buildBlogSchemas() {
-  const authorSlug = data.author?.toLowerCase() === 'jenice' ? 'jenice' : 'scott';
+  const authorSlug = 'scott';
 
   return [
     {

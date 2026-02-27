@@ -139,7 +139,7 @@ async function recordAPICall(db: any, ip: string, hasEmail: boolean): Promise<vo
 // --- Claude API for Chat ---
 
 function buildChatSystemPrompt(): string {
-  return `You are the Discover Philippines AI Trip Planner in EDIT MODE. The user has an existing itinerary and wants to modify it.
+  return `You are the Discover Colorado AI Trip Planner in EDIT MODE. The user has an existing itinerary and wants to modify it.
 
 RULES:
 - Return a COMPLETE replacement itinerary — preserve unchanged parts exactly as they are

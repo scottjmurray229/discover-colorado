@@ -1,0 +1,85 @@
+{
+  "name": "Colorado Mountain Road Trip",
+  "subtitle": "Denver, Vail & Aspen",
+  "dates": "Jun 20–26, 2026",
+  "days": [
+    {
+      "day": 1,
+      "title": "Arrive in Denver",
+      "activities": [
+        {"id": "a1", "time": "10:00", "title": "Arrive at Denver International Airport", "description": "Pick up rental car", "type": "transport", "lat": 39.8561, "lng": -104.6737, "status": "confirmed"},
+        {"id": "a2", "time": "12:00", "title": "Lunch at Union Station", "description": "Explore the food hall", "type": "food", "lat": 39.7527, "lng": -105.0007, "status": "confirmed"},
+        {"id": "a3", "time": "14:00", "title": "Walk 16th Street Mall", "description": "Downtown Denver shopping", "type": "sightseeing", "lat": 39.7478, "lng": -104.9945, "status": "confirmed"},
+        {"id": "a4", "time": "17:00", "title": "Red Rocks Park Sunset", "description": "Explore the amphitheater and trails", "type": "activity", "lat": 39.6654, "lng": -105.2057, "status": "confirmed"}
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Boulder Day Trip",
+      "activities": [
+        {"id": "b1", "time": "09:00", "title": "Drive to Boulder", "description": "30-minute drive northwest", "type": "transport", "lat": 40.0150, "lng": -105.2705, "status": "confirmed"},
+        {"id": "b2", "time": "10:00", "title": "Hike Flatirons Trail", "description": "Iconic Boulder hiking", "type": "activity", "lat": 39.9883, "lng": -105.2930, "status": "confirmed"},
+        {"id": "b3", "time": "13:00", "title": "Lunch on Pearl Street", "description": "Browse shops and restaurants", "type": "food", "lat": 40.0176, "lng": -105.2797, "status": "confirmed"},
+        {"id": "b4", "time": "15:00", "title": "Celestial Seasonings Tea Tour", "description": "Free factory tour", "type": "activity", "lat": 40.0659, "lng": -105.2015, "status": "confirmed"}
+      ]
+    },
+    {
+      "day": 3,
+      "title": "Denver to Vail",
+      "activities": [
+        {"id": "c1", "time": "09:00", "title": "Drive I-70 to Vail", "description": "2-hour scenic mountain drive", "type": "transport", "lat": 39.6403, "lng": -106.3742, "status": "confirmed"},
+        {"id": "c2", "time": "12:00", "title": "Lunch in Vail Village", "description": "Explore the pedestrian village", "type": "food", "lat": 39.6433, "lng": -106.3781, "status": "confirmed"},
+        {"id": "c3", "time": "14:00", "title": "Vail Mountain Gondola", "description": "Ride to Eagle's Nest", "type": "activity", "lat": 39.6391, "lng": -106.3553, "status": "confirmed"},
+        {"id": "c4", "time": "17:00", "title": "Betty Ford Alpine Gardens", "description": "Highest botanical garden in North America", "type": "sightseeing", "lat": 39.6428, "lng": -106.3736, "status": "confirmed"}
+      ]
+    },
+    {
+      "day": 4,
+      "title": "Vail to Aspen",
+      "activities": [
+        {"id": "d1", "time": "09:00", "title": "Drive to Aspen via Independence Pass", "description": "Stunning alpine drive (summer only)", "type": "transport", "lat": 39.1911, "lng": -106.8175, "status": "confirmed"},
+        {"id": "d2", "time": "12:00", "title": "Lunch in downtown Aspen", "description": "Farm-to-table dining", "type": "food", "lat": 39.1911, "lng": -106.8175, "status": "confirmed"},
+        {"id": "d3", "time": "14:00", "title": "Maroon Bells Scenic Area", "description": "Most photographed peaks in Colorado", "type": "sightseeing", "lat": 39.0710, "lng": -106.9389, "status": "confirmed"},
+        {"id": "d4", "time": "17:00", "title": "Aspen Art Museum", "description": "Free admission contemporary art", "type": "sightseeing", "lat": 39.1907, "lng": -106.8192, "status": "confirmed"}
+      ]
+    },
+    {
+      "day": 5,
+      "title": "Glenwood Springs",
+      "activities": [
+        {"id": "e1", "time": "09:00", "title": "Drive to Glenwood Springs", "description": "45-minute drive through canyon", "type": "transport", "lat": 39.5505, "lng": -107.3248, "status": "confirmed"},
+        {"id": "e2", "time": "10:00", "title": "Glenwood Hot Springs Pool", "description": "World's largest mineral hot springs pool", "type": "activity", "lat": 39.5505, "lng": -107.3248, "status": "confirmed"},
+        {"id": "e3", "time": "13:00", "title": "Lunch at Riviera Supper Club", "description": "Local favorite steakhouse", "type": "food", "lat": 39.5476, "lng": -107.3237, "status": "confirmed"},
+        {"id": "e4", "time": "15:00", "title": "Hanging Lake Trail", "description": "Iconic turquoise lake hike (permit required)", "type": "activity", "lat": 39.6017, "lng": -107.1922, "status": "confirmed"}
+      ]
+    },
+    {
+      "day": 6,
+      "title": "Return to Denver & Departure",
+      "activities": [
+        {"id": "f1", "time": "09:00", "title": "Drive to Georgetown", "description": "Historic mining town stop", "type": "transport", "lat": 39.7061, "lng": -105.6975, "status": "confirmed"},
+        {"id": "f2", "time": "11:00", "title": "Georgetown Loop Railroad", "description": "Historic narrow-gauge train ride", "type": "activity", "lat": 39.7061, "lng": -105.6975, "status": "confirmed"},
+        {"id": "f3", "time": "13:00", "title": "Lunch in Idaho Springs", "description": "Beau Jo's mountain pizza", "type": "food", "lat": 39.7425, "lng": -105.5136, "status": "confirmed"},
+        {"id": "f4", "time": "16:00", "title": "Depart from Denver", "description": "Return rental car at DEN", "type": "transport", "lat": 39.8561, "lng": -104.6737, "status": "confirmed"}
+      ]
+    }
+  ],
+  "weather": [
+    {"day": 1, "high": 85, "low": 55, "condition": "sunny", "icon": "sun"},
+    {"day": 2, "high": 82, "low": 52, "condition": "sunny", "icon": "sun"},
+    {"day": 3, "high": 72, "low": 45, "condition": "partly cloudy", "icon": "cloud-sun"},
+    {"day": 4, "high": 70, "low": 42, "condition": "sunny", "icon": "sun"},
+    {"day": 5, "high": 78, "low": 48, "condition": "sunny", "icon": "sun"},
+    {"day": 6, "high": 84, "low": 54, "condition": "partly cloudy", "icon": "cloud-sun"}
+  ],
+  "contacts": [
+    {"id": "c1", "name": "Visit Denver", "phone": "+1-303-892-1112", "type": "tourism"},
+    {"id": "c2", "name": "Aspen Chamber", "phone": "+1-970-925-1940", "type": "tourism"}
+  ],
+  "group": [
+    {"id": "g1", "name": "Scott", "role": "organizer", "avatar": ""},
+    {"id": "g2", "name": "Family", "role": "traveler", "avatar": ""}
+  ],
+  "notifications": [],
+  "changeLog": []
+}

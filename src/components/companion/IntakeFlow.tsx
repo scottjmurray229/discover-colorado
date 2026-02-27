@@ -238,13 +238,13 @@ export default function IntakeFlow() {
           transform: 'rotate(-15deg)',
         }}>🇵🇭</div>
         <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: 2, textTransform: 'uppercase' as const, opacity: 0.6, marginBottom: 8 }}>
-          DISCOVER PHILIPPINES
+          DISCOVER COLORADO
         </div>
         <div style={{ fontSize: 26, fontWeight: 800, lineHeight: 1.2, marginBottom: 8 }}>
           Your Trip.<br />Your Companion.
         </div>
         <div style={{ fontSize: 14, opacity: 0.85, lineHeight: 1.5, maxWidth: 300 }}>
-          Turn any Philippines itinerary into an offline trip companion with local directions, budget tracking, and insider tips.
+          Turn any Colorado itinerary into an offline trip companion with local directions, budget tracking, and insider tips.
         </div>
       </div>
 
@@ -299,7 +299,7 @@ export default function IntakeFlow() {
         icon="📋"
         iconBg="#F0E8FF"
         title="Start from Template"
-        desc="Popular routes you can customize — Visayas, Palawan, Siargao & more"
+        desc="Popular routes you can customize — Ski Country, Palawan, Siargao & more"
         style={{ marginBottom: 20 }}
       />
 
@@ -328,7 +328,7 @@ export default function IntakeFlow() {
           "We had zero signal on the ferry to Siquijor and the app had everything — directions, restaurant picks, even the right phrases. Felt like traveling with a local friend."
         </div>
         <div style={{ fontSize: 12, fontWeight: 700, color: COLORS.oceanTeal, marginTop: 8 }}>
-          — Sarah & Mike, 7-day Visayas trip
+          — Sarah & Mike, 7-day Ski Country trip
         </div>
       </div>
     </>
@@ -466,9 +466,9 @@ export default function IntakeFlow() {
     const filtered = filter === 'all'
       ? templates
       : templates.filter((t) => {
-          if (filter === 'visayas') return t.route.match(/Cebu|Bohol|Siquijor|Dumaguete/i);
+          if (filter === 'ski-country') return t.route.match(/Cebu|Bohol|Siquijor|Dumaguete/i);
           if (filter === 'palawan') return t.route.match(/Palawan|El Nido|Coron|Puerto Princesa/i);
-          if (filter === 'mindanao') return t.route.match(/Siargao|Davao/i);
+          if (filter === 'western-slope') return t.route.match(/Siargao|Davao/i);
           return true;
         });
 
@@ -480,7 +480,7 @@ export default function IntakeFlow() {
         </div>
 
         <div style={{ display: 'flex', gap: 8, marginBottom: 16, overflowX: 'auto' as const }}>
-          {['all', 'visayas', 'palawan', 'mindanao'].map((f) => (
+          {['all', 'ski-country', 'palawan', 'western-slope'].map((f) => (
             <Pill key={f} active={filter === f} onClick={() => setFilter(f)}>
               {f.charAt(0).toUpperCase() + f.slice(1)}
             </Pill>
@@ -761,7 +761,7 @@ export default function IntakeFlow() {
                     <div style={{ flex: 1 }}>
                       <div style={{ fontSize: 13, fontWeight: 700, color: COLORS.deepNight }}>{item.title}</div>
                       <div style={{ fontSize: 11, color: COLORS.oceanTeal, fontWeight: 600 }}>
-                        {item.type === 'transport' ? 'Directions included' : item.type === 'food' ? 'Local pick by Jenice' : 'Local tips included'}
+                        {item.type === 'transport' ? 'Directions included' : item.type === 'food' ? 'Local pick by Scott' : 'Local tips included'}
                       </div>
                     </div>
                     <div style={{ fontSize: 12, color: COLORS.gray400 }}>{item.time}</div>
@@ -842,11 +842,11 @@ export default function IntakeFlow() {
           {[
             { icon: '🧭', title: 'Real Directions', desc: "Not Google Maps pins — actual 'take the Ceres bus, tell the conductor Panagsama' directions" },
             { icon: '🌅', title: 'Sunrise/Sunset', desc: 'Golden hour times with best viewpoints matched to your daily locations' },
-            { icon: '💬', title: 'Local Phrases', desc: 'Cebuano & Tagalog phrases tuned to your destinations with pronunciation' },
+            { icon: '💬', title: 'Local Phrases', desc: 'Cebuano & English phrases tuned to your destinations with pronunciation' },
             { icon: '📞', title: 'Key Contacts', desc: 'Emergency numbers, hospitals, trusted local drivers & guides for your specific route' },
             { icon: '🎒', title: 'Smart Packing', desc: 'Checklist auto-generated from your activities — canyoneering adds water shoes' },
             { icon: '💰', title: 'Budget Tracker', desc: 'Log expenses, see typical costs, convert currency — all offline' },
-            { icon: '💵', title: 'Tipping Guide', desc: 'What to tip in every Philippines situation, from trike drivers to dive masters' },
+            { icon: '💵', title: 'Tipping Guide', desc: 'What to tip in every Colorado situation, from trike drivers to dive masters' },
             { icon: '🌅', title: 'Sunrise/Sunset', desc: 'Golden hour times with best viewpoints matched to your daily locations' },
             { icon: '📶', title: 'Works Offline', desc: 'Everything cached to your phone. No signal on the ferry? No problem' },
           ].map((f, i) => (

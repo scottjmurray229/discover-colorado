@@ -228,7 +228,7 @@ export async function GET(context: APIContext): Promise<Response> {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI Usage Dashboard — Discover Philippines</title>
+<title>AI Usage Dashboard — Discover Colorado</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: #0f1117; color: #e1e4e8; min-height: 100vh; }
@@ -293,7 +293,7 @@ export async function GET(context: APIContext): Promise<Response> {
 <div class="header">
   <div>
     <h1>AI Usage Dashboard</h1>
-    <div class="meta">Discover Philippines &middot; Claude Haiku 4.5</div>
+    <div class="meta">Discover Colorado &middot; Claude Haiku 4.5</div>
   </div>
   <div class="meta" style="text-align:right">
     Tracking since ${firstEvent !== '—' ? firstEvent.split('T')[0] : '—'}

@@ -177,7 +177,7 @@ export const NETWORK_SITES: NetworkSite[] = [
     url: 'https://discovercolorado.info',
     flag: '🇺🇸',
     region: 'americas',
-    status: 'coming-soon',
+    status: 'live',
     tagline: 'Mountains, skiing, and craft beer culture',
   },
 ];

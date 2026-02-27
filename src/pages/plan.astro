@@ -22,7 +22,7 @@ const gmapMarkers = geoMarkers.map(m => {
   return {
     slug: m.slug, label: m.label, lat: m.lat, lng: m.lng,
     hasVideo: !!dest?.data.heroVideo,
-    region: dest?.data.region || 'luzon',
+    region: dest?.data.region || 'front-range',
     url: `/destinations/${m.slug}/`,
     status: dest?.data.heroVideo ? 'Guide Available' : 'Guide Coming Soon',
   };
@@ -30,8 +30,8 @@ const gmapMarkers = geoMarkers.map(m => {
 const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
 ---
 <BaseLayout
-  title="AI Trip Planner — Build Your Philippines Itinerary"
-  description="Tell us your dream Philippines trip and our AI builds a custom day-by-day itinerary backed by 20+ trips of real travel experience. Real prices in PHP & USD."
+  title="AI Trip Planner — Build Your Colorado Itinerary"
+  description="Tell us your dream Colorado trip and our AI builds a custom day-by-day itinerary backed by 20+ trips of real travel experience. Real prices in PHP & USD."
 >
   <!-- ============================================================
        HERO
@@ -42,8 +42,8 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
     </video>
     <div class="planner-hero-gradient-overlay"></div>
     <div class="planner-hero-eyebrow">AI-Powered &middot; Any Destination &middot; Real Prices in PHP &amp; USD &middot; <span class="free-badge-inline">Free Through June 30</span></div>
-    <h1>Plan Your Philippines Trip</h1>
-    <p>Explore the map, pick your destinations, tell us your style — and our AI builds a custom day-by-day itinerary backed by 20+ trips of real Philippines experience.</p>
+    <h1>Plan Your Colorado Trip</h1>
+    <p>Explore the map, pick your destinations, tell us your style — and our AI builds a custom day-by-day itinerary backed by 20+ trips of real Colorado experience.</p>
   </section>
 
   <!-- ============================================================
@@ -56,7 +56,7 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
     </div>
     <div class="map-layout">
 
-      <!-- PHILIPPINES MAP -->
+      <!-- COLORADO MAP -->
       <div class="map-container" id="mapContainer">
         <div class="map-tooltip" id="mapTooltip">
           <div class="map-tooltip-name" id="tooltipName"></div>
@@ -72,8 +72,8 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
 
       <!-- REGION CARDS -->
       <div class="region-cards">
-        <div class="region-card" data-region="luzon">
-          <div class="region-card-header"><div class="region-card-name">Luzon</div><div class="region-card-count">23 destinations</div></div>
+        <div class="region-card" data-region="front-range">
+          <div class="region-card-header"><div class="region-card-name">Front Range</div><div class="region-card-count">23 destinations</div></div>
           <div class="region-card-desc">The main island. Skip Manila, fly into Clark. Mountains in the north, surfing in the east, history everywhere.</div>
           <div class="region-dest-tags">
             <span class="dest-chip has-video" data-dest="clark">Clark</span>
@@ -101,8 +101,8 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
             <span class="dest-chip" data-dest="zambales">Zambales</span>
           </div>
         </div>
-        <div class="region-card" data-region="visayas">
-          <div class="region-card-header"><div class="region-card-name">Visayas</div><div class="region-card-count">13 destinations</div></div>
+        <div class="region-card" data-region="ski-country">
+          <div class="region-card-header"><div class="region-card-name">Ski Country</div><div class="region-card-count">13 destinations</div></div>
           <div class="region-card-desc">Island-hopping paradise. Heart of Philippine beach culture with best diving, waterfalls, and mystical islands.</div>
           <div class="region-dest-tags">
             <span class="dest-chip has-video" data-dest="cebu">Cebu</span>
@@ -130,8 +130,8 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
             <span class="dest-chip" data-dest="cuyo">Cuyo</span>
           </div>
         </div>
-        <div class="region-card" data-region="mindanao">
-          <div class="region-card-header"><div class="region-card-name">Mindanao</div><div class="region-card-count">3 destinations</div></div>
+        <div class="region-card" data-region="western-slope">
+          <div class="region-card-header"><div class="region-card-name">Western Slope</div><div class="region-card-count">3 destinations</div></div>
           <div class="region-card-desc">The road less traveled. World-class surfing in Siargao, volcanic islands in Camiguin, Davao's durian country.</div>
           <div class="region-dest-tags">
             <span class="dest-chip has-video" data-dest="siargao">Siargao</span>
@@ -240,9 +240,9 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
        ============================================================ -->
   <section class="trust-section">
     <div class="trust-inner">
-      <div class="trust-item-block"><div class="trust-icon">&#128506;</div><div class="trust-title">Any Destination</div><div class="trust-desc">Open-ended — plan trips to any island, city, or region in the Philippines</div></div>
+      <div class="trust-item-block"><div class="trust-icon">&#128506;</div><div class="trust-title">Any Destination</div><div class="trust-desc">Open-ended — plan trips to any island, city, or region in Colorado</div></div>
       <div class="trust-item-block"><div class="trust-icon">&#128176;</div><div class="trust-title">Real Prices</div><div class="trust-desc">Every cost in PHP with USD equivalent — no guesswork</div></div>
-      <div class="trust-item-block"><div class="trust-icon">&#129523;</div><div class="trust-title">20+ Trips Since 2003</div><div class="trust-desc">Itineraries informed by Scott &amp; Jenice's real travel experience</div></div>
+      <div class="trust-item-block"><div class="trust-icon">&#129523;</div><div class="trust-title">20+ Trips Since 2003</div><div class="trust-desc">Itineraries informed by Scott &amp; Scott's real travel experience</div></div>
       <div class="trust-item-block"><div class="trust-icon">&#129309;</div><div class="trust-title">Book With Confidence</div><div class="trust-desc">Direct links to trusted hotels, tours, transport — vetted by us</div></div>
     </div>
   </section>
@@ -487,8 +487,8 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
 
     if (type === 'hotel') {
       const hotelName = description.split(/\s+or\s+similar|[.,—]/)[0].replace(/^check\s*into\s*/i, '').trim();
-      const query = hotelName ? hotelName + ' ' + destName : destName + ' Philippines';
-      let url = `https://www.booking.com/searchresults.html?ss=${enc(query)}&aid=2778866&label=discoverphilippines`;
+      const query = hotelName ? hotelName + ' ' + destName : destName + ' Colorado';
+      let url = `https://www.booking.com/searchresults.html?ss=${enc(query)}&aid=2778866&label=discovercolorado`;
       if (bp.checkin) url += `&checkin=${bp.checkin}&checkout=${bp.checkout}`;
       url += `&group_adults=${bp.adults}&no_rooms=1`;
       if (bp.children > 0) url += `&group_children=${bp.children}`;
@@ -496,13 +496,13 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
     }
     if (type === 'tour') {
       const query = destName + ' ' + description.split(/[.,—]/)[0].trim().slice(0, 40);
-      return `https://www.getyourguide.com/s/?q=${enc(query)}&partner_id=IVN6IQ3&cmp=discover-philippines`;
+      return `https://www.getyourguide.com/s/?q=${enc(query)}&partner_id=IVN6IQ3&cmp=discover-colorado`;
     }
     if (type === 'transport' || type === 'ferry') {
       const slug12go = TWELVE_GO_SLUGS[destination] || destination.replace(/-/g, '-');
       return `https://12go.asia/en/travel/${slug12go}?z=15062413&sub_id=discoverph-plan`;
     }
-    return `https://www.getyourguide.com/s/?q=${enc(destName + ' Philippines')}&partner_id=IVN6IQ3&cmp=discover-philippines`;
+    return `https://www.getyourguide.com/s/?q=${enc(destName + ' Colorado')}&partner_id=IVN6IQ3&cmp=discover-colorado`;
   }
 
   function buildViatorUrl(destination: string, description: string): string {
@@ -515,7 +515,7 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
     const destName = DEST_NAMES[destination] || destination.replace(/-/g, ' ');
     const hotelName = description.split(/\s+or\s+similar|[.,—]/)[0].replace(/^check\s*into\s*/i, '').trim();
     const query = hotelName || destName;
-    const landingPage = encodeURIComponent(`https://www.hotels.com/Hotel-Search?destination=${encodeURIComponent(query + ' Philippines')}`);
+    const landingPage = encodeURIComponent(`https://www.hotels.com/Hotel-Search?destination=${encodeURIComponent(query + ' Colorado')}`);
     return `https://hotels.com/affiliate?landingPage=${landingPage}&camref=1101l5Eohj&creativeref=1011l66481&adref=trip-planner`;
   }
 
@@ -938,7 +938,7 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
 
       <div class="companion-upsell">
         <h3 class="companion-upsell-heading">Take This Itinerary Offline</h3>
-        <p class="companion-upsell-text">Get your itinerary with offline access, local directions, budget tracking, and Filipino phrases — all in one app. Free through June 30, 2026.</p>
+        <p class="companion-upsell-text">Get your itinerary with offline access, local directions, budget tracking, and Colorado phrases — all in one app. Free through June 30, 2026.</p>
         <a href="/companion/" class="companion-upsell-btn">Get Trip Companion — Free Until June 30</a>
       </div>
 
@@ -1010,7 +1010,7 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
         }
         text += '\n';
       }
-      text += 'Generated by Discover Philippines AI Trip Planner\nhttps://discoverphilippines.info/plan/';
+      text += 'Generated by Discover Colorado AI Trip Planner\nhttps://discovercolorado.info/plan/';
       navigator.clipboard.writeText(text).then(() => {
         if (btn) { btn.innerHTML = '<span class="itin-action-icon">\u2705</span> Copied!'; setTimeout(() => { btn.innerHTML = '<span class="itin-action-icon">\ud83d\udccb</span> Copy to Clipboard'; }, 2000); }
       });
@@ -1077,7 +1077,7 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
       s.dataset.height = '320';
       s.dataset.border = '1';
       s.dataset.radius = '8';
-      s.dataset.caption = 'Find Transport in the Philippines';
+      s.dataset.caption = 'Find Transport in Colorado';
       s.dataset.sub_id = 'discoverph-plan';
       s.dataset.domain = '12go.asia';
       widgetWrap.appendChild(s);
@@ -1088,7 +1088,7 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
     container.innerHTML = `
       <div class="email-gate">
         <h3>Unlock More Itineraries</h3>
-        <p>You've used your free generations for today. Enter your email to unlock 10 more — plus get our free Philippines planning guide.</p>
+        <p>You've used your free generations for today. Enter your email to unlock 10 more — plus get our free Colorado planning guide.</p>
         <form class="email-gate-form" id="emailGateForm">
           <input type="email" class="email-gate-input" id="emailGateInput" placeholder="your@email.com" required />
           <button type="submit" class="planner-btn planner-btn--primary">Unlock &amp; Generate</button>
@@ -1271,10 +1271,10 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
 
     // Region card hover → highlight markers
     var regionBounds = {
-      luzon: { north: 21, south: 13, east: 126, west: 119.5 },
-      visayas: { north: 12.5, south: 9, east: 126, west: 121 },
+      front-range: { north: 21, south: 13, east: 126, west: 119.5 },
+      ski-country: { north: 12.5, south: 9, east: 126, west: 121 },
       palawan: { north: 13, south: 8.5, east: 121.5, west: 117.5 },
-      mindanao: { north: 10.5, south: 5.5, east: 127, west: 120 },
+      western-slope: { north: 10.5, south: 5.5, east: 127, west: 120 },
     };
 
     document.querySelectorAll('.region-card').forEach(function(card) {

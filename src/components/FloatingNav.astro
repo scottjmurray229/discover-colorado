@@ -1,6 +1,4 @@
 ---
-import LanguageSwitcher from './LanguageSwitcher.astro';
-
 const currentPath = Astro.url.pathname;
 
 const navLinks = [
@@ -11,24 +9,22 @@ const navLinks = [
 ];
 
 const guideLinks = [
-  { href: '/snorkeling-philippines/', label: 'Snorkeling', icon: '🤿' },
-  { href: '/festivals/', label: 'Festivals', icon: '🎉' },
-  { href: '/cuisine/', label: 'Food & Cuisine', icon: '🍴' },
-  { href: '/history/', label: 'WWII Heritage', icon: '🏛️' },
+  { href: '/destinations/', label: 'All Destinations', icon: '🏔️' },
+  { href: '/cuisine/', label: 'Food & Drink', icon: '🍺' },
+  { href: '/festivals/', label: 'Events & Festivals', icon: '🎶' },
   { href: '/practical/', label: 'Travel Tips', icon: '🛠️' },
-  { href: '/wellness-philippines/', label: 'Wellness', icon: '💆' },
   { href: '/finer-things/', label: 'The Finer Things', icon: '🥃' },
 ];
 
 const isGuidesActive = (p: string) =>
-  p.startsWith('/snorkeling') || p.startsWith('/festivals') || p.startsWith('/cuisine') || p.startsWith('/history') || p.startsWith('/practical') || p.startsWith('/wellness') || p.startsWith('/finer-things');
+  p.startsWith('/destinations') || p.startsWith('/cuisine') || p.startsWith('/festivals') || p.startsWith('/practical') || p.startsWith('/finer-things');
 ---
 
 <!-- Desktop: top nav bar — transparent → solid on scroll -->
 <header class="desktop-nav" aria-label="Main navigation" data-pagefind-ignore>
   <nav class="container-content desktop-nav-inner">
     <a href="/" class="desktop-nav-brand">
-      Discover <span class="brand-accent">Philippines</span>
+      Discover <span class="brand-accent">Colorado</span>
     </a>
 
     <div class="desktop-nav-links">
@@ -77,9 +73,6 @@ const isGuidesActive = (p: string) =>
       </svg>
     </button>
 
-    <!-- Language Switcher (desktop) -->
-    <LanguageSwitcher />
-
     <!-- Trip Companion CTA (desktop ≥1024px) -->
     <a href="/companion/" class="companion-cta">Trip Companion</a>
 
@@ -122,9 +115,6 @@ const isGuidesActive = (p: string) =>
     >
       Trip Companion
     </a>
-    <div class="dropdown-lang-row">
-      <LanguageSwitcher />
-    </div>
     <div class="dropdown-divider"></div>
     <div class="dropdown-section-label">Discover</div>
     {guideLinks.map((g) => (
@@ -199,9 +189,6 @@ const isGuidesActive = (p: string) =>
       <span class="mobile-guides-icon">🧭</span>
       <span>Trip Companion</span>
     </a>
-    <div class="mobile-guides-lang">
-      <LanguageSwitcher />
-    </div>
   </div>
 </nav>
 
@@ -741,35 +728,6 @@ const isGuidesActive = (p: string) =>
     font-size: 1.3rem;
   }
 
-  /* ---- Language switcher in mobile flyout ---- */
-  .mobile-guides-lang {
-    grid-column: 1 / -1;
-    display: flex;
-    justify-content: center;
-    padding-top: var(--space-2);
-    border-top: 1px solid rgba(0, 0, 0, 0.06);
-    margin-top: var(--space-1);
-  }
-
-  .mobile-guides-lang :global(.lang-switcher) {
-    display: inline-flex;
-    font-size: 0.85rem;
-  }
-
-  .mobile-guides-lang :global(.lang-switcher-link) {
-    color: var(--color-slate);
-    padding: 6px 12px;
-  }
-
-  .mobile-guides-lang :global(.lang-switcher-link:hover) {
-    color: var(--color-ocean-teal);
-  }
-
-  .mobile-guides-lang :global(.lang-switcher-link--active) {
-    color: var(--color-ocean-teal);
-    background: rgba(13, 115, 119, 0.08);
-  }
-
   /* ---- Search trigger ---- */
   .search-trigger {
     display: none;
@@ -855,29 +813,4 @@ const isGuidesActive = (p: string) =>
     color: var(--color-heading, #1A2332);
   }
 
-  /* ---- Language switcher in tablet dropdown ---- */
-  .dropdown-lang-row {
-    display: flex;
-    justify-content: center;
-    padding: var(--space-2) var(--space-4);
-  }
-
-  .dropdown-lang-row :global(.lang-switcher) {
-    display: inline-flex;
-    font-size: 0.85rem;
-  }
-
-  .dropdown-lang-row :global(.lang-switcher-link) {
-    color: var(--color-slate);
-    padding: 6px 12px;
-  }
-
-  .dropdown-lang-row :global(.lang-switcher-link:hover) {
-    color: var(--color-ocean-teal);
-  }
-
-  .dropdown-lang-row :global(.lang-switcher-link--active) {
-    color: var(--color-ocean-teal);
-    background: rgba(13, 115, 119, 0.08);
-  }
 </style>

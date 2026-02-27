@@ -1,4 +1,4 @@
-// Custom Google Maps styling matching the Discover Philippines design system.
+// Custom Google Maps styling matching the Discover Colorado design system.
 // Sand land, Sky water, muted POIs.
 
 export const MAP_STYLES = [

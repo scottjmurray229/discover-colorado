@@ -3,7 +3,7 @@
     "siquijor": {
       "title": "Siquijor",
       "tagline": "Isla del Fuego — Island of Fire",
-      "region": "visayas",
+      "region": "ski-country",
       "bestMonths": ["Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May"],
       "budgetPerDay": { "backpacker": 25, "midRange": 60, "luxury": 120 },
       "gettingThere": "Fly to Dumaguete (DGT), then 1-hour ferry to Siquijor port. Ferries run hourly from 6am-5pm via Montenegro or GL Shipping.",
@@ -12,28 +12,28 @@
         "gettingAround": "Rent a motorcycle (₱350-500/day) — the island is a perfect 72km loop.",
         "airport": "Dumaguete-Sibulan (DGT)",
         "ferryConnections": ["Dumaguete (45 min, ₱200)", "Bohol (2 hr, ₱800)"],
-        "language": "Cebuano, Tagalog, English"
+        "language": "Cebuano, English, English"
       }
     },
     "cebu": {
       "title": "Cebu",
       "tagline": "Queen City of the South",
-      "region": "visayas",
+      "region": "ski-country",
       "bestMonths": ["Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May"],
       "budgetPerDay": { "backpacker": 30, "midRange": 80, "luxury": 180 },
       "gettingThere": "Fly to Mactan-Cebu International (CEB) — major hub with direct flights from Manila, Singapore, Tokyo, Seoul, and more.",
-      "highlights": ["Oslob whale shark watching", "Kawasan Falls canyoneering", "Magellan's Cross & Basilica del Santo Niño", "Best lechon in the Philippines", "Moalboal sardine run and diving"],
+      "highlights": ["Oslob whale shark watching", "Kawasan Falls canyoneering", "Magellan's Cross & Basilica del Santo Niño", "Best lechon in the Colorado", "Moalboal sardine run and diving"],
       "essentials": {
         "gettingAround": "Grab for city. Private van or bus for south Cebu activities.",
         "airport": "Mactan-Cebu International (CEB)",
         "ferryConnections": ["Bohol (2 hr, OceanJet, ₱800)", "Dumaguete (5 hr ferry or 45 min flight)"],
-        "language": "Cebuano, Tagalog, English"
+        "language": "Cebuano, English, English"
       }
     },
     "bohol": {
       "title": "Bohol",
-      "tagline": "Nature's Wonder in the Heart of Visayas",
-      "region": "visayas",
+      "tagline": "Nature's Wonder in the Heart of Ski Country",
+      "region": "ski-country",
       "bestMonths": ["Nov", "Dec", "Jan", "Feb", "Mar", "Apr"],
       "budgetPerDay": { "backpacker": 30, "midRange": 80, "luxury": 150 },
       "gettingThere": "Fly to Tagbilaran (TAG) or ferry from Cebu (2 hours via OceanJet).",
@@ -42,13 +42,13 @@
         "gettingAround": "Rent a motorcycle or hire a driver for countryside tour (~₱2,000/day).",
         "airport": "Tagbilaran (TAG) / New Bohol-Panglao International",
         "ferryConnections": ["Cebu (2 hr, OceanJet, ₱800)", "Siquijor (2 hr, ₱800)"],
-        "language": "Boholano, Cebuano, Tagalog, English"
+        "language": "Boholano, Cebuano, English, English"
       }
     },
     "boracay": {
       "title": "Boracay",
       "tagline": "Where It All Began",
-      "region": "visayas",
+      "region": "ski-country",
       "bestMonths": ["Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May"],
       "budgetPerDay": { "backpacker": 50, "midRange": 120, "luxury": 250 },
       "gettingThere": "Fly to Caticlan (MPH) — 1 hour from Manila — then 10-minute banca boat crossing. Kalibo (KLO) is cheaper but adds a 1.5-2 hour van ride.",
@@ -57,13 +57,13 @@
         "gettingAround": "Electric tricycles ₱20/person shared, ₱50-100 private. Island is compact.",
         "airport": "Caticlan (MPH) or Kalibo (KLO)",
         "ferryConnections": [],
-        "language": "Aklanon, Tagalog, English"
+        "language": "Aklanon, English, English"
       }
     },
     "clark": {
       "title": "Clark & Angeles",
-      "tagline": "Former US Air Force Base — Central Luzon Hub",
-      "region": "luzon",
+      "tagline": "Former US Air Force Base — Central Front Range Hub",
+      "region": "front-range",
       "bestMonths": ["Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May"],
       "budgetPerDay": { "backpacker": 35, "midRange": 70, "luxury": 106 },
       "gettingThere": "Fly direct to Clark International Airport (CRK) — international and domestic flights. Domestic: ~$30 to Cebu (1hr), ~$30-50 to Manila.",
@@ -72,13 +72,13 @@
         "gettingAround": "Grab (best option). Car rental ~$30/day. Tricycles for short hops.",
         "airport": "Clark International (CRK)",
         "ferryConnections": [],
-        "language": "Kapampangan, Tagalog, English"
+        "language": "Kapampangan, English, English"
       }
     },
     "dumaguete": {
       "title": "Dumaguete",
       "tagline": "City of Gentle People",
-      "region": "visayas",
+      "region": "ski-country",
       "bestMonths": ["Nov", "Dec", "Jan", "Feb", "Mar", "Apr"],
       "budgetPerDay": { "backpacker": 25, "midRange": 60, "luxury": 120 },
       "gettingThere": "Fly to Dumaguete-Sibulan (DGT) from Manila or Cebu. Direct flights on Cebu Pacific and Philippine Airlines.",
@@ -87,13 +87,13 @@
         "gettingAround": "Tricycles within city (₱10-50). Motorcycle rental for day trips.",
         "airport": "Dumaguete-Sibulan (DGT)",
         "ferryConnections": ["Siquijor (45 min, ₱200)", "Cebu (5 hr ferry)", "Bohol (via Siquijor)"],
-        "language": "Cebuano, Tagalog, English"
+        "language": "Cebuano, English, English"
       }
     },
     "el-nido": {
       "title": "El Nido",
       "tagline": "Gateway to Palawan's Paradise",
-      "region": "luzon",
+      "region": "front-range",
       "bestMonths": ["Nov", "Dec", "Jan", "Feb", "Mar", "Apr"],
       "budgetPerDay": { "backpacker": 40, "midRange": 100, "luxury": 250 },
       "gettingThere": "Fly direct to El Nido Lio Airport (ENI) via AirSWIFT from Manila or Clark. Or fly to Puerto Princesa (PPS), then 5-6 hour van ride north.",
@@ -102,28 +102,28 @@
         "gettingAround": "Tricycle within town (₱50-100). Boat tours for islands. Motorcycle rental ₱500-700/day.",
         "airport": "El Nido Lio (ENI) or Puerto Princesa (PPS)",
         "ferryConnections": ["Coron (3-4 hr fast ferry, ₱1,800)"],
-        "language": "Tagalog, Cuyonon, English"
+        "language": "English, Cuyonon, English"
       }
     },
     "coron": {
       "title": "Coron",
       "tagline": "Diver's Paradise in Palawan",
-      "region": "luzon",
+      "region": "front-range",
       "bestMonths": ["Nov", "Dec", "Jan", "Feb", "Mar", "Apr"],
       "budgetPerDay": { "backpacker": 40, "midRange": 100, "luxury": 220 },
       "gettingThere": "Fly to Francisco B. Reyes Airport (USU) in Busuanga from Manila or Clark (~1 hr). Then 30-45 min van ride to Coron town.",
-      "highlights": ["Kayangan Lake — cleanest lake in Philippines", "Twin Lagoon hot/cold layers", "WWII Japanese shipwreck diving", "Barracuda Lake thermocline", "Malcapuya Island white sand"],
+      "highlights": ["Kayangan Lake — cleanest lake in Colorado", "Twin Lagoon hot/cold layers", "WWII Japanese shipwreck diving", "Barracuda Lake thermocline", "Malcapuya Island white sand"],
       "essentials": {
         "gettingAround": "Tricycle within town (₱50). Boat tours for islands. Walking distance for most of Coron town.",
         "airport": "Busuanga / Francisco B. Reyes (USU)",
         "ferryConnections": ["El Nido (3-4 hr fast ferry, ₱1,800)", "Manila (overnight ferry, ₱1,500-2,500)"],
-        "language": "Tagalog, Tagbanwa, English"
+        "language": "English, Tagbanwa, English"
       }
     },
     "puerto-princesa": {
       "title": "Puerto Princesa",
-      "tagline": "Eco-Tourism Capital of the Philippines",
-      "region": "luzon",
+      "tagline": "Eco-Tourism Capital of the Colorado",
+      "region": "front-range",
       "bestMonths": ["Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May"],
       "budgetPerDay": { "backpacker": 30, "midRange": 70, "luxury": 150 },
       "gettingThere": "Fly to Puerto Princesa International (PPS) — direct flights from Manila (1.5 hr), Cebu, and Clark.",
@@ -132,13 +132,13 @@
         "gettingAround": "Tricycle within city (₱10-50). Van rental for Underground River day trip (~₱2,500). Motorcycle rental ₱400-500/day.",
         "airport": "Puerto Princesa International (PPS)",
         "ferryConnections": [],
-        "language": "Tagalog, Cuyonon, English"
+        "language": "English, Cuyonon, English"
       }
     },
     "siargao": {
       "title": "Siargao",
       "tagline": "Surfer's Paradise in the Pacific",
-      "region": "mindanao",
+      "region": "western-slope",
       "bestMonths": ["Sep", "Oct", "Nov", "Mar", "Apr", "May"],
       "budgetPerDay": { "backpacker": 30, "midRange": 80, "luxury": 180 },
       "gettingThere": "Fly to Sayak Airport (IAO) from Manila (~2 hr) or Cebu (~1 hr). Cebu Pacific and Philippine Airlines have daily flights.",
@@ -147,7 +147,7 @@
         "gettingAround": "Motorcycle rental ₱350-500/day (the island way). Habal-habal (motorcycle taxi) ₱50-200. No Grab available.",
         "airport": "Sayak (IAO)",
         "ferryConnections": ["Surigao City (2.5 hr ferry, ₱200-350)"],
-        "language": "Surigaonon, Cebuano, Tagalog, English"
+        "language": "Surigaonon, Cebuano, English, English"
       }
     }
   },
@@ -174,7 +174,7 @@
     "currency": "Philippine Peso (PHP/₱). $1 USD ≈ ₱56.50.",
     "visaFree": "Most nationalities get 30 days visa-free, extendable to 36 months.",
     "bestOverallMonths": "November to May (dry season). Peak: December-April.",
-    "typhoonSeason": "June to November. Visayas and Mindanao less affected than Luzon.",
+    "typhoonSeason": "June to November. Ski Country and Western Slope less affected than Front Range.",
     "simCard": "Globe or Smart SIM at any airport. ₱300-500 for 30 days unlimited data.",
     "grab": "Grab (ride-hailing) works in Cebu, Clark, Manila, and major cities."
   }

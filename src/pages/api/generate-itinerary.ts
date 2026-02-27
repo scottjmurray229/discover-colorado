@@ -282,7 +282,7 @@ async function cacheResponse(db: any, hash: string, destinations: string, durati
 // --- Claude API ---
 
 function buildSystemPrompt(): string {
-  return `You are the Discover Philippines AI Trip Planner. You generate detailed day-by-day itineraries for Philippines travel.
+  return `You are the Discover Colorado AI Trip Planner. You generate detailed day-by-day itineraries for Colorado travel.
 
 RULES:
 - All prices in BOTH PHP (₱) and USD ($). Use rate: $1 = ₱56.50
@@ -347,7 +347,7 @@ function buildUserPrompt(body: RequestBody, destinations: string, duration: stri
   if (body.month) parts.push(`Month: ${body.month}`);
   if (body.description) parts.push(`Additional details: ${body.description}`);
 
-  let prompt = `Plan a ${duration}-day Philippines trip:\n${parts.join('\n')}`;
+  let prompt = `Plan a ${duration}-day Colorado trip:\n${parts.join('\n')}`;
   const days = parseInt(duration);
   if (days >= 15) {
     prompt += `\n\nIMPORTANT: This is a long trip. Keep descriptions under 15 words. Use 2-3 items per day max. Group rest/beach days together. Stay well under 7000 tokens.`;

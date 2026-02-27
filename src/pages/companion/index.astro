@@ -4,12 +4,12 @@ import { Image } from 'astro:assets';
 import FAQ from '../../components/FAQ.astro';
 import '../../styles/companion.css';
 import scottImg from '../../images/scott-murray.jpg';
-import jeniceImg from '../../images/jenice-murray.jpg';
+import scottImg from '../../images/scott-murray.jpg';
 
 const faqItems = [
   {
     question: 'What exactly is the Trip Companion?',
-    answer: 'It\'s an offline-capable web app built from your specific itinerary. We enrich every destination with real directions (not just Google Maps pins), local phrases, emergency contacts, budget tracking, and insider tips from our 20+ trips to the Philippines.',
+    answer: 'It\'s an offline-capable web app built from your specific itinerary. We enrich every destination with real directions (not just Google Maps pins), local phrases, emergency contacts, budget tracking, and insider tips from our 20+ trips to Colorado.',
   },
   {
     question: 'How does it work offline?',
@@ -29,7 +29,7 @@ const faqItems = [
   },
   {
     question: 'What destinations do you cover?',
-    answer: 'We currently cover 20+ destinations across the Philippines including Cebu, Bohol, Siquijor, Palawan (El Nido & Coron), Siargao, Boracay, Dumaguete, Manila, Clark, and more. Each destination has real directions, local restaurant picks, and insider tips from our personal trips.',
+    answer: 'We currently cover 20+ destinations across Colorado including Cebu, Bohol, Siquijor, Palawan (El Nido & Coron), Siargao, Boracay, Dumaguete, Manila, Clark, and more. Each destination has real directions, local restaurant picks, and insider tips from our personal trips.',
   },
 ];
 
@@ -37,7 +37,7 @@ const features = [
   { icon: '🧭', title: 'Real Directions', description: 'Not Google Maps pins — actual "take the Ceres bus, tell the conductor Panagsama" directions from every destination.' },
   { icon: '🌅', title: 'Sunrise & Sunset', description: 'Golden hour times with best viewpoints matched to your daily locations. Never miss a sunset.' },
   { icon: '💰', title: 'Budget Tracker', description: 'Log expenses in PHP or USD, see typical costs for your destinations, and convert currency — all offline.' },
-  { icon: '💬', title: 'Local Phrases', description: 'Cebuano and Tagalog phrases tuned to your specific destinations, with pronunciation guides.' },
+  { icon: '💬', title: 'Local Phrases', description: 'Cebuano and English phrases tuned to your specific destinations, with pronunciation guides.' },
   { icon: '👥', title: 'Group Sharing', description: 'One purchase, up to 8 travelers. Everyone gets the full companion with real-time sync.' },
   { icon: '💵', title: 'Expense Splitter', description: 'Track shared costs, split bills, and settle up at the end of the trip. No more spreadsheets.' },
   { icon: '🎒', title: 'Smart Packing List', description: 'Auto-generated from your activities — canyoneering adds water shoes, snorkeling adds reef-safe sunscreen.' },
@@ -56,7 +56,7 @@ const testimonials = [
   {
     quote: 'We had zero signal on the ferry to Siquijor and the app had everything — directions, restaurant picks, even the right phrases. Felt like traveling with a local friend.',
     author: 'Sarah & Mike',
-    trip: '7-day Visayas trip',
+    trip: '7-day Ski Country trip',
   },
   {
     quote: 'The real directions are a game changer. Instead of staring at a map pin, I knew exactly which bus to take and what to tell the driver. Saved us hours.',
@@ -74,7 +74,7 @@ const testimonials = [
 
 <BaseLayout
   title="Trip Companion"
-  description="Turn any Philippines itinerary into an offline trip companion with local directions, budget tracking, and insider tips. Free through June 30, 2026."
+  description="Turn any Colorado itinerary into an offline trip companion with local directions, budget tracking, and insider tips. Free through June 30, 2026."
 >
   <!-- ============================================================
        HERO
@@ -93,22 +93,22 @@ const testimonials = [
             <p class="cp-founder-name">— Scott, <a href="/about/scott/">co-founder</a></p>
           </div>
         </div>
-        <div class="cp-founder cp-founder--jenice">
+        <div class="cp-founder cp-founder--scott">
           <div class="cp-founder-bubble">
             <p class="cp-founder-quote">"Every local tip I know, in your pocket."</p>
-            <p class="cp-founder-name">— Jenice, <a href="/about/">local expert</a></p>
+            <p class="cp-founder-name">— Scott, <a href="/about/">local expert</a></p>
           </div>
           <div class="cp-founder-avatar">
-            <Image src={jeniceImg} alt="Jenice — co-founder and local expert" width={52} height={52} format="webp" />
+            <Image src={scottImg} alt="Scott — co-founder and local expert" width={52} height={52} format="webp" />
           </div>
         </div>
       </div>
 
       <div class="cp-hero-text">
-        <p class="cp-hero-label">Discover Philippines</p>
+        <p class="cp-hero-label">Discover Colorado</p>
         <h1 class="cp-hero-title">Your Trip. Your Companion.<br />Works Offline.</h1>
         <p class="cp-hero-subtitle">
-          Turn any Philippines itinerary into an offline trip companion with local directions, budget tracking, and insider tips from 20+ real trips.
+          Turn any Colorado itinerary into an offline trip companion with local directions, budget tracking, and insider tips from 20+ real trips.
         </p>
         <div class="cp-hero-ctas">
           <a href="/companion/start/" class="cp-btn cp-btn--primary">Start Planning</a>
@@ -119,8 +119,8 @@ const testimonials = [
         <div class="cp-phone-frame">
           <div class="cp-phone-screen">
             <div class="cp-phone-header">
-              <span class="cp-phone-label">DISCOVER PHILIPPINES</span>
-              <span class="cp-phone-title">Central Visayas Explorer</span>
+              <span class="cp-phone-label">DISCOVER COLORADO</span>
+              <span class="cp-phone-title">Central Ski Country Explorer</span>
               <span class="cp-phone-meta">7 days · 3 destinations · 14 activities</span>
             </div>
             <div class="cp-phone-items">
@@ -142,7 +142,7 @@ const testimonials = [
                 <span class="cp-phone-item-icon">🍽️</span>
                 <div>
                   <span class="cp-phone-item-title">Dinner at Pleasure Point</span>
-                  <span class="cp-phone-item-tag">Local pick by Jenice</span>
+                  <span class="cp-phone-item-tag">Local pick by Scott</span>
                 </div>
               </div>
             </div>
@@ -169,8 +169,8 @@ const testimonials = [
                 <span class="cp-mockup-icons">📶 🔋</span>
               </div>
               <div class="cp-mockup-header" style="background: var(--gradient-companion-hero);">
-                <span class="cp-mockup-label">DISCOVER PHILIPPINES</span>
-                <span class="cp-mockup-title">Central Visayas</span>
+                <span class="cp-mockup-label">DISCOVER COLORADO</span>
+                <span class="cp-mockup-title">Central Ski Country</span>
                 <span class="cp-mockup-sub">Day 1 of 7 · Cebu City</span>
               </div>
               <div class="cp-mockup-body">
@@ -200,7 +200,7 @@ const testimonials = [
                     <span class="cp-mockup-emoji">🍜</span>
                     <div>
                       <span class="cp-mockup-name">Lunch · Larsian BBQ</span>
-                      <span class="cp-mockup-tag">Jenice's pick</span>
+                      <span class="cp-mockup-tag">Scott's pick</span>
                     </div>
                   </div>
                 </div>
@@ -363,7 +363,7 @@ const testimonials = [
               <div class="cp-mockup-header cp-mockup-header--coral">
                 <span class="cp-mockup-label">LOCAL PHRASES</span>
                 <span class="cp-mockup-title">Cebuano (Bisaya)</span>
-                <span class="cp-mockup-sub">For your Visayas destinations</span>
+                <span class="cp-mockup-sub">For your Ski Country destinations</span>
               </div>
               <div class="cp-mockup-body">
                 <div class="cp-mockup-phrase">
@@ -396,7 +396,7 @@ const testimonials = [
             </div>
           </div>
           <h3 class="cp-carousel-title">Local Phrases</h3>
-          <p class="cp-carousel-desc">Cebuano & Tagalog phrases matched to your destinations with pronunciation.</p>
+          <p class="cp-carousel-desc">Cebuano & English phrases matched to your destinations with pronunciation.</p>
         </div>
 
         <!-- 5. Group Sharing -->
@@ -409,7 +409,7 @@ const testimonials = [
               </div>
               <div class="cp-mockup-header cp-mockup-header--purple">
                 <span class="cp-mockup-label">GROUP TRIP</span>
-                <span class="cp-mockup-title">Visayas Adventure</span>
+                <span class="cp-mockup-title">Ski Country Adventure</span>
                 <span class="cp-mockup-sub">6 travelers · Synced</span>
               </div>
               <div class="cp-mockup-body">
@@ -424,7 +424,7 @@ const testimonials = [
                   <div class="cp-mockup-member">
                     <span class="cp-mockup-avatar" style="background: var(--color-warm-coral);">J</span>
                     <div>
-                      <span class="cp-mockup-name">Jenice</span>
+                      <span class="cp-mockup-name">Scott</span>
                       <span class="cp-mockup-tag">Online</span>
                     </div>
                   </div>
@@ -851,8 +851,8 @@ const testimonials = [
     transform: rotate(45deg);
   }
 
-  /* Arrow pointing right (toward Jenice's avatar) */
-  .cp-founder--jenice .cp-founder-bubble::after {
+  /* Arrow pointing right (toward Scott's avatar) */
+  .cp-founder--scott .cp-founder-bubble::after {
     content: '';
     position: absolute;
     right: -7px;
