@@ -1,0 +1,942 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import EmailCapture from '../../components/EmailCapture.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Wellness', url: '/wellness-philippines/' },
+];
+
+const pageTitle = 'Wellness in the Philippines — Spa, Hot Springs, Boxing, Martial Arts & Retreats 2026';
+const pageDescription = 'Traditional hilot massage, volcanic hot springs, Manny Pacquiao\'s boxing legacy, arnis martial arts, Filipino gym culture, and world-class wellness retreats.';
+
+interface TopicSection {
+  id: string;
+  icon: string;
+  title: string;
+  gradient: string;
+  items: { label: string; text: string; link?: string }[];
+}
+
+const topics: TopicSection[] = [
+  {
+    id: 'spa',
+    icon: '\u{1F486}',
+    title: 'Spa & Massage',
+    gradient: 'linear-gradient(135deg, #7C3AED 0%, #C084FC 100%)',
+    items: [
+      { label: 'Hilot — The Filipino Healing Tradition', text: 'Hilot is the traditional Filipino massage — and it\'s nothing like a Western spa treatment. A hilot practitioner (manghihilot) uses coconut oil, banana leaves, and intuitive pressure to find tension and misalignment in your body. It\'s part massage, part folk healing, and it\'s been passed down for generations. A session runs \u20B1150\u2013300 ($2.65\u20135.30 USD) in provincial areas and \u20B1500\u2013800 ($8.85\u201314.15 USD) at urban spas. If you only try one wellness experience in the Philippines, make it this one.' },
+      { label: 'Tagaytay Spa Scene', link: '/destinations/tagaytay/', text: 'The ridge city south of Manila has become the spa capital of the Philippines. <strong>Qiwellness Living</strong> offers Japanese-inspired onsen-style pools with views of Taal Volcano \u2014 day passes run \u20B11,500\u20132,500 ($26.50\u201344.25 USD). <strong>Key Wellness Suites</strong> has excellent hilot and hot stone treatments from \u20B1800 ($14.15 USD). <strong>Nurture Wellness Village</strong> in nearby Tagaytay is a full wellness resort with Filipino healing traditions, herbal baths, and farm-to-table dining. The cool mountain air at 2,000+ feet makes it a natural escape from Manila\'s heat.' },
+      { label: 'Siargao Luxury Spas', link: '/destinations/siargao/', text: 'The surf island has attracted high-end wellness brands. <strong>Nay Palad Hideaway</strong> is a world-class luxury resort with spa treatments starting at \u20B15,000+ ($88.50+ USD) \u2014 oceanfront massage pavilions, sound healing, and personalized wellness programs. Even mid-range resorts like <strong>Bravo Beach Resort</strong> and <strong>Harana</strong> offer solid massage services from \u20B1500\u2013800 ($8.85\u201314.15 USD). After a day of surfing Cloud 9, a deep-tissue massage is practically mandatory.' },
+      { label: 'Biliran Community Hilot', link: '/destinations/biliran/', text: 'In rural areas like Biliran, hilot isn\'t a luxury \u2014 it\'s community healthcare. The local manghihilot is often an older woman in the barangay who treats everything from muscle pain to fever. Jenice grew up with this \u2014 when someone was sick, you didn\'t always go to a doctor first, you went to the manghihilot. Sessions are \u20B1100\u2013200 ($1.75\u20133.50 USD) or sometimes just a donation. It\'s an experience you won\'t find in any resort brochure.' },
+      { label: 'Resort Spa Chains', text: 'Major resort chains across the Philippines offer reliable spa services. <strong>Henann Resorts</strong> (Boracay, Bohol, Alona) have full-service spas with Swedish, hot stone, and hilot options from \u20B11,200\u20132,500 ($21.25\u201344.25 USD). <strong>Plantation Bay</strong> in Cebu has an excellent spa with couples\' packages. <strong>El Nido Resorts</strong> (Miniloc, Lagen) offer island spa treatments with ocean views. Most 4\u20135 star hotels include spa facilities \u2014 quality varies, but prices are a fraction of what you\'d pay in Bali or Thailand.' },
+      { label: 'Siquijor Fish Spa & Healing', link: '/destinations/siquijor/', text: 'The "mystic island" combines wellness with folklore. Fish spas where tiny garra rufa nibble dead skin off your feet are popular along San Juan beach \u2014 \u20B1100\u2013150 ($1.75\u20132.65 USD) per session. But the real draw is the island\'s traditional healing culture. <strong>Bolo-Bolo healing</strong> is a folk medicine practice where a healer blows through a straw into a glass of water to diagnose illness. Whether you believe in it or not, it\'s a fascinating cultural experience unique to Siquijor.' },
+      { label: 'Street-Side Massage', text: 'In tourist areas like Boracay, Cebu, and El Nido, freelance massage therapists walk the beach or set up along the strip. Prices start at \u20B1250\u2013400 ($4.40\u20137.10 USD) for a full-body massage. Quality varies \u2014 some are excellent, others are rushed. <strong>Tips:</strong> Negotiate the price before starting, confirm the duration (60 vs 90 minutes), and tip \u20B150\u2013100 ($0.90\u20131.75 USD) for good service. Beachfront massage at sunset for under $10 is one of the great bargains of Philippine travel.' },
+    ],
+  },
+  {
+    id: 'hot-springs',
+    icon: '\u2668\uFE0F',
+    title: 'Hot Springs & Thermal Pools',
+    gradient: 'linear-gradient(135deg, #9A3412 0%, #F59E0B 100%)',
+    items: [
+      { label: 'Laguna \u2014 Hot Springs Capital', link: '/destinations/laguna/', text: 'Laguna province, just 2 hours south of Manila, sits on a volcanic fault line that produces some of the best hot springs in Southeast Asia. The towns of <strong>Los Ba\u00F1os</strong>, <strong>Calamba</strong>, and <strong>Pansol</strong> have hundreds of private hot spring resorts \u2014 from basic pools for \u20B1100 ($1.75 USD) to luxury villa rentals for \u20B15,000\u201315,000 ($88.50\u2013265.50 USD) per night with private hot spring pools. Water temperatures range from 38\u201342\u00B0C (100\u2013108\u00B0F). This is where Manila families go for weekend getaways.' },
+      { label: 'Camiguin Volcanic Springs', link: '/destinations/camiguin/', text: 'The "Island Born of Fire" has natural hot springs heated by active volcanoes. <strong>Ardent Hot Springs</strong> is the most popular \u2014 cascading pools of varying temperatures surrounded by jungle, \u20B150 ($0.90 USD) entrance. The water has a slight sulfuric mineral scent and locals swear by its healing properties. <strong>Sto. Ni\u00F1o Cold Spring</strong> nearby makes for a perfect contrast \u2014 icy cold spring water that\'s refreshing after soaking in the hot pools. Some springs produce naturally carbonated water that fizzes on your skin.' },
+      { label: 'Hidden Valley Springs', link: '/destinations/laguna/', text: 'A private resort nestled in a former volcanic crater in Alaminos, Laguna. <strong>Hidden Valley Springs</strong> is a day-trip destination with natural spring-fed pools, lush tropical gardens, and a buffet lunch included in the day pass (\u20B12,500\u20133,500 / $44.25\u201362 USD per person). It\'s pricier than the Pansol resorts but significantly more scenic and well-maintained. The springs are cool (not hot) but the setting is spectacular \u2014 a natural amphitheater of tropical forest.' },
+      { label: 'Coron Saltwater Hot Springs', link: '/destinations/coron/', text: '<strong>Maquinit Hot Springs</strong> in Coron is one of the few saltwater hot springs in the world. The water sits at a steady 39\u201340\u00B0C (102\u2013104\u00B0F) and flows into a mangrove-lined pool overlooking the sea. Entrance is \u20B1200 ($3.50 USD). Go at sunset \u2014 the golden light over the limestone karsts while you soak in warm saltwater is unforgettable. It\'s a 30-minute tricycle ride from Coron town (\u20B1150\u2013200 / $2.65\u20133.50 USD each way).' },
+      { label: 'Baguio & Cordillera Springs', link: '/destinations/baguio/', text: 'The mountain city and surrounding Cordillera region have natural hot springs at higher elevations where the cool pine forest air makes the warm water even more enjoyable. <strong>Asin Hot Springs</strong> in Tuba, Benguet (30 minutes from Baguio) has natural sulfur pools along the river \u2014 \u20B150\u2013100 ($0.90\u20131.75 USD) entrance. The combination of cool mountain air (15\u201323\u00B0C / 59\u201373\u00B0F) and hot mineral water is therapeutic.' },
+      { label: 'How Villa Hot Springs Work', text: 'The most popular hot spring experience for Filipino families is renting a <strong>private villa</strong> in Pansol, Laguna. These are residential properties with 1\u20134 private hot spring pools, air-conditioned rooms, karaoke machines, and grilling areas. Prices range from \u20B13,000\u201320,000 ($53\u2013354 USD) for 24 hours depending on capacity (10\u201350+ guests). Book through Facebook groups or resort websites. <strong>Pro tip:</strong> Weekday rates are 30\u201350% cheaper than weekends. Bring your own food and drinks \u2014 most villas have full kitchens but don\'t provide provisions.' },
+    ],
+  },
+  {
+    id: 'boxing',
+    icon: '\u{1F94A}',
+    title: 'Boxing Culture',
+    gradient: 'linear-gradient(135deg, #991B1B 0%, #1A2332 100%)',
+    items: [
+      { label: 'The Pacquiao Effect', text: 'Boxing in the Philippines isn\'t just a sport \u2014 it\'s a national identity. <strong>Manny Pacquiao</strong>, the eight-division world champion from General Santos City, transformed an entire country\'s relationship with boxing. When Pacquiao fights, the Philippines stops \u2014 crime rates drop, streets empty, and every screen shows the bout. His journey from sleeping on cardboard in Manila to becoming a global icon is the ultimate Filipino success story. Even in retirement, his legacy shapes how Filipinos see themselves on the world stage.' },
+      { label: 'Elorde Boxing Gym', link: '/destinations/manila/', text: 'Founded by the legendary <strong>Gabriel "Flash" Elorde</strong> (junior lightweight world champion, 1960\u20131967), Elorde Boxing Gyms are the most accessible chain for tourists. Multiple locations across Manila \u2014 Makati, Katipunan, and Alabang. Drop-in sessions run \u20B1300\u2013500 ($5.30\u20138.85 USD) including glove rental. Classes range from beginner bag work to advanced sparring. The coaches are patient with newcomers and the atmosphere is welcoming. This is the easiest way to experience Filipino boxing culture firsthand.' },
+      { label: 'General Santos City \u2014 Pacquiao\'s Hometown', link: '/destinations/davao/', text: 'GenSan (as locals call it) is ground zero for Philippine boxing. The <strong>Pacquiao Mansion</strong> is a local landmark. Multiple boxing gyms in the city train aspiring fighters \u2014 many from poverty, following Manny\'s path. The <strong>GenSan Fish Port Complex</strong> is where young Pacquiao first worked before boxing changed his life. While GenSan isn\'t a typical tourist destination, boxing fans will find it a pilgrimage-worthy visit. Fly in from Davao or Manila (1.5\u20132 hours).' },
+      { label: 'Tourist-Friendly Gyms', link: '/destinations/cebu/', text: '<strong>ALA Boxing Gym</strong> in Cebu is run by the Aldeguer family, one of Philippine boxing\'s most prominent promoter families. They\'ve produced multiple world champions. Tourist drop-ins are welcome \u2014 \u20B1200\u2013400 ($3.50\u20137.10 USD) per session. In Manila, <strong>Uppercut Boxing</strong> in BGC and Makati offers boutique boxing fitness classes (more workout, less fighting) for \u20B1500\u2013800 ($8.85\u201314.15 USD). <strong>Pacquiao Boxing Gym</strong> in Manila\'s Entertainment City area is another option with the champion\'s branding.' },
+      { label: 'The Neighborhood Boxing Scene', text: 'Beyond the commercial gyms, every Filipino neighborhood has an informal boxing scene. Look for the hand-wrapped heavy bags hanging from mango trees, the makeshift rings in covered courts, and the kids shadowboxing on the street. These <strong>barangay boxing programs</strong> are where future champions are found \u2014 coaches volunteer their time, equipment is shared, and raw talent is spotted early. If you\'re invited to watch or try on the gloves at a neighborhood session, do it \u2014 it\'s one of the most authentic experiences in the Philippines.' },
+      { label: 'Why Boxing Matters Here', text: 'In a country where 20% of the population lives below the poverty line, boxing represents something powerful: a path out. Pacquiao proved that a kid from nothing could become the richest athlete in the country, a senator, and a global icon \u2014 all through boxing. The sport is deeply woven into Filipino identity, pride, and aspiration. Understanding Philippine boxing culture gives you a window into the Filipino spirit that no resort or beach can provide.' },
+    ],
+  },
+  {
+    id: 'martial-arts',
+    icon: '\u{1F5E1}\uFE0F',
+    title: 'Arnis & Martial Arts',
+    gradient: 'linear-gradient(135deg, #78350F 0%, #D4A574 100%)',
+    items: [
+      { label: 'Arnis \u2014 The National Martial Art', text: 'Arnis (also called Eskrima or Kali) is the Philippines\' national martial art and one of the few weapon-based martial arts in the world. It emphasizes stick and blade fighting using rattan sticks (baston), with empty-hand techniques (mano mano) as the foundation. In 2009, Arnis was declared the <strong>national martial art and sport of the Philippines</strong> by Republic Act 9850. It\'s practical, fast, and beautiful to watch \u2014 and unlike many martial arts, it starts with weapons first and empty-hand second.' },
+      { label: 'Where to Train \u2014 Doce Pares Cebu', link: '/destinations/cebu/', text: '<strong>Doce Pares</strong> (Twelve Pairs) is one of the oldest and most prestigious arnis organizations, founded in Cebu City in 1932. Their headquarters in Cebu offers training for all levels \u2014 from complete beginners to advanced practitioners. A session runs \u20B1300\u2013600 ($5.30\u201310.60 USD). Other respected schools include <strong>Balintawak</strong> (also Cebu-based, known for close-range fighting) and <strong>LESKAS</strong> (Lightning Scientific Arnis) in Manila. Tell them you\'re a tourist interested in learning \u2014 they\'re proud to share their art.' },
+      { label: 'The Cebu-Mactan Connection', link: '/destinations/cebu/', text: 'Cebu\'s martial arts heritage runs deep. In 1521, <strong>Lapu-Lapu</strong> \u2014 the chieftain of Mactan Island \u2014 killed Ferdinand Magellan in the Battle of Mactan, making him the first Filipino hero to resist foreign colonization. The fighting techniques Lapu-Lapu\'s warriors used are considered the ancestors of modern arnis. The <strong>Lapu-Lapu Shrine</strong> on Mactan Island commemorates this battle. Training arnis in Cebu connects you to 500 years of martial arts history.' },
+      { label: 'Cultural Events & Competitions', text: 'The <strong>WEKAF (World Eskrima Kali Arnis Federation)</strong> holds international tournaments, with the Philippines as the dominant force. Locally, arnis demonstrations are part of many festivals and cultural events. The <strong>Kadaugan sa Mactan</strong> festival in Cebu (every April) reenacts the Battle of Mactan with full arnis demonstrations. <strong>Palarong Pambansa</strong> (National Games) includes arnis as an official sport. If you\'re visiting during these events, the live demonstrations are electric.' },
+      { label: 'Other Filipino Martial Arts', text: 'Beyond arnis, the Philippines has several indigenous fighting systems. <strong>Dumog</strong> is Filipino wrestling \u2014 grappling and takedown techniques used by farmers and fishermen. <strong>Yaw-Yan</strong> (Sayaw ng Kamatayan / "Dance of Death") is a kickboxing system developed in the 1970s combining Filipino striking with muay thai elements. <strong>Silat</strong> is practiced in Mindanao\'s Muslim communities, sharing roots with Malaysian and Indonesian martial arts. <strong>Panantukan</strong> (Filipino boxing / "dirty boxing") uses the empty-hand techniques from arnis \u2014 elbows, knees, and headbutts included.' },
+      { label: 'Training Gear', text: 'If you want to practice arnis at home after your trip, bring back a pair of <a href="https://www.amazon.com/dp/B009P2BFYG?tag=discoverphili-20" target="_blank" rel="nofollow sponsored">rattan escrima sticks</a> \u2014 they\'re cheap in the Philippines (\u20B1100\u2013200 / $1.75\u20133.50 USD per pair at local martial arts shops) but cost 3\u20134x more abroad. For protection during training, <a href="https://www.amazon.com/dp/B07KQBFKG2?tag=discoverphili-20" target="_blank" rel="nofollow sponsored">padded escrima gloves</a> are essential for stick sparring. A <a href="https://www.amazon.com/dp/B07LC9BGWT?tag=discoverphili-20" target="_blank" rel="nofollow sponsored">training headguard</a> is smart if you\'re doing full-contact drills.' },
+    ],
+  },
+  {
+    id: 'fitness',
+    icon: '\u{1F4AA}',
+    title: 'Fitness & Gyms',
+    gradient: 'linear-gradient(135deg, #059669 0%, #14B8A6 100%)',
+    items: [
+      { label: 'Filipino Gym Culture', text: 'Filipinos take fitness seriously, especially in urban areas. Manila and Cebu have a booming gym scene that rivals any major Asian city. Gym culture skews young \u2014 the selfie-in-the-mirror aesthetic is strong \u2014 but you\'ll find serious lifters and athletes at every gym. Most gyms open early (5\u20136am) and stay open late (10\u201311pm). Expect loud music, air conditioning that may or may not work, and a friendly atmosphere. Filipinos are naturally social at the gym \u2014 don\'t be surprised if someone offers to spot you or asks about your workout.' },
+      { label: 'Anytime Fitness & Gym Chains', text: '<strong>Anytime Fitness</strong> has 100+ locations across the Philippines \u2014 the most reliable option for travelers. Your international membership works here. Day passes run \u20B1300\u2013500 ($5.30\u20138.85 USD) at non-member rates. <strong>Gold\'s Gym</strong> has locations in major malls. <strong>Fitness First</strong> is the premium chain with locations in BGC, Makati, and Cebu. Local chains like <strong>Slimmers World</strong> and <strong>Eclipse Gym</strong> offer budget options from \u20B1100\u2013200 ($1.75\u20133.50 USD) per session. Most SM and Robinsons malls have a gym on the upper floors.' },
+      { label: 'CrossFit & Functional Fitness', text: 'The CrossFit scene in the Philippines is growing fast. <strong>CrossFit Manila</strong> (BGC) and <strong>CrossFit Katipunan</strong> are the flagship boxes \u2014 drop-in rates around \u20B1500\u2013800 ($8.85\u201314.15 USD). <strong>CrossFit Cebu</strong> has a strong community with regular competitions. F45, Orange Theory, and similar boutique fitness studios are popping up in Manila\'s business districts. The Filipino CrossFit community is welcoming to drop-ins \u2014 just check their schedule on social media and show up.' },
+      { label: 'Hotel & Resort Gyms', text: 'Most 4\u20135 star hotels in Manila, Cebu, and Boracay have decent gyms \u2014 usually included with your stay. The <strong>Shangri-La hotels</strong> (Manila, Cebu, Boracay) have the best hotel gyms in the country. Resort gyms on smaller islands (Siargao, Siquijor, Camiguin) tend to be basic \u2014 a few dumbbells, a bench, and a treadmill if you\'re lucky. If staying at a budget hotel, ask at check-in if they have a partner gym nearby \u2014 many have arrangements with local gyms for discounted day passes.' },
+      { label: 'Outdoor Fitness', text: 'Early morning and late afternoon, Filipino parks come alive with fitness. <strong>Luneta Park</strong> and <strong>BGC Track</strong> in Manila, <strong>Tops Lookout Road</strong> in Cebu, and beachfront paths in Boracay are popular running routes. <strong>Outdoor calisthenics parks</strong> (pull-up bars, dip stations) are common in barangay public spaces \u2014 free to use. Group Zumba sessions in public parks and malls happen regularly \u2014 just join in. The humidity will humble you \u2014 take it easy the first few days and hydrate aggressively.' },
+      { label: 'What to Pack for the Gym', text: 'Bring your own <a href="https://www.amazon.com/dp/B088KT2NRF?tag=discoverphili-20" target="_blank" rel="nofollow sponsored">resistance bands</a> \u2014 they pack flat, weigh nothing, and let you train in your hotel room when a gym isn\'t available. A <a href="https://www.amazon.com/dp/B07BGBXVNL?tag=discoverphili-20" target="_blank" rel="nofollow sponsored">quick-dry gym towel</a> is essential in the tropical heat. <a href="https://www.amazon.com/dp/B074DTJKFM?tag=discoverphili-20" target="_blank" rel="nofollow sponsored">Wireless earbuds</a> are a must \u2014 gym playlists are heavy on Filipino pop and you might want your own soundtrack. Gym shoes take up suitcase space, so consider lightweight <a href="https://www.amazon.com/dp/B09WN2NFZR?tag=discoverphili-20" target="_blank" rel="nofollow sponsored">minimalist training shoes</a> that flatten for packing.' },
+    ],
+  },
+  {
+    id: 'retreats',
+    icon: '\u{1F9D8}',
+    title: 'Wellness Retreats',
+    gradient: 'linear-gradient(135deg, #065F46 0%, #064E3B 50%, #14B8A6 100%)',
+    items: [
+      { label: 'The Farm at San Benito', link: '/destinations/laguna/', text: 'The Philippines\' most celebrated wellness resort, located in Lipa, Batangas (2.5 hours from Manila). <strong>The Farm at San Benito</strong> is a medical-grade wellness destination with vegan cuisine, holistic treatments, and programs for detox, weight management, and stress recovery. Rooms start at \u20B115,000+ ($265+ USD) per night including meals and some treatments. The grounds are stunning \u2014 58 hectares of tropical gardens. This is where Manila\'s elite go to reset, and it consistently ranks among Asia\'s top wellness resorts.' },
+      { label: 'Nay Palad Hideaway', link: '/destinations/siargao/', text: 'Formerly Dedon Island Resort on Siargao, <strong>Nay Palad Hideaway</strong> is a luxury barefoot resort with a full wellness program. Rates start at \u20B150,000+ ($885+ USD) per night all-inclusive. The spa uses local ingredients \u2014 coconut oil, turmeric, volcanic clay \u2014 and treatments are performed in open-air pavilions overlooking the Pacific. Yoga sessions, sound healing, and surfing lessons are included. This is ultra-luxury wellness for travelers who want world-class service on a remote island.' },
+      { label: 'Yoga Retreats', text: 'Yoga retreats are flourishing across the Philippines. <strong>Siargao</strong> has the highest concentration \u2014 <strong>Lotus Shores</strong> and <strong>Soul Tribe</strong> offer multi-day retreats from \u20B15,000\u201315,000 ($88.50\u2013265.50 USD) including accommodation and daily sessions. <strong>Palawan</strong> (El Nido and Puerto Princesa) and <strong>Bohol</strong> have growing yoga scenes. <strong>Dumaguete</strong> attracts long-term wellness travelers with affordable yoga studios and health-conscious cafes. Most retreats welcome all levels \u2014 no experience needed.' },
+      { label: 'Meditation & Mindfulness', text: 'Buddhist meditation centers, particularly in <strong>Cebu</strong> and <strong>Manila</strong>, offer free or donation-based meditation sessions. The <strong>Theosophical Society</strong> in Manila hosts regular meditation gatherings. <strong>Vipassana meditation retreats</strong> (10-day silent retreats) are available in Laguna and Cebu \u2014 free of charge, funded by donations. These are intense but transformative experiences. For a lighter introduction, many yoga studios in Siargao and Dumaguete offer guided meditation classes for \u20B1300\u2013500 ($5.30\u20138.85 USD).' },
+      { label: 'Beach Wellness Resorts', text: 'Several Philippine resorts combine beach holiday with wellness programming. <strong>Amorita Resort</strong> in Bohol has a spa with cliff-top treatment rooms overlooking Alona Beach. <strong>Atmosphere Resort</strong> in Dumaguete focuses on diving and wellness \u2014 spa, yoga, and organic dining. <strong>Crimson Resort</strong> in Cebu offers a full-service spa with hilot and Western treatments. Prices for spa treatments at these properties run \u20B12,000\u20135,000 ($35.40\u201388.50 USD) per session \u2014 luxurious by Philippine standards, still affordable by international ones.' },
+      { label: 'Budget Wellness Options', text: 'You don\'t need a luxury resort for wellness in the Philippines. <strong>Barangay hilot</strong> practitioners charge \u20B1150\u2013300 ($2.65\u20135.30 USD). Public hot springs in Laguna start at \u20B1100 ($1.75 USD). Beach yoga classes in Siargao and El Nido run \u20B1300\u2013500 ($5.30\u20138.85 USD). Meditation at Buddhist centers is free. A full day of wellness \u2014 morning yoga, afternoon hilot, evening hot spring soak \u2014 can cost under \u20B11,500 ($26.50 USD) total. The Philippines may be the most affordable wellness destination in Asia.' },
+      { label: 'Choosing the Right Retreat', text: 'Match your retreat to your goals. <strong>Detox/medical wellness:</strong> The Farm at San Benito (structured programs, medical staff). <strong>Luxury escape:</strong> Nay Palad, Amorita, Atmosphere (pampering + nature). <strong>Active wellness:</strong> Siargao retreats (surfing + yoga + massage). <strong>Spiritual/meditation:</strong> Vipassana centers in Laguna or Cebu (serious inner work). <strong>Budget reset:</strong> DIY in Dumaguete or Siquijor (cheap hilot + yoga + healthy eating). <strong>Duration:</strong> 3 days minimum for any real benefit, 7\u201310 days ideal for a full reset. Book directly with resorts for the best rates \u2014 third-party sites often mark up by 15\u201325%.' },
+    ],
+  },
+];
+---
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  pageType="destination"
+  breadcrumbs={breadcrumbs}
+>
+  <!-- Hero -->
+  <header class="well-hero">
+    <div class="well-hero-gradient"></div>
+    <div class="well-hero-noise"></div>
+    <div class="well-hero-content">
+      <h1 class="well-hero-title">Wellness in the Philippines</h1>
+      <p class="well-hero-subtitle">Traditional hilot massage passed down for generations, volcanic hot springs you soak in for less than a dollar, Manny Pacquiao's boxing legacy alive in every neighborhood, the world's only national stick-fighting martial art, and wellness retreats that rival Bali at a fraction of the price.</p>
+      <div class="well-hero-meta">
+        <div class="well-hero-meta-item">
+          <span class="well-hero-meta-label">Topics</span>
+          <span class="well-hero-meta-value">6</span>
+        </div>
+        <div class="well-hero-meta-item">
+          <span class="well-hero-meta-label">Destinations</span>
+          <span class="well-hero-meta-value">12+</span>
+        </div>
+        <div class="well-hero-meta-item">
+          <span class="well-hero-meta-label">Experiences</span>
+          <span class="well-hero-meta-value">30+</span>
+        </div>
+      </div>
+    </div>
+    <div class="well-scroll-hint">Scroll<br />&#8595;</div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="container-content">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <!-- Personal intro -->
+  <section class="well-personal well-reveal">
+    <div class="container-content">
+      <blockquote class="well-personal-quote">
+        <p>Wellness in the Philippines surprised me. I expected the beach massages and resort spas, but I didn't expect the depth of it — hilot practitioners who can feel where your stress lives, volcanic hot springs where the water fizzes on your skin, and a boxing culture so embedded in the national identity that an entire country stops to watch one man fight. Jenice grew up with hilot as basic healthcare — when someone was sick, the manghihilot came before the doctor. The Philippines doesn't market itself as a wellness destination the way Bali or Thailand does, but the traditions run deeper and the prices make it accessible to everyone.</p>
+        <cite>— Scott</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Quick Facts Strip -->
+  <section class="well-quickfacts well-reveal">
+    <div class="container-content">
+      <div class="well-quickfacts-bar">
+        <div class="well-quickfact">
+          <span class="well-quickfact-label">Hilot Massage</span>
+          <span class="well-quickfact-value">₱150–800</span>
+        </div>
+        <div class="well-quickfact-divider"></div>
+        <div class="well-quickfact">
+          <span class="well-quickfact-label">Hot Spring Villa</span>
+          <span class="well-quickfact-value">₱3K–20K</span>
+        </div>
+        <div class="well-quickfact-divider"></div>
+        <div class="well-quickfact">
+          <span class="well-quickfact-label">Boxing Session</span>
+          <span class="well-quickfact-value">₱200–500</span>
+        </div>
+        <div class="well-quickfact-divider"></div>
+        <div class="well-quickfact">
+          <span class="well-quickfact-label">Arnis Lesson</span>
+          <span class="well-quickfact-value">₱300–600</span>
+        </div>
+        <div class="well-quickfact-divider"></div>
+        <div class="well-quickfact">
+          <span class="well-quickfact-label">Gym Drop-In</span>
+          <span class="well-quickfact-value">₱100–500</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Nav -->
+  <section class="well-quicknav well-reveal">
+    <div class="container-content">
+      <div class="well-quicknav-grid">
+        {topics.map((t) => (
+          <a href={`#${t.id}`} class="well-quicknav-chip">
+            <span class="well-quicknav-icon">{t.icon}</span>
+            <span class="well-quicknav-label">{t.title.split(' ').slice(0, 2).join(' ')}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Topic Sections -->
+  {topics.map((topic) => (
+    <section class="well-topic well-reveal" id={topic.id}>
+      <div class="container-content">
+        <div class="well-topic-header" style={`background: ${topic.gradient};`}>
+          <div class="well-topic-header-inner">
+            <span class="well-topic-icon">{topic.icon}</span>
+            <h2 class="well-topic-title">{topic.title}</h2>
+            <span class="well-topic-count">{topic.items.length} tips</span>
+          </div>
+        </div>
+
+        <div class="well-tip-grid">
+          {topic.items.map((item) => (
+            <div class="well-tip-card">
+              <h3 class="well-tip-label">{item.label}</h3>
+              <p class="well-tip-text" set:html={item.text} />
+              {item.link && (
+                <a href={item.link} class="well-tip-link">Explore {item.label.split('—')[0].split('—')[0].trim()} &rarr;</a>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- Scott's Pro Tips -->
+  <section class="well-protips well-reveal">
+    <div class="container-content">
+      <div class="well-protips-card">
+        <h2 class="well-protips-heading">Scott's Pro Tips</h2>
+        <div class="scott-tips">
+          <ul>
+            <li><strong>Best Value Massage:</strong> Skip the resort spa and find a local hilot practitioner — you'll pay ₱150–300 ($2.65–5.30 USD) for a treatment that's often better than the ₱2,000+ resort version. Ask your hotel front desk or any local — everyone knows someone who does hilot.</li>
+            <li><strong>Hot Springs Timing:</strong> Go to Laguna hot springs on weekdays — prices drop 30–50% and you'll have the pools to yourself. Weekend rates spike and popular villas book out weeks in advance. Arrive early (before 10am) for the quietest experience.</li>
+            <li><strong>Boxing Gym Etiquette:</strong> Bring your own hand wraps and gloves if you have them — gym rental gloves have seen better days. Wear proper athletic shoes (no slippers). Be respectful to the trainers — call them "coach" and listen. A ₱100–200 tip ($1.75–3.50 USD) after a good session is appreciated.</li>
+            <li><strong>Arnis Souvenirs:</strong> Buy your rattan sticks in the Philippines — ₱100–200 per pair at martial arts shops near training centers. They're allowed in checked luggage (not carry-on). Wrap them in a towel inside your bag. Customs won't care — they're sporting equipment, not weapons.</li>
+            <li><strong>Gym Membership Hack:</strong> If you're staying 2+ weeks, a monthly gym membership (₱1,500–3,000 / $26.50–53 USD) is cheaper than daily drop-ins. Most gyms offer monthly passes without contracts. Anytime Fitness locations honor international memberships.</li>
+            <li><strong>Hydration Is Everything:</strong> Whether you're in a hot spring, a boxing gym, or doing beach yoga, the tropical heat will dehydrate you faster than you think. Drink 3–4 liters of water daily minimum. Electrolyte packets are cheap at any pharmacy — ₱15–25 ($0.25–0.45 USD) per sachet. Coconut water (buko juice) is ₱20–50 ($0.35–0.90 USD) fresh from the vendor.</li>
+            <li><strong>Retreat Booking:</strong> Book wellness retreats directly through the resort website — third-party booking sites mark up 15–25%. For The Farm at San Benito and Nay Palad, book 2–3 months in advance during peak season (Dec–May). Off-season rates (June–November) can be 30–40% lower with the same experience.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Affiliate Disclosure -->
+  <div class="container-content well-reveal" style="padding-bottom: 0;">
+    <p class="well-affiliate-disclosure">Some links on this page are affiliate links — we earn a small commission if you purchase through them, at no extra cost to you. We only recommend gear we personally use. <a href="/legal/affiliate-disclosure/">Full disclosure</a>.</p>
+  </div>
+
+  <!-- Bottom CTA -->
+  <section class="well-cta-section well-reveal">
+    <div class="container-content">
+      <div class="well-cta-card">
+        <h2 class="well-cta-heading">Plan Your Wellness Trip</h2>
+        <p class="well-cta-text">Tell our AI planner your dates and interests — it'll build a custom itinerary with the best spas, hot springs, and wellness experiences across the Philippines.</p>
+        <a href="/plan/" class="well-cta-button">Start Planning &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <FAQ items={[
+    { question: "What is hilot massage in the Philippines?", answer: "Hilot is a traditional Filipino healing massage that uses coconut oil, banana leaves, and pressure techniques passed down through generations. Practitioners (manghihilot) diagnose tension by feeling for 'displaced' muscles and joints, then use deep-tissue manipulation to realign them. Sessions cost ₱300-800 ($5-14 USD) and are available at spas, resorts, and from local practitioners in most towns." },
+    { question: "Where are the best hot springs in the Philippines?", answer: "Laguna province has the highest concentration — Pansol in Calamba has hundreds of private hot spring resorts within a 30-minute drive from Manila. Asin Hot Springs near Baguio offers mountain-fed thermal pools. Mainit Hot Springs in Camiguin sits right next to a cold river for contrast bathing. Tagaytay's spas offer heated pools with volcano views. Budget ₱200-1,500 ($4-27 USD) for day access." },
+    { question: "Can tourists train boxing in the Philippines?", answer: "Absolutely — the Philippines is a boxing-obsessed nation and gyms welcome visitors. Elorde Boxing Gym has branches across Manila with drop-in rates of ₱300-500 ($5-9 USD) per session. Baguio has altitude training camps. Some gyms offer one-on-one pad work with trainers for ₱500-1,000 per hour. Bring your own hand wraps; gloves are usually provided." },
+    { question: "What is arnis and where can I learn it?", answer: "Arnis (also called Eskrima or Kali) is the national martial art of the Philippines — a weapons-based system using sticks, knives, and empty-hand techniques. It became an Olympic sport in 2021. Training is available in Manila (Doce Pares, Balintawak clubs), Cebu (the birthplace of Eskrima), and Baguio. Drop-in sessions cost ₱200-500 ($4-9 USD)." },
+    { question: "How much does a spa day cost in the Philippines?", answer: "A full-body massage starts at ₱300 ($5 USD) at local spas and goes up to ₱3,000+ ($54 USD) at luxury resort spas. A full spa day with massage, facial, body scrub, and pool access typically costs ₱1,500-5,000 ($27-90 USD). The Philippines offers some of the best value spa experiences in Southeast Asia — quality is high and prices are a fraction of Western rates." },
+    { question: "What are the best wellness retreats in the Philippines?", answer: "The Farm at San Benito (Batangas) is the top luxury wellness resort with medical-grade detox programs. Nurture Wellness Village (Tagaytay) offers holistic treatments in a garden setting. Atmosphere Resorts (Dumaguete) combines diving with spa culture. For budget wellness, Sagada's mountain air and yoga studios offer a DIY retreat atmosphere. Retreat packages range from ₱5,000-50,000 ($90-900 USD) per night." },
+  ]} />
+
+  <!-- Email Capture -->
+  <div class="container-content well-reveal" style="padding-bottom: var(--space-6);">
+    <EmailCapture
+      leadMagnet="Get Our Free Philippine Wellness Guide"
+      description="Spa, hot springs, boxing, martial arts, and retreats across the Philippines — packed into one PDF."
+      bullets={[
+        'Best hilot practitioners and spa resorts by region',
+        'Complete hot springs guide — Laguna, Camiguin, Coron, and more',
+        'Boxing gym and arnis training directory for tourists',
+        'Budget wellness itinerary — full day under $27',
+      ]}
+      guideTag="pillar-wellness"
+    />
+  </div>
+
+  <!-- Cross-links -->
+  <section class="well-crosslinks well-reveal">
+    <div class="container-content">
+      <h3 class="well-crosslinks-heading">Explore More</h3>
+      <div class="well-crosslinks-grid">
+        <a href="/cuisine/" class="well-crosslink-card">
+          <span class="well-crosslink-icon">&#127860;</span>
+          <span class="well-crosslink-label">Food & Cuisine</span>
+          <span class="well-crosslink-desc">35 dishes across 27 destinations, region by region</span>
+        </a>
+        <a href="/finer-things/" class="well-crosslink-card">
+          <span class="well-crosslink-icon">&#127867;</span>
+          <span class="well-crosslink-label">The Finer Things</span>
+          <span class="well-crosslink-desc">Beer, rum, nightlife, karaoke, and cigars</span>
+        </a>
+        <a href="/snorkeling-philippines/" class="well-crosslink-card">
+          <span class="well-crosslink-icon">&#127754;</span>
+          <span class="well-crosslink-label">Snorkeling Guide</span>
+          <span class="well-crosslink-desc">14 destinations ranked by underwater experience</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+</BaseLayout>
+
+<!-- Scroll Reveal Observer (uses well-reveal/well-visible to avoid Tailwind .visible conflict) -->
+<script>
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const wellRevealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('well-visible');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+    document.querySelectorAll('.well-reveal').forEach((el) => wellRevealObserver.observe(el));
+  } else {
+    document.querySelectorAll('.well-reveal').forEach((el) => el.classList.add('well-visible'));
+  }
+</script>
+
+<style>
+  /* ================================================================
+     HERO — Green/teal wellness gradient
+     ================================================================ */
+  .well-hero {
+    position: relative;
+    min-height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 5rem var(--space-6) 60px;
+    overflow: hidden;
+  }
+
+  .well-hero-gradient {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(135deg, #065F46 0%, #0D7377 45%, #14B8A6 100%);
+  }
+
+  .well-hero-noise {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  .well-hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 720px;
+  }
+
+  .well-hero-title {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: var(--weight-bold);
+    color: #fff;
+    line-height: 1.1;
+    margin: 0 0 var(--space-3);
+  }
+
+  .well-hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    margin: 0 0 var(--space-5);
+    max-width: 580px;
+  }
+
+  .well-hero-meta {
+    display: flex;
+    gap: var(--space-5);
+    flex-wrap: wrap;
+  }
+
+  .well-hero-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .well-hero-meta-label {
+    font-size: 0.65rem;
+    font-weight: var(--weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .well-hero-meta-value {
+    font-size: 1.1rem;
+    font-weight: var(--weight-bold);
+    color: #fff;
+  }
+
+  .well-scroll-hint {
+    position: absolute;
+    bottom: 16px;
+    right: var(--space-6);
+    z-index: 3;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.35);
+    text-align: center;
+    animation: wellBounce 2s ease-in-out infinite;
+  }
+
+  @keyframes wellBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+
+  /* ================================================================
+     PERSONAL INTRO
+     ================================================================ */
+  .well-personal {
+    padding-block: var(--space-8);
+  }
+
+  .well-personal-quote {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: var(--space-6) var(--space-8);
+    border-left: 4px solid #14B8A6;
+    background: var(--color-sky);
+    border-radius: 0 12px 12px 0;
+  }
+
+  .well-personal-quote p {
+    font-size: var(--text-body);
+    color: var(--color-heading);
+    line-height: var(--leading-body);
+    font-style: italic;
+    margin-bottom: var(--space-3);
+  }
+
+  .well-personal-quote cite {
+    font-size: var(--text-caption);
+    color: #065F46;
+    font-weight: var(--weight-semibold);
+    font-style: normal;
+  }
+
+  /* ================================================================
+     QUICK FACTS STRIP
+     ================================================================ */
+  .well-quickfacts {
+    padding: 0 0 var(--space-4);
+  }
+
+  .well-quickfacts-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-5);
+    background: var(--color-sky);
+    border-radius: 16px;
+    padding: var(--space-4) var(--space-6);
+    flex-wrap: wrap;
+  }
+
+  .well-quickfact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    text-align: center;
+  }
+
+  .well-quickfact-label {
+    font-size: 0.65rem;
+    font-weight: var(--weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-slate);
+  }
+
+  .well-quickfact-value {
+    font-size: 1.05rem;
+    font-weight: var(--weight-extrabold);
+    color: var(--color-deep-night);
+  }
+
+  .well-quickfact-divider {
+    width: 1px;
+    height: 28px;
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  /* ================================================================
+     QUICK NAV — Jump-to chips
+     ================================================================ */
+  .well-quicknav {
+    padding: 0 0 var(--space-6);
+  }
+
+  .well-quicknav-grid {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+  }
+
+  .well-quicknav-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: var(--color-white);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 40px;
+    font-size: 0.8rem;
+    font-weight: var(--weight-medium);
+    color: #4A5568;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  }
+
+  .well-quicknav-chip:hover {
+    background: #ECFDF5;
+    color: #065F46;
+    transform: translateY(-2px);
+  }
+
+  .well-quicknav-icon {
+    font-size: 1rem;
+  }
+
+  .well-quicknav-label {
+    white-space: nowrap;
+  }
+
+  /* ================================================================
+     TOPIC SECTION
+     ================================================================ */
+  .well-topic {
+    padding: var(--space-4) 0 var(--space-6);
+    scroll-margin-top: 80px;
+  }
+
+  .well-topic-header {
+    position: relative;
+    border-radius: 20px;
+    padding: var(--space-5) var(--space-6);
+    margin-bottom: var(--space-5);
+    overflow: hidden;
+  }
+
+  .well-topic-header-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+  }
+
+  .well-topic-icon {
+    font-size: 1.6rem;
+  }
+
+  .well-topic-title {
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-weight: var(--weight-bold);
+    color: #fff;
+    margin: 0;
+    line-height: 1.2;
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .well-topic-count {
+    font-size: 0.7rem;
+    font-weight: var(--weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+
+  /* ================================================================
+     TIP CARDS
+     ================================================================ */
+  .well-tip-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+
+  @media (max-width: 768px) {
+    .well-tip-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .well-tip-card {
+    background: var(--color-white);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 14px;
+    padding: var(--space-5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .well-tip-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .well-tip-label {
+    font-size: 0.95rem;
+    font-weight: var(--weight-bold);
+    color: var(--color-deep-night);
+    margin: 0 0 var(--space-2);
+    line-height: 1.3;
+  }
+
+  .well-tip-text {
+    font-size: 0.85rem;
+    color: var(--color-slate);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  .well-tip-text :global(a) {
+    color: #065F46;
+    font-weight: var(--weight-semibold);
+    text-decoration: underline;
+    text-decoration-color: rgba(6, 95, 70, 0.3);
+    text-underline-offset: 2px;
+    transition: text-decoration-color 0.2s ease;
+  }
+
+  .well-tip-text :global(a:hover) {
+    text-decoration-color: #065F46;
+  }
+
+  .well-tip-link {
+    display: inline-block;
+    margin-top: var(--space-3);
+    font-size: 0.8rem;
+    font-weight: var(--weight-semibold);
+    color: #065F46;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .well-tip-link:hover {
+    color: #14B8A6;
+  }
+
+  /* ================================================================
+     SCOTT'S PRO TIPS
+     ================================================================ */
+  .well-protips {
+    padding: var(--space-4) 0 var(--space-6);
+  }
+
+  .well-protips-card {
+    background: linear-gradient(135deg, #1A2332 0%, #2D3748 100%);
+    border-radius: 20px;
+    padding: var(--space-6) var(--space-6);
+  }
+
+  .well-protips-heading {
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-weight: var(--weight-bold);
+    color: #14B8A6;
+    margin: 0 0 var(--space-4);
+  }
+
+  .well-protips-card .scott-tips {
+    background: transparent;
+    border-left: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  .well-protips-card .scott-tips ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  .well-protips-card .scott-tips li {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.65;
+    padding-left: var(--space-4);
+    position: relative;
+  }
+
+  .well-protips-card .scott-tips li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #14B8A6;
+  }
+
+  .well-protips-card .scott-tips :global(strong) {
+    color: #14B8A6;
+    font-weight: var(--weight-semibold);
+  }
+
+  .well-protips-card .scott-tips :global(a) {
+    color: #5EEAD4;
+    font-weight: var(--weight-semibold);
+    text-decoration: underline;
+    text-decoration-color: rgba(94, 234, 212, 0.4);
+    text-underline-offset: 2px;
+    transition: text-decoration-color 0.2s ease;
+  }
+
+  .well-protips-card .scott-tips :global(a:hover) {
+    text-decoration-color: #5EEAD4;
+  }
+
+  /* ================================================================
+     AFFILIATE DISCLOSURE
+     ================================================================ */
+  .well-affiliate-disclosure {
+    font-size: 0.75rem;
+    color: #4A5568;
+    line-height: 1.5;
+    text-align: center;
+    padding: var(--space-4) var(--space-6);
+    background: var(--color-sky);
+    border-radius: 10px;
+    margin-bottom: var(--space-4);
+  }
+
+  .well-affiliate-disclosure a {
+    color: var(--color-ocean-teal);
+    text-decoration: underline;
+  }
+
+  /* ================================================================
+     BOTTOM CTA
+     ================================================================ */
+  .well-cta-section {
+    padding: var(--space-6) 0 var(--space-8);
+  }
+
+  .well-cta-card {
+    background: linear-gradient(135deg, #065F46 0%, #0D7377 50%, #14B8A6 100%);
+    border-radius: 20px;
+    padding: var(--space-8) var(--space-6);
+    text-align: center;
+    color: #fff;
+  }
+
+  .well-cta-heading {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    font-weight: var(--weight-bold);
+    margin: 0 0 var(--space-3);
+    color: #fff;
+  }
+
+  .well-cta-text {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 520px;
+    margin: 0 auto var(--space-5);
+    line-height: 1.6;
+  }
+
+  .well-cta-button {
+    display: inline-block;
+    background: var(--color-deep-night);
+    color: #14B8A6;
+    font-size: 0.9rem;
+    font-weight: var(--weight-semibold);
+    padding: 12px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .well-cta-button:hover {
+    background: #0D1117;
+    transform: translateY(-2px);
+  }
+
+  /* ================================================================
+     CROSS-LINKS
+     ================================================================ */
+  .well-crosslinks {
+    padding: 0 0 var(--space-10);
+  }
+
+  .well-crosslinks-heading {
+    font-size: 1.1rem;
+    font-weight: var(--weight-bold);
+    color: var(--color-deep-night);
+    text-align: center;
+    margin: 0 0 var(--space-4);
+  }
+
+  .well-crosslinks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 640px) {
+    .well-crosslinks-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .well-crosslink-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-5) var(--space-4);
+    background: var(--color-white);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 16px;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .well-crosslink-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .well-crosslink-icon {
+    font-size: 1.8rem;
+  }
+
+  .well-crosslink-label {
+    font-size: 0.95rem;
+    font-weight: var(--weight-bold);
+    color: #1A2332;
+  }
+
+  .well-crosslink-desc {
+    font-size: 0.78rem;
+    color: #4A5568;
+    line-height: 1.4;
+  }
+
+  /* ================================================================
+     SCROLL REVEAL (page-specific, avoids Tailwind .visible conflict)
+     ================================================================ */
+  .well-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .well-reveal.well-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @keyframes wellRevealFallback {
+    to { opacity: 1; transform: none; }
+  }
+
+  .well-reveal {
+    animation: wellRevealFallback 0s 3s forwards;
+  }
+
+  /* ================================================================
+     RESPONSIVE
+     ================================================================ */
+  @media (max-width: 640px) {
+    .well-hero {
+      min-height: 50vh;
+      padding: 0 var(--space-4) 40px;
+    }
+
+    .well-hero-meta {
+      gap: var(--space-4);
+    }
+
+    .well-scroll-hint {
+      display: none;
+    }
+
+    .well-topic-header {
+      padding: var(--space-4) var(--space-4);
+    }
+
+    .well-quickfacts-bar {
+      gap: var(--space-3);
+      padding: var(--space-3) var(--space-4);
+    }
+
+    .well-quickfact-divider {
+      display: none;
+    }
+
+    .well-quickfact {
+      min-width: 80px;
+    }
+
+    .well-personal-quote {
+      padding: var(--space-4) var(--space-5);
+    }
+
+    .well-protips-card {
+      padding: var(--space-5) var(--space-4);
+    }
+  }
+</style>

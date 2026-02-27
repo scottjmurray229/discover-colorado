@@ -1,0 +1,23 @@
+{
+	"main": "dist/_worker.js/index.js",
+	"name": "discover-colorado",
+  "compatibility_date": "2026-02-04",
+  "compatibility_flags": [
+    "nodejs_compat",
+    "global_fetch_strictly_public"
+  ],
+	"assets": {
+		"binding": "ASSETS",
+		"directory": "./dist"
+	},
+	"observability": {
+    "enabled": true
+  },
+"d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "trip-planner-cache",
+      "database_id": "45f42d68-0341-41f3-953e-0ebf6754ddd5"
+    }
+  ]
+}

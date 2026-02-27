@@ -1,0 +1,634 @@
+{
+  "name": "Palawan Family Adventure",
+  "subtitle": "El Nido → Linapacan → Coron",
+  "dates": "Dec 26, 2026 – Jan 2, 2027",
+  "days": [
+    {
+      "day": 1,
+      "date": "Fri, Dec 26",
+      "title": "Clark to El Nido",
+      "location": "El Nido, Palawan",
+      "items": [
+        {
+          "id": "d1-1",
+          "time": "4:45 AM",
+          "icon": "✈️",
+          "type": "transport",
+          "title": "Flight: Clark → El Nido",
+          "detail": "Cebu Pacific/AirSWIFT ATR 42-600 turboprop, ~1 hr 30 min. Airport check-in only — arrive 2 hours early. Baggage not included in base fare.",
+          "directions": "Clark International Airport (CRK) Terminal 2. AirSWIFT check-in counter opens 2 hours before departure. No online check-in available.",
+          "status": "confirmed",
+          "lat": 15.186,
+          "lng": 120.56
+        },
+        {
+          "id": "d1-2",
+          "time": "6:30 AM",
+          "icon": "🛬",
+          "type": "transport",
+          "title": "Arrive El Nido Lio Airport",
+          "detail": "Small boutique airport 15 min north of El Nido town. Pre-arranged van transfer for the group.",
+          "directions": "Van pickup pre-arranged with hotel. Private van to El Nido town ₱1,500-2,000, or ₱200-300/person shared. 15-minute drive south.",
+          "status": "confirmed",
+          "lat": 11.2024,
+          "lng": 119.4162
+        },
+        {
+          "id": "d1-3",
+          "time": "10:00 AM",
+          "icon": "🏨",
+          "type": "accommodation",
+          "title": "Check In — El Nido",
+          "detail": "Villa or adjacent family rooms for the group. Settle in, rest after early flight.",
+          "directions": "Hotel in El Nido town or Lio Beach area. Villa with multiple rooms ideal for the group of 8.",
+          "status": "confirmed",
+          "lat": 11.1784,
+          "lng": 119.393
+        },
+        {
+          "id": "d1-4",
+          "time": "3:00 PM",
+          "icon": "🏖️",
+          "type": "activity",
+          "title": "Nacpan Beach",
+          "detail": "One of the Philippines' most beautiful long-stretch beaches. Expansive enough for the kids to run and play with plenty of space. Golden sand, palm trees, gentle waves.",
+          "directions": "30 minutes north of El Nido town by van. Road is paved but bumpy in sections. Van can drop off and pick up — arrange return time with driver.",
+          "status": "confirmed",
+          "lat": 11.2483,
+          "lng": 119.3867
+        },
+        {
+          "id": "d1-5",
+          "time": "7:00 PM",
+          "icon": "🍽️",
+          "type": "food",
+          "title": "Dinner on Hama Street",
+          "detail": "El Nido's main restaurant strip along the beachfront. Seafood, Filipino, and international options. ₱300-600/person.",
+          "directions": "Walk the beachfront in El Nido town. Hama Street runs parallel to the shore — dozens of restaurants to choose from.",
+          "status": "confirmed",
+          "lat": 11.1785,
+          "lng": 119.3935
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "date": "Sat, Dec 27",
+      "title": "El Nido Tour A",
+      "location": "Bacuit Bay, El Nido",
+      "items": [
+        {
+          "id": "d2-1",
+          "time": "8:30 AM",
+          "icon": "💰",
+          "type": "activity",
+          "title": "Pay El Nido Eco-Tourism Fee",
+          "detail": "One-time fee of ₱400/person. Covers all tours during your stay. Pay at the municipal tourism office before boarding.",
+          "directions": "El Nido Municipal Tourism Office near the main beach. Open from 7 AM. Pay before your first boat tour.",
+          "status": "confirmed",
+          "lat": 11.1784,
+          "lng": 119.393
+        },
+        {
+          "id": "d2-2",
+          "time": "9:00 AM",
+          "icon": "⛵",
+          "type": "activity",
+          "title": "Private Boat — Tour A (Bacuit Bay)",
+          "detail": "Full-day island hopping on private bangka for the group. Flexible pace, avoid crowds. Lunch prepared by boat crew (BBQ seafood at Shimizu Island). ₱8,000-12,000 for private boat.",
+          "directions": "Depart from El Nido main beach. Private boat captain meets you at the beach. Life jackets provided for all.",
+          "status": "confirmed",
+          "lat": 11.17,
+          "lng": 119.35
+        },
+        {
+          "id": "d2-3",
+          "time": "9:45 AM",
+          "icon": "🏞️",
+          "type": "activity",
+          "title": "Big Lagoon",
+          "detail": "Towering limestone cliffs surrounding crystal-clear turquoise water. Kayak rentals ₱150/person. The older kids will love paddling through the dramatic canyon.",
+          "directions": "First stop on Tour A, ~30 min by boat from El Nido beach. Kayak rental stand at the lagoon entrance.",
+          "status": "confirmed",
+          "lat": 11.1863,
+          "lng": 119.3241
+        },
+        {
+          "id": "d2-4",
+          "time": "11:00 AM",
+          "icon": "🕳️",
+          "type": "activity",
+          "title": "Secret Lagoon",
+          "detail": "Hidden pool accessible through a small rock opening. Shallow and calm — great for our toddler and the kids. Magical enclosed cove.",
+          "directions": "Short boat ride from Big Lagoon. Wade through a narrow rock opening to reach the hidden pool inside.",
+          "status": "confirmed",
+          "lat": 11.1608,
+          "lng": 119.3433
+        },
+        {
+          "id": "d2-5",
+          "time": "12:30 PM",
+          "icon": "🍚",
+          "type": "food",
+          "title": "Lunch at Shimizu Island",
+          "detail": "BBQ seafood lunch prepared by the boat crew on the beach. White sand, excellent snorkeling with abundant fish and coral nearby.",
+          "directions": "Boat crew sets up lunch on the beach. Snorkel gear available for reef exploration right offshore.",
+          "status": "confirmed",
+          "lat": 11.17,
+          "lng": 119.3567
+        },
+        {
+          "id": "d2-6",
+          "time": "2:30 PM",
+          "icon": "🏖️",
+          "type": "activity",
+          "title": "Seven Commandos Beach",
+          "detail": "Long sandy beach with coconut palms, perfect for kids to play. Snorkeling with sea turtles sometimes spotted offshore.",
+          "directions": "Last major stop on Tour A. Sandy beach with shade from palm trees. Small bar selling drinks.",
+          "status": "confirmed",
+          "lat": 11.195,
+          "lng": 119.3833
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "date": "Sun, Dec 28",
+      "title": "El Nido Tour C",
+      "location": "Bacuit Bay, El Nido",
+      "items": [
+        {
+          "id": "d3-1",
+          "time": "9:00 AM",
+          "icon": "⛵",
+          "type": "activity",
+          "title": "Private Boat — Tour C",
+          "detail": "Widely considered the most scenic El Nido tour. Private boat for flexible timing with the kids. ₱8,000-12,000 for private boat.",
+          "directions": "Same departure beach as Tour A. Boat captain meets you at the main beach at 9 AM.",
+          "status": "confirmed",
+          "lat": 11.1784,
+          "lng": 119.393
+        },
+        {
+          "id": "d3-2",
+          "time": "10:00 AM",
+          "icon": "🚁",
+          "type": "activity",
+          "title": "Helicopter Island",
+          "detail": "Named for its distinctive helicopter shape. Excellent snorkeling directly off the beach — eels, pufferfish, vibrant marine life. One of the best spots for underwater photos.",
+          "directions": "~45 min boat ride from El Nido. Snorkel right off the beach — reef starts just meters from shore.",
+          "status": "confirmed",
+          "lat": 11.1317,
+          "lng": 119.3417
+        },
+        {
+          "id": "d3-3",
+          "time": "11:30 AM",
+          "icon": "🏝️",
+          "type": "activity",
+          "title": "Secret Beach",
+          "detail": "Fully enclosed cove surrounded by limestone walls, accessible by swimming through a narrow crevice. Magical and unforgettable. Older kids will love the adventure. Not suitable for toddler — nannies stay on boat.",
+          "directions": "Swim through a narrow rock crevice to reach the hidden beach inside. Life jackets recommended. Water depth at entrance varies with tide.",
+          "status": "confirmed",
+          "lat": 11.1267,
+          "lng": 119.32
+        },
+        {
+          "id": "d3-4",
+          "time": "12:30 PM",
+          "icon": "🍚",
+          "type": "food",
+          "title": "Lunch on the Boat",
+          "detail": "Crew-prepared BBQ lunch. Fresh seafood, rice, fruit.",
+          "directions": "Served aboard or on a nearby beach depending on conditions.",
+          "status": "confirmed",
+          "lat": 11.13,
+          "lng": 119.33
+        },
+        {
+          "id": "d3-5",
+          "time": "2:00 PM",
+          "icon": "⛪",
+          "type": "activity",
+          "title": "Matinloc Shrine",
+          "detail": "Historic shrine built into a limestone cliff with panoramic views of the surrounding islands. Great photo spot.",
+          "directions": "Boat docks at the shrine pier. Short walk up stone steps to the shrine and viewpoint.",
+          "status": "confirmed",
+          "lat": 11.1033,
+          "lng": 119.3217
+        },
+        {
+          "id": "d3-6",
+          "time": "3:30 PM",
+          "icon": "🏖️",
+          "type": "activity",
+          "title": "Hidden Beach",
+          "detail": "Secluded paradise tucked behind towering cliffs, only accessible at certain tides. Check tide table with boat captain.",
+          "directions": "Accessible by swimming from the boat to shore. Tide-dependent — captain knows the timing.",
+          "status": "weather_watch",
+          "weatherNote": "Accessible at low tide only — captain will check conditions",
+          "lat": 11.1283,
+          "lng": 119.3317
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "date": "Mon, Dec 29",
+      "title": "El Nido → Linapacan",
+      "location": "Linapacan Islands",
+      "items": [
+        {
+          "id": "d4-1",
+          "time": "8:00 AM",
+          "icon": "⛵",
+          "type": "transport",
+          "title": "Expedition Departs El Nido",
+          "detail": "Private bangka charter begins. 2-day, 1-night island-hopping expedition through the Linapacan Islands to Coron. All meals, snorkeling gear, and overnight included. ₱20,000-35,000 for the group.",
+          "directions": "Depart from El Nido pier or hotel pickup. Crew loads supplies and departs by 8-9 AM. Bring waterproof bags for electronics.",
+          "status": "confirmed",
+          "lat": 11.1784,
+          "lng": 119.393
+        },
+        {
+          "id": "d4-2",
+          "time": "10:30 AM",
+          "icon": "🏝️",
+          "type": "activity",
+          "title": "Island Stop — Snorkeling",
+          "detail": "First island stop in Linapacan. Some of the clearest water in the Philippines — often beating both El Nido and Coron for water clarity. Pristine reef, untouched by mass tourism.",
+          "directions": "Crew navigates to the best conditions. 2-4 island stops along the route. Snorkeling gear provided.",
+          "status": "confirmed",
+          "lat": 11.5,
+          "lng": 119.85
+        },
+        {
+          "id": "d4-3",
+          "time": "12:30 PM",
+          "icon": "🍚",
+          "type": "food",
+          "title": "Lunch on the Beach",
+          "detail": "Fresh-caught seafood, rice, and local dishes prepared by the boat crew. Served alfresco on a remote island beach.",
+          "directions": "Crew selects a beach with shade. Lunch is prepared onboard and served on the sand.",
+          "status": "confirmed",
+          "lat": 11.52,
+          "lng": 119.87
+        },
+        {
+          "id": "d4-4",
+          "time": "2:00 PM",
+          "icon": "🏖️",
+          "type": "activity",
+          "title": "Remote Beach Exploration",
+          "detail": "White-sand beaches, vibrant snorkeling reefs, and small fishing villages. Very few tourists — almost completely untouched.",
+          "directions": "Crew navigates to best islands based on weather and conditions.",
+          "status": "confirmed",
+          "lat": 11.55,
+          "lng": 119.9
+        },
+        {
+          "id": "d4-5",
+          "time": "5:00 PM",
+          "icon": "🏕️",
+          "type": "accommodation",
+          "title": "Overnight — Linapacan Island Camp",
+          "detail": "Beachfront kubo (traditional bamboo cottage) or tent on the sand. Dinner prepared by crew — fresh seafood and campfire on the beach. Sleeping under the stars.",
+          "directions": "Crew handles all logistics. Bring toddler essentials — no stores on the island. Insect repellent recommended for evening.",
+          "status": "confirmed",
+          "lat": 11.5,
+          "lng": 119.85
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "date": "Tue, Dec 30",
+      "title": "Linapacan → Coron",
+      "location": "Linapacan → Coron",
+      "items": [
+        {
+          "id": "d5-1",
+          "time": "7:30 AM",
+          "icon": "☀️",
+          "type": "activity",
+          "title": "Sunrise & Breakfast at Camp",
+          "detail": "Wake up on a remote island beach. Crew prepares breakfast. Last morning in the Linapacan wilderness.",
+          "directions": "Breakfast served at the campsite. Pack up and prepare for departure.",
+          "status": "confirmed",
+          "lat": 11.5,
+          "lng": 119.85
+        },
+        {
+          "id": "d5-2",
+          "time": "9:00 AM",
+          "icon": "⛵",
+          "type": "transport",
+          "title": "Continue North to Coron",
+          "detail": "Day 2 of the expedition. More island stops through Linapacan and Culion islands as we head toward Coron.",
+          "directions": "Crew handles navigation. ~5-6 hours of sailing with multiple stops.",
+          "status": "confirmed",
+          "lat": 11.7,
+          "lng": 120.0
+        },
+        {
+          "id": "d5-3",
+          "time": "10:30 AM",
+          "icon": "🏖️",
+          "type": "activity",
+          "title": "Ditaytayan Sandbar",
+          "detail": "One of the most beautiful sandbars in Palawan. Dramatic strip of white sand extending between islands with turquoise water on both sides.",
+          "directions": "En route to Coron. Crew stops for swimming and photos. Shallow water — safe for kids.",
+          "status": "confirmed",
+          "lat": 11.65,
+          "lng": 120.0167
+        },
+        {
+          "id": "d5-4",
+          "time": "12:00 PM",
+          "icon": "🍚",
+          "type": "food",
+          "title": "Lunch on the Water",
+          "detail": "Final expedition meal prepared by the crew. Fresh seafood BBQ on a beach stop.",
+          "directions": "Crew selects a sheltered beach for lunch.",
+          "status": "confirmed",
+          "lat": 11.8,
+          "lng": 120.1
+        },
+        {
+          "id": "d5-5",
+          "time": "4:00 PM",
+          "icon": "🏨",
+          "type": "accommodation",
+          "title": "Arrive Coron Town",
+          "detail": "Expedition ends at Coron port. Transfer to hotel. Rest and explore Coron town on foot.",
+          "directions": "Coron port is walkable to most hotels. Tricycle to hotel ₱50-100 if needed. Town is small and walkable.",
+          "status": "confirmed",
+          "lat": 12.0054,
+          "lng": 120.2027
+        },
+        {
+          "id": "d5-6",
+          "time": "7:00 PM",
+          "icon": "🍽️",
+          "type": "food",
+          "title": "Dinner in Coron Town",
+          "detail": "Waterfront restaurants along the pier area. Filipino seafood and international options. ₱300-500/person.",
+          "directions": "Walk along the main street near the public market and pier. Several restaurants with water views.",
+          "status": "confirmed",
+          "lat": 12.0054,
+          "lng": 120.2027
+        }
+      ]
+    },
+    {
+      "day": 6,
+      "date": "Wed, Dec 31",
+      "title": "Coron Tour A — NYE",
+      "location": "Coron Island",
+      "items": [
+        {
+          "id": "d6-1",
+          "time": "8:00 AM",
+          "icon": "⛵",
+          "type": "activity",
+          "title": "Private Boat — Coron Tour A",
+          "detail": "New Year's Eve island hopping. The iconic highlights of Coron — lakes, lagoons, and beaches. Private boat to start early and beat crowds. ₱8,000-12,000.",
+          "directions": "Depart from Coron pier. Private boat captain meets at 8 AM. Start early — Kayangan gets crowded by 10 AM.",
+          "status": "confirmed",
+          "lat": 12.0054,
+          "lng": 120.2027
+        },
+        {
+          "id": "d6-2",
+          "time": "9:00 AM",
+          "icon": "💎",
+          "type": "activity",
+          "title": "Kayangan Lake",
+          "detail": "Known as the cleanest lake in the Philippines. Short hike up limestone steps to iconic viewpoint (the postcard shot of Coron), then down to crystal-clear freshwater lake. ₱300/person entrance. Life jackets required.",
+          "directions": "First stop — arrive early to beat tour groups. Hike is ~10 min up stairs. Doable with toddler in carrier. Viewpoint at the top, then descend to the lake.",
+          "status": "confirmed",
+          "lat": 11.9942,
+          "lng": 120.2389
+        },
+        {
+          "id": "d6-3",
+          "time": "11:00 AM",
+          "icon": "🌊",
+          "type": "activity",
+          "title": "Twin Lagoon",
+          "detail": "Two turquoise lagoons separated by a thin limestone wall. At low tide, swim through underwater passage between them. At high tide, wooden stairs to climb over. Warm-cool temperature contrast is fascinating for kids. Kayak rentals available.",
+          "directions": "Short boat ride from Kayangan. Tide determines access method — captain will advise. Bring underwater camera.",
+          "status": "confirmed",
+          "lat": 12.0105,
+          "lng": 120.1908
+        },
+        {
+          "id": "d6-4",
+          "time": "12:30 PM",
+          "icon": "🍚",
+          "type": "food",
+          "title": "Lunch at CYC Beach",
+          "detail": "White sand beach, perfect lunch stop. Crew-prepared BBQ. Kids can play on the beach while adults eat.",
+          "directions": "Beach with shade structures. Calm shallow water for kids.",
+          "status": "confirmed",
+          "lat": 11.9617,
+          "lng": 120.2033
+        },
+        {
+          "id": "d6-5",
+          "time": "2:00 PM",
+          "icon": "🏊",
+          "type": "activity",
+          "title": "Barracuda Lake",
+          "detail": "Unique lake with thermocline layers — cold freshwater on top, warm saltwater below. Surreal swimming experience as you pass through temperature layers.",
+          "directions": "Short hike from the dock. Similar to Kayangan but less crowded in afternoon.",
+          "status": "confirmed",
+          "lat": 11.9967,
+          "lng": 120.2283
+        },
+        {
+          "id": "d6-6",
+          "time": "3:30 PM",
+          "icon": "🐠",
+          "type": "activity",
+          "title": "Coral Garden Snorkeling",
+          "detail": "Shallow, vibrant snorkeling spot ideal for beginners and children. Abundant fish and healthy coral.",
+          "directions": "Last stop before returning. Shallow reef — safe for kids with life jackets.",
+          "status": "confirmed",
+          "lat": 11.9833,
+          "lng": 120.21
+        },
+        {
+          "id": "d6-7",
+          "time": "8:00 PM",
+          "icon": "🎉",
+          "type": "activity",
+          "title": "New Year's Eve Celebration",
+          "detail": "Celebrate at your resort or waterfront restaurant. Coron town does fireworks at midnight over the bay.",
+          "directions": "Waterfront restaurants along the pier for dinner with views. Fireworks visible from most locations near the water.",
+          "status": "confirmed",
+          "lat": 12.0054,
+          "lng": 120.2027
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "date": "Thu, Jan 1",
+      "title": "Coron Tour C + Hot Springs",
+      "location": "Outer Islands, Coron",
+      "items": [
+        {
+          "id": "d7-1",
+          "time": "8:30 AM",
+          "icon": "⛵",
+          "type": "activity",
+          "title": "Private Boat — Coron Tour C",
+          "detail": "Remote outer islands south of Coron. Stunning white-sand beaches rather than lakes and lagoons. ₱8,000-12,000 for private boat.",
+          "directions": "Depart from Coron pier. Longer boat ride to outer islands — ~1 hour to first stop.",
+          "status": "confirmed",
+          "lat": 12.0054,
+          "lng": 120.2027
+        },
+        {
+          "id": "d7-2",
+          "time": "10:00 AM",
+          "icon": "🏖️",
+          "type": "activity",
+          "title": "Malcapuya Island",
+          "detail": "Powdery white sand beach with calm, shallow turquoise water. Perfect for families — toddler can wade safely and older kids can snorkel.",
+          "directions": "~1 hour by boat from Coron. Shallow entry, sandy bottom. No sharp coral near shore.",
+          "status": "confirmed",
+          "lat": 11.8583,
+          "lng": 120.09
+        },
+        {
+          "id": "d7-3",
+          "time": "12:00 PM",
+          "icon": "🍚",
+          "type": "food",
+          "title": "Beach Lunch at Banana Island",
+          "detail": "Quiet beach with excellent snorkeling along the reef edge. Crew prepares lunch on the beach.",
+          "directions": "Short boat ride from Malcapuya. Reef snorkeling is right offshore.",
+          "status": "confirmed",
+          "lat": 11.8783,
+          "lng": 120.0617
+        },
+        {
+          "id": "d7-4",
+          "time": "2:00 PM",
+          "icon": "🏝️",
+          "type": "activity",
+          "title": "Bulog Dos Island",
+          "detail": "Dramatic sandbar extending between two islands. Great for photos and wading. Shallow water all around.",
+          "directions": "En route back to Coron. Sandbar is exposed at low tide — check tide with captain.",
+          "status": "confirmed",
+          "lat": 11.9283,
+          "lng": 120.05
+        },
+        {
+          "id": "d7-5",
+          "time": "5:00 PM",
+          "icon": "♨️",
+          "type": "activity",
+          "title": "Maquinit Hot Springs",
+          "detail": "One of the only saltwater hot springs in the Philippines. Naturally heated to 38-40°C by underground volcanic activity. Stone-lined pools surrounded by mangroves with ocean views. ₱200-300/adult, ₱100/child.",
+          "directions": "20 min by tricycle from Coron town on a bumpy scenic road. Round-trip tricycle ₱400-700 — driver waits for you. Bring insect repellent (near mangroves).",
+          "status": "confirmed",
+          "lat": 11.9814,
+          "lng": 120.2622
+        }
+      ]
+    },
+    {
+      "day": 8,
+      "date": "Fri, Jan 2",
+      "title": "Coron → Clark",
+      "location": "Coron → Clark",
+      "items": [
+        {
+          "id": "d8-1",
+          "time": "8:00 AM",
+          "icon": "🧳",
+          "type": "activity",
+          "title": "Pack & Check Out",
+          "detail": "Final morning in Coron. Check out of hotel, organize luggage for the group.",
+          "directions": "Hotel checkout. Secure transport to airport — pre-arrange van for 8 people.",
+          "status": "confirmed",
+          "lat": 12.0054,
+          "lng": 120.2027
+        },
+        {
+          "id": "d8-2",
+          "time": "9:30 AM",
+          "icon": "🚐",
+          "type": "transport",
+          "title": "Transfer to Busuanga Airport",
+          "detail": "30-45 min drive from Coron town to Francisco B. Reyes Airport (USU). Environmental/tourist fee ₱200/person collected at airport departure.",
+          "directions": "Van from Coron town to Busuanga Airport. Road is paved, ~30-45 min. Arrive 1.5 hours before flight.",
+          "status": "confirmed",
+          "lat": 12.1615,
+          "lng": 120.1
+        },
+        {
+          "id": "d8-3",
+          "time": "12:00 PM",
+          "icon": "✈️",
+          "type": "transport",
+          "title": "Flight: Coron → Clark",
+          "detail": "PAL or Cebu Pacific/Cebgo, ~1 hr 15-30 min. Daily flights available since March 2026.",
+          "directions": "Francisco B. Reyes Airport (USU). Small airport — check-in counter only. ₱200/person environmental fee at departure.",
+          "status": "confirmed",
+          "lat": 12.1615,
+          "lng": 120.1
+        },
+        {
+          "id": "d8-4",
+          "time": "1:30 PM",
+          "icon": "🏠",
+          "type": "transport",
+          "title": "Arrive Clark — Trip Complete!",
+          "detail": "Welcome home. 8 days, 3 destinations, countless memories.",
+          "directions": "Clark International Airport (CRK). Private vehicle pickup or Grab home.",
+          "status": "confirmed",
+          "lat": 15.186,
+          "lng": 120.56
+        }
+      ]
+    }
+  ],
+  "weather": [
+    { "day": "Fri", "icon": "☀️", "high": 31, "low": 25, "rain": 10 },
+    { "day": "Sat", "icon": "☀️", "high": 32, "low": 25, "rain": 5 },
+    { "day": "Sun", "icon": "⛅", "high": 31, "low": 25, "rain": 15 },
+    { "day": "Mon", "icon": "☀️", "high": 32, "low": 26, "rain": 5 },
+    { "day": "Tue", "icon": "☀️", "high": 33, "low": 26, "rain": 5 },
+    { "day": "Wed", "icon": "☀️", "high": 31, "low": 25, "rain": 10 },
+    { "day": "Thu", "icon": "⛅", "high": 30, "low": 25, "rain": 20 },
+    { "day": "Fri", "icon": "☀️", "high": 32, "low": 26, "rain": 5 }
+  ],
+  "contacts": [
+    { "icon": "🚨", "name": "Philippine Emergency", "role": "Emergency Services", "phone": "911" },
+    { "icon": "🏥", "name": "El Nido District Hospital", "role": "El Nido", "phone": "+63-48-723-0330" },
+    { "icon": "🏥", "name": "Busuanga District Hospital", "role": "Coron/Busuanga", "phone": "+63-48-728-2361" },
+    { "icon": "⛵", "name": "Expedition Operator", "role": "Linapacan charter", "phone": "+63-917-555-0000" },
+    { "icon": "🚐", "name": "Van Service", "role": "Airport transfers", "phone": "+63-927-555-1111" }
+  ],
+  "group": [
+    { "id": "scott", "name": "Scott", "avatar": "🧔", "role": "host", "color": "#0D7377" },
+    { "id": "jenice", "name": "Jenice", "avatar": "👩", "role": "editor", "color": "#E8654A" },
+    { "id": "ate", "name": "Ate", "avatar": "👩‍🦱", "role": "viewer", "color": "#7C3AED" },
+    { "id": "kuya", "name": "Kuya", "avatar": "👨‍🦱", "role": "viewer", "color": "#2D8A4E" }
+  ],
+  "notifications": [
+    { "id": 1, "type": "weather", "text": "Dry season confirmed for Dec 26–Jan 2. Calm seas expected — ideal for island hopping and Linapacan expedition.", "time": "1 day ago", "read": false },
+    { "id": 2, "type": "change", "by": "scott", "text": "booked private bangka for Tour A and Tour C in El Nido", "time": "3 days ago", "read": true },
+    { "id": 3, "type": "currency", "text": "USD/PHP rate updated: ₱58.00. Budget tracker refreshed.", "time": "Yesterday", "read": true },
+    { "id": 4, "type": "sync", "text": "All devices synced. Last update: 5 min ago.", "time": "5 min ago", "read": true }
+  ],
+  "changeLog": [
+    { "id": 1, "type": "added", "by": "scott", "time": "3 days ago", "title": "Maquinit Hot Springs", "detail": "Added evening hot springs visit on Day 7 — perfect way to end the adventure", "day": 7, "synced": true },
+    { "id": 2, "type": "swapped", "by": "jenice", "time": "5 days ago", "title": "Expedition route", "from": "Direct ferry El Nido → Coron", "to": "2-day Linapacan expedition", "reason": "Linapacan has the clearest water in the Philippines — can't skip it", "day": 4, "synced": true },
+    { "id": 3, "type": "note", "by": "scott", "time": "1 week ago", "title": "Flight booking", "detail": "Booked CRK–ENI and USU–CRK flights for 8 seats. Cebu Pacific/AirSWIFT. Peak season — glad we booked early.", "day": 1, "synced": true }
+  ]
+}
