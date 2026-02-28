@@ -1,0 +1,381 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import EmailCapture from '../../components/EmailCapture.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Colorado History', url: '/history/' },
+];
+
+const pageTitle = 'Colorado History — From Ancestral Puebloans to the Rocky Mountain Frontier';
+const pageDescription = 'Explore Colorado\'s layered history — ancient cliff dwellings at Mesa Verde, the Pikes Peak gold rush, mining ghost towns, Ute heritage, and the making of the American West.';
+
+interface TopicSection {
+  id: string;
+  icon: string;
+  title: string;
+  gradient: string;
+  items: { label: string; text: string }[];
+}
+
+const topics: TopicSection[] = [
+  {
+    id: 'ancestral-puebloans',
+    icon: '🏛️',
+    title: 'Ancestral Puebloans & Mesa Verde',
+    gradient: 'linear-gradient(135deg, #5D4037 0%, #8D6E63 100%)',
+    items: [
+      { label: 'Cliff Dwellings of Mesa Verde', text: 'Mesa Verde National Park preserves over 600 cliff dwellings built by the Ancestral Puebloans between 600 and 1300 AD. The most famous, Cliff Palace, is a 150-room complex tucked into an alcove 100 feet above the canyon floor. These weren\'t primitive shelters — they were sophisticated multi-story apartment buildings with plazas, kivas (ceremonial rooms), and storage facilities. The engineering required to build and inhabit these structures at this scale remains remarkable.' },
+      { label: 'Who Were the Ancestral Puebloans?', text: 'The Ancestral Puebloans (previously called "Anasazi," a Navajo term the descendants find disrespectful) were an agricultural people who farmed corn, beans, and squash on the mesa tops. They developed complex irrigation systems, created distinctive black-on-white pottery, and built an extensive road network connecting communities across the Four Corners region. Around 1300 AD, they migrated south — likely due to prolonged drought — and their descendants include today\'s Pueblo peoples of New Mexico and Arizona.' },
+      { label: 'Visiting Mesa Verde Today', text: 'Mesa Verde is a UNESCO World Heritage Site and Colorado\'s only cultural national park. Cliff Palace and Balcony House require ranger-guided tours (book well in advance for summer). The Chapin Mesa Archeological Museum provides essential context. The park sits at 7,000-8,500 feet elevation, so bring layers and water. Allow at least a full day — preferably two. The drive from Durango takes about 45 minutes.' },
+      { label: 'Beyond Mesa Verde — Canyons of the Ancients', text: 'Canyons of the Ancients National Monument, west of Cortez, has the highest known density of archaeological sites in the United States — over 6,000 recorded sites in 176,000 acres. Most are unexcavated, marked only by subtle stone walls and pottery shards. The Anasazi Heritage Center in Dolores serves as the visitor center and museum, housing over three million artifacts. It\'s far less crowded than Mesa Verde and deeply atmospheric.' },
+    ],
+  },
+  {
+    id: 'ute-people',
+    icon: '🏔️',
+    title: 'The Ute People — Colorado\'s Original Inhabitants',
+    gradient: 'linear-gradient(135deg, #1B5E20 0%, #388E3C 100%)',
+    items: [
+      { label: 'The Ute Nation', text: 'The Ute people have lived in Colorado for at least 1,000 years — long before any European set foot in the Rockies. The word "Colorado" itself comes from Spanish, but the state\'s older name is the Ute homeland. Twelve bands of Utes ranged across the mountains and valleys, following seasonal patterns — hunting elk and deer in the high country in summer, descending to the valleys and hot springs in winter. They were master horsemen after Spanish contact.' },
+      { label: 'Ute Trail System', text: 'The Ute Trail system across Colorado\'s mountains predates European exploration by centuries. Many of today\'s highways and passes follow Ute routes — Trail Ridge Road through Rocky Mountain National Park was originally a Ute trail. The Ute Pass to Pikes Peak, the route through Glenwood Canyon, and the path over Tennessee Pass were all established by Ute travelers. Every time you drive I-70 through the mountains, you\'re following ancient Ute pathways.' },
+      { label: 'Forced Removal & Reservations', text: 'The discovery of gold and silver in Colorado sealed the Utes\' fate. Through a series of treaties and betrayals — the Treaty of 1868, the Brunot Agreement of 1873, and finally the forced removal after the Meeker Massacre of 1879 — the Ute people were pushed off their mountain homeland. Today, the Southern Ute and Ute Mountain Ute tribes maintain reservations in southwestern Colorado. The Northern Ute tribe was relocated to Utah.' },
+      { label: 'Ute Heritage Today', text: 'The Ute Indian Museum in Montrose tells the story of the Ute people with dignity and depth. The Southern Ute Cultural Center in Ignacio preserves language, traditions, and art. Bear dances and Sun dances continue as living traditions. Hot springs throughout Colorado — from Glenwood Springs to Ouray to Pagosa Springs — were sacred Ute healing sites for centuries before becoming tourist destinations.' },
+    ],
+  },
+  {
+    id: 'gold-rush',
+    icon: '⛏️',
+    title: 'The Pikes Peak Gold Rush',
+    gradient: 'linear-gradient(135deg, #E65100 0%, #FF9800 100%)',
+    items: [
+      { label: '"Pikes Peak or Bust"', text: 'In 1858, prospectors found gold at the confluence of Cherry Creek and the South Platte River — present-day downtown Denver. The cry "Pikes Peak or Bust" sent 100,000 fortune seekers west in 1859. Most found nothing and turned back, earning the derisive nickname "go-backers." But enough gold was found in the mountains to transform Colorado from an empty territory into a boomtown economy virtually overnight.' },
+      { label: 'Denver — Born from Gold', text: 'Denver was founded as a mining camp in 1858 and became the supply hub for the goldfields. Within two years it had saloons, assay offices, and a newspaper. The city nearly died when the initial placer deposits ran out, but survived by reinventing itself as a railroad hub, cattle town, and eventually state capital (1876). Today\'s LoDo neighborhood sits on the original settlement. The History Colorado Center downtown tells the full story.' },
+      { label: 'Central City & Black Hawk', text: 'Central City was called "the richest square mile on earth" during the 1860s gold boom. The town exploded with miners, saloons, and an opera house (still standing and hosting performances today). Black Hawk, just downhill, was the smelting center. The two towns are now casino towns, but the Victorian architecture and mine headframes remain. The narrow-gauge road up from Golden follows the original wagon route.' },
+      { label: 'Silver Boom & Bust — Leadville & Aspen', text: 'The gold rush gave way to silver in the 1870s-80s. Leadville became Colorado\'s second-largest city, producing $15 million in silver annually. Horace Tabor went from shopkeeper to millionaire to senator on silver wealth. Aspen was a silver town before it was a ski town — the Hotel Jerome (1889) was built with mining money. When the Silver Purchase Act was repealed in 1893, both towns crashed. Leadville never fully recovered; Aspen reinvented itself on snow.' },
+      { label: 'Cripple Creek — The Last Gold Rush', text: 'Cripple Creek, behind Pikes Peak, had Colorado\'s last major gold strike in 1891. By 1900 it was producing more gold than any district in the world and had 50,000 residents, 75 saloons, and an electric trolley. The Molly Kathleen Mine offers underground tours. The Cripple Creek District Museum preserves the mining heritage. Like Central City, the town now has casinos, but the history runs deep beneath the surface.' },
+    ],
+  },
+  {
+    id: 'mining-towns',
+    icon: '🏚️',
+    title: 'Ghost Towns & Mining Heritage',
+    gradient: 'linear-gradient(135deg, #4A5568 0%, #718096 100%)',
+    items: [
+      { label: 'Colorado\'s Ghost Towns', text: 'Colorado has more ghost towns than living towns — over 1,500 abandoned settlements scatter the mountains. Most were mining camps that boomed and busted within a decade. St. Elmo near Buena Vista is one of the best-preserved, with a dozen original buildings on a dirt main street. Animas Forks above Silverton sits at 11,200 feet and is accessible only by 4WD in summer. Independence (near Aspen) was abandoned in a single winter night in 1899 when miners snowshoed out.' },
+      { label: 'The Million Dollar Highway', text: 'US Route 550 between Ouray and Silverton — the "Million Dollar Highway" — is one of America\'s most spectacular and terrifying drives. The road carved into cliff faces, with no guardrails in places, follows the old wagon route that connected mining camps. Silverton, at the end of the Durango & Silverton Narrow Gauge Railroad, was a supply town for dozens of surrounding mines. Today it\'s a living museum of mining-era architecture.' },
+      { label: 'Telluride\'s Second Life', text: 'Telluride was a rough mining town where Butch Cassidy robbed his first bank (the San Miguel Valley Bank, 1889). By the mid-20th century, the mines had closed and the town nearly died. Then came the ski resort (1972), followed by the Telluride Film Festival and Bluegrass Festival. Today it\'s one of Colorado\'s most exclusive destinations — but the mining-era buildings on Colorado Avenue tell the original story.' },
+      { label: 'Georgetown & the Georgetown Loop', text: 'Georgetown, just off I-70 west of Denver, was a silver mining center so wealthy it was called "the Silver Queen of the Rockies." The town\'s Victorian architecture is remarkably intact — over 200 buildings from the 1870s-1890s still stand. The Georgetown Loop Railroad, a narrow-gauge engineering marvel with a 300-foot loop bridge, has been restored as a heritage railway. The Hotel de Paris Museum preserves a French-run luxury hotel from the mining era.' },
+    ],
+  },
+  {
+    id: 'statehood',
+    icon: '🏛️',
+    title: 'Statehood & the Modern Era',
+    gradient: 'linear-gradient(135deg, #0D7377 0%, #4DB6AC 100%)',
+    items: [
+      { label: 'The Centennial State — 1876', text: 'Colorado became the 38th state on August 1, 1876 — exactly 100 years after the Declaration of Independence, earning the nickname "Centennial State." The state constitution was remarkably progressive for its time: it included provisions for public education and water rights that would shape the entire American West. Denver became the permanent capital, and the gold-domed State Capitol was completed in 1894, modeled after the US Capitol.' },
+      { label: 'Water Wars & Western Development', text: 'Colorado\'s history is inseparable from water. The state sits atop the Continental Divide, and rivers flowing from its mountains — the Colorado, Rio Grande, Platte, and Arkansas — irrigate farms and cities across seven states and Mexico. Water rights battles have shaped politics, agriculture, and development for 150 years. The phrase "Whiskey is for drinking, water is for fighting" captures the intensity of Colorado water politics.' },
+      { label: 'Rocky Mountain National Park — 1915', text: 'Rocky Mountain National Park was established on January 26, 1915, thanks to the tireless advocacy of naturalist Enos Mills. Mills spent years lobbying Congress, writing books, and guiding visitors through the wilderness to build public support. Trail Ridge Road, completed in 1932, made the park accessible by automobile. Today RMNP receives over 4 million visitors annually and is one of the most visited national parks in the country.' },
+      { label: 'The Ski Industry Revolution', text: 'Colorado\'s ski industry began in the 1940s when the US Army\'s 10th Mountain Division trained at Camp Hale near Leadville for alpine warfare in WWII. After the war, veterans returned to build Colorado\'s first ski resorts. Aspen opened in 1947. Vail was founded in 1962 by 10th Mountain veteran Pete Seibert. Breckenridge, Keystone, Copper Mountain, Steamboat, and Telluride followed. Today Colorado has 32 ski areas generating $5 billion annually.' },
+      { label: 'Colorado\'s Space Connection', text: 'Colorado is the second-largest aerospace employer in the United States. The US Air Force Academy has been in Colorado Springs since 1954. NORAD (North American Aerospace Defense Command) monitors the skies from inside Cheyenne Mountain. The United States Space Force headquarters is at Peterson Space Force Base in Colorado Springs. Lockheed Martin, Ball Aerospace, and United Launch Alliance all have major Colorado operations. The state\'s clear skies and high altitude make it ideal for astronomy and space operations.' },
+    ],
+  },
+  {
+    id: 'cultural-history',
+    icon: '🎭',
+    title: 'Cultural & Social History',
+    gradient: 'linear-gradient(135deg, #6A1B9A 0%, #AB47BC 100%)',
+    items: [
+      { label: 'The Ludlow Massacre — 1914', text: 'On April 20, 1914, Colorado National Guard troops and company guards attacked a tent colony of 1,200 striking coal miners and their families near Trinidad. Twenty-one people were killed, including eleven children and two women who suffocated in a pit beneath a burning tent. The Ludlow Massacre became a turning point in American labor history, leading to federal investigations and eventual reforms in mining labor laws. A memorial stands at the site today.' },
+      { label: 'The Dust Bowl & Depression', text: 'Southeastern Colorado was devastated by the Dust Bowl of the 1930s. Baca County lost 40% of its population as farms turned to dust and families fled west. The experience reshaped Colorado\'s approach to land management and water conservation. The Comanche National Grassland now covers much of the former Dust Bowl territory, restored through decades of careful stewardship.' },
+      { label: 'Camp Amache — Japanese Internment', text: 'During WWII, the US government forced over 7,500 Japanese Americans into the Granada Relocation Center (Camp Amache) in southeastern Colorado. Families were uprooted from their homes on the West Coast and confined behind barbed wire in the Colorado prairie. The camp operated from 1942-1945. Camp Amache was designated a National Historic Site in 2022, preserving this dark chapter of American history. The nearby town of Granada maintains a small museum.' },
+      { label: 'The Outdoor Recreation Movement', text: 'Colorado pioneered the American outdoor recreation movement. The Colorado Mountain Club (founded 1912) promoted mountaineering and conservation. The state created the first recreational ski area licensing system. The 14er-bagging tradition — climbing all 58 peaks above 14,000 feet — became a defining Colorado pursuit. The Outdoor Industry Association headquartered in Boulder generates $28 billion annually for the state economy. Today, outdoor recreation is woven into Colorado\'s identity as deeply as mining once was.' },
+    ],
+  },
+];
+---
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  pageType="destination"
+  schemaData={{ title: pageTitle, description: pageDescription }}
+  breadcrumbs={breadcrumbs}
+>
+  <!-- Hero -->
+  <header class="hist-hero">
+    <div class="hist-hero-gradient"></div>
+    <div class="hist-hero-noise"></div>
+    <div class="hist-hero-content">
+      <h1 class="hist-hero-title">Colorado History & Heritage</h1>
+      <p class="hist-hero-subtitle">From 1,000-year-old cliff dwellings at Mesa Verde to the gold rush that built Denver, from Ute trails across the Rockies to the ski industry born from WWII veterans.</p>
+      <div class="hist-hero-meta">
+        <div class="hist-hero-meta-item">
+          <span class="hist-hero-meta-label">Eras</span>
+          <span class="hist-hero-meta-value">6</span>
+        </div>
+        <div class="hist-hero-meta-item">
+          <span class="hist-hero-meta-label">Timeline</span>
+          <span class="hist-hero-meta-value">1,000+ Years</span>
+        </div>
+        <div class="hist-hero-meta-item">
+          <span class="hist-hero-meta-label">Sites</span>
+          <span class="hist-hero-meta-value">20+</span>
+        </div>
+      </div>
+    </div>
+    <div class="hist-scroll-hint">Scroll<br />&#8595;</div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="container-content">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <!-- Personal intro -->
+  <section class="hist-personal reveal">
+    <div class="container-content">
+      <blockquote class="hist-personal-quote">
+        <p>I came to Colorado for the mountains and stayed for the stories. Standing inside Cliff Palace at Mesa Verde, walking the dirt streets of St. Elmo, reading the names at the Ludlow Massacre memorial — Colorado's history isn't locked in museums. It's carved into canyon walls, scattered across mountain passes, and built into the Victorian storefronts of towns that boomed on silver and survived on stubbornness. Every trail in this state has a story beneath it.</p>
+        <cite>— Scott</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Quick Nav -->
+  <section class="hist-quicknav reveal">
+    <div class="container-content">
+      <div class="hist-quicknav-grid">
+        {topics.map((t) => (
+          <a href={`#${t.id}`} class="hist-quicknav-chip">
+            <span class="hist-quicknav-icon">{t.icon}</span>
+            <span class="hist-quicknav-label">{t.title.split(' ').slice(0, 2).join(' ')}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Topic Sections -->
+  {topics.map((topic) => (
+    <section class="hist-topic reveal" id={topic.id}>
+      <div class="container-content">
+        <div class="hist-topic-header" style={`background: ${topic.gradient};`}>
+          <div class="hist-topic-header-inner">
+            <span class="hist-topic-icon">{topic.icon}</span>
+            <h2 class="hist-topic-title">{topic.title}</h2>
+            <span class="hist-topic-count">{topic.items.length} topics</span>
+          </div>
+        </div>
+
+        <div class="hist-tip-grid">
+          {topic.items.map((item) => (
+            <div class="hist-tip-card">
+              <h3 class="hist-tip-label">{item.label}</h3>
+              <p class="hist-tip-text" set:html={item.text} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- Bottom CTA -->
+  <section class="hist-cta-section reveal">
+    <div class="container-content">
+      <div class="hist-cta-card">
+        <h2 class="hist-cta-heading">Plan a Heritage Trip</h2>
+        <p class="hist-cta-text">Tell our AI planner you're interested in history and it will build a Colorado itinerary around Mesa Verde, ghost towns, mining heritage, and the stories that shaped the West.</p>
+        <a href="/plan/" class="hist-cta-button">Start Planning &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <FAQ items={[
+    { question: "What is the oldest historical site in Colorado?", answer: "Mesa Verde National Park contains cliff dwellings built by Ancestral Puebloans between 600 and 1300 AD, making them over 700 years old. Cliff Palace, the largest cliff dwelling in North America, has 150 rooms and 23 kivas. The park is a UNESCO World Heritage Site and the only national park in the US dedicated entirely to preserving cultural heritage." },
+    { question: "When was the Colorado gold rush?", answer: "The Pikes Peak Gold Rush began in 1858 when gold was found at the confluence of Cherry Creek and the South Platte River (present-day Denver). By 1859, an estimated 100,000 people headed west under the banner 'Pikes Peak or Bust.' The gold rush led directly to Denver's founding, Colorado Territory's creation (1861), and eventual statehood in 1876." },
+    { question: "What are the best ghost towns to visit in Colorado?", answer: "St. Elmo near Buena Vista is the best-preserved, with a dozen original buildings. Animas Forks above Silverton sits at 11,200 feet (4WD required). Independence near Aspen was abandoned in a single night. Ashcroft near Aspen is a well-preserved silver camp. The Million Dollar Highway between Ouray and Silverton passes several mining ruins. Most ghost towns are best visited June through September." },
+    { question: "Who are the Ute people?", answer: "The Ute people are Colorado's original inhabitants, living in the Rocky Mountains for at least 1,000 years before European contact. Twelve bands of Utes ranged across the mountains following seasonal patterns. After gold and silver discoveries, they were progressively forced from their homeland. Today, the Southern Ute and Ute Mountain Ute tribes maintain reservations in southwestern Colorado." },
+    { question: "How did Colorado's ski industry start?", answer: "Colorado's ski industry traces directly to WWII. The US Army's 10th Mountain Division trained at Camp Hale near Leadville for alpine warfare. After the war, veterans like Pete Seibert returned to build ski resorts — Aspen opened in 1947, Vail in 1962. Today Colorado has 32 ski areas generating $5 billion annually, and the sport is central to the state's identity and economy." },
+    { question: "What happened at the Ludlow Massacre?", answer: "On April 20, 1914, Colorado National Guard troops and company guards attacked a tent colony of striking coal miners near Trinidad, killing 21 people including 11 children and 2 women. The Ludlow Massacre was a turning point in American labor history, leading to federal reforms in mining labor laws. A memorial stands at the site today, about 18 miles north of Trinidad off I-25." },
+  ]} />
+
+  <!-- Email Capture -->
+  <div class="container-content reveal" style="padding-bottom: var(--space-6);">
+    <EmailCapture
+      leadMagnet="Get Our Free Colorado Heritage Trail Guide"
+      description="A printable PDF guide to Colorado's most significant historical sites — from Mesa Verde to mining ghost towns, with logistics, hours, and insider tips."
+      bullets={[
+        'Complete Mesa Verde visitor guide with tour booking strategy',
+        'Top 10 ghost towns with access difficulty ratings and directions',
+        'Gold rush heritage trail from Denver to Cripple Creek',
+        'Ute heritage sites and cultural centers across southwestern Colorado',
+      ]}
+      guideTag="pillar-history"
+    />
+  </div>
+
+  <!-- Cross-links -->
+  <section class="hist-crosslinks reveal">
+    <div class="container-content">
+      <h3 class="hist-crosslinks-heading">Explore More</h3>
+      <div class="hist-crosslinks-grid">
+        <a href="/cuisine/" class="hist-crosslink-card">
+          <span class="hist-crosslink-icon">&#127860;</span>
+          <span class="hist-crosslink-label">Food & Cuisine</span>
+          <span class="hist-crosslink-desc">Green chile, craft beer, and Colorado's food scene</span>
+        </a>
+        <a href="/hiking/" class="hist-crosslink-card">
+          <span class="hist-crosslink-icon">&#9968;</span>
+          <span class="hist-crosslink-label">Hiking Guide</span>
+          <span class="hist-crosslink-desc">14ers, national parks, and Colorado's best trails</span>
+        </a>
+        <a href="/destinations/" class="hist-crosslink-card">
+          <span class="hist-crosslink-icon">&#127956;</span>
+          <span class="hist-crosslink-label">All Destinations</span>
+          <span class="hist-crosslink-desc">20 destinations from Denver to Durango</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<!-- Scroll Reveal Observer -->
+<script>
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach((el) => el.classList.add('visible'));
+  }
+</script>
+
+<style>
+  .hist-hero {
+    position: relative;
+    min-height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 5rem var(--space-6) 60px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #5D4037 0%, #E65100 50%, #0D7377 100%);
+  }
+
+  .hist-hero-gradient {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.55) 100%);
+  }
+
+  .hist-hero-noise {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  .hist-hero-content { position: relative; z-index: 3; max-width: 720px; }
+
+  .hist-hero-title {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: var(--weight-bold);
+    color: #fff;
+    line-height: 1.1;
+    margin: 0 0 var(--space-3);
+  }
+
+  .hist-hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    margin: 0 0 var(--space-5);
+    max-width: 580px;
+  }
+
+  .hist-hero-meta { display: flex; gap: var(--space-5); flex-wrap: wrap; }
+  .hist-hero-meta-item { display: flex; flex-direction: column; gap: 2px; }
+  .hist-hero-meta-label { font-size: 0.65rem; font-weight: var(--weight-semibold); text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255, 255, 255, 0.5); }
+  .hist-hero-meta-value { font-size: 1.1rem; font-weight: var(--weight-bold); color: #fff; }
+
+  .hist-scroll-hint {
+    position: absolute; bottom: 16px; right: var(--space-6); z-index: 3;
+    font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.35); text-align: center;
+    animation: histBounce 2s ease-in-out infinite;
+  }
+  @keyframes histBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+
+  .hist-personal { padding-block: var(--space-8); }
+  .hist-personal-quote {
+    max-width: 680px; margin: 0 auto; padding: var(--space-6) var(--space-8);
+    border-left: 4px solid var(--color-warm-coral); background: var(--color-sky); border-radius: 0 12px 12px 0;
+  }
+  .hist-personal-quote p { font-size: var(--text-body); color: var(--color-heading); line-height: var(--leading-body); font-style: italic; margin-bottom: var(--space-3); }
+  .hist-personal-quote cite { font-size: var(--text-caption); color: var(--color-warm-coral); font-weight: var(--weight-semibold); font-style: normal; }
+
+  .hist-quicknav { padding: 0 0 var(--space-6); }
+  .hist-quicknav-grid { display: flex; justify-content: center; gap: var(--space-2); flex-wrap: wrap; }
+  .hist-quicknav-chip {
+    display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px;
+    background: var(--color-white); border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 40px;
+    font-size: 0.8rem; font-weight: var(--weight-medium); color: var(--color-slate); text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  }
+  .hist-quicknav-chip:hover { background: var(--color-sky); color: var(--color-ocean-teal); transform: translateY(-2px); }
+  .hist-quicknav-icon { font-size: 1rem; }
+  .hist-quicknav-label { white-space: nowrap; }
+
+  .hist-topic { padding: var(--space-4) 0 var(--space-6); scroll-margin-top: 80px; }
+  .hist-topic-header { position: relative; border-radius: 20px; padding: var(--space-5) var(--space-6); margin-bottom: var(--space-5); overflow: hidden; }
+  .hist-topic-header-inner { position: relative; z-index: 1; display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
+  .hist-topic-icon { font-size: 1.6rem; }
+  .hist-topic-title { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: var(--weight-bold); color: #fff; margin: 0; line-height: 1.2; flex: 1; min-width: 200px; }
+  .hist-topic-count { font-size: 0.7rem; font-weight: var(--weight-semibold); text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255, 255, 255, 0.55); background: rgba(255, 255, 255, 0.1); padding: 4px 12px; border-radius: 20px; }
+
+  .hist-tip-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4); }
+  @media (max-width: 768px) { .hist-tip-grid { grid-template-columns: 1fr; } }
+  .hist-tip-card { background: var(--color-white); border: 1px solid rgba(0, 0, 0, 0.06); border-radius: 14px; padding: var(--space-5); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .hist-tip-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); }
+  .hist-tip-label { font-size: 0.95rem; font-weight: var(--weight-bold); color: var(--color-deep-night); margin: 0 0 var(--space-2); line-height: 1.3; }
+  .hist-tip-text { font-size: 0.85rem; color: var(--color-slate); line-height: 1.65; margin: 0; }
+
+  .hist-cta-section { padding: var(--space-6) 0 var(--space-8); }
+  .hist-cta-card { background: linear-gradient(135deg, var(--color-deep-night) 0%, #2D3748 100%); border-radius: 20px; padding: var(--space-8) var(--space-6); text-align: center; color: #fff; }
+  .hist-cta-heading { font-size: clamp(1.3rem, 3vw, 1.8rem); font-weight: var(--weight-bold); margin: 0 0 var(--space-3); color: #fff; }
+  .hist-cta-text { font-size: 1rem; color: rgba(255, 255, 255, 0.75); max-width: 520px; margin: 0 auto var(--space-5); line-height: 1.6; }
+  .hist-cta-button { display: inline-block; background: var(--color-warm-coral); color: #fff; font-size: 0.9rem; font-weight: var(--weight-semibold); padding: 12px 28px; border-radius: 40px; text-decoration: none; transition: background 0.2s ease, transform 0.2s ease; }
+  .hist-cta-button:hover { background: #d4553b; transform: translateY(-2px); }
+
+  .hist-crosslinks { padding: 0 0 var(--space-10); }
+  .hist-crosslinks-heading { font-size: 1.1rem; font-weight: var(--weight-bold); color: var(--color-deep-night); text-align: center; margin: 0 0 var(--space-4); }
+  .hist-crosslinks-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); max-width: 800px; margin: 0 auto; }
+  @media (max-width: 640px) { .hist-crosslinks-grid { grid-template-columns: 1fr; } }
+  .hist-crosslink-card { display: flex; flex-direction: column; align-items: center; gap: var(--space-2); padding: var(--space-5) var(--space-4); background: var(--color-white); border: 1px solid rgba(0, 0, 0, 0.06); border-radius: 16px; text-decoration: none; color: inherit; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .hist-crosslink-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); }
+  .hist-crosslink-icon { font-size: 1.8rem; }
+  .hist-crosslink-label { font-size: 0.95rem; font-weight: var(--weight-bold); color: var(--color-deep-night); }
+  .hist-crosslink-desc { font-size: 0.78rem; color: var(--color-slate); line-height: 1.4; }
+
+  @media (max-width: 640px) {
+    .hist-hero { min-height: 50vh; padding: 0 var(--space-4) 40px; }
+    .hist-hero-meta { gap: var(--space-4); }
+    .hist-scroll-hint { display: none; }
+    .hist-topic-header { padding: var(--space-4) var(--space-4); }
+  }
+</style>

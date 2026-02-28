@@ -1,0 +1,912 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import EmailCapture from '../../components/EmailCapture.astro';
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'The Finer Things', url: '/finer-things/' },
+];
+
+const pageTitle = 'The Finer Things — Colorado Luxury Travel, Fine Dining & Premium Experiences 2026';
+const pageDescription = 'Aspen ski lodges, Vail luxury resorts, Denver fine dining, mountain hot springs retreats, helicopter tours, and elevated Colorado travel experiences.';
+
+interface TopicSection {
+  id: string;
+  icon: string;
+  title: string;
+  gradient: string;
+  items: { label: string; text: string; link?: string }[];
+}
+
+const topics: TopicSection[] = [
+  {
+    id: 'ski-lodges',
+    icon: '\u26F7\uFE0F',
+    title: 'Luxury Ski Lodges',
+    gradient: 'linear-gradient(135deg, #1A2332 0%, #0D7377 100%)',
+    items: [
+      { label: 'The Little Nell, Aspen', link: '/destinations/aspen/', text: 'The only ski-in/ski-out five-star, five-diamond hotel in Aspen, sitting right at the base of Aspen Mountain. Rooms start around $1,200/night in peak season and climb steeply from there. The on-site restaurant <strong>Element 47</strong> has one of the best wine programs in the state. The ski concierge will have your boots warmed and gear ready before you finish breakfast. If you\'re going to splurge on one Colorado ski trip, this is where the money goes.' },
+      { label: 'The St. Regis Aspen Resort', link: '/destinations/aspen/', text: 'Old-world luxury meets mountain grandeur. The lobby alone — soaring ceilings, stone fireplaces, and Remington bronze sculptures — sets the tone. Rooms from $800–2,000/night depending on season. The <strong>Remède Spa</strong> is a 15,000-square-foot retreat with an oxygen lounge (altitude recovery is real at 7,900 feet). Butler service and a heated outdoor pool with mountain views seal the deal.' },
+      { label: 'Four Seasons Vail', link: '/destinations/vail/', text: 'Right in Vail Village with ski valet service — hand them your skis at the end of the day and they\'re tuned and ready by morning. Rooms from $600–1,500/night. The <strong>Flame</strong> restaurant does an excellent Colorado lamb. The rooftop pool is heated year-round with views of the Gore Range. In summer, this becomes a base for mountain biking, fly fishing, and hiking the alpine meadows.' },
+      { label: 'Montage Deer Valley... Wait, We\'re in Colorado', text: 'Colorado doesn\'t need Utah\'s resorts — the state has its own collection of world-class mountain hotels. <strong>The Sebastian</strong> in Vail, <strong>Hotel Jerome</strong> in Aspen (since 1889), <strong>Lumière Hotel</strong> in Telluride, and <strong>The Limelight</strong> in Snowmass all deliver luxury without the pretension. Colorado ski culture is upscale but unpretentious — nobody looks twice at your gear brand, but everyone notices if you can ski Highlands Bowl.' },
+      { label: 'Telluride Boutique Hotels', link: '/destinations/telluride/', text: 'Telluride does luxury differently — smaller, more intimate, with a mountain-town soul. <strong>The Madeline Hotel & Residences</strong> is the flagship: ski-in/ski-out, full spa, and a rooftop pool. <strong>Hotel Telluride</strong> is a boutique option with rooms from $300–800/night and a quieter vibe. The free gondola between town and Mountain Village means you can stay in town for the nightlife and ski from the Village. That gondola is one of the best free rides in American skiing.' },
+    ],
+  },
+  {
+    id: 'fine-dining',
+    icon: '\uD83C\uDF7D\uFE0F',
+    title: 'Fine Dining',
+    gradient: 'linear-gradient(135deg, #78350F 0%, #D4A574 100%)',
+    items: [
+      { label: 'Frasca Food & Wine, Boulder', link: '/destinations/boulder/', text: 'Friuli-Venezia Giulia cuisine in the foothills of the Rockies — and it works brilliantly. James Beard Award-winning chef Lachlan Mackinnon-Patterson and master sommelier Bobby Stuckey created something special here. The tasting menu runs $150–200/person before wine. Reservations book weeks out. The wine list is deep on Italian and Colorado selections — yes, Colorado wine is a real thing. This is the best restaurant in the state, full stop.' },
+      { label: 'Beckon, Denver', link: '/destinations/denver/', text: 'A 22-seat tasting-menu restaurant hidden in Denver\'s RiNo district. No signage, no menu posted online — you get what chef Duncan Holmes is inspired by that night. 10–12 courses for around $200/person. The space is intimate, the plating is meticulous, and the ingredient sourcing is hyper-local. This is Denver\'s answer to the omakase trend, except it\'s New American with Colorado ingredients. Book well in advance.' },
+      { label: 'The Wolf\'s Tailor, Denver', link: '/destinations/denver/', text: 'Grain-forward cooking that sounds odd until you taste it. House-milled flours, fermented grains, and pasta made from heritage wheats grown in Colorado. Dinner runs $100–150/person. The bread program alone is worth the visit — they mill grains daily. It\'s creative and intellectual without being pretentious. Located in Sunnyside, which has quietly become one of Denver\'s best dining neighborhoods.' },
+      { label: 'Matsuhisa, Aspen', link: '/destinations/aspen/', text: 'Nobu Matsuhisa\'s original mountain outpost, opened in 1998 and still going strong. The black cod miso is the signature (just like every Nobu), but the Aspen location has specials you won\'t find elsewhere. Dinner for two runs $200–400 depending on how deep you go. The atmosphere is Aspen at its best — celebrities and ski bums at adjacent tables, nobody caring who\'s who. Reservations essential in ski season.' },
+      { label: 'Splendido at The Chateau, Beaver Creek', link: '/destinations/vail/', text: 'Fine dining in a European-style chateau at the base of Beaver Creek. The elk tenderloin is a Colorado icon. Dinner runs $80–150/person. Floor-to-ceiling windows overlook the slopes. In winter, you can literally ski to dinner — the restaurant is at the base of the Centennial lift. The wine cellar holds 10,000+ bottles. It\'s the kind of place where ski jackets are welcome alongside sport coats.' },
+      { label: 'The Kitchen, Boulder & Denver', link: '/destinations/boulder/', text: 'Community-focused fine dining from Kimbal Musk (yes, that family). Boulder is the original location. The concept: farm-to-table before it was a buzzword, with Colorado-sourced ingredients and a warm, communal atmosphere. Dinner runs $60–100/person. The brunch is legendary in Boulder. Multiple locations now, but the Boulder flagship on Pearl Street has the original energy — sit on the patio and watch the Flatirons turn gold at sunset.' },
+    ],
+  },
+  {
+    id: 'hot-springs',
+    icon: '\u2668\uFE0F',
+    title: 'Luxury Hot Springs & Spa Retreats',
+    gradient: 'linear-gradient(135deg, #0D7377 0%, #14B8A6 100%)',
+    items: [
+      { label: 'Glenwood Hot Springs Resort', link: '/destinations/glenwood-springs/', text: 'The world\'s largest hot springs pool — over two blocks long, fed by the Yampah Spring at 122\u00B0F. Day passes from $30. The resort itself is mid-range, but the <strong>Spa of the Rockies</strong> on-site offers premium treatments: hot stone massage ($175), mineral body wraps, and a private vapor cave experience. The pool stays open year-round, and soaking under falling snow with steam rising off the water is a core Colorado experience.' },
+      { label: 'Strawberry Park Hot Springs', link: '/destinations/steamboat-springs/', text: 'Rustic luxury 7 miles north of Steamboat Springs. Natural stone pools built into the hillside, temperatures ranging from 101\u00B0F to 104\u00B0F, fed by natural mineral springs. Day admission $20. After dark, it\'s adults-only and clothing-optional — the stars above the Yampa Valley are extraordinary. No cell service, no bright lights, no noise. Getting there in winter requires 4WD or the shuttle ($15 round trip). This is Colorado\'s most authentic hot springs experience.' },
+      { label: 'The Springs Resort, Pagosa Springs', text: 'The deepest geothermal hot spring in the world, feeding 25 soaking pools ranging from 83\u00B0F to 114\u00B0F along the San Juan River. The resort rooms start at $300/night and include unlimited pool access. The <strong>spa</strong> uses geothermal mineral water in treatments. Sunset soaks with views of the San Juan Mountains are unforgettable. Less crowded than Glenwood, more polished than Strawberry Park — the sweet spot for luxury hot springs.' },
+      { label: 'Iron Mountain Hot Springs, Glenwood Springs', link: '/destinations/glenwood-springs/', text: 'The newer, more boutique alternative to the main Glenwood pool. Sixteen freshwater soaking pools and a large family pool along the Colorado River. Day passes $35. The pools are terraced on the riverbank with individual temperature controls — find your sweet spot. A full bar serves drinks poolside. It\'s more intimate and upscale than the main resort, and the river views are better. Evening sessions under the stars are the move.' },
+      { label: 'Dunton Hot Springs', text: 'A restored ghost town turned ultra-luxury resort in the San Juan Mountains — this is Colorado\'s most exclusive hot springs experience. Hand-hewn log cabins, a saloon, a chapel, and natural hot springs. Rates start around $1,500/night all-inclusive. Limited to 42 guests at a time. The spring-fed pool sits in a restored bathhouse from the 1800s. If money is no object and you want complete privacy in the mountains, Dunton is it.' },
+    ],
+  },
+  {
+    id: 'adventures',
+    icon: '\uD83D\uDE81',
+    title: 'Premium Mountain Adventures',
+    gradient: 'linear-gradient(135deg, #4C1D95 0%, #3730A3 100%)',
+    items: [
+      { label: 'Rocky Mountain Helicopter Tours', text: 'See the Continental Divide from 12,000 feet without the hike. Multiple operators run scenic flights from Aspen, Vail, and Estes Park. A 30-minute flight runs $350–500/person; hour-long tours covering Maroon Bells and the Elk Mountains run $700–1,000. Some operators offer heli-skiing packages in winter — you land on untouched powder above treeline and ski down. That\'s a $1,500+ day, but if you\'re an expert skier, it\'s the ultimate Colorado flex.' },
+      { label: 'Royal Gorge Route Railroad', text: 'A luxury train ride through the Royal Gorge, following the Arkansas River 1,000 feet below the canyon rim. The <strong>Vista Dome</strong> class ($75/person) has a glass-topped car for panoramic views. <strong>First Class Lunch</strong> ($125/person) adds a multi-course meal with Colorado wine pairings. The 2-hour round trip from Ca\u00F1on City is scenic in any season, but fall colors in September are extraordinary. Book the dome car — the standard coach is fine, but you came for the views.' },
+      { label: 'Championship Mountain Golf', text: 'Colorado has over 300 golf courses, and the mountain courses are something else. <strong>The Broadmoor</strong> in Colorado Springs has three courses including the East Course — a Donald Ross design. Green fees $200–350. <strong>Red Sky Golf Club</strong> in Vail Valley has a Tom Fazio and Greg Norman course at 7,500 feet elevation. Green fees $250–400. At altitude, the ball flies 10–15% farther — club down and enjoy the extra distance. Season runs May through October.' },
+      { label: 'Private Fly Fishing Experiences', text: 'Colorado has 9,000+ miles of trout streams, and the premium guided experiences are special. <strong>Eleven Mile Canyon</strong>, the <strong>Frying Pan River</strong> near Basalt, and the <strong>South Platte</strong> are legendary. A full-day private guide runs $500–700 for two people, including gear, streamside lunch, and local knowledge that took decades to build. The gold medal waters designation means these rivers sustain high populations of large trout — 14-inch rainbows and browns are common.' },
+      { label: 'Maroon Bells Luxury Experiences', text: 'The most photographed peaks in North America — and they live up to it. Standard access is $10 by reservation shuttle. But the premium move: book a sunrise photography tour ($200–300/person) that gets you in before the shuttle starts. Or hire a private guide for a day hike to Crater Lake ($350–500/person) with packed gourmet lunch. In winter, cross-country ski or snowshoe to the bells on a guided tour. The reflection of the Maroon Bells in Maroon Lake at dawn is genuinely breathtaking.' },
+    ],
+  },
+  {
+    id: 'wine-spirits',
+    icon: '\uD83C\uDF77',
+    title: 'Colorado Wine & Craft Spirits',
+    gradient: 'linear-gradient(135deg, #78350F 0%, #B45309 100%)',
+    items: [
+      { label: 'Western Slope Wine Country', text: 'Colorado\'s wine country runs along the Western Slope — Grand Valley (Palisade) and West Elks AVAs. The altitude (4,500–6,500 feet) and 300+ days of sunshine create intense, concentrated fruit. <strong>The Storm Cellar</strong>, <strong>Colterris</strong>, and <strong>Carlson Vineyards</strong> in Palisade are standouts. Tasting fees $10–20. The wines that work best here: Riesling, Viognier, Cabernet Franc, and Syrah. Don\'t expect Napa — expect something more interesting and far less crowded.' },
+      { label: 'Palisade Wine Tasting Route', text: 'Palisade has 20+ wineries within a few miles of each other — rentable bikes and shuttle services make it easy. Start at <strong>Bookcliff Vineyards</strong> for the Ensemble red blend, hit <strong>Plum Creek Winery</strong> for the Palisade Peach wine (don\'t judge it by the name — it\'s genuinely good), and finish at <strong>Mesa Park Vineyards</strong> for estate-grown Cabernet. Full-day guided tours with transport run $100–150/person. Pair with a lunch at <strong>Palisade Cafe</strong> — the peach pork chop is the move.' },
+      { label: 'Craft Distilleries', text: 'Colorado has 100+ craft distilleries, and the quality is nationally competitive. <strong>Laws Whiskey House</strong> in Denver makes a bonded four-grain bourbon that competes with Kentucky\'s best ($55/bottle). <strong>Breckenridge Distillery</strong> does a bourbon and a rum worth seeking out — plus their tasting room in Breckenridge is a beautiful space. <strong>Leopold Bros.</strong> in Denver is the bartender\'s choice — their Three Pins alpine herbal liqueur is unique to Colorado. Distillery tours run $15–25.' },
+      { label: 'Craft Beer at Its Finest', link: '/destinations/denver/', text: 'Colorado is America\'s craft beer capital by any measure — 400+ breweries statewide. For the premium experience: <strong>Weldwerks</strong> in Greeley (their hazy IPAs are nationally ranked), <strong>Casey Brewing</strong> in Glenwood Springs (spontaneous fermentation, farmhouse ales — the waiting list is long), and <strong>Cerebral Brewing</strong> in Denver (barrel-aged stouts). Skip the Coors tour in Golden unless you genuinely care about macro brewing history — the real beer scene is in Denver\'s RiNo district and Fort Collins.' },
+      { label: 'Elevated Tasting Experiences', text: 'For something beyond a standard tasting room visit: <strong>The Infinite Monkey Theorem</strong> in Denver makes urban winery wines in cans and kegs — their tasting room in RiNo is funky and fun. <strong>Spirit Hound Distillers</strong> in Lyons does a gin botanicals workshop. Several Palisade wineries offer <strong>harvest experiences</strong> in September — you pick grapes, help crush, and taste barrel samples. These run $100–200/person and sell out fast.' },
+    ],
+  },
+  {
+    id: 'boutique-stays',
+    icon: '\uD83C\uDFE8',
+    title: 'Boutique Hotels & Luxury Stays',
+    gradient: 'linear-gradient(135deg, #1A2332 0%, #4A3728 50%, #D4A574 100%)',
+    items: [
+      { label: 'Hotel Jerome, Aspen', link: '/destinations/aspen/', text: 'Aspen\'s original luxury hotel, built during the silver mining boom in 1889. Restored to a perfect blend of Victorian bones and modern luxury. Rooms from $500–1,500/night. The <strong>J-Bar</strong> is Aspen\'s most iconic watering hole — where Hunter S. Thompson used to hold court. The lobby\'s original woodwork, tin ceilings, and period chandeliers are the real deal. If you want to feel Aspen\'s history while sleeping on a $3,000 mattress, this is your spot.' },
+      { label: 'The Broadmoor, Colorado Springs', link: '/destinations/colorado-springs/', text: 'A 5,000-acre Forbes Five-Star resort at the foot of Cheyenne Mountain. Three golf courses, a world-class spa, multiple restaurants, and a zip line course on the mountain behind the hotel. Rooms from $400–1,200/night. The <strong>Penrose Room</strong> restaurant is Colorado Springs\' finest dining — jacket required. The Broadmoor has hosted presidents, dignitaries, and celebrities since 1918. It\'s a destination unto itself — some guests never leave the property.' },
+      { label: 'Scarp Ridge Lodge, Crested Butte', link: '/destinations/crested-butte/', text: 'An 8-room boutique lodge that redefines mountain luxury in Crested Butte. Each room is individually designed with reclaimed wood, local art, and mountain views. Rates from $600–1,200/night include gourmet breakfast and aprés-ski snacks. The lodge arranges private ski guides, snowcat tours, and heli-skiing. In summer, it\'s mountain biking and wildflower hikes. Crested Butte itself is the anti-Aspen — funky, colorful, with no chain stores on the main street.' },
+      { label: 'The Crawford Hotel, Denver', link: '/destinations/denver/', text: 'Inside Denver\'s Union Station — one of the most successful adaptive reuse projects in America. The building dates to 1881; the hotel opened in 2014. Each of the 112 rooms is unique, fitted into the original architecture. Rooms from $300–700/night. Downstairs: <strong>Terminal Bar</strong>, <strong>Stoic & Genuine</strong> (seafood), <strong>Mercantile</strong> (breakfast). The Great Hall\'s shuffleboard tables and cocktail scene make it Denver\'s living room. Location is unbeatable — walk to LoDo, RiNo, and the 16th Street Mall.' },
+      { label: 'Dunton Town House, Telluride', link: '/destinations/telluride/', text: 'From the same people behind Dunton Hot Springs — a townhouse hotel in downtown Telluride with just 12 rooms. Reclaimed wood, local stone, and mountain-modern design. Rates from $500–1,000/night. The ground-floor restaurant is one of Telluride\'s best. Walk to the free gondola, the festival grounds, and the town\'s legendary bars. It\'s intimate luxury in a town that still feels like a real mountain community, not a resort facade.' },
+    ],
+  },
+  {
+    id: 'faq',
+    icon: '\u2753',
+    title: 'Luxury Colorado Travel FAQ',
+    gradient: 'linear-gradient(135deg, #1565C0 0%, #42A5F5 100%)',
+    items: [
+      { label: 'What\'s the best time to visit Colorado for luxury travel?', text: 'Ski season (December through March) for mountain resorts, with peak pricing in February during Presidents\' Day week. Summer (June through September) for hot springs, wine tasting, golf, and mountain adventures. September specifically is the sweet spot — fall colors, harvest season in wine country, warm days, cool nights, and thinner crowds after Labor Day.' },
+      { label: 'Do I need to worry about altitude sickness?', text: 'Yes, especially if you\'re coming from sea level. Denver sits at 5,280 feet; mountain resorts range from 7,000 to 11,000+ feet. Drink extra water, limit alcohol the first day, and don\'t plan strenuous activity for your first 24 hours. The St. Regis Aspen has an oxygen lounge for a reason. Most luxury hotels can arrange supplemental oxygen for your room if needed ($50–100/night).' },
+      { label: 'How far in advance should I book luxury ski lodges?', text: 'For peak ski season (Christmas through mid-March), book 3–6 months ahead for properties like The Little Nell and Four Seasons Vail. Holiday weeks (Christmas, New Year\'s, Presidents\' Day) book up 6–12 months out. Shoulder season (early December, late March/April) is easier and significantly cheaper — spring skiing in April can save you 40% on the same room.' },
+      { label: 'Is Colorado wine actually good?', text: 'It\'s legitimately good and getting better every year. The Western Slope AVAs produce excellent Riesling, Viognier, Cabernet Franc, and Syrah. The altitude and sunshine intensity create concentrated fruit flavors you won\'t find elsewhere. It\'s not Napa or Sonoma, and that\'s the point — it\'s its own thing. Go to Palisade with an open mind and you\'ll come home with a case.' },
+      { label: 'What\'s the dress code at Colorado\'s fine restaurants?', text: 'Colorado fine dining is smart casual — nicer jeans, a collared shirt or blouse, and clean shoes will get you into 95% of upscale restaurants. The Penrose Room at The Broadmoor requires a jacket. Everywhere else, the vibe is "elevated mountain" — you won\'t see ties, but you won\'t see flip-flops either. Aspen and Vail skew slightly dressier than Denver, but nobody\'s turning you away in a nice sweater.' },
+    ],
+  },
+];
+---
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  pageType="destination"
+  breadcrumbs={breadcrumbs}
+>
+  <!-- Hero -->
+  <header class="ft-hero">
+    <div class="ft-hero-gradient"></div>
+    <div class="ft-hero-noise"></div>
+    <div class="ft-hero-content">
+      <h1 class="ft-hero-title">The Finer Things</h1>
+      <p class="ft-hero-subtitle">Aspen five-star ski lodges, Vail mountainside fine dining, Denver's rising culinary scene, hot springs luxury retreats, helicopter tours above the Continental Divide, and Colorado wine country on the Western Slope.</p>
+      <div class="ft-hero-meta">
+        <div class="ft-hero-meta-item">
+          <span class="ft-hero-meta-label">Topics</span>
+          <span class="ft-hero-meta-value">7</span>
+        </div>
+        <div class="ft-hero-meta-item">
+          <span class="ft-hero-meta-label">Luxury Experiences</span>
+          <span class="ft-hero-meta-value">35+</span>
+        </div>
+        <div class="ft-hero-meta-item">
+          <span class="ft-hero-meta-label">Mountain Resorts</span>
+          <span class="ft-hero-meta-value">10+</span>
+        </div>
+      </div>
+    </div>
+    <div class="ft-scroll-hint">Scroll<br />&#8595;</div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="container-content">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <!-- Personal intro -->
+  <section class="ft-personal ft-reveal">
+    <div class="container-content">
+      <blockquote class="ft-personal-quote">
+        <p>Colorado is one of those places where luxury doesn't mean stuffy. You can ski world-class powder in the morning, soak in a natural hot spring at sunset, and eat a James Beard-caliber meal that night — all in the same mountain town. I've traveled all over, and the combination of outdoor adventure and elevated experiences here is hard to beat anywhere. The altitude hits you harder than the cocktails, but that's part of the deal. Drink water, pace yourself, and lean into it.</p>
+        <cite>— Scott</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Quick Facts Strip -->
+  <section class="ft-quickfacts ft-reveal">
+    <div class="container-content">
+      <div class="ft-quickfacts-bar">
+        <div class="ft-quickfact">
+          <span class="ft-quickfact-label">Ski Season</span>
+          <span class="ft-quickfact-value">Nov–Apr</span>
+        </div>
+        <div class="ft-quickfact-divider"></div>
+        <div class="ft-quickfact">
+          <span class="ft-quickfact-label">Fine Dining</span>
+          <span class="ft-quickfact-value">$80–200+</span>
+        </div>
+        <div class="ft-quickfact-divider"></div>
+        <div class="ft-quickfact">
+          <span class="ft-quickfact-label">Luxury Hotel</span>
+          <span class="ft-quickfact-value">$500–2,000</span>
+        </div>
+        <div class="ft-quickfact-divider"></div>
+        <div class="ft-quickfact">
+          <span class="ft-quickfact-label">Altitude</span>
+          <span class="ft-quickfact-value">5,280–14,000 ft</span>
+        </div>
+        <div class="ft-quickfact-divider"></div>
+        <div class="ft-quickfact">
+          <span class="ft-quickfact-label">Wine Region</span>
+          <span class="ft-quickfact-value">Palisade</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Nav -->
+  <section class="ft-quicknav ft-reveal">
+    <div class="container-content">
+      <div class="ft-quicknav-grid">
+        {topics.map((t) => (
+          <a href={`#${t.id}`} class="ft-quicknav-chip">
+            <span class="ft-quicknav-icon">{t.icon}</span>
+            <span class="ft-quicknav-label">{t.title.split(' ').slice(0, 2).join(' ')}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Topic Sections -->
+  {topics.map((topic) => (
+    <section class="ft-topic ft-reveal" id={topic.id}>
+      <div class="container-content">
+        <div class="ft-topic-header" style={`background: ${topic.gradient};`}>
+          <div class="ft-topic-header-inner">
+            <span class="ft-topic-icon">{topic.icon}</span>
+            <h2 class="ft-topic-title">{topic.title}</h2>
+            <span class="ft-topic-count">{topic.items.length} tips</span>
+          </div>
+        </div>
+
+        <div class="ft-tip-grid">
+          {topic.items.map((item) => (
+            <div class="ft-tip-card">
+              <h3 class="ft-tip-label">{item.label}</h3>
+              <p class="ft-tip-text" set:html={item.text} />
+              {item.link && (
+                <a href={item.link} class="ft-tip-link">Explore {item.label.split(',')[0]} &rarr;</a>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- Scott's Pro Tips -->
+  <section class="ft-protips ft-reveal">
+    <div class="container-content">
+      <div class="ft-protips-card">
+        <h2 class="ft-protips-heading">Scott's Pro Tips</h2>
+        <div class="scott-tips">
+          <ul>
+            <li><strong>Altitude Is Real:</strong> At 7,000–11,000 feet, altitude affects everything — your energy, your alcohol tolerance, and your sleep. Drink twice the water you normally would, skip the heavy drinking on night one, and don't plan a 14er hike for your first day. Most luxury hotels offer supplemental oxygen for $50–100/night — use it if you need it.</li>
+            <li><strong>Ski Season Pricing:</strong> Peak ski season (Christmas through Presidents' Day) commands premium rates at every mountain resort. For the same luxury at 30–40% less: book early December or late March/April for spring skiing. The snow is still excellent and the crowds thin out dramatically.</li>
+            <li><strong>Reservations Are Essential:</strong> Denver's top restaurants (Beckon, Frasca, Wolf's Tailor) book up 2–4 weeks ahead. Mountain-town fine dining during ski season books even faster. Make dinner reservations before you book your flights. Same goes for hot springs — Strawberry Park and Dunton Hot Springs require reservations, especially on weekends.</li>
+            <li><strong>Layers Over Luxury:</strong> Colorado weather changes fast — a 60-degree morning can turn into a 30-degree snowstorm by afternoon. Pack layers regardless of season. A $2,000 cashmere coat is useless if you don't have a wind shell over it at 12,000 feet. The smartest dressed people in Aspen are wearing Patagonia, not Prada.</li>
+            <li><strong>Wine Country Timing:</strong> Palisade wine tasting is best May through October. September harvest season is the premium window — some wineries offer crush experiences. Bring a cooler for your wine purchases; summer heat in the car will cook a bottle fast. Many wineries are closed or limited hours November through April.</li>
+            <li><strong>Hot Springs Strategy:</strong> Go early morning or late evening to avoid crowds. Strawberry Park after dark (adults only) is the quintessential Colorado hot springs experience — but you need 4WD or the shuttle in winter. Iron Mountain in Glenwood Springs is the best mix of upscale atmosphere and natural setting. Dunton Hot Springs is the ultimate splurge if money is truly no object.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="ft-cta-section ft-reveal">
+    <div class="container-content">
+      <div class="ft-cta-card">
+        <h2 class="ft-cta-heading">Plan Your Luxury Colorado Trip</h2>
+        <p class="ft-cta-text">Tell our AI planner your dates and interests — it'll build a custom itinerary with the best resorts, restaurants, and premium experiences across the state.</p>
+        <a href="/plan/" class="ft-cta-button">Start Planning &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Email Capture -->
+  <div class="container-content ft-reveal" style="padding-bottom: var(--space-6);">
+    <EmailCapture
+      leadMagnet="Get Our Free Colorado Luxury Travel Guide"
+      description="Premium resorts, fine dining, hot springs, and elevated mountain experiences — packed into one PDF."
+      bullets={[
+        'Top luxury ski lodges ranked by experience and value',
+        'Complete fine dining guide for Denver, Aspen, and Vail',
+        'Hot springs guide — from rustic to ultra-luxury',
+        'Colorado wine country itinerary with tasting notes',
+      ]}
+      guideTag="pillar-finer-things"
+    />
+  </div>
+
+  <!-- Cross-links -->
+  <section class="ft-crosslinks ft-reveal">
+    <div class="container-content">
+      <h3 class="ft-crosslinks-heading">Explore More</h3>
+      <div class="ft-crosslinks-grid">
+        <a href="/destinations/" class="ft-crosslink-card">
+          <span class="ft-crosslink-icon">&#127956;</span>
+          <span class="ft-crosslink-label">All Destinations</span>
+          <span class="ft-crosslink-desc">20 Colorado destinations from Denver to Durango</span>
+        </a>
+        <a href="/blog/" class="ft-crosslink-card">
+          <span class="ft-crosslink-icon">&#128221;</span>
+          <span class="ft-crosslink-label">Travel Blog</span>
+          <span class="ft-crosslink-desc">Stories, tips, and insider guides to Colorado</span>
+        </a>
+        <a href="/companion/" class="ft-crosslink-card">
+          <span class="ft-crosslink-icon">&#129302;</span>
+          <span class="ft-crosslink-label">Travel Companion</span>
+          <span class="ft-crosslink-desc">AI-powered trip planning for your Colorado adventure</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+</BaseLayout>
+
+<!-- Scroll Reveal Observer (uses ft-reveal/ft-visible to avoid Tailwind .visible conflict) -->
+<script>
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const ftRevealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('ft-visible');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+    document.querySelectorAll('.ft-reveal').forEach((el) => ftRevealObserver.observe(el));
+  } else {
+    document.querySelectorAll('.ft-reveal').forEach((el) => el.classList.add('ft-visible'));
+  }
+</script>
+
+<style>
+  /* ================================================================
+     HERO — Mountain luxury gradient
+     ================================================================ */
+  .ft-hero {
+    position: relative;
+    min-height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 5rem var(--space-6) 60px;
+    overflow: hidden;
+  }
+
+  .ft-hero-gradient {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(135deg, #1A2332 0%, #0D7377 40%, #D4A574 100%);
+  }
+
+  .ft-hero-noise {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  .ft-hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 720px;
+  }
+
+  .ft-hero-title {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: var(--weight-bold);
+    color: #fff;
+    line-height: 1.1;
+    margin: 0 0 var(--space-3);
+  }
+
+  .ft-hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    margin: 0 0 var(--space-5);
+    max-width: 580px;
+  }
+
+  .ft-hero-meta {
+    display: flex;
+    gap: var(--space-5);
+    flex-wrap: wrap;
+  }
+
+  .ft-hero-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .ft-hero-meta-label {
+    font-size: 0.65rem;
+    font-weight: var(--weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .ft-hero-meta-value {
+    font-size: 1.1rem;
+    font-weight: var(--weight-bold);
+    color: #fff;
+  }
+
+  .ft-scroll-hint {
+    position: absolute;
+    bottom: 16px;
+    right: var(--space-6);
+    z-index: 3;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.35);
+    text-align: center;
+    animation: ftBounce 2s ease-in-out infinite;
+  }
+
+  @keyframes ftBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+
+  /* ================================================================
+     PERSONAL INTRO
+     ================================================================ */
+  .ft-personal {
+    padding-block: var(--space-8);
+  }
+
+  .ft-personal-quote {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: var(--space-6) var(--space-8);
+    border-left: 4px solid #D4A574;
+    background: var(--color-sky);
+    border-radius: 0 12px 12px 0;
+  }
+
+  .ft-personal-quote p {
+    font-size: var(--text-body);
+    color: var(--color-heading);
+    line-height: var(--leading-body);
+    font-style: italic;
+    margin-bottom: var(--space-3);
+  }
+
+  .ft-personal-quote cite {
+    font-size: var(--text-caption);
+    color: #78350F;
+    font-weight: var(--weight-semibold);
+    font-style: normal;
+  }
+
+  /* ================================================================
+     QUICK FACTS STRIP
+     ================================================================ */
+  .ft-quickfacts {
+    padding: 0 0 var(--space-4);
+  }
+
+  .ft-quickfacts-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-5);
+    background: var(--color-sky);
+    border-radius: 16px;
+    padding: var(--space-4) var(--space-6);
+    flex-wrap: wrap;
+  }
+
+  .ft-quickfact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    text-align: center;
+  }
+
+  .ft-quickfact-label {
+    font-size: 0.65rem;
+    font-weight: var(--weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-slate);
+  }
+
+  .ft-quickfact-value {
+    font-size: 1.05rem;
+    font-weight: var(--weight-extrabold);
+    color: var(--color-deep-night);
+  }
+
+  .ft-quickfact-divider {
+    width: 1px;
+    height: 28px;
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  /* ================================================================
+     QUICK NAV — Jump-to chips
+     ================================================================ */
+  .ft-quicknav {
+    padding: 0 0 var(--space-6);
+  }
+
+  .ft-quicknav-grid {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+  }
+
+  .ft-quicknav-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: var(--color-white);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 40px;
+    font-size: 0.8rem;
+    font-weight: var(--weight-medium);
+    color: #4A5568;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  }
+
+  .ft-quicknav-chip:hover {
+    background: #FDF8F0;
+    color: #78350F;
+    transform: translateY(-2px);
+  }
+
+  .ft-quicknav-icon {
+    font-size: 1rem;
+  }
+
+  .ft-quicknav-label {
+    white-space: nowrap;
+  }
+
+  /* ================================================================
+     TOPIC SECTION
+     ================================================================ */
+  .ft-topic {
+    padding: var(--space-4) 0 var(--space-6);
+    scroll-margin-top: 80px;
+  }
+
+  .ft-topic-header {
+    position: relative;
+    border-radius: 20px;
+    padding: var(--space-5) var(--space-6);
+    margin-bottom: var(--space-5);
+    overflow: hidden;
+  }
+
+  .ft-topic-header-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+  }
+
+  .ft-topic-icon {
+    font-size: 1.6rem;
+  }
+
+  .ft-topic-title {
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-weight: var(--weight-bold);
+    color: #fff;
+    margin: 0;
+    line-height: 1.2;
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .ft-topic-count {
+    font-size: 0.7rem;
+    font-weight: var(--weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+
+  /* ================================================================
+     TIP CARDS
+     ================================================================ */
+  .ft-tip-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+
+  @media (max-width: 768px) {
+    .ft-tip-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .ft-tip-card {
+    background: var(--color-white);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 14px;
+    padding: var(--space-5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .ft-tip-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .ft-tip-label {
+    font-size: 0.95rem;
+    font-weight: var(--weight-bold);
+    color: var(--color-deep-night);
+    margin: 0 0 var(--space-2);
+    line-height: 1.3;
+  }
+
+  .ft-tip-text {
+    font-size: 0.85rem;
+    color: var(--color-slate);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  .ft-tip-text :global(a) {
+    color: #78350F;
+    font-weight: var(--weight-semibold);
+    text-decoration: underline;
+    text-decoration-color: rgba(120, 53, 15, 0.3);
+    text-underline-offset: 2px;
+    transition: text-decoration-color 0.2s ease;
+  }
+
+  .ft-tip-text :global(a:hover) {
+    text-decoration-color: #78350F;
+  }
+
+  .ft-tip-link {
+    display: inline-block;
+    margin-top: var(--space-3);
+    font-size: 0.8rem;
+    font-weight: var(--weight-semibold);
+    color: #78350F;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .ft-tip-link:hover {
+    color: #D4A574;
+  }
+
+  /* ================================================================
+     SCOTT'S PRO TIPS
+     ================================================================ */
+  .ft-protips {
+    padding: var(--space-4) 0 var(--space-6);
+  }
+
+  .ft-protips-card {
+    background: linear-gradient(135deg, #1A2332 0%, #2D3748 100%);
+    border-radius: 20px;
+    padding: var(--space-6) var(--space-6);
+  }
+
+  .ft-protips-heading {
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-weight: var(--weight-bold);
+    color: #D4A574;
+    margin: 0 0 var(--space-4);
+  }
+
+  .ft-protips-card .scott-tips {
+    background: transparent;
+    border-left: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  .ft-protips-card .scott-tips ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  .ft-protips-card .scott-tips li {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.65;
+    padding-left: var(--space-4);
+    position: relative;
+  }
+
+  .ft-protips-card .scott-tips li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #D4A574;
+  }
+
+  .ft-protips-card .scott-tips :global(strong) {
+    color: #D4A574;
+    font-weight: var(--weight-semibold);
+  }
+
+  .ft-protips-card .scott-tips :global(a) {
+    color: #FB923C;
+    font-weight: var(--weight-semibold);
+    text-decoration: underline;
+    text-decoration-color: rgba(251, 146, 60, 0.4);
+    text-underline-offset: 2px;
+    transition: text-decoration-color 0.2s ease;
+  }
+
+  .ft-protips-card .scott-tips :global(a:hover) {
+    text-decoration-color: #FB923C;
+  }
+
+  /* ================================================================
+     BOTTOM CTA
+     ================================================================ */
+  .ft-cta-section {
+    padding: var(--space-6) 0 var(--space-8);
+  }
+
+  .ft-cta-card {
+    background: linear-gradient(135deg, #78350F 0%, #D4A574 100%);
+    border-radius: 20px;
+    padding: var(--space-8) var(--space-6);
+    text-align: center;
+    color: #fff;
+  }
+
+  .ft-cta-heading {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    font-weight: var(--weight-bold);
+    margin: 0 0 var(--space-3);
+    color: #fff;
+  }
+
+  .ft-cta-text {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 520px;
+    margin: 0 auto var(--space-5);
+    line-height: 1.6;
+  }
+
+  .ft-cta-button {
+    display: inline-block;
+    background: var(--color-deep-night);
+    color: #D4A574;
+    font-size: 0.9rem;
+    font-weight: var(--weight-semibold);
+    padding: 12px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .ft-cta-button:hover {
+    background: #0D1117;
+    transform: translateY(-2px);
+  }
+
+  /* ================================================================
+     CROSS-LINKS
+     ================================================================ */
+  .ft-crosslinks {
+    padding: 0 0 var(--space-10);
+  }
+
+  .ft-crosslinks-heading {
+    font-size: 1.1rem;
+    font-weight: var(--weight-bold);
+    color: var(--color-deep-night);
+    text-align: center;
+    margin: 0 0 var(--space-4);
+  }
+
+  .ft-crosslinks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 640px) {
+    .ft-crosslinks-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .ft-crosslink-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-5) var(--space-4);
+    background: var(--color-white);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 16px;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .ft-crosslink-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .ft-crosslink-icon {
+    font-size: 1.8rem;
+  }
+
+  .ft-crosslink-label {
+    font-size: 0.95rem;
+    font-weight: var(--weight-bold);
+    color: #1A2332;
+  }
+
+  .ft-crosslink-desc {
+    font-size: 0.78rem;
+    color: #4A5568;
+    line-height: 1.4;
+  }
+
+  /* ================================================================
+     SCROLL REVEAL (page-specific, avoids Tailwind .visible conflict)
+     ================================================================ */
+  .ft-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .ft-reveal.ft-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @keyframes ftRevealFallback {
+    to { opacity: 1; transform: none; }
+  }
+
+  .ft-reveal {
+    animation: ftRevealFallback 0s 3s forwards;
+  }
+
+  /* ================================================================
+     RESPONSIVE
+     ================================================================ */
+  @media (max-width: 640px) {
+    .ft-hero {
+      min-height: 50vh;
+      padding: 0 var(--space-4) 40px;
+    }
+
+    .ft-hero-meta {
+      gap: var(--space-4);
+    }
+
+    .ft-scroll-hint {
+      display: none;
+    }
+
+    .ft-topic-header {
+      padding: var(--space-4) var(--space-4);
+    }
+
+    .ft-quickfacts-bar {
+      gap: var(--space-3);
+      padding: var(--space-3) var(--space-4);
+    }
+
+    .ft-quickfact-divider {
+      display: none;
+    }
+
+    .ft-quickfact {
+      min-width: 80px;
+    }
+
+    .ft-personal-quote {
+      padding: var(--space-4) var(--space-5);
+    }
+
+    .ft-protips-card {
+      padding: var(--space-5) var(--space-4);
+    }
+  }
+</style>

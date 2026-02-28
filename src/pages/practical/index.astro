@@ -1,0 +1,318 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import EmailCapture from '../../components/EmailCapture.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Travel Tips', url: '/practical/' },
+];
+
+const pageTitle = 'Colorado Travel Tips — Altitude, Driving, Skiing & Safety Guide 2026';
+const pageDescription = 'Everything you need for your Colorado trip — altitude sickness prevention, mountain pass driving, ski pass strategy, wildlife safety, and packing for extreme weather swings.';
+
+interface TopicSection {
+  id: string;
+  icon: string;
+  title: string;
+  gradient: string;
+  items: { label: string; text: string }[];
+}
+
+const topics: TopicSection[] = [
+  {
+    id: 'entry',
+    icon: '🛂',
+    title: 'Entry & Domestic Travel',
+    gradient: 'linear-gradient(135deg, #1565C0 0%, #42A5F5 100%)',
+    items: [
+      { label: 'No Visa Needed (Domestic)', text: 'Colorado is a US state — no passport or visa required for domestic travelers. A valid state-issued ID or driver\'s license is all you need for flights into DEN (Denver International Airport). TSA PreCheck saves serious time at DEN, which is the 5th busiest airport in the country.' },
+      { label: 'International Visitors', text: 'If visiting from abroad, you\'ll need a valid passport and the appropriate US visa or ESTA (for Visa Waiver Program countries). DEN has direct international flights from London, Frankfurt, Tokyo, and several Canadian and Mexican cities. Global Entry ($100 for 5 years) speeds up arrival significantly.' },
+      { label: 'Flying In', text: 'Denver International Airport (DEN) is the main gateway — it\'s 25 miles northeast of downtown Denver. The A-Line commuter train ($10.50 one-way) connects DEN to Union Station in 37 minutes. Uber/Lyft to downtown runs $35-55. For ski trips, Eagle County Airport (EGE) near Vail and Aspen/Pitkin County Airport (ASE) offer seasonal service from major hubs.' },
+      { label: 'Driving In', text: 'I-25 runs north-south along the Front Range (from Wyoming through Denver to New Mexico). I-70 runs east-west through the mountains (Denver to the ski resorts and Utah). I-76 connects from Nebraska. From the east, the drive across Kansas on I-70 is famously flat and boring — but the moment you see the Rockies emerge on the horizon, it\'s worth every mile.' },
+    ],
+  },
+  {
+    id: 'money',
+    icon: '💰',
+    title: 'Money & Budget',
+    gradient: 'linear-gradient(135deg, #2E7D32 0%, #66BB6A 100%)',
+    items: [
+      { label: 'Currency', text: 'US dollars (USD). Credit and debit cards accepted everywhere, including most ski resort vendors and mountain town shops. Apple Pay and Google Pay are widely supported. Cash is only needed for tips and occasional farmers market purchases.' },
+      { label: 'Tipping Culture', text: 'Standard US tipping applies. Restaurants: 18-20%. Coffee shops: $1-2. Hotel housekeeping: $3-5/night. Ski instructors: $20-50 for a group lesson, $50-100 for private. Shuttle drivers: $2-5. Tour guides and river rafting guides: 15-20%. Bartenders at apres-ski: $1-2 per drink.' },
+      { label: 'Daily Budget Ranges', text: 'Budget: $80-120/day — hostels, grocery store meals, free hiking, public transit. Mid-range: $200-350/day — hotels, restaurants, rental car, one paid activity. Luxury: $500+/day — ski-in/ski-out lodges, fine dining, private guides. Ski season inflates everything — a Vail hotel room that costs $200 in summer is $500+ in January.' },
+      { label: 'Ski Pass Strategy', text: 'The Epic Pass ($841 for 2025-26) covers Vail, Beaver Creek, Breckenridge, Keystone, and Crested Butte. The Ikon Pass ($1,179) covers Winter Park, Steamboat, Aspen, Copper, and Eldora. Single-day lift tickets run $180-250 at major resorts. If you\'re skiing 3+ days, a pass pays for itself. Buy passes in spring for the next season — prices go up monthly.' },
+      { label: 'Saving Money', text: 'Colorado State Parks annual pass ($80) covers parking at 40+ parks. Happy hours in Denver are excellent — $5-8 craft beers and half-price appetizers at most breweries (3-6pm). Many ski resorts offer free or discounted lift tickets for beginners in January. Pack lunches for ski days — cafeteria food at resorts is $18-25 per meal.' },
+    ],
+  },
+  {
+    id: 'transport',
+    icon: '🚗',
+    title: 'Getting Around',
+    gradient: 'linear-gradient(135deg, #E65100 0%, #FF9800 100%)',
+    items: [
+      { label: 'Renting a Car', text: 'A rental car is essential for most Colorado trips. Denver is manageable with transit, but reaching mountain towns, national parks, and ski resorts requires driving. Rent an AWD or 4WD vehicle in winter — many mountain passes require traction tires or chains by law (October through May). Budget $50-100/day; prices surge during ski season.' },
+      { label: 'Mountain Pass Driving', text: 'I-70 through the mountains is the main artery to ski country and can be treacherous in winter. Chains or snow tires are legally required on I-70 during storms (Traction Law). Loveland Pass (11,990ft), Independence Pass (12,095ft), and Trail Ridge Road (12,183ft) close seasonally. Check COtrip.org for road conditions before any mountain drive.' },
+      { label: 'Winter Driving', text: 'If you\'re not experienced driving in snow, be honest with yourself. Black ice, whiteout conditions, and steep descents with no guardrails are real on mountain roads. Keep your gas tank at least half full. Carry an emergency kit: blankets, water, flashlight, snacks, phone charger. Slow down on descents — brake early, not hard. 4WD helps you go but doesn\'t help you stop.' },
+      { label: 'Ski Resort Shuttles', text: 'Many ski towns offer free shuttle systems. Breckenridge Free Ride, Vail bus system, Aspen RFTA, and Steamboat Springs Transit all run frequent routes connecting town to slopes. The Bustang bus service ($12-28) connects Denver to mountain towns along I-70 on weekends during ski season. Saves the headache of driving and parking.' },
+      { label: 'Denver Transit', text: 'RTD (Regional Transportation District) covers the Denver metro with bus and light rail. The A-Line connects the airport to Union Station. The Free MallRide shuttle runs 16th Street Mall in downtown. For going out in Denver, Uber and Lyft are reliable and affordable. B-Cycle bike-share stations are everywhere in Denver and Boulder for warm-weather exploring.' },
+    ],
+  },
+  {
+    id: 'connectivity',
+    icon: '📱',
+    title: 'Connectivity & Cell Coverage',
+    gradient: 'linear-gradient(135deg, #6A1B9A 0%, #AB47BC 100%)',
+    items: [
+      { label: 'Cell Coverage', text: 'All major US carriers work well along the Front Range and in major towns. Mountain areas are spotty — Verizon generally has the best mountain coverage, T-Mobile is weakest in rural areas. You\'ll lose signal on many mountain passes, in canyons, and in remote areas of the national parks.' },
+      { label: 'Mountain Dead Zones', text: 'Rocky Mountain National Park has limited service (some spots in Estes Park work). Black Canyon of the Gunnison, Great Sand Dunes, and Mesa Verde have minimal to no coverage. Download offline maps and trail guides before heading into these areas. Cell service in ski resort villages is usually good, but coverage drops on the mountain itself during peak usage.' },
+      { label: 'International Visitors', text: 'Prepaid US SIM or eSIM options are the same as anywhere in the US — T-Mobile, Mint Mobile, or Airalo eSIMs work well and cost $30-40/month. Activate before you land. Free WiFi is available at most coffee shops, hotels, libraries, and restaurants throughout Colorado.' },
+      { label: 'Emergency Communication', text: 'In backcountry areas without cell service, consider renting or buying a satellite communicator like a Garmin inReach ($15/month subscription) for emergency SOS capability. Colorado Mountain Rescue teams are excellent but response times in remote areas can be hours. Let someone know your plans before venturing into the backcountry.' },
+    ],
+  },
+  {
+    id: 'safety',
+    icon: '🏥',
+    title: 'Safety & Health',
+    gradient: 'linear-gradient(135deg, #C62828 0%, #EF5350 100%)',
+    items: [
+      { label: 'Altitude Sickness', text: 'This is the #1 health issue visitors face. Denver sits at 5,280ft, ski resorts at 9,000-12,000ft, and many hikes go above 13,000ft. Symptoms start within 6-12 hours: headache, nausea, fatigue, dizziness. Prevention: drink twice your normal water intake, avoid alcohol for the first 24 hours, take it easy on day one, and sleep at the lowest elevation possible. If symptoms worsen, descend immediately.' },
+      { label: 'Hydration at Altitude', text: 'Colorado\'s dry air and high elevation dehydrate you much faster than you realize. Drink at least 3-4 liters of water daily, more if you\'re active. Your lips will crack, your skin will dry out, and you\'ll get headaches if you don\'t hydrate aggressively. Bring lip balm with SPF and moisturizer. Electrolyte tablets (Nuun, Liquid IV) help more than plain water.' },
+      { label: 'Wildlife Encounters', text: 'Black bears are active spring through fall — store food in bear-proof containers when camping and never approach. Mountain lions are present but rarely seen — make noise on trails, don\'t hike alone at dawn/dusk, and never run from one (face it, make yourself big). Moose are in the mountains and are more dangerous than bears — give them 75+ feet of space. They charge.' },
+      { label: 'Lightning', text: 'Colorado has more lightning deaths per capita than almost any other state. Afternoon thunderstorms are daily occurrences June through August, especially above treeline. Start hikes early (by 6-7am) and plan to be below treeline by noon. If caught: get low, avoid ridges and isolated trees, and put down trekking poles. The "30-30 rule" — seek shelter if thunder follows lightning by 30 seconds or less.' },
+      { label: 'Sun Exposure', text: 'UV intensity increases 4-5% for every 1,000ft of elevation gain. At 10,000ft, UV is roughly 50% stronger than sea level. Apply SPF 50+ every 2 hours, wear UV sunglasses (snow blindness is real), and don\'t skip sunscreen on cloudy days — UV penetrates clouds at altitude. Reflection off snow doubles your exposure while skiing.' },
+      { label: 'Cannabis Regulations', text: 'Recreational cannabis is legal for adults 21+ in Colorado. Purchase from licensed dispensaries only (verify at colorado.gov/marijuana). Legal possession limit: 1 ounce. You cannot consume in public, in vehicles, in national/state parks, or at ski resorts — all of these carry fines. Most hotels are non-smoking. Edibles: start with 5mg or less and wait 2 hours before taking more.' },
+    ],
+  },
+  {
+    id: 'packing',
+    icon: '🎒',
+    title: 'Packing Essentials',
+    gradient: 'linear-gradient(135deg, #78350F 0%, #D97706 100%)',
+    items: [
+      { label: 'Layering System', text: 'Colorado temperatures can swing 40-50 degrees in a single day. A morning hike at 40F becomes a 85F afternoon in summer. The proven system: moisture-wicking base layer, insulating mid-layer (fleece or down), and a wind/waterproof outer shell. In winter, add thermal base layers and a puffy down jacket. Cotton kills in the mountains — it holds moisture and chills you.' },
+      { label: 'Footwear', text: 'Hiking boots with ankle support are essential for mountain trails — loose scree and uneven terrain are the norm. Waterproof boots matter for spring hikes when trails are muddy and snow-melt creek crossings are frequent. For winter, insulated waterproof boots for town and proper ski boots for the slopes. Pack comfortable walking shoes for Denver and brewery tours.' },
+      { label: 'Sun & Altitude Protection', text: 'Non-negotiable items: SPF 50+ sunscreen, SPF lip balm, quality UV sunglasses (polarized for snow glare), and a wide-brim hat or baseball cap. Bring a refillable water bottle (32oz minimum) and electrolyte tablets. A lightweight UV buff/gaiter protects your neck on exposed ridgeline hikes.' },
+      { label: 'Winter Specific', text: 'For ski trips: bring or rent ski-specific gear (jacket, pants, goggles, gloves, helmet). Hand and toe warmers are cheap and essential on bitter cold days. A balaclava or face mask for windy ridges. Pack more socks than you think you need — wet socks at altitude are miserable. Most ski towns have rental shops if you don\'t want to fly with gear.' },
+      { label: 'Rain & Storm Gear', text: 'A packable rain jacket is essential May through September — afternoon thunderstorms are nearly daily in the mountains. Not a poncho — wind at altitude will tear it apart. A lightweight waterproof layer (Patagonia Torrentshell, REI Rainier) packs small and saves your day when storms roll in at 12,500ft with nowhere to hide.' },
+    ],
+  },
+  {
+    id: 'culture',
+    icon: '🏔️',
+    title: 'Local Culture & Etiquette',
+    gradient: 'linear-gradient(135deg, #0D7377 0%, #14B8A6 100%)',
+    items: [
+      { label: 'Outdoor Culture', text: 'Colorado is defined by its outdoor lifestyle. People here hike, bike, ski, and climb year-round. It\'s normal to see someone in full hiking gear at a brewery at 3pm on a Tuesday. The culture is active, health-conscious, and genuinely welcoming to visitors who respect the mountains. "14er bagging" (summiting all 58 peaks above 14,000ft) is a local obsession.' },
+      { label: 'Craft Beer Capital', text: 'Colorado has 400+ craft breweries — more per capita than almost any state. Denver, Fort Collins, and Boulder are the epicenters. Brewery etiquette: tipping $1 per beer is standard. Most breweries are kid and dog-friendly. A "flight" (4-6 small pours) is the best way to sample. Don\'t order a Bud Light at a craft brewery — you\'ll get a look.' },
+      { label: 'Trail Etiquette', text: 'Uphill hikers have the right of way. Yield to horses on shared trails. Bikes yield to hikers. Stay on marked trails — alpine tundra above treeline takes decades to recover from a single footstep. Pack out everything you carry in. Dog rules vary by trail — always carry bags and check leash requirements. Popular 14ers and trails near Denver (Hanging Lake, Maroon Bells) require reservations in summer.' },
+      { label: 'Ski Culture', text: 'The "ski bum" lifestyle is real — many resort town workers are there for the snow, not the money. Lift line etiquette: no cutting, no stopping in the middle of runs, look uphill before merging. "First tracks" (being on the first chairlift) is a point of pride. Apres-ski (post-skiing drinks and food) is a ritual — every resort town has its spot. Tipping ski instructors is appreciated.' },
+      { label: 'Respect the Environment', text: 'Leave No Trace is taken seriously in Colorado. Pack out all trash, stay on trails, don\'t pick wildflowers (many are protected), and don\'t approach wildlife. Fire restrictions are common in summer — always check before lighting a campfire. Water sources above treeline are fragile ecosystems. Coloradans are proud of their public lands and expect visitors to treat them well.' },
+    ],
+  },
+];
+---
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  pageType="destination"
+  schemaData={{ title: pageTitle, description: pageDescription }}
+  breadcrumbs={breadcrumbs}
+>
+  <!-- Hero -->
+  <header class="prac-hero">
+    <div class="prac-hero-gradient"></div>
+    <div class="prac-hero-noise"></div>
+    <div class="prac-hero-content">
+      <h1 class="prac-hero-title">Colorado Travel Essentials</h1>
+      <p class="prac-hero-subtitle">Altitude sickness prevention, mountain pass driving, ski pass strategy, wildlife safety, and packing for extreme temperature swings.</p>
+      <div class="prac-hero-meta">
+        <div class="prac-hero-meta-item">
+          <span class="prac-hero-meta-label">Topics</span>
+          <span class="prac-hero-meta-value">7</span>
+        </div>
+        <div class="prac-hero-meta-item">
+          <span class="prac-hero-meta-label">Updated</span>
+          <span class="prac-hero-meta-value">Feb 2026</span>
+        </div>
+      </div>
+    </div>
+    <div class="prac-scroll-hint">Scroll<br />&#8595;</div>
+  </header>
+
+  <div class="container-content"><Breadcrumb items={breadcrumbs} /></div>
+
+  <section class="prac-personal reveal">
+    <div class="container-content">
+      <blockquote class="prac-personal-quote">
+        <p>I learned about altitude sickness the hard way — sprinting up a trail in Breckenridge on day one and spending the rest of the evening with a splitting headache. Colorado rewards preparation and punishes overconfidence. The mountains are stunning but they demand respect. This guide is every lesson I've learned so you don't repeat my mistakes.</p>
+        <cite>— Scott</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="prac-quicknav reveal">
+    <div class="container-content">
+      <div class="prac-quicknav-grid">
+        {topics.map((t) => (
+          <a href={`#${t.id}`} class="prac-quicknav-chip">
+            <span class="prac-quicknav-icon">{t.icon}</span>
+            <span class="prac-quicknav-label">{t.title.split(' ').slice(0, 2).join(' ')}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {topics.map((topic) => (
+    <section class="prac-topic reveal" id={topic.id}>
+      <div class="container-content">
+        <div class="prac-topic-header" style={`background: ${topic.gradient};`}>
+          <div class="prac-topic-header-inner">
+            <span class="prac-topic-icon">{topic.icon}</span>
+            <h2 class="prac-topic-title">{topic.title}</h2>
+            <span class="prac-topic-count">{topic.items.length} tips</span>
+          </div>
+        </div>
+        <div class="prac-tip-grid">
+          {topic.items.map((item) => (
+            <div class="prac-tip-card">
+              <h3 class="prac-tip-label">{item.label}</h3>
+              <p class="prac-tip-text" set:html={item.text} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <section class="prac-cta-section reveal">
+    <div class="container-content">
+      <div class="prac-cta-card">
+        <h2 class="prac-cta-heading">Plan Your Colorado Trip</h2>
+        <p class="prac-cta-text">Tell our AI planner your dates, budget, and interests — it builds a custom day-by-day itinerary with drives, lodging, and activities.</p>
+        <a href="/plan/" class="prac-cta-button">Start Planning &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <FAQ items={[
+    { question: "How do I prevent altitude sickness in Colorado?", answer: "Hydrate aggressively (3-4 liters/day), avoid alcohol for the first 24 hours, take it easy on day one, and sleep at the lowest elevation possible. Ibuprofen can help with headaches. If you're going above 10,000ft, consider spending a night in Denver (5,280ft) first to acclimatize. If symptoms worsen (confusion, severe headache, vomiting), descend immediately." },
+    { question: "Do I need a 4WD vehicle in Colorado?", answer: "In summer, 2WD is fine for paved roads and most national parks. In winter (October-May), AWD or 4WD with proper tires is strongly recommended for mountain driving. Colorado's Traction Law requires adequate tires or chains on I-70 during storms. Many mountain passes are unpaved and require high-clearance 4WD vehicles even in summer." },
+    { question: "What is the best time to visit Colorado?", answer: "Ski season: December through March (January-February for best snow). Summer hiking: June through September (wildflowers peak in July). Fall foliage: late September to mid-October (aspens turn gold). Spring is mud season in the mountains (April-May) — many trails and passes are closed. Denver is pleasant year-round." },
+    { question: "How much does a ski trip to Colorado cost?", answer: "Budget ski trip: $150-200/day (shared lodging, season pass, packed lunches). Mid-range: $300-500/day (hotel, restaurants, daily lift tickets). Luxury: $700+/day (ski-in/ski-out resort, private lessons, fine dining). Lift tickets alone are $180-250/day at major resorts — a multi-day pass saves significantly. Equipment rental: $40-80/day." },
+    { question: "Is Colorado safe for tourists?", answer: "Colorado is very safe for tourists. The main risks are natural: altitude sickness, lightning, wildlife encounters, and winter driving conditions. Denver has typical big-city safety considerations (don't leave valuables in cars, stay aware at night). In the mountains, the biggest dangers are overestimating your fitness at altitude and underestimating weather changes." },
+    { question: "What should I pack for Colorado?", answer: "Layers are everything: moisture-wicking base, insulating mid-layer, wind/waterproof shell. Sun protection (SPF 50+, sunglasses, hat) is critical at altitude. Comfortable hiking boots, reusable water bottle, and electrolyte tablets. Winter additions: thermal base layers, insulated jacket, warm gloves, and hand warmers. Skip cotton — it's dangerous when wet at altitude." },
+  ]} />
+
+  <div class="container-content reveal" style="padding-bottom: var(--space-6);">
+    <EmailCapture
+      leadMagnet="Get Our Free Colorado Travel Essentials Guide"
+      description="A printable PDF covering everything in this guide — plus altitude acclimation tips, ski pass comparison, and emergency contacts."
+      bullets={[
+        'Altitude sickness prevention checklist and symptom guide',
+        'Ski pass comparison (Epic vs Ikon) with cost breakdowns',
+        'Mountain driving safety guide with road condition resources',
+        'Packing checklist for summer hiking and winter skiing',
+      ]}
+      guideTag="pillar-practical"
+    />
+  </div>
+
+  <section class="prac-crosslinks reveal">
+    <div class="container-content">
+      <h3 class="prac-crosslinks-heading">Explore More</h3>
+      <div class="prac-crosslinks-grid">
+        <a href="/destinations/" class="prac-crosslink-card">
+          <span class="prac-crosslink-icon">&#127956;</span>
+          <span class="prac-crosslink-label">All Destinations</span>
+          <span class="prac-crosslink-desc">20 destinations across the Front Range, ski country, and beyond</span>
+        </a>
+        <a href="/cuisine/" class="prac-crosslink-card">
+          <span class="prac-crosslink-icon">&#127860;</span>
+          <span class="prac-crosslink-label">Food & Drink</span>
+          <span class="prac-crosslink-desc">Craft beer, green chili, farm-to-table, and mountain town dining</span>
+        </a>
+        <a href="/festivals/" class="prac-crosslink-card">
+          <span class="prac-crosslink-icon">&#127914;</span>
+          <span class="prac-crosslink-label">Events & Festivals</span>
+          <span class="prac-crosslink-desc">Bluegrass, beer fests, and mountain town celebrations</span>
+        </a>
+        <a href="/finer-things/" class="prac-crosslink-card">
+          <span class="prac-crosslink-icon">&#127865;</span>
+          <span class="prac-crosslink-label">The Finer Things</span>
+          <span class="prac-crosslink-desc">Whiskey, craft cocktails, and Colorado wine country</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const revealObserver = new IntersectionObserver(
+      (entries) => { entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('visible'); }); },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach((el) => el.classList.add('visible'));
+  }
+</script>
+
+<style>
+  .prac-hero { position: relative; min-height: 55vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 5rem var(--space-6) 60px; overflow: hidden; background: linear-gradient(135deg, #1A2332 0%, #2563EB 40%, #0D7377 100%); }
+  .prac-hero-gradient { position: absolute; inset: 0; z-index: 1; background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.55) 100%); }
+  .prac-hero-noise { position: absolute; inset: 0; z-index: 2; background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E"); pointer-events: none; }
+  .prac-hero-content { position: relative; z-index: 3; max-width: 720px; }
+  .prac-hero-title { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: var(--weight-bold); color: #fff; line-height: 1.1; margin: 0 0 var(--space-3); }
+  .prac-hero-subtitle { font-size: clamp(1rem, 2vw, 1.15rem); color: rgba(255, 255, 255, 0.85); line-height: 1.6; margin: 0 0 var(--space-5); max-width: 580px; }
+  .prac-hero-meta { display: flex; gap: var(--space-5); flex-wrap: wrap; }
+  .prac-hero-meta-item { display: flex; flex-direction: column; gap: 2px; }
+  .prac-hero-meta-label { font-size: 0.65rem; font-weight: var(--weight-semibold); text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255, 255, 255, 0.5); }
+  .prac-hero-meta-value { font-size: 1.1rem; font-weight: var(--weight-bold); color: #fff; }
+  .prac-scroll-hint { position: absolute; bottom: 16px; right: var(--space-6); z-index: 3; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(255, 255, 255, 0.35); text-align: center; animation: pracBounce 2s ease-in-out infinite; }
+  @keyframes pracBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+  .prac-personal { padding-block: var(--space-8); }
+  .prac-personal-quote { max-width: 680px; margin: 0 auto; padding: var(--space-6) var(--space-8); border-left: 4px solid var(--color-ocean-teal); background: var(--color-sky); border-radius: 0 12px 12px 0; }
+  .prac-personal-quote p { font-size: var(--text-body); color: var(--color-heading); line-height: var(--leading-body); font-style: italic; margin-bottom: var(--space-3); }
+  .prac-personal-quote cite { font-size: var(--text-caption); color: var(--color-ocean-teal); font-weight: var(--weight-semibold); font-style: normal; }
+  .prac-quicknav { padding: 0 0 var(--space-6); }
+  .prac-quicknav-grid { display: flex; justify-content: center; gap: var(--space-2); flex-wrap: wrap; }
+  .prac-quicknav-chip { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--color-white); border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 40px; font-size: 0.8rem; font-weight: var(--weight-medium); color: var(--color-slate); text-decoration: none; transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease; }
+  .prac-quicknav-chip:hover { background: var(--color-sky); color: var(--color-ocean-teal); transform: translateY(-2px); }
+  .prac-quicknav-icon { font-size: 1rem; }
+  .prac-quicknav-label { white-space: nowrap; }
+  .prac-topic { padding: var(--space-4) 0 var(--space-6); scroll-margin-top: 80px; }
+  .prac-topic-header { position: relative; border-radius: 20px; padding: var(--space-5) var(--space-6); margin-bottom: var(--space-5); overflow: hidden; }
+  .prac-topic-header-inner { position: relative; z-index: 1; display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
+  .prac-topic-icon { font-size: 1.6rem; }
+  .prac-topic-title { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: var(--weight-bold); color: #fff; margin: 0; line-height: 1.2; flex: 1; min-width: 200px; }
+  .prac-topic-count { font-size: 0.7rem; font-weight: var(--weight-semibold); text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255, 255, 255, 0.55); background: rgba(255, 255, 255, 0.1); padding: 4px 12px; border-radius: 20px; }
+  .prac-tip-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4); }
+  @media (max-width: 768px) { .prac-tip-grid { grid-template-columns: 1fr; } }
+  .prac-tip-card { background: var(--color-white); border: 1px solid rgba(0, 0, 0, 0.06); border-radius: 14px; padding: var(--space-5); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .prac-tip-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); }
+  .prac-tip-label { font-size: 0.95rem; font-weight: var(--weight-bold); color: var(--color-deep-night); margin: 0 0 var(--space-2); line-height: 1.3; }
+  .prac-tip-text { font-size: 0.85rem; color: var(--color-slate); line-height: 1.65; margin: 0; }
+  .prac-tip-text :global(a) { color: var(--color-ocean-teal); font-weight: var(--weight-semibold); text-decoration: underline; text-decoration-color: rgba(13, 115, 119, 0.3); text-underline-offset: 2px; transition: text-decoration-color 0.2s ease; }
+  .prac-tip-text :global(a:hover) { text-decoration-color: var(--color-ocean-teal); }
+  .prac-cta-section { padding: var(--space-6) 0 var(--space-8); }
+  .prac-cta-card { background: linear-gradient(135deg, var(--color-deep-night) 0%, #2D3748 100%); border-radius: 20px; padding: var(--space-8) var(--space-6); text-align: center; color: #fff; }
+  .prac-cta-heading { font-size: clamp(1.3rem, 3vw, 1.8rem); font-weight: var(--weight-bold); margin: 0 0 var(--space-3); color: #fff; }
+  .prac-cta-text { font-size: 1rem; color: rgba(255, 255, 255, 0.75); max-width: 520px; margin: 0 auto var(--space-5); line-height: 1.6; }
+  .prac-cta-button { display: inline-block; background: var(--color-warm-coral); color: #fff; font-size: 0.9rem; font-weight: var(--weight-semibold); padding: 12px 28px; border-radius: 40px; text-decoration: none; transition: background 0.2s ease, transform 0.2s ease; }
+  .prac-cta-button:hover { background: #d4553b; transform: translateY(-2px); }
+  .prac-crosslinks { padding: 0 0 var(--space-10); }
+  .prac-crosslinks-heading { font-size: 1.1rem; font-weight: var(--weight-bold); color: var(--color-deep-night); text-align: center; margin: 0 0 var(--space-4); }
+  .prac-crosslinks-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); max-width: 960px; margin: 0 auto; }
+  @media (max-width: 768px) { .prac-crosslinks-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px) { .prac-crosslinks-grid { grid-template-columns: 1fr; } }
+  .prac-crosslink-card { display: flex; flex-direction: column; align-items: center; gap: var(--space-2); padding: var(--space-5) var(--space-4); background: var(--color-white); border: 1px solid rgba(0, 0, 0, 0.06); border-radius: 16px; text-decoration: none; color: inherit; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .prac-crosslink-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); }
+  .prac-crosslink-icon { font-size: 1.8rem; }
+  .prac-crosslink-label { font-size: 0.95rem; font-weight: var(--weight-bold); color: var(--color-deep-night); }
+  .prac-crosslink-desc { font-size: 0.78rem; color: var(--color-slate); line-height: 1.4; }
+  @media (max-width: 640px) { .prac-hero { min-height: 50vh; padding: 0 var(--space-4) 40px; } .prac-hero-meta { gap: var(--space-4); } .prac-scroll-hint { display: none; } .prac-topic-header { padding: var(--space-4) var(--space-4); } }
+</style>

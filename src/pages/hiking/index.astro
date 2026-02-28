@@ -1,0 +1,336 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import EmailCapture from '../../components/EmailCapture.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Colorado Hiking Guide', url: '/hiking/' },
+];
+
+const pageTitle = 'Colorado Hiking Guide — 14ers, National Parks & the Best Trails in the Rockies';
+const pageDescription = 'The definitive guide to hiking in Colorado — 14ers for peak baggers, national park trails, alpine lakes, and iconic routes from Maroon Bells to the Continental Divide.';
+
+interface TopicSection {
+  id: string;
+  icon: string;
+  title: string;
+  gradient: string;
+  items: { label: string; text: string }[];
+}
+
+const topics: TopicSection[] = [
+  {
+    id: 'fourteeners',
+    icon: '⛰️',
+    title: 'Colorado 14ers — Peaks Above 14,000 Feet',
+    gradient: 'linear-gradient(135deg, #1565C0 0%, #42A5F5 100%)',
+    items: [
+      { label: 'What Are 14ers?', text: 'Colorado has 58 peaks above 14,000 feet — more than any other state in the Lower 48. "Bagging" all 58 is a lifelong pursuit for thousands of hikers. They range from Class 1 walkups (Quandary Peak, Mt. Bierstadt) to Class 4 scrambles requiring technical climbing skills (Capitol Peak, Pyramid Peak). The tradition of ticking them off a list is so embedded in Colorado culture that bumper stickers tracking your progress are a common sight.' },
+      { label: 'Best Beginner 14ers', text: 'Quandary Peak (14,265 ft) near Breckenridge is the most popular starter — a well-marked trail with 3,450 feet of elevation gain over 6.75 miles round trip. Mt. Bierstadt (14,060 ft) near Georgetown is another excellent first 14er with a clear path and stunning views of the Sawtooth Ridge. Grays Peak (14,270 ft) and Torreys Peak (14,267 ft) can be done as a combo. Start before sunrise, bring layers, and turn back if storms threaten — lightning above treeline is the number one danger.' },
+      { label: 'The Hardest 14ers', text: 'Capitol Peak near Aspen is widely considered Colorado\'s most dangerous 14er — the infamous "Knife Edge" traverse is a narrow ridge with thousand-foot drops on both sides. Pyramid Peak has loose rock and extreme exposure. Longs Peak\'s Keyhole Route in Rocky Mountain National Park involves Class 3 scrambling across "The Narrows" and "The Homestretch." These peaks have claimed lives. They require experience, fitness, route-finding ability, and respect for mountain weather.' },
+      { label: 'The Sawatch Range — 14er Country', text: 'The Sawatch Range near Leadville and Buena Vista contains 15 fourteeners — the densest concentration in the state. Mt. Elbert (14,439 ft) is the highest peak in Colorado and the entire Rocky Mountain chain. Mt. Massive (14,421 ft) is the second highest. The Collegiate Peaks — Princeton, Yale, Harvard, Columbia, Oxford — are named after universities and offer some of the most scenic ridge walks in the Rockies.' },
+      { label: '14er Season & Safety', text: 'The optimal window for 14er hiking is late June through September, after snowpack melts and before early winter storms. July and August see afternoon thunderstorms almost daily — start your hike by 5-6 AM and aim to be below treeline by noon. Altitude sickness affects most people above 10,000 feet: acclimate for 1-2 days before attempting a summit. Bring extra layers (summit temps can be 40 degrees colder than the trailhead), plenty of water, sun protection, and a trail map.' },
+    ],
+  },
+  {
+    id: 'rocky-mountain',
+    icon: '🦌',
+    title: 'Rocky Mountain National Park',
+    gradient: 'linear-gradient(135deg, #1B5E20 0%, #388E3C 100%)',
+    items: [
+      { label: 'Park Overview', text: 'Rocky Mountain National Park spans 415 square miles of alpine tundra, glacial lakes, dense forests, and 77 peaks above 12,000 feet. Trail Ridge Road crosses the Continental Divide at 12,183 feet — the highest continuous paved road in the US. The park receives over 4 million visitors annually, making timed-entry reservations essential from late May through October. Estes Park is the east-side gateway; Grand Lake provides access from the west.' },
+      { label: 'Best Day Hikes', text: 'Emerald Lake Trail (3.6 miles round trip) passes Dream Lake and Emerald Lake — two of the most photographed spots in the park. Sky Pond (9 miles round trip) takes you past Alberta Falls, The Loch, and Timberline Falls to a cirque lake beneath the Cathedral Spires. Bear Lake Nature Trail (0.8 miles) is an easy loop with stunning reflections. Flattop Mountain to Hallett Peak (9.8 miles round trip) offers panoramic views from above treeline.' },
+      { label: 'Longs Peak — The Park\'s Crown Jewel', text: 'Longs Peak (14,259 ft) is the northernmost 14er in Colorado and the park\'s most iconic summit. The Keyhole Route is a strenuous 14.5-mile round trip with 5,100 feet of elevation gain and Class 3 scrambling through The Trough, The Narrows, and The Homestretch. Most hikers start at 2-3 AM to summit before afternoon storms. Longs has claimed over 60 lives — this is a serious mountain that demands preparation and respect.' },
+      { label: 'Wildlife & Elk Rut', text: 'RMNP is one of the best places in the Lower 48 for wildlife viewing. Elk are the stars — herds graze in meadows along Trail Ridge Road and in Horseshoe Park. September and October bring the elk rut: bulls bugle (an eerie, haunting sound) and spar for mates. Moose frequent the west side near Grand Lake. Marmots and pikas live above treeline. Bighorn sheep congregate near Sheep Lakes. Black bears are present but rarely seen.' },
+      { label: 'Timed Entry & Planning', text: 'Since 2020, RMNP requires timed-entry reservations during peak season (late May through October). Reservations open on Recreation.gov — the Bear Lake corridor fills fastest. The park has two distinct sides: the east side (Estes Park) has most of the iconic trails and facilities; the west side (Grand Lake) is quieter and more remote. Old Fall River Road is a one-way gravel road that provides a less-crowded alternative to Trail Ridge Road.' },
+    ],
+  },
+  {
+    id: 'iconic-trails',
+    icon: '🥾',
+    title: 'Iconic Colorado Trails',
+    gradient: 'linear-gradient(135deg, #E65100 0%, #FF9800 100%)',
+    items: [
+      { label: 'Maroon Bells — The Most Photographed Peaks in North America', text: 'The Maroon Bells near Aspen are twin 14,000-foot peaks reflected in Maroon Lake — arguably the most photographed mountain scenery in the country. The Maroon Lake Scenic Trail (1.5 miles) circles the lake for the iconic view. Crater Lake Trail (3.6 miles round trip) climbs to a high alpine lake beneath the Bells. The Four Pass Loop (26.8 miles) circumnavigates the entire Maroon Bells-Snowmass Wilderness over four 12,000+ foot passes in 3-4 days. Shuttle buses are required from Aspen in summer.' },
+      { label: 'Garden of the Gods', text: 'Garden of the Gods in Colorado Springs is a free public park with towering red sandstone formations set against the backdrop of Pikes Peak. The Central Garden Trail (1.5 miles) weaves between the most dramatic formations — Balanced Rock, Kissing Camels, and Cathedral Spires. The Perkins Central Garden Trail is wheelchair-accessible. Rock climbing is permitted (and excellent) on many formations. Sunrise and sunset light up the red rocks in spectacular fashion.' },
+      { label: 'Great Sand Dunes', text: 'Great Sand Dunes National Park contains the tallest sand dunes in North America — Star Dune rises 750 feet above the valley floor. There are no marked trails on the dunes; you simply walk up. Hiking to the top of High Dune (699 ft) takes 1-2 hours and is surprisingly exhausting in the deep sand. In late spring and early summer, Medano Creek flows along the dune base creating a natural "beach." The Sangre de Cristo mountains provide a dramatic backdrop. The dunes are surreal — you won\'t believe you\'re in Colorado.' },
+      { label: 'Hanging Lake', text: 'Hanging Lake in Glenwood Canyon is a travertine lake perched on a cliff with waterfalls cascading into turquoise water. The trail is 2.4 miles round trip with 1,000 feet of steep elevation gain. The lake is fragile — swimming and wading are prohibited. A permit system limits daily visitors (reserve at visitglenwood.com). The trail was damaged in a 2020 mudslide but has been rebuilt. It\'s Colorado\'s most popular short hike, and the permit system has dramatically improved the experience.' },
+      { label: 'Ice Lake Basin', text: 'Ice Lake Basin near Silverton is one of Colorado\'s most stunning alpine hikes — a 7-mile round trip to a turquoise lake at 12,585 feet surrounded by 13,000-foot peaks splashed with red, orange, and purple mineral deposits. The trail climbs through wildflower meadows that peak in mid-July. Island Lake, a short side trip, is equally spectacular. The trailhead is on South Mineral Road (passable in a regular car). This is the kind of hike that makes you understand why people move to Colorado.' },
+    ],
+  },
+  {
+    id: 'long-trails',
+    icon: '🗺️',
+    title: 'Long-Distance Trails',
+    gradient: 'linear-gradient(135deg, #6A1B9A 0%, #AB47BC 100%)',
+    items: [
+      { label: 'The Colorado Trail — 486 Miles', text: 'The Colorado Trail runs 486 miles from Denver (Waterton Canyon) to Durango, crossing eight mountain ranges, six wilderness areas, and five major river systems. The trail climbs above 10,000 feet for most of its length and reaches 13,271 feet at its highest point. Thru-hikers typically complete it in 4-6 weeks (June through September). The trail can also be done in segments — the Collegiate West section near Buena Vista is the most spectacular single-week section.' },
+      { label: 'Continental Divide Trail Through Colorado', text: 'The Continental Divide Trail (CDT) runs 800 miles through Colorado as part of its 3,100-mile journey from Mexico to Canada. Colorado\'s section is considered the most scenic and challenging — crossing the San Juan Mountains, the Sawatch Range, the Collegiates, and Rocky Mountain National Park. The CDT through Colorado climbs above treeline repeatedly and requires comfort with route-finding in remote terrain. Most thru-hikers hit Colorado in July-August.' },
+      { label: 'Collegiate Loop', text: 'The Collegiate Loop combines the Colorado Trail\'s Collegiate East and Collegiate West segments into a 160-mile loop through some of the most spectacular mountain scenery in the state. The route passes beneath seven 14ers, crosses multiple 12,000-foot passes, and traverses the heart of the Sawatch Range. Most backpackers take 10-14 days. The west segment (added in 2012) is more remote and more scenic than the east.' },
+      { label: 'Section Hikes & Weekend Backpacking', text: 'Colorado is ideal for weekend backpacking trips. The Four Pass Loop near Aspen (26.8 miles, 3-4 days) is the state\'s most popular multi-day route. Lost Creek Wilderness (70 miles of trails, 1-3 hours from Denver) offers solitude and granite formations. Indian Peaks Wilderness near Boulder has accessible high-alpine lakes. The Flat Tops Wilderness on the Western Slope is Colorado\'s largest flat-topped plateau with 100+ miles of trails and almost no crowds.' },
+    ],
+  },
+  {
+    id: 'national-parks',
+    icon: '🏞️',
+    title: 'National Parks & Monuments',
+    gradient: 'linear-gradient(135deg, #0D7377 0%, #4DB6AC 100%)',
+    items: [
+      { label: 'Black Canyon of the Gunnison', text: 'Black Canyon of the Gunnison is Colorado\'s most underrated national park. The Gunnison River carved a canyon so deep and narrow that parts receive only 33 minutes of sunlight per day. The Painted Wall — Colorado\'s tallest cliff at 2,250 feet — drops straight into the gorge. The South Rim Drive has 12 overlooks. For hikers, the Gunnison Route descends 1,800 feet in one mile to the river (Class III difficulty, chains and poison ivy). The North Rim is more remote and less visited.' },
+      { label: 'Great Sand Dunes National Park', text: 'Beyond the dunes themselves, the park offers hiking in the Sangre de Cristo Mountains. The Mosca Pass Trail (7 miles round trip) follows a historic route over the mountains. The Sand Ramp Trail leads to remote dune fields. Backcountry camping is available in the dunefield and mountain areas. The park is also a certified International Dark Sky Park — stargazing is phenomenal. The nearest town is Alamosa, about 35 miles south.' },
+      { label: 'Colorado National Monument', text: 'Colorado National Monument near Grand Junction features red rock canyons carved into the Colorado Plateau. Rim Rock Drive (23 miles) offers stunning overlooks. Monument Canyon Trail (12 miles round trip) descends into the canyon past Independence Monument — a 450-foot sandstone tower. The Coke Ovens Trail is a shorter option with views of distinctive dome-shaped rock formations. This is red rock country comparable to Utah but with a fraction of the crowds.' },
+      { label: 'Mesa Verde National Park', text: 'Mesa Verde is detailed in our History & Heritage section, but from a hiking perspective, the Petroglyph Point Trail (2.4 miles) passes Ancestral Puebloan rock art and canyon views. The Prater Ridge Trail (7.8 miles) offers mesa-top hiking with views of the Montezuma Valley. The Knife Edge Trail follows a narrow ridge with dramatic drop-offs. Most visitors focus on the cliff dwelling tours, but the mesa-top trails reward those who linger.' },
+      { label: 'Florissant Fossil Beds & Other Monuments', text: 'Florissant Fossil Beds National Monument preserves one of the world\'s richest fossil deposits — petrified redwood stumps and 34-million-year-old insect fossils. Browns Canyon National Monument on the Arkansas River offers rafting and hiking through granite gorges. Chimney Rock National Monument near Pagosa Springs has Ancestral Puebloan ruins aligned with lunar standstill cycles. These smaller monuments are uncrowded gems scattered across the state.' },
+    ],
+  },
+  {
+    id: 'practical',
+    icon: '🎒',
+    title: 'Hiking Essentials & Safety',
+    gradient: 'linear-gradient(135deg, #C62828 0%, #EF5350 100%)',
+    items: [
+      { label: 'Altitude Acclimatization', text: 'Colorado\'s trails start where most mountain ranges end. Trailheads are commonly at 9,000-11,000 feet, and summits exceed 13,000-14,000 feet. Altitude sickness is real: headaches, nausea, shortness of breath, and fatigue hit most sea-level visitors above 8,000 feet. Spend 1-2 days in Denver (5,280 ft) or a mountain town before attempting anything strenuous. Hydrate aggressively — you need twice as much water at altitude. Diamox (acetazolamide) can help; consult your doctor.' },
+      { label: 'Lightning & Afternoon Storms', text: 'Lightning kills more people in Colorado than any other natural hazard. Afternoon thunderstorms are nearly guaranteed in July and August, building rapidly after noon. The rule: start early, summit by noon, be below treeline by early afternoon. If caught in a storm above treeline, descend immediately. Do not shelter under isolated trees. Crouch in a ball on the balls of your feet if lightning is striking nearby. This is not optional advice — it saves lives.' },
+      { label: 'The Ten Essentials', text: 'Every Colorado hiker should carry: (1) navigation (map + compass or GPS), (2) sun protection (sunscreen, hat, sunglasses — UV is 25% stronger at altitude), (3) insulation (puffy jacket, rain shell — summit temps can be 40F colder than the trailhead), (4) headlamp, (5) first aid kit, (6) fire starter, (7) repair tools (knife, duct tape), (8) nutrition (extra food), (9) hydration (3+ liters for a full day), (10) emergency shelter (space blanket). Conditions change fast in the Rockies.' },
+      { label: 'When to Hike', text: 'The hiking season depends on elevation. Front Range trails (under 9,000 ft) are hikeable year-round. Alpine trails (above 11,000 ft) are typically snow-free from late June through September. Wildflower season peaks in mid-July. Fall colors (aspens turning gold) peak in late September. Winter hiking is popular with microspikes and snowshoes. The best months overall are July and September — July for wildflowers, September for golden aspens and thinner crowds.' },
+      { label: 'Leave No Trace in Colorado', text: 'Colorado\'s trails are under enormous pressure from 4+ million annual park visitors and a booming population. Pack out all trash, stay on established trails (alpine tundra takes decades to recover from a single footstep off-trail), bury human waste 6-8 inches deep at least 200 feet from water, and camp on durable surfaces. Many popular trailheads now require parking reservations or permits. These systems exist because the alternative is loved-to-death trails — respect them.' },
+    ],
+  },
+];
+---
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  pageType="destination"
+  schemaData={{ title: pageTitle, description: pageDescription }}
+  breadcrumbs={breadcrumbs}
+>
+  <!-- Hero -->
+  <header class="hike-hero">
+    <div class="hike-hero-gradient"></div>
+    <div class="hike-hero-noise"></div>
+    <div class="hike-hero-content">
+      <h1 class="hike-hero-title">Colorado Hiking Guide</h1>
+      <p class="hike-hero-subtitle">58 fourteeners, four national parks, the Maroon Bells, and 30,000 miles of trails across the most spectacular mountain landscape in the Lower 48.</p>
+      <div class="hike-hero-meta">
+        <div class="hike-hero-meta-item">
+          <span class="hike-hero-meta-label">14ers</span>
+          <span class="hike-hero-meta-value">58</span>
+        </div>
+        <div class="hike-hero-meta-item">
+          <span class="hike-hero-meta-label">National Parks</span>
+          <span class="hike-hero-meta-value">4</span>
+        </div>
+        <div class="hike-hero-meta-item">
+          <span class="hike-hero-meta-label">Trail Miles</span>
+          <span class="hike-hero-meta-value">30,000+</span>
+        </div>
+      </div>
+    </div>
+    <div class="hike-scroll-hint">Scroll<br />&#8595;</div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="container-content">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <!-- Personal intro -->
+  <section class="hike-personal reveal">
+    <div class="container-content">
+      <blockquote class="hike-personal-quote">
+        <p>I've spent more time above treeline in Colorado than most people spend thinking about it. From my first terrifying 14er summit (Quandary Peak, gasping for air at every switchback) to watching sunrise from the Maroon Bells in dead silence, this state has rewired how I think about hiking. The scale is different here. The air is thinner. The storms are faster. And the views are worth every ounce of suffering it takes to earn them. This guide covers what I've learned — the hard way and the beautiful way.</p>
+        <cite>— Scott</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Quick Nav -->
+  <section class="hike-quicknav reveal">
+    <div class="container-content">
+      <div class="hike-quicknav-grid">
+        {topics.map((t) => (
+          <a href={`#${t.id}`} class="hike-quicknav-chip">
+            <span class="hike-quicknav-icon">{t.icon}</span>
+            <span class="hike-quicknav-label">{t.title.split(' ').slice(0, 2).join(' ')}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Topic Sections -->
+  {topics.map((topic) => (
+    <section class="hike-topic reveal" id={topic.id}>
+      <div class="container-content">
+        <div class="hike-topic-header" style={`background: ${topic.gradient};`}>
+          <div class="hike-topic-header-inner">
+            <span class="hike-topic-icon">{topic.icon}</span>
+            <h2 class="hike-topic-title">{topic.title}</h2>
+            <span class="hike-topic-count">{topic.items.length} trails</span>
+          </div>
+        </div>
+
+        <div class="hike-tip-grid">
+          {topic.items.map((item) => (
+            <div class="hike-tip-card">
+              <h3 class="hike-tip-label">{item.label}</h3>
+              <p class="hike-tip-text" set:html={item.text} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- Bottom CTA -->
+  <section class="hike-cta-section reveal">
+    <div class="container-content">
+      <div class="hike-cta-card">
+        <h2 class="hike-cta-heading">Plan Your Colorado Hiking Trip</h2>
+        <p class="hike-cta-text">Tell our AI planner your fitness level and interests — it will build a custom itinerary with the best trails, trailhead logistics, and gear recommendations.</p>
+        <a href="/plan/" class="hike-cta-button">Start Planning &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <FAQ items={[
+    { question: "How many 14ers does Colorado have?", answer: "Colorado has 58 peaks above 14,000 feet — the most of any state in the Lower 48. They range from Class 1 walkups (Quandary Peak, Mt. Bierstadt) suitable for fit beginners to Class 4 technical climbs (Capitol Peak, Pyramid Peak) requiring climbing experience. The highest is Mt. Elbert at 14,439 feet. Most hikers spend years or decades working through the list." },
+    { question: "When is the best time to hike in Colorado?", answer: "The prime hiking window is late June through September. July offers peak wildflowers. September has golden aspens and fewer crowds. Alpine trails above 11,000 feet are typically snow-free from late June onward. Afternoon thunderstorms are common in July-August — start early and be below treeline by noon. Front Range trails below 9,000 feet are hikeable year-round." },
+    { question: "How do you deal with altitude sickness in Colorado?", answer: "Acclimate for 1-2 days before attempting strenuous hikes above 10,000 feet. Hydrate aggressively — you need twice as much water at altitude. Symptoms include headache, nausea, shortness of breath, and fatigue. If symptoms worsen, descend immediately. Diamox (prescription) can help prevent altitude sickness. Most importantly, listen to your body and don't push through severe symptoms." },
+    { question: "What is the easiest 14er in Colorado?", answer: "Quandary Peak (14,265 ft) near Breckenridge is generally considered the easiest — a well-marked trail with 3,450 feet of elevation gain over 6.75 miles round trip. Mt. Bierstadt (14,060 ft) near Georgetown is another excellent beginner option. Both are Class 1 (no scrambling required) and have clear trails. Start before sunrise and allow 6-8 hours round trip." },
+    { question: "Do I need a reservation for Rocky Mountain National Park?", answer: "Yes — timed-entry reservations are required from late May through October. Reservations open on Recreation.gov and fill quickly, especially for the Bear Lake corridor. The park also charges an entrance fee ($30/vehicle for 7 days). If you plan to visit multiple national parks, the $80 America the Beautiful annual pass is worth it." },
+    { question: "What are the best hikes near Denver?", answer: "Within 1-2 hours of Denver: Mt. Bierstadt (14er, Georgetown), Hanging Lake (Glenwood Canyon, permit required), Garden of the Gods (Colorado Springs, free), Chautauqua Park/Flatirons (Boulder), St. Mary's Glacier (near Idaho Springs), and Chicago Lakes (Mt. Evans area). For easier options, Red Rocks Trading Post Trail and Roxborough State Park are both under 30 minutes from downtown." },
+  ]} />
+
+  <!-- Email Capture -->
+  <div class="container-content reveal" style="padding-bottom: var(--space-6);">
+    <EmailCapture
+      leadMagnet="Get Our Free Colorado Trail Guide"
+      description="A printable PDF with Colorado's 25 best hikes — including trail maps, difficulty ratings, trailhead directions, and gear checklists."
+      bullets={[
+        'Top 10 beginner 14ers with step-by-step route descriptions',
+        'Rocky Mountain National Park day hike planner',
+        'Seasonal hiking calendar with wildflower and fall color timing',
+        'Essential gear checklist for altitude hiking in Colorado',
+      ]}
+      guideTag="pillar-hiking"
+    />
+  </div>
+
+  <!-- Cross-links -->
+  <section class="hike-crosslinks reveal">
+    <div class="container-content">
+      <h3 class="hike-crosslinks-heading">Explore More</h3>
+      <div class="hike-crosslinks-grid">
+        <a href="/cuisine/" class="hike-crosslink-card">
+          <span class="hike-crosslink-icon">&#127860;</span>
+          <span class="hike-crosslink-label">Food & Cuisine</span>
+          <span class="hike-crosslink-desc">Refuel with green chile, craft beer, and Colorado's best food</span>
+        </a>
+        <a href="/history/" class="hike-crosslink-card">
+          <span class="hike-crosslink-icon">&#127963;</span>
+          <span class="hike-crosslink-label">History & Heritage</span>
+          <span class="hike-crosslink-desc">Mesa Verde, ghost towns, and the stories beneath the trails</span>
+        </a>
+        <a href="/destinations/" class="hike-crosslink-card">
+          <span class="hike-crosslink-icon">&#127956;</span>
+          <span class="hike-crosslink-label">All Destinations</span>
+          <span class="hike-crosslink-desc">20 destinations from Denver to Durango</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<!-- Scroll Reveal Observer -->
+<script>
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach((el) => el.classList.add('visible'));
+  }
+</script>
+
+<style>
+  .hike-hero {
+    position: relative; min-height: 55vh; display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 5rem var(--space-6) 60px; overflow: hidden;
+    background: linear-gradient(135deg, #1565C0 0%, #1B5E20 50%, #E65100 100%);
+  }
+  .hike-hero-gradient { position: absolute; inset: 0; z-index: 1; background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.55) 100%); }
+  .hike-hero-noise { position: absolute; inset: 0; z-index: 2; background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E"); pointer-events: none; }
+  .hike-hero-content { position: relative; z-index: 3; max-width: 720px; }
+  .hike-hero-title { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: var(--weight-bold); color: #fff; line-height: 1.1; margin: 0 0 var(--space-3); }
+  .hike-hero-subtitle { font-size: clamp(1rem, 2vw, 1.15rem); color: rgba(255, 255, 255, 0.85); line-height: 1.6; margin: 0 0 var(--space-5); max-width: 580px; }
+  .hike-hero-meta { display: flex; gap: var(--space-5); flex-wrap: wrap; }
+  .hike-hero-meta-item { display: flex; flex-direction: column; gap: 2px; }
+  .hike-hero-meta-label { font-size: 0.65rem; font-weight: var(--weight-semibold); text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255, 255, 255, 0.5); }
+  .hike-hero-meta-value { font-size: 1.1rem; font-weight: var(--weight-bold); color: #fff; }
+  .hike-scroll-hint { position: absolute; bottom: 16px; right: var(--space-6); z-index: 3; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(255, 255, 255, 0.35); text-align: center; animation: hikeBounce 2s ease-in-out infinite; }
+  @keyframes hikeBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+
+  .hike-personal { padding-block: var(--space-8); }
+  .hike-personal-quote { max-width: 680px; margin: 0 auto; padding: var(--space-6) var(--space-8); border-left: 4px solid var(--color-warm-coral); background: var(--color-sky); border-radius: 0 12px 12px 0; }
+  .hike-personal-quote p { font-size: var(--text-body); color: var(--color-heading); line-height: var(--leading-body); font-style: italic; margin-bottom: var(--space-3); }
+  .hike-personal-quote cite { font-size: var(--text-caption); color: var(--color-warm-coral); font-weight: var(--weight-semibold); font-style: normal; }
+
+  .hike-quicknav { padding: 0 0 var(--space-6); }
+  .hike-quicknav-grid { display: flex; justify-content: center; gap: var(--space-2); flex-wrap: wrap; }
+  .hike-quicknav-chip { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--color-white); border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 40px; font-size: 0.8rem; font-weight: var(--weight-medium); color: var(--color-slate); text-decoration: none; transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease; }
+  .hike-quicknav-chip:hover { background: var(--color-sky); color: var(--color-ocean-teal); transform: translateY(-2px); }
+  .hike-quicknav-icon { font-size: 1rem; }
+  .hike-quicknav-label { white-space: nowrap; }
+
+  .hike-topic { padding: var(--space-4) 0 var(--space-6); scroll-margin-top: 80px; }
+  .hike-topic-header { position: relative; border-radius: 20px; padding: var(--space-5) var(--space-6); margin-bottom: var(--space-5); overflow: hidden; }
+  .hike-topic-header-inner { position: relative; z-index: 1; display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
+  .hike-topic-icon { font-size: 1.6rem; }
+  .hike-topic-title { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: var(--weight-bold); color: #fff; margin: 0; line-height: 1.2; flex: 1; min-width: 200px; }
+  .hike-topic-count { font-size: 0.7rem; font-weight: var(--weight-semibold); text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255, 255, 255, 0.55); background: rgba(255, 255, 255, 0.1); padding: 4px 12px; border-radius: 20px; }
+
+  .hike-tip-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4); }
+  @media (max-width: 768px) { .hike-tip-grid { grid-template-columns: 1fr; } }
+  .hike-tip-card { background: var(--color-white); border: 1px solid rgba(0, 0, 0, 0.06); border-radius: 14px; padding: var(--space-5); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .hike-tip-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); }
+  .hike-tip-label { font-size: 0.95rem; font-weight: var(--weight-bold); color: var(--color-deep-night); margin: 0 0 var(--space-2); line-height: 1.3; }
+  .hike-tip-text { font-size: 0.85rem; color: var(--color-slate); line-height: 1.65; margin: 0; }
+
+  .hike-cta-section { padding: var(--space-6) 0 var(--space-8); }
+  .hike-cta-card { background: linear-gradient(135deg, var(--color-deep-night) 0%, #2D3748 100%); border-radius: 20px; padding: var(--space-8) var(--space-6); text-align: center; color: #fff; }
+  .hike-cta-heading { font-size: clamp(1.3rem, 3vw, 1.8rem); font-weight: var(--weight-bold); margin: 0 0 var(--space-3); color: #fff; }
+  .hike-cta-text { font-size: 1rem; color: rgba(255, 255, 255, 0.75); max-width: 520px; margin: 0 auto var(--space-5); line-height: 1.6; }
+  .hike-cta-button { display: inline-block; background: var(--color-warm-coral); color: #fff; font-size: 0.9rem; font-weight: var(--weight-semibold); padding: 12px 28px; border-radius: 40px; text-decoration: none; transition: background 0.2s ease, transform 0.2s ease; }
+  .hike-cta-button:hover { background: #d4553b; transform: translateY(-2px); }
+
+  .hike-crosslinks { padding: 0 0 var(--space-10); }
+  .hike-crosslinks-heading { font-size: 1.1rem; font-weight: var(--weight-bold); color: var(--color-deep-night); text-align: center; margin: 0 0 var(--space-4); }
+  .hike-crosslinks-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); max-width: 800px; margin: 0 auto; }
+  @media (max-width: 640px) { .hike-crosslinks-grid { grid-template-columns: 1fr; } }
+  .hike-crosslink-card { display: flex; flex-direction: column; align-items: center; gap: var(--space-2); padding: var(--space-5) var(--space-4); background: var(--color-white); border: 1px solid rgba(0, 0, 0, 0.06); border-radius: 16px; text-decoration: none; color: inherit; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .hike-crosslink-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); }
+  .hike-crosslink-icon { font-size: 1.8rem; }
+  .hike-crosslink-label { font-size: 0.95rem; font-weight: var(--weight-bold); color: var(--color-deep-night); }
+  .hike-crosslink-desc { font-size: 0.78rem; color: var(--color-slate); line-height: 1.4; }
+
+  @media (max-width: 640px) {
+    .hike-hero { min-height: 50vh; padding: 0 var(--space-4) 40px; }
+    .hike-hero-meta { gap: var(--space-4); }
+    .hike-scroll-hint { display: none; }
+    .hike-topic-header { padding: var(--space-4) var(--space-4); }
+  }
+</style>

@@ -1,0 +1,663 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import EmailCapture from '../../components/EmailCapture.astro';
+import FAQ from '../../components/FAQ.astro';
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Colorado Cuisine Guide', url: '/cuisine/' },
+];
+
+const pageTitle = 'Colorado Cuisine Guide — From Green Chile to Craft Beer and Beyond';
+const pageDescription = 'A region-by-region guide to Colorado food culture — green chile, Rocky Mountain bison, Palisade peaches, craft beer, and the farm-to-table movement redefining the West.';
+
+interface TopicSection {
+  id: string;
+  icon: string;
+  title: string;
+  gradient: string;
+  items: { label: string; text: string }[];
+}
+
+const topics: TopicSection[] = [
+  {
+    id: 'green-chile',
+    icon: '🌶️',
+    title: 'Green Chile Culture',
+    gradient: 'linear-gradient(135deg, #2E7D32 0%, #66BB6A 100%)',
+    items: [
+      { label: 'The Great Green Chile Debate', text: 'Colorado\'s green chile is a religion. Unlike New Mexico\'s Hatch-centric style, Colorado green chile tends to be pork-heavy, thick, and served smothered over everything from breakfast burritos to burgers. The state\'s Front Range is ground zero for the rivalry — every diner, taqueria, and breakfast joint claims theirs is the best. Pueblo chiles are the Colorado purist\'s choice, and every September, the Pueblo Chile & Frijoles Festival draws thousands.' },
+      { label: 'Pueblo Chiles — Colorado\'s Own', text: 'Pueblo, Colorado grows its own mirasol chile pepper — often called the Pueblo chile — that rivals anything from New Mexico. The Pueblo chile has a slightly sweeter, more complex heat than Hatch varieties. Farmers roast them in tumbling drum roasters outside grocery stores every fall. The smell of roasting chiles is the unofficial scent of September in Colorado.' },
+      { label: 'Where to Get the Best Green Chile', text: 'Santiago\'s in Denver is legendary — cash only, no-frills, and the green chile is incendiary. Sam\'s No. 3 downtown Denver serves it on everything. Illegal Pete\'s (Boulder/Denver) lets you smother any burrito in their house green chile. In Pueblo, the Pass Key and Café del Rio are local institutions. For competition-grade heat, hit the annual Chile & Frijoles Festival in September.' },
+      { label: 'Green Chile Breakfast Burritos', text: 'The green chile breakfast burrito is Colorado\'s state food in everything but official proclamation. Scrambled eggs, potatoes, cheese, your choice of meat, and a blanket of green chile — all wrapped in a massive flour tortilla. Every gas station, every diner, every ski lodge serves one. It\'s the fuel that powers the state. Order it "smothered" and eat it with a fork.' },
+    ],
+  },
+  {
+    id: 'bison-game',
+    icon: '🦬',
+    title: 'Bison, Elk & Rocky Mountain Game',
+    gradient: 'linear-gradient(135deg, #5D4037 0%, #8D6E63 100%)',
+    items: [
+      { label: 'Bison — The Original Colorado Protein', text: 'Bison once numbered 60 million across the Great Plains. Colorado helped bring them back from near-extinction, and today the state is one of the largest bison producers in the country. Bison meat is leaner and richer than beef, with a slightly sweet, clean flavor. You\'ll find bison burgers, steaks, and chili on menus from Denver to Durango.' },
+      { label: 'Elk and Venison', text: 'Colorado has the largest elk population in the world — over 280,000 animals. Elk steaks and medallions appear on upscale menus across the mountains. The meat is lean, tender, and mildly gamey. Buckhorn Exchange in Denver (Colorado\'s oldest restaurant, established 1893) serves elk alongside rattlesnake and quail. It\'s a taxidermy museum with a kitchen.' },
+      { label: 'Rocky Mountain Oysters', text: 'Yes, they are exactly what you think — deep-fried bull testicles. A Colorado tradition born on cattle ranches, Rocky Mountain Oysters are breaded, fried, and served with cocktail sauce. They taste like a cross between fried chicken and calamari. Bruce\'s Bar in Severance holds the annual "Testicle Festival." The Buckhorn Exchange in Denver serves them year-round.' },
+      { label: 'Farm-to-Table Game Meats', text: 'Colorado\'s ranch culture meets its farm-to-table movement in restaurants across the Front Range. Frasca Food & Wine in Boulder sources local game and pairs it with Italian technique. The Fort restaurant in Morrison (a replica of Bent\'s Fort) specializes in Colorado game served the way fur traders ate 200 years ago — bison, elk, quail, and that signature green chile.' },
+    ],
+  },
+  {
+    id: 'craft-beer',
+    icon: '🍺',
+    title: 'Craft Beer Capital',
+    gradient: 'linear-gradient(135deg, #E65100 0%, #FF9800 100%)',
+    items: [
+      { label: 'Colorado\'s Beer Dynasty', text: 'Colorado has over 430 craft breweries — one of the highest per-capita counts in the nation. The state practically invented the American craft beer movement. Coors has been brewing in Golden since 1873. Boulder\'s first microbrewery opened in 1979. Today, the Denver-Boulder-Fort Collins corridor is the Napa Valley of beer, with nationally acclaimed taprooms within a 90-minute drive of each other.' },
+      { label: 'Denver\'s Beer Scene', text: 'Denver hosts the Great American Beer Festival every October — the largest beer competition in the country with 4,000+ beers. RiNo (River North Art District) is brewery row: Ratio Beerworks, Our Mutual Friend, and Epic Brewing all within walking distance. Wynkoop Brewing was Colorado\'s first brewpub (founded 1988 by future governor John Hickenlooper). In LoHi, Cerebral Brewing and Comrade Brewing are favorites.' },
+      { label: 'Boulder & Fort Collins', text: 'Boulder is home to Avery Brewing (their barrel-aged program is world-class) and Mountain Sun Pub (no TV, no phones, cash only). Fort Collins is the heavyweight: New Belgium (creators of Fat Tire), Odell Brewing, Horse & Dragon, and Funkwerks (Belgian-style sours). Fort Collins alone has 30+ breweries for a city of 170,000. The Colorado Ale Trail maps all of them.' },
+      { label: 'Mountain Town Breweries', text: 'Every ski town has a brewpub worth visiting. Telluride Brewing makes the legendary Face Down Brown ale. Breckenridge Brewery started in a tiny spot on Main Street (now a massive campus in Littleton). Aspen Brewing serves après-ski pints. Steamboat Springs has Mountain Tap and Storm Peak. Crested Butte\'s Irwin Guides serves craft beer at 12,000 feet. Even tiny Ouray has Ouray Brewery.' },
+      { label: 'Colorado Wine & Spirits', text: 'Palisade on the Western Slope is Colorado\'s wine country — warm days, cool nights, and irrigated vineyards producing excellent Merlot, Riesling, and Viognier. Colorado has 170+ wineries. The spirits scene is growing too: Breckenridge Distillery makes bourbon at 9,600 feet, Stranahan\'s in Denver produces Colorado whiskey, and Leopold Bros. crafts everything from absinthe to gin.' },
+    ],
+  },
+  {
+    id: 'farm-to-table',
+    icon: '🌿',
+    title: 'Farm-to-Table & Modern Colorado',
+    gradient: 'linear-gradient(135deg, #0D7377 0%, #4DB6AC 100%)',
+    items: [
+      { label: 'Denver\'s Restaurant Renaissance', text: 'Denver has quietly become one of America\'s best food cities. The RiNo neighborhood is the epicenter — Safta (modern Israeli), Beckon (intimate tasting menu), Tavernetta (Italian with Colorado ingredients). Acorn is the anchor of The Source market hall, serving wood-fired cooking with local produce. Chef Alex Seidel\'s Fruition has been a James Beard finalist multiple times.' },
+      { label: 'Boulder\'s Food Philosophy', text: 'Boulder was farm-to-table before it had a name. Frasca Food & Wine (James Beard Award winner) pairs Friulian Italian cuisine with Colorado ingredients. The Kitchen pioneered community-table dining. Flagstaff House, perched above Boulder Canyon, serves tasting menus with 360-degree mountain views. The Boulder Farmers Market (Saturday mornings, April-November) is one of the best in the West.' },
+      { label: 'Food Halls & Markets', text: 'Denver\'s food hall scene rivals any major city. The Source (RiNo) was the pioneer — Acorn restaurant, Crooked Stave brewery, and specialty shops under one roof. Stanley Marketplace in Aurora repurposed a WWII-era aviation factory into 50+ vendors. Avanti Food & Beverages is a shipping-container food hall with a rooftop and mountain views. The Broadway Market in the Baker neighborhood features rotating chef concepts.' },
+      { label: 'Palisade Peaches & Western Slope Produce', text: 'Palisade peaches are Colorado\'s most beloved fruit — juicy, fragrant, and available for about three weeks every August. Locals drive hours to buy cases directly from orchards. The Palisade Peach Festival celebrates the harvest. Beyond peaches, the Western Slope grows outstanding apples, cherries, and lavender. Rocky Ford cantaloupes from the Arkansas Valley are another state treasure.' },
+      { label: 'Colorado Lamb & Ranching Heritage', text: 'Colorado lamb is prized by chefs nationwide — raised at altitude on mountain grasses, it has a clean, sweet flavor. The state\'s ranching tradition dates back to the 1860s cattle drives. Today, that heritage lives on in ranch-to-table restaurants and annual stock shows. The National Western Stock Show in Denver (January) has been a tradition since 1906 — rodeo, livestock auctions, and all the BBQ you can eat.' },
+    ],
+  },
+  {
+    id: 'mountain-dining',
+    icon: '🏔️',
+    title: 'Mountain Town Dining',
+    gradient: 'linear-gradient(135deg, #1565C0 0%, #42A5F5 100%)',
+    items: [
+      { label: 'Aspen\'s High-End Scene', text: 'Aspen punches absurdly above its weight for a town of 7,000. Matsuhisa (Nobu\'s original mountain outpost) serves world-class Japanese. The White House Tavern makes a $28 grilled cheese that\'s somehow worth it. Ajax Tavern at the base of Aspen Mountain is the power lunch spot. Element 47 at The Little Nell does a tasting menu that rivals anything in Manhattan.' },
+      { label: 'Telluride — Small Town, Big Flavor', text: 'Telluride\'s restaurant scene is disproportionately excellent. Allred\'s, accessed only by free gondola, serves contemporary American at 10,551 feet with panoramic views. Brown Dog Pizza is the locals\' après-ski favorite. Chop House has solid steaks. The Butcher & The Baker does farm-fresh brunch. For a town at the end of a box canyon, the culinary ambition is remarkable.' },
+      { label: 'Steamboat Springs & Crested Butte', text: 'Steamboat Springs has a cowboy-meets-craft-beer food culture. Café Diva serves creative American cuisine. Yampa Valley Kitchen focuses on locally sourced everything. In Crested Butte, the Secret Stash serves unexpectedly great pizza in a funky Victorian house. Slogar Bar & Restaurant does family-style fried chicken dinners that are legendary — get there early because they sell out.' },
+      { label: 'Durango & the Southwest Corner', text: 'Durango blends Colorado mountain culture with Southwest flavors. Ore House serves prime rib in a saloon-style setting. Steamworks Brewing is the local brewpub standard. East by Southwest fuses Asian flavors with Colorado ingredients. The Durango Farmers Market (Saturday mornings) is one of the best in the Four Corners region. For green chile, Jean Pierre Bakery is a surprising standout.' },
+    ],
+  },
+  {
+    id: 'iconic-dishes',
+    icon: '🍽️',
+    title: 'Iconic Colorado Dishes',
+    gradient: 'linear-gradient(135deg, #C62828 0%, #EF5350 100%)',
+    items: [
+      { label: 'Denver Omelette', text: 'The Denver omelette (also called a Western omelette) was invented in Colorado — ham, peppers, onions, and cheese folded into eggs. Its origins are debated, but one theory ties it to Chinese railroad workers who adapted egg foo young for Western palates. Every diner in the state serves one. Snooze, an A.M. Eatery (multiple Denver locations) puts creative spins on the classic.' },
+      { label: 'Lamb Burgers & Bison Chili', text: 'Colorado lamb burgers are a staple at gastropubs across the Front Range — ground lamb with green chile, goat cheese, and a brioche bun. Bison chili is the mountain-town answer to Texas-style — thick, hearty, often with beans (sorry, Texas), and always topped with cheese and a dollop of sour cream. Every ski lodge has a version, and it tastes better at 9,000 feet.' },
+      { label: 'Palisade Peach Everything', text: 'When Palisade peaches hit in August, Colorado loses its mind. Peach cobbler, peach ice cream, peach salsa, peach margaritas, peach-topped salads — the fruit invades every menu for three glorious weeks. Roadside stands along I-70 near Grand Junction sell fresh boxes. Peach-infused beers from local breweries are a summer staple. If you visit Colorado in August, plan around peach season.' },
+      { label: 'Breakfast Culture', text: 'Colorado takes breakfast more seriously than almost any other state. The green chile breakfast burrito is king, but the state also excels at huevos rancheros, chicken and waffles (Denver Biscuit Company), and creative benedicts (Snooze). Lucile\'s Creole Cafe in Boulder serves Cajun-influenced brunch that draws hour-long lines. Morning culture here is fueled by altitude, outdoor ambition, and exceptional coffee.' },
+      { label: 'Colorado Coffee Scene', text: 'Colorado\'s coffee culture rivals Portland and Seattle. Huckleberry Roasters and Commonwealth Coffee in Denver are nationally recognized roasters. Ozo Coffee in Boulder emphasizes direct-trade sourcing. Laughing Goat in Boulder\'s Pearl Street Mall is a classic college-town café. In the mountains, every ski town has a local roaster. The altitude (thinner air = lower boiling point) actually affects extraction, and some roasters adjust their process accordingly.' },
+    ],
+  },
+];
+---
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  pageType="destination"
+  schemaData={{ title: pageTitle, description: pageDescription }}
+  breadcrumbs={breadcrumbs}
+>
+  <!-- Hero -->
+  <header class="cuis-hero">
+    <div class="cuis-hero-gradient"></div>
+    <div class="cuis-hero-noise"></div>
+    <div class="cuis-hero-content">
+      <h1 class="cuis-hero-title">The Colorado Table</h1>
+      <p class="cuis-hero-subtitle">Green chile smothered burritos, bison steaks at altitude, 430 craft breweries, Palisade peaches in August, and a farm-to-table movement that rivals any coast.</p>
+      <div class="cuis-hero-meta">
+        <div class="cuis-hero-meta-item">
+          <span class="cuis-hero-meta-label">Topics</span>
+          <span class="cuis-hero-meta-value">6</span>
+        </div>
+        <div class="cuis-hero-meta-item">
+          <span class="cuis-hero-meta-label">Breweries</span>
+          <span class="cuis-hero-meta-value">430+</span>
+        </div>
+        <div class="cuis-hero-meta-item">
+          <span class="cuis-hero-meta-label">Regions</span>
+          <span class="cuis-hero-meta-value">4</span>
+        </div>
+      </div>
+    </div>
+    <div class="cuis-scroll-hint">Scroll<br />&#8595;</div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="container-content">
+    <Breadcrumb items={breadcrumbs} />
+  </div>
+
+  <!-- Personal intro -->
+  <section class="cuis-personal reveal">
+    <div class="container-content">
+      <blockquote class="cuis-personal-quote">
+        <p>I moved to Colorado thinking it was all about the mountains. Then I had my first green chile breakfast burrito at Santiago's, my first bison burger at a Fort Collins taproom, and my first case of Palisade peaches bought off the back of a truck in August. Colorado's food scene doesn't get the national attention it deserves, and honestly, the locals like it that way. This guide is the cheat sheet to eating well across the Centennial State.</p>
+        <cite>— Scott</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Quick Nav -->
+  <section class="cuis-quicknav reveal">
+    <div class="container-content">
+      <div class="cuis-quicknav-grid">
+        {topics.map((t) => (
+          <a href={`#${t.id}`} class="cuis-quicknav-chip">
+            <span class="cuis-quicknav-icon">{t.icon}</span>
+            <span class="cuis-quicknav-label">{t.title.split(' ').slice(0, 2).join(' ')}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Topic Sections -->
+  {topics.map((topic) => (
+    <section class="cuis-topic reveal" id={topic.id}>
+      <div class="container-content">
+        <div class="cuis-topic-header" style={`background: ${topic.gradient};`}>
+          <div class="cuis-topic-header-inner">
+            <span class="cuis-topic-icon">{topic.icon}</span>
+            <h2 class="cuis-topic-title">{topic.title}</h2>
+            <span class="cuis-topic-count">{topic.items.length} items</span>
+          </div>
+        </div>
+
+        <div class="cuis-tip-grid">
+          {topic.items.map((item) => (
+            <div class="cuis-tip-card">
+              <h3 class="cuis-tip-label">{item.label}</h3>
+              <p class="cuis-tip-text" set:html={item.text} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- Bottom CTA -->
+  <section class="cuis-cta-section reveal">
+    <div class="container-content">
+      <div class="cuis-cta-card">
+        <h2 class="cuis-cta-heading">Plan Your Colorado Food Trip</h2>
+        <p class="cuis-cta-text">Tell our AI planner you're a foodie and it will build a Colorado itinerary around the best restaurants, breweries, and food halls — from Denver to the mountain towns.</p>
+        <a href="/plan/" class="cuis-cta-button">Start Planning &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <FAQ items={[
+    { question: "What food is Colorado known for?", answer: "Colorado is famous for green chile (especially Pueblo chiles), green chile breakfast burritos, Rocky Mountain Oysters (deep-fried bull testicles), bison and elk steaks, Palisade peaches, craft beer, and a thriving farm-to-table restaurant scene concentrated in Denver and Boulder. The Denver omelette (ham, peppers, onions, cheese) also originated here." },
+    { question: "What is the best craft beer city in Colorado?", answer: "Fort Collins is the craft beer capital — home to New Belgium (Fat Tire), Odell Brewing, Funkwerks, and 30+ breweries in a city of 170,000. Denver has the most breweries by volume, including the annual Great American Beer Festival. Boulder rounds out the top three with Avery Brewing and Mountain Sun. The entire Front Range corridor is America's best beer region." },
+    { question: "Where can I try green chile in Colorado?", answer: "Santiago's (Denver) is the iconic spot — cash only, legendary heat. Sam's No. 3 in downtown Denver serves it on everything. In Pueblo, try Pass Key or Café del Rio. Illegal Pete's (Boulder/Denver chain) smothers burritos in house green chile. Virtually every diner along the Front Range has green chile on the menu — it's as ubiquitous as ketchup." },
+    { question: "When are Palisade peaches in season?", answer: "Palisade peaches are available for roughly three weeks in late July through August. The peak is typically the first two weeks of August. Roadside stands along I-70 near Grand Junction sell fresh boxes. The annual Palisade Peach Festival is held in mid-August. If you visit Colorado in summer, planning around peach season is absolutely worth it." },
+    { question: "What is a Denver omelette?", answer: "A Denver omelette (also called a Western omelette) is made with diced ham, bell peppers, onions, and cheese folded into beaten eggs. It likely originated in Colorado or the American West in the late 1800s, possibly adapted from Chinese egg foo young by railroad workers. Today it's a diner staple across the country, but it's still best eaten in Denver." },
+    { question: "How much does dining out cost in Colorado?", answer: "Breakfast burritos: $8-14. Casual lunch (burger, beer): $15-25. Brewery taproom with food: $20-35. Mid-range dinner: $35-60/person. Fine dining (Frasca, Fruition, Element 47): $80-200/person with wine. Mountain town restaurants are 10-20% pricier than Denver. Tipping standard is 18-20%." },
+  ]} />
+
+  <!-- Email Capture -->
+  <div class="container-content reveal" style="padding-bottom: var(--space-6);">
+    <EmailCapture
+      leadMagnet="Get Our Free Colorado Food & Beer Guide"
+      description="A printable PDF guide to Colorado's best restaurants, breweries, and food experiences — organized by region with honest recommendations."
+      bullets={[
+        'Top 20 restaurants across Denver, Boulder, and mountain towns',
+        'Colorado craft beer trail with 50 must-visit breweries',
+        'Green chile power rankings — the best spots by region',
+        'Seasonal food calendar: peach season, chile roasting, food festivals',
+      ]}
+      guideTag="pillar-cuisine"
+    />
+  </div>
+
+  <!-- Cross-links -->
+  <section class="cuis-crosslinks reveal">
+    <div class="container-content">
+      <h3 class="cuis-crosslinks-heading">Explore More</h3>
+      <div class="cuis-crosslinks-grid">
+        <a href="/hiking/" class="cuis-crosslink-card">
+          <span class="cuis-crosslink-icon">&#9968;</span>
+          <span class="cuis-crosslink-label">Hiking Guide</span>
+          <span class="cuis-crosslink-desc">14ers, national parks, and the best trails across Colorado</span>
+        </a>
+        <a href="/history/" class="cuis-crosslink-card">
+          <span class="cuis-crosslink-icon">&#127963;</span>
+          <span class="cuis-crosslink-label">History & Heritage</span>
+          <span class="cuis-crosslink-desc">Mesa Verde, gold rush towns, and Colorado's story</span>
+        </a>
+        <a href="/destinations/" class="cuis-crosslink-card">
+          <span class="cuis-crosslink-icon">&#127956;</span>
+          <span class="cuis-crosslink-label">All Destinations</span>
+          <span class="cuis-crosslink-desc">20 destinations from Denver to Durango</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<!-- Scroll Reveal Observer -->
+<script>
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach((el) => el.classList.add('visible'));
+  }
+</script>
+
+<style>
+  /* ================================================================
+     HERO
+     ================================================================ */
+  .cuis-hero {
+    position: relative;
+    min-height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 5rem var(--space-6) 60px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #2E7D32 0%, #5D4037 50%, #E65100 100%);
+  }
+
+  .cuis-hero-gradient {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.55) 100%);
+  }
+
+  .cuis-hero-noise {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  .cuis-hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 720px;
+  }
+
+  .cuis-hero-title {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: var(--weight-bold);
+    color: #fff;
+    line-height: 1.1;
+    margin: 0 0 var(--space-3);
+  }
+
+  .cuis-hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    margin: 0 0 var(--space-5);
+    max-width: 580px;
+  }
+
+  .cuis-hero-meta {
+    display: flex;
+    gap: var(--space-5);
+    flex-wrap: wrap;
+  }
+
+  .cuis-hero-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .cuis-hero-meta-label {
+    font-size: 0.65rem;
+    font-weight: var(--weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .cuis-hero-meta-value {
+    font-size: 1.1rem;
+    font-weight: var(--weight-bold);
+    color: #fff;
+  }
+
+  .cuis-scroll-hint {
+    position: absolute;
+    bottom: 16px;
+    right: var(--space-6);
+    z-index: 3;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.35);
+    text-align: center;
+    animation: cuisBounce 2s ease-in-out infinite;
+  }
+
+  @keyframes cuisBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+
+  /* ================================================================
+     PERSONAL INTRO
+     ================================================================ */
+  .cuis-personal {
+    padding-block: var(--space-8);
+  }
+
+  .cuis-personal-quote {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: var(--space-6) var(--space-8);
+    border-left: 4px solid var(--color-warm-coral);
+    background: var(--color-sky);
+    border-radius: 0 12px 12px 0;
+  }
+
+  .cuis-personal-quote p {
+    font-size: var(--text-body);
+    color: var(--color-heading);
+    line-height: var(--leading-body);
+    font-style: italic;
+    margin-bottom: var(--space-3);
+  }
+
+  .cuis-personal-quote cite {
+    font-size: var(--text-caption);
+    color: var(--color-warm-coral);
+    font-weight: var(--weight-semibold);
+    font-style: normal;
+  }
+
+  /* ================================================================
+     QUICK NAV
+     ================================================================ */
+  .cuis-quicknav {
+    padding: 0 0 var(--space-6);
+  }
+
+  .cuis-quicknav-grid {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+  }
+
+  .cuis-quicknav-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: var(--color-white);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 40px;
+    font-size: 0.8rem;
+    font-weight: var(--weight-medium);
+    color: var(--color-slate);
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  }
+
+  .cuis-quicknav-chip:hover {
+    background: var(--color-sky);
+    color: var(--color-ocean-teal);
+    transform: translateY(-2px);
+  }
+
+  .cuis-quicknav-icon {
+    font-size: 1rem;
+  }
+
+  .cuis-quicknav-label {
+    white-space: nowrap;
+  }
+
+  /* ================================================================
+     TOPIC SECTION
+     ================================================================ */
+  .cuis-topic {
+    padding: var(--space-4) 0 var(--space-6);
+    scroll-margin-top: 80px;
+  }
+
+  .cuis-topic-header {
+    position: relative;
+    border-radius: 20px;
+    padding: var(--space-5) var(--space-6);
+    margin-bottom: var(--space-5);
+    overflow: hidden;
+  }
+
+  .cuis-topic-header-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+  }
+
+  .cuis-topic-icon {
+    font-size: 1.6rem;
+  }
+
+  .cuis-topic-title {
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-weight: var(--weight-bold);
+    color: #fff;
+    margin: 0;
+    line-height: 1.2;
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .cuis-topic-count {
+    font-size: 0.7rem;
+    font-weight: var(--weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+
+  /* ================================================================
+     TIP CARDS
+     ================================================================ */
+  .cuis-tip-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+
+  @media (max-width: 768px) {
+    .cuis-tip-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .cuis-tip-card {
+    background: var(--color-white);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 14px;
+    padding: var(--space-5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .cuis-tip-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .cuis-tip-label {
+    font-size: 0.95rem;
+    font-weight: var(--weight-bold);
+    color: var(--color-deep-night);
+    margin: 0 0 var(--space-2);
+    line-height: 1.3;
+  }
+
+  .cuis-tip-text {
+    font-size: 0.85rem;
+    color: var(--color-slate);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* ================================================================
+     BOTTOM CTA
+     ================================================================ */
+  .cuis-cta-section {
+    padding: var(--space-6) 0 var(--space-8);
+  }
+
+  .cuis-cta-card {
+    background: linear-gradient(135deg, var(--color-deep-night) 0%, #2D3748 100%);
+    border-radius: 20px;
+    padding: var(--space-8) var(--space-6);
+    text-align: center;
+    color: #fff;
+  }
+
+  .cuis-cta-heading {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    font-weight: var(--weight-bold);
+    margin: 0 0 var(--space-3);
+    color: #fff;
+  }
+
+  .cuis-cta-text {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 520px;
+    margin: 0 auto var(--space-5);
+    line-height: 1.6;
+  }
+
+  .cuis-cta-button {
+    display: inline-block;
+    background: var(--color-warm-coral);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: var(--weight-semibold);
+    padding: 12px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .cuis-cta-button:hover {
+    background: #d4553b;
+    transform: translateY(-2px);
+  }
+
+  /* ================================================================
+     CROSS-LINKS
+     ================================================================ */
+  .cuis-crosslinks {
+    padding: 0 0 var(--space-10);
+  }
+
+  .cuis-crosslinks-heading {
+    font-size: 1.1rem;
+    font-weight: var(--weight-bold);
+    color: var(--color-deep-night);
+    text-align: center;
+    margin: 0 0 var(--space-4);
+  }
+
+  .cuis-crosslinks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 640px) {
+    .cuis-crosslinks-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .cuis-crosslink-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-5) var(--space-4);
+    background: var(--color-white);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 16px;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .cuis-crosslink-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .cuis-crosslink-icon {
+    font-size: 1.8rem;
+  }
+
+  .cuis-crosslink-label {
+    font-size: 0.95rem;
+    font-weight: var(--weight-bold);
+    color: var(--color-deep-night);
+  }
+
+  .cuis-crosslink-desc {
+    font-size: 0.78rem;
+    color: var(--color-slate);
+    line-height: 1.4;
+  }
+
+  /* ================================================================
+     RESPONSIVE
+     ================================================================ */
+  @media (max-width: 640px) {
+    .cuis-hero {
+      min-height: 50vh;
+      padding: 0 var(--space-4) 40px;
+    }
+
+    .cuis-hero-meta {
+      gap: var(--space-4);
+    }
+
+    .cuis-scroll-hint {
+      display: none;
+    }
+
+    .cuis-topic-header {
+      padding: var(--space-4) var(--space-4);
+    }
+  }
+</style>
