@@ -4,7 +4,6 @@ import { Image } from 'astro:assets';
 import FAQ from '../../components/FAQ.astro';
 import '../../styles/companion.css';
 import scottImg from '../../images/scott-murray.jpg';
-import scottImg from '../../images/scott-murray.jpg';
 
 const faqItems = [
   {
@@ -29,15 +28,15 @@ const faqItems = [
   },
   {
     question: 'What destinations do you cover?',
-    answer: 'We currently cover 20+ destinations across Colorado including Cebu, Bohol, Siquijor, Palawan (El Nido & Coron), Siargao, Boracay, Dumaguete, Manila, Clark, and more. Each destination has real directions, local restaurant picks, and insider tips from our personal trips.',
+    answer: 'We currently cover 20 destinations across Colorado including Denver, Boulder, Aspen, Vail, Breckenridge, Estes Park, Telluride, Durango, and more. Each destination has real directions, local restaurant picks, and insider tips from our personal trips.',
   },
 ];
 
 const features = [
-  { icon: '🧭', title: 'Real Directions', description: 'Not Google Maps pins — actual "take the Ceres bus, tell the conductor Panagsama" directions from every destination.' },
+  { icon: '🧭', title: 'Real Directions', description: 'Not Google Maps pins — actual "take I-70 west to exit 195, park at the free shuttle lot" directions from every destination.' },
   { icon: '🌅', title: 'Sunrise & Sunset', description: 'Golden hour times with best viewpoints matched to your daily locations. Never miss a sunset.' },
-  { icon: '💰', title: 'Budget Tracker', description: 'Log expenses in PHP or USD, see typical costs for your destinations, and convert currency — all offline.' },
-  { icon: '💬', title: 'Local Phrases', description: 'Cebuano and English phrases tuned to your specific destinations, with pronunciation guides.' },
+  { icon: '💰', title: 'Budget Tracker', description: 'Log expenses in USD, see typical costs for your destinations, and track spending — all offline.' },
+  { icon: '💬', title: 'Local Tips', description: 'Insider tips tuned to your specific destinations — trail conditions, parking, seasonal closures.' },
   { icon: '👥', title: 'Group Sharing', description: 'One purchase, up to 8 travelers. Everyone gets the full companion with real-time sync.' },
   { icon: '💵', title: 'Expense Splitter', description: 'Track shared costs, split bills, and settle up at the end of the trip. No more spreadsheets.' },
   { icon: '🎒', title: 'Smart Packing List', description: 'Auto-generated from your activities — canyoneering adds water shoes, snorkeling adds reef-safe sunscreen.' },
@@ -54,19 +53,19 @@ const steps = [
 
 const testimonials = [
   {
-    quote: 'We had zero signal on the ferry to Siquijor and the app had everything — directions, restaurant picks, even the right phrases. Felt like traveling with a local friend.',
+    quote: 'We lost signal on the drive through the Rockies and the app had everything — directions, restaurant picks, even trailhead tips. Felt like traveling with a local friend.',
     author: 'Sarah & Mike',
     trip: '7-day Ski Country trip',
   },
   {
     quote: 'The real directions are a game changer. Instead of staring at a map pin, I knew exactly which bus to take and what to tell the driver. Saved us hours.',
     author: 'James',
-    trip: '5-day Cebu & Bohol',
+    trip: '5-day Denver & Mountains',
   },
   {
     quote: 'Shared the companion with our whole group of 6. Everyone had the same info, we tracked expenses together, and the packing list was spot on.',
     author: 'Rachel & David',
-    trip: '10-day Palawan adventure',
+    trip: '10-day Colorado road trip',
   },
 ];
 
@@ -127,7 +126,7 @@ const testimonials = [
               <div class="cp-phone-item">
                 <span class="cp-phone-item-icon">✈️</span>
                 <div>
-                  <span class="cp-phone-item-title">Arrive Mactan-Cebu</span>
+                  <span class="cp-phone-item-title">Arrive Denver DIA</span>
                   <span class="cp-phone-item-tag">Directions included</span>
                 </div>
               </div>
@@ -171,7 +170,7 @@ const testimonials = [
               <div class="cp-mockup-header" style="background: var(--gradient-companion-hero);">
                 <span class="cp-mockup-label">DISCOVER COLORADO</span>
                 <span class="cp-mockup-title">Central Ski Country</span>
-                <span class="cp-mockup-sub">Day 1 of 7 · Cebu City</span>
+                <span class="cp-mockup-sub">Day 1 of 7 · Denver</span>
               </div>
               <div class="cp-mockup-body">
                 <div class="cp-mockup-item">
@@ -179,7 +178,7 @@ const testimonials = [
                   <div class="cp-mockup-row">
                     <span class="cp-mockup-emoji">✈️</span>
                     <div>
-                      <span class="cp-mockup-name">Arrive Mactan-Cebu</span>
+                      <span class="cp-mockup-name">Arrive Denver DIA</span>
                       <span class="cp-mockup-tag">Directions included</span>
                     </div>
                   </div>
@@ -190,7 +189,7 @@ const testimonials = [
                     <span class="cp-mockup-emoji">🏨</span>
                     <div>
                       <span class="cp-mockup-name">Check in · Quest Hotel</span>
-                      <span class="cp-mockup-tag">₱2,800/night</span>
+                      <span class="cp-mockup-tag">$189/night</span>
                     </div>
                   </div>
                 </div>
@@ -220,7 +219,7 @@ const testimonials = [
                     <span class="cp-mockup-emoji">🍽️</span>
                     <div>
                       <span class="cp-mockup-name">Dinner · Casa Verde</span>
-                      <span class="cp-mockup-tag">₱350/person</span>
+                      <span class="cp-mockup-tag">$25/person</span>
                     </div>
                   </div>
                 </div>
@@ -248,28 +247,28 @@ const testimonials = [
               <div class="cp-mockup-header cp-mockup-header--teal">
                 <span class="cp-mockup-label">GETTING TO</span>
                 <span class="cp-mockup-title">Moalboal Beach</span>
-                <span class="cp-mockup-sub">From Cebu City · 3 hours</span>
+                <span class="cp-mockup-sub">From Denver · 2 hours</span>
               </div>
               <div class="cp-mockup-body">
                 <div class="cp-mockup-direction">
                   <div class="cp-mockup-step-circle">1</div>
                   <div>
                     <span class="cp-mockup-dir-title">South Bus Terminal</span>
-                    <span class="cp-mockup-dir-detail">Take a taxi or Grab to Cebu South Bus Terminal (₱150-200). Tell the driver "South Bus."</span>
+                    <span class="cp-mockup-dir-detail">Take I-70 West from Denver. Stay in the left lane through the Eisenhower Tunnel.</span>
                   </div>
                 </div>
                 <div class="cp-mockup-direction">
                   <div class="cp-mockup-step-circle">2</div>
                   <div>
-                    <span class="cp-mockup-dir-title">Ceres Bus to Moalboal</span>
-                    <span class="cp-mockup-dir-detail">Look for the Ceres bus with "Bato via Barili" sign. Tell the conductor "Moalboal." ₱155, ~3 hrs.</span>
+                    <span class="cp-mockup-dir-title">Exit 195 to Breckenridge</span>
+                    <span class="cp-mockup-dir-detail">Take exit 195 (CO-9 South). Follow signs to Breckenridge. Free parking at the gondola lot.</span>
                   </div>
                 </div>
                 <div class="cp-mockup-direction">
                   <div class="cp-mockup-step-circle">3</div>
                   <div>
-                    <span class="cp-mockup-dir-title">Tricycle to Panagsama</span>
-                    <span class="cp-mockup-dir-detail">At Moalboal town, take a tricycle to Panagsama Beach. ₱50 per person, 10 minutes.</span>
+                    <span class="cp-mockup-dir-title">Free Shuttle to Main St</span>
+                    <span class="cp-mockup-dir-detail">Ride the free Summit Stage bus from the gondola lot to Main Street. Runs every 15 min.</span>
                   </div>
                 </div>
                 <div class="cp-mockup-tip">
@@ -300,7 +299,7 @@ const testimonials = [
               <div class="cp-mockup-header cp-mockup-header--gold">
                 <span class="cp-mockup-label">BUDGET TRACKER</span>
                 <span class="cp-mockup-title">Day 3 · Moalboal</span>
-                <span class="cp-mockup-sub">₱4,250 spent · $76 USD</span>
+                <span class="cp-mockup-sub">$425 spent today</span>
               </div>
               <div class="cp-mockup-body">
                 <div class="cp-mockup-budget-bar">
@@ -313,7 +312,7 @@ const testimonials = [
                     <span class="cp-mockup-name">Chief Mau Resort</span>
                     <span class="cp-mockup-tag">Accommodation</span>
                   </div>
-                  <span class="cp-mockup-amount">₱1,800</span>
+                  <span class="cp-mockup-amount">$189</span>
                 </div>
                 <div class="cp-mockup-expense">
                   <span class="cp-mockup-emoji">🐟</span>
@@ -321,7 +320,7 @@ const testimonials = [
                     <span class="cp-mockup-name">Sardine Run Tour</span>
                     <span class="cp-mockup-tag">Activity</span>
                   </div>
-                  <span class="cp-mockup-amount">₱1,500</span>
+                  <span class="cp-mockup-amount">$150</span>
                 </div>
                 <div class="cp-mockup-expense">
                   <span class="cp-mockup-emoji">🍜</span>
@@ -329,7 +328,7 @@ const testimonials = [
                     <span class="cp-mockup-name">Lunch · Pleasure Point</span>
                     <span class="cp-mockup-tag">Food</span>
                   </div>
-                  <span class="cp-mockup-amount">₱650</span>
+                  <span class="cp-mockup-amount">$65</span>
                 </div>
                 <div class="cp-mockup-expense">
                   <span class="cp-mockup-emoji">🛺</span>
@@ -337,7 +336,7 @@ const testimonials = [
                     <span class="cp-mockup-name">Tricycle rides (×3)</span>
                     <span class="cp-mockup-tag">Transport</span>
                   </div>
-                  <span class="cp-mockup-amount">₱300</span>
+                  <span class="cp-mockup-amount">$21</span>
                 </div>
               </div>
               <div class="cp-mockup-tabs">
@@ -349,7 +348,7 @@ const testimonials = [
             </div>
           </div>
           <h3 class="cp-carousel-title">Budget Tracker</h3>
-          <p class="cp-carousel-desc">Log expenses, see typical costs, convert PHP/USD — all offline.</p>
+          <p class="cp-carousel-desc">Log expenses, see typical costs, track your budget — all offline.</p>
         </div>
 
         <!-- 4. Local Phrases -->
@@ -362,29 +361,29 @@ const testimonials = [
               </div>
               <div class="cp-mockup-header cp-mockup-header--coral">
                 <span class="cp-mockup-label">LOCAL PHRASES</span>
-                <span class="cp-mockup-title">Cebuano (Bisaya)</span>
-                <span class="cp-mockup-sub">For your Ski Country destinations</span>
+                <span class="cp-mockup-title">Local Tips</span>
+                <span class="cp-mockup-sub">For your Colorado destinations</span>
               </div>
               <div class="cp-mockup-body">
                 <div class="cp-mockup-phrase">
-                  <div class="cp-mockup-phrase-local">Maayong buntag!</div>
-                  <div class="cp-mockup-phrase-eng">Good morning!</div>
-                  <div class="cp-mockup-phrase-say">ma-AH-yong boon-TAG</div>
+                  <div class="cp-mockup-phrase-local">Free shuttle to Main St</div>
+                  <div class="cp-mockup-phrase-eng">Summit Stage runs every 15 min</div>
+                  <div class="cp-mockup-phrase-say">No car needed in ski towns</div>
                 </div>
                 <div class="cp-mockup-phrase">
-                  <div class="cp-mockup-phrase-local">Pila ni?</div>
-                  <div class="cp-mockup-phrase-eng">How much is this?</div>
-                  <div class="cp-mockup-phrase-say">PEE-la nee</div>
+                  <div class="cp-mockup-phrase-local">Arrive early for parking</div>
+                  <div class="cp-mockup-phrase-eng">Trailheads fill by 7am in summer</div>
+                  <div class="cp-mockup-phrase-say">Check RMNP timed entry permits</div>
                 </div>
                 <div class="cp-mockup-phrase">
-                  <div class="cp-mockup-phrase-local">Asa ang Panagsama?</div>
-                  <div class="cp-mockup-phrase-eng">Where is Panagsama?</div>
-                  <div class="cp-mockup-phrase-say">AH-sa ang pa-nag-SA-ma</div>
+                  <div class="cp-mockup-phrase-local">Hydrate at altitude</div>
+                  <div class="cp-mockup-phrase-eng">Drink twice your normal water</div>
+                  <div class="cp-mockup-phrase-say">Altitude sickness hits above 8,000ft</div>
                 </div>
                 <div class="cp-mockup-phrase">
-                  <div class="cp-mockup-phrase-local">Salamat kaayo!</div>
-                  <div class="cp-mockup-phrase-eng">Thank you very much!</div>
-                  <div class="cp-mockup-phrase-say">sa-LA-mat ka-AH-yo</div>
+                  <div class="cp-mockup-phrase-local">Layer up always</div>
+                  <div class="cp-mockup-phrase-eng">40° temp swings in one day</div>
+                  <div class="cp-mockup-phrase-say">Afternoon thunderstorms year-round</div>
                 </div>
               </div>
               <div class="cp-mockup-tabs">
@@ -396,7 +395,7 @@ const testimonials = [
             </div>
           </div>
           <h3 class="cp-carousel-title">Local Phrases</h3>
-          <p class="cp-carousel-desc">Cebuano & English phrases matched to your destinations with pronunciation.</p>
+          <p class="cp-carousel-desc">Insider tips matched to your Colorado destinations — parking, shuttles, trail conditions, altitude tips.</p>
         </div>
 
         <!-- 5. Group Sharing -->
@@ -445,11 +444,11 @@ const testimonials = [
                 </div>
                 <div class="cp-mockup-group-stats">
                   <div class="cp-mockup-stat">
-                    <span class="cp-mockup-stat-val">₱12,400</span>
+                    <span class="cp-mockup-stat-val">$1,240</span>
                     <span class="cp-mockup-stat-label">Group total</span>
                   </div>
                   <div class="cp-mockup-stat">
-                    <span class="cp-mockup-stat-val">₱2,067</span>
+                    <span class="cp-mockup-stat-val">$207</span>
                     <span class="cp-mockup-stat-label">Per person</span>
                   </div>
                 </div>

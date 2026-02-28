@@ -97,8 +97,10 @@ function splitDescription(description: string, pricePhp?: number, priceUsd?: num
   }
 
   // Append prices to detail if available
-  if (pricePhp && priceUsd) {
-    detail += ` (₱${pricePhp.toLocaleString()} / $${priceUsd})`;
+  if (priceUsd) {
+    detail += ` ($${priceUsd} USD)`;
+  } else if (pricePhp) {
+    detail += ` ($${pricePhp})`;
   }
 
   return { title, detail };
@@ -177,8 +179,8 @@ export function transformItinerary(apiItinerary: ApiItinerary): TripData {
   const numDays = apiItinerary.days.length;
 
   const contacts: Contact[] = [
-    { icon: '🚨', name: 'Philippine Emergency', role: 'Emergency Services', phone: '911' },
-    { icon: '🏥', name: 'Philippine Red Cross', role: 'Nationwide', phone: '143' },
+    { icon: '🚨', name: 'Colorado Emergency', role: 'Emergency Services', phone: '911' },
+    { icon: '🏥', name: 'Colorado State Patrol', role: 'Statewide', phone: '*277' },
   ];
 
   const group: GroupMember[] = [

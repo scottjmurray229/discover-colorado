@@ -6,16 +6,16 @@ import { hasMxRecords, signEmailCookie } from '../../lib/email-cookie';
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const GUIDE_NAMES: Record<string, string> = {
-  'destination-siquijor': 'Siquijor Travel Guide',
-  'destination-cebu': 'Cebu Travel Guide',
-  'destination-boracay': 'Boracay Travel Guide',
-  'destination-el-nido': 'El Nido Travel Guide',
-  'destination-clark': 'Clark & Pampanga Travel Guide',
-  'destination-coron': 'Coron Travel Guide',
-  'destination-bohol': 'Bohol Travel Guide',
-  'destination-siargao': 'Siargao Travel Guide',
-  'destination-dumaguete': 'Dumaguete Travel Guide',
-  'destination-puerto-princesa': 'Puerto Princesa Travel Guide',
+  'destination-denver': 'Denver Travel Guide',
+  'destination-boulder': 'Boulder Travel Guide',
+  'destination-aspen': 'Aspen Travel Guide',
+  'destination-vail': 'Vail Travel Guide',
+  'destination-breckenridge': 'Breckenridge Travel Guide',
+  'destination-colorado-springs': 'Colorado Springs Travel Guide',
+  'destination-estes-park': 'Estes Park Travel Guide',
+  'destination-telluride': 'Telluride Travel Guide',
+  'destination-durango': 'Durango Travel Guide',
+  'destination-steamboat-springs': 'Steamboat Springs Travel Guide',
 };
 
 function getGuideName(tag: string): string {
@@ -35,7 +35,7 @@ function buildWelcomeEmail(guideName: string): string {
       </div>
       <div style="padding:28px;">
         <p style="color:#1A2332;font-size:16px;line-height:1.65;margin:0 0 16px;">
-          Salamat! You're now part of the Discover Colorado community.
+          Thanks! You're now part of the Discover Colorado community.
         </p>
         <p style="color:#4A5568;font-size:15px;line-height:1.65;margin:0 0 16px;">
           We're putting together your <strong>${guideName}</strong> with real prices, tested itineraries, and local tips from our trips. We'll send it to you as soon as it's ready.

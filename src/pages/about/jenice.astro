@@ -1,0 +1,257 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import EmailCapture from '../../components/EmailCapture.astro';
+
+const breadcrumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'About', url: '/about/' },
+  { name: 'Jenice', url: '/about/jenice/' },
+];
+
+const schemaData = {
+  name: 'Jenice Murray',
+  image: '/images/jenice-murray.jpg',
+  bio: 'Mountain explorer and culinary enthusiast who brings personal storytelling and local discoveries to Discover Colorado.',
+  url: 'https://discovercolorado.info/about/jenice/',
+  knowsAbout: [
+    'Colorado mountain towns',
+    'Colorado food and craft beer',
+    'Rocky Mountain experiences',
+    'Colorado ski culture',
+    'Denver dining scene',
+    'Colorado wildflower seasons',
+    'Mountain town charm',
+  ],
+  sameAs: [],
+};
+
+const blogPosts: { slug: string; title: string }[] = [];
+
+const destinations = [
+  { slug: 'denver', title: 'Denver' },
+  { slug: 'aspen', title: 'Aspen' },
+  { slug: 'telluride', title: 'Telluride' },
+  { slug: 'boulder', title: 'Boulder' },
+  { slug: 'estes-park', title: 'Estes Park' },
+];
+
+const coverageAreas = [
+  { icon: '🏔️', title: 'Mountain Town Culture', desc: 'The charm of Telluride, the energy of Aspen, the soul of Crested Butte — the mountain town experiences that define Colorado.' },
+  { icon: '🍺', title: 'Food & Craft Beer', desc: 'Denver\'s food hall scene, Boulder\'s farm-to-table culture, Colorado craft breweries, and the culinary side of mountain life.' },
+  { icon: '🌸', title: 'Seasons & Scenery', desc: 'Wildflower meadows, fall aspen gold, powder days, and the seasonal magic that makes every visit to Colorado different.' },
+  { icon: '⛷️', title: 'Ski & Adventure Culture', desc: 'Apres-ski traditions, mountain lodge vibes, summer festival season, and the lifestyle that draws people to the Rockies.' },
+];
+---
+
+<BaseLayout
+  title="Jenice Murray — Mountain Explorer | Discover Colorado"
+  description="Meet Jenice Murray — mountain explorer and culinary enthusiast who brings personal storytelling and local discoveries to Discover Colorado."
+  pageType="author"
+  schemaData={schemaData}
+  breadcrumbs={breadcrumbs}
+>
+
+<!-- HERO -->
+<section class="author-hero">
+  <div class="hero-grid"></div>
+  <div class="author-hero-inner">
+    <Breadcrumb items={breadcrumbs} />
+    <div class="hero-eyebrow">Meet the Explorer</div>
+    <div class="author-avatar-wrap">
+      <img src="/images/jenice-murray.jpg" alt="Jenice Murray — Mountain Explorer" class="author-avatar-large" width="120" height="120" loading="eager" />
+    </div>
+    <h1>Jenice Murray</h1>
+    <p class="hero-role">Mountain Explorer & Culinary Enthusiast</p>
+    <p class="hero-location">San Diego &middot; Colorado</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-num">Explorer</div><div class="hero-stat-label">Rocky Mountain high</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">Foodie</div><div class="hero-stat-label">Denver to ski towns</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">Seasons</div><div class="hero-stat-label">All four, every time</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BIO -->
+<section class="bio-section">
+  <div class="bio-inner">
+    <div class="section-eyebrow">About Jenice</div>
+    <h2 class="section-title">The Personal Perspective Behind Every Story</h2>
+    <div class="bio-content">
+      <p>Colorado wasn't just a destination for me &mdash; it was a revelation. The first time we drove into the mountains from Denver, watching the plains give way to foothills and then suddenly these massive peaks, I understood why people upend their lives to move here. The Rockies have a way of making everything else feel small.</p>
+      <p>But what really won me over was the culture in the mountain towns. Telluride feels like a movie set that people actually live in. Crested Butte has a wildflower festival that fills entire meadows with color. Boulder's food scene rivals cities ten times its size. <strong>Colorado isn't just mountains &mdash; it's a lifestyle, and every town does it differently.</strong></p>
+      <p>I'm the one who finds the craft brewery with the best patio view, the apres-ski spot where locals actually go, and the restaurant in Denver's RiNo district that's worth the wait. When Scott is tracking trail conditions and calculating altitude gains, I'm making sure we have dinner reservations somewhere memorable.</p>
+      <p>Scott brings the adventure logistics. I bring the moments between the hikes. <strong>Scott knows which trail to hit at sunrise. I know which mountain lodge has the fireplace and the cocktail that make the evening perfect.</strong> Together, we cover Colorado from summit to supper.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="credentials-section">
+  <div class="credentials-inner">
+    <div class="section-eyebrow">Credentials</div>
+    <h2 class="section-title">Why You Can Trust Jenice's Perspective</h2>
+    <ul class="credential-list">
+      <li><strong>Mountain town explorer</strong> with experience in Aspen, Telluride, Crested Butte, Steamboat, and beyond</li>
+      <li><strong>Colorado food and beer enthusiast</strong> who has explored Denver's food halls, Boulder's farm-to-table scene, and mountain dining</li>
+      <li><strong>Seasonal traveler</strong> who has experienced Colorado in every season &mdash; powder days, wildflower hikes, fall color, and summer festivals</li>
+      <li>Personal experience with <strong>Colorado's apres-ski culture</strong> and mountain lodge traditions</li>
+      <li>Passionate about <strong>Denver's evolving food scene</strong> &mdash; RiNo, LoDo, and the neighborhoods beyond downtown</li>
+      <li>Brings the <strong>lifestyle perspective</strong> &mdash; the culture, the community, and the moments that make mountain travel special</li>
+      <li>Frequent traveler with <strong>40+ countries</strong> of experience alongside Scott</li>
+    </ul>
+  </div>
+</section>
+
+<!-- WHAT JENICE COVERS -->
+<section class="coverage-section">
+  <div class="coverage-inner">
+    <div class="section-eyebrow">Content Areas</div>
+    <h2 class="section-title">What Jenice Covers</h2>
+    <div class="coverage-grid">
+      {coverageAreas.map((area) => (
+        <div class="coverage-card reveal">
+          <div class="coverage-icon">{area.icon}</div>
+          <div class="coverage-title">{area.title}</div>
+          <p class="coverage-desc">{area.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT BY JENICE -->
+<section class="content-section">
+  <div class="content-inner">
+    <div class="section-eyebrow">Content by Jenice</div>
+    <h2 class="section-title">Articles & Guides</h2>
+
+    <h3 class="content-subhead">Blog Posts</h3>
+    <div class="content-grid">
+      {blogPosts.map((post) => (
+        <a href={`/blog/${post.slug}/`} class="content-card reveal">
+          <div class="content-card-type">Blog</div>
+          <div class="content-card-title">{post.title}</div>
+        </a>
+      ))}
+    </div>
+
+    <h3 class="content-subhead">Destination Guides (Cultural Sections)</h3>
+    <div class="content-grid content-grid--destinations">
+      {destinations.map((dest) => (
+        <a href={`/destinations/${dest.slug}/`} class="content-card content-card--dest reveal">
+          <div class="content-card-type">Destination</div>
+          <div class="content-card-title">{dest.title}</div>
+        </a>
+      ))}
+    </div>
+
+    <div class="content-all-link">
+      <a href="/destinations/">Browse all destination guides &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- EMAIL CAPTURE -->
+<section class="email-section">
+  <div class="email-section-inner">
+    <EmailCapture
+      leadMagnet="Get Jenice's Colorado Experience Guide"
+      description="Insider tips from a mountain explorer who knows the best restaurants, breweries, and cultural experiences across Colorado's mountain towns."
+      bullets={[
+        'Best mountain town restaurants and apres-ski spots',
+        'Denver food scene guide — RiNo, LoDo, and beyond',
+        'Seasonal highlights: wildflowers, fall color, powder days',
+        'Hidden gems and local favorites in every mountain town',
+      ]}
+      guideTag="author-jenice"
+    />
+  </div>
+</section>
+
+<!-- BACK LINK -->
+<section class="back-section">
+  <div class="back-inner">
+    <a href="/about/" class="back-link">&larr; Back to About Us</a>
+  </div>
+</section>
+
+</BaseLayout>
+
+<script>
+  const ro = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+</script>
+
+<style>
+  .author-hero { padding: 140px 24px 80px; position: relative; overflow: hidden; text-align: center; background: linear-gradient(165deg, #141C26 0%, #1B3A4B 30%, #0D7377 55%, #1B3A4B 75%, #141C26 100%); }
+  .author-hero::before { content: ''; position: absolute; top: -20%; right: -8%; width: 700px; height: 700px; background: radial-gradient(circle, rgba(212,165,116,0.12) 0%, transparent 55%); border-radius: 50%; pointer-events: none; animation: orbFloat 12s ease-in-out infinite; }
+  .author-hero::after { content: ''; position: absolute; bottom: -25%; left: -12%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(251,191,36,0.07) 0%, transparent 55%); border-radius: 50%; pointer-events: none; animation: orbFloat 15s ease-in-out infinite reverse; }
+  @keyframes orbFloat { 0%, 100% { transform: translate(0, 0); } 33% { transform: translate(20px, -15px); } 66% { transform: translate(-10px, 10px); } }
+  .hero-grid { position: absolute; inset: 0; pointer-events: none; background-image: linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px); background-size: 60px 60px; }
+  .author-hero-inner { max-width: 660px; margin: 0 auto; position: relative; z-index: 2; }
+  .author-hero-inner :global(.breadcrumb) { margin-bottom: var(--space-8); }
+  .author-hero-inner :global(.breadcrumb a), .author-hero-inner :global(.breadcrumb span) { color: rgba(255,255,255,0.5); }
+  .author-hero-inner :global(.breadcrumb a:hover) { color: rgba(255,255,255,0.8); }
+  .hero-eyebrow { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-warm-gold); margin-bottom: 24px; opacity: 0; animation: heroUp 1s cubic-bezier(0.16,1,0.3,1) forwards 0.2s; }
+  .author-avatar-wrap { margin-bottom: 24px; opacity: 0; animation: heroUp 1s cubic-bezier(0.16,1,0.3,1) forwards 0.3s; }
+  .author-avatar-large { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin: 0 auto; border: 4px solid rgba(255,255,255,0.15); box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+  .author-hero h1 { font-family: var(--font-serif); font-size: clamp(2rem, 5vw, 3rem); color: white; line-height: 1.1; margin-bottom: 8px; opacity: 0; animation: heroUp 1s cubic-bezier(0.16,1,0.3,1) forwards 0.4s; }
+  .hero-role { font-size: 1.05rem; color: var(--color-warm-gold); font-weight: 600; margin-bottom: 4px; opacity: 0; animation: heroUp 1s cubic-bezier(0.16,1,0.3,1) forwards 0.5s; }
+  .hero-location { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 32px; opacity: 0; animation: heroUp 1s cubic-bezier(0.16,1,0.3,1) forwards 0.55s; }
+  .hero-stats { display: flex; justify-content: center; gap: 40px; opacity: 0; animation: heroUp 1s cubic-bezier(0.16,1,0.3,1) forwards 0.65s; }
+  .hero-stat { text-align: center; }
+  .hero-stat-num { font-family: var(--font-serif); font-size: 1.6rem; color: white; }
+  .hero-stat-label { font-size: 0.65rem; color: rgba(255,255,255,0.45); font-weight: 400; margin-top: 2px; }
+  @keyframes heroUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+  .section-eyebrow { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-warm-coral); margin-bottom: 12px; }
+  .section-title { font-family: var(--font-serif); font-size: clamp(1.6rem, 3.5vw, 2.2rem); color: var(--color-deep-night); line-height: 1.15; margin-bottom: 32px; }
+  .bio-section { padding: 80px 24px 64px; max-width: var(--content-lg); margin: 0 auto; }
+  .bio-inner { max-width: 720px; }
+  .bio-content p { font-size: 1.02rem; line-height: 2; color: var(--color-deep-night); font-weight: 300; margin-bottom: 20px; }
+  .bio-content strong { font-weight: 600; }
+  .credentials-section { padding: 64px 24px 80px; background: var(--color-white); }
+  .credentials-inner { max-width: var(--content-lg); margin: 0 auto; }
+  .credential-list { list-style: none; display: flex; flex-direction: column; gap: 16px; max-width: 720px; }
+  .credential-list li { padding-left: 28px; position: relative; line-height: 1.7; font-size: 0.95rem; color: var(--color-slate); }
+  .credential-list li::before { content: ''; position: absolute; left: 0; top: 10px; width: 10px; height: 10px; border-radius: 50%; background: linear-gradient(135deg, var(--color-warm-gold), #FBBF24); }
+  .credential-list li strong { color: var(--color-deep-night); font-weight: 600; }
+  .coverage-section { padding: 80px 24px; background: var(--color-sand); }
+  .coverage-inner { max-width: var(--max-width, 1120px); margin: 0 auto; }
+  .coverage-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .coverage-card { background: var(--color-white); border-radius: 16px; padding: 28px 24px; border: 1px solid transparent; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); }
+  .coverage-card:hover { transform: translateY(-4px); box-shadow: 0 4px 24px rgba(26,35,50,0.08); border-color: var(--color-sand-dark); }
+  .coverage-icon { font-size: 1.5rem; margin-bottom: 12px; }
+  .coverage-title { font-family: var(--font-serif); font-size: 1.1rem; color: var(--color-deep-night); margin-bottom: 8px; }
+  .coverage-desc { font-size: 0.82rem; color: var(--color-slate); line-height: 1.7; font-weight: 300; }
+  .content-section { padding: 80px 24px; background: var(--color-white); }
+  .content-inner { max-width: var(--max-width, 1120px); margin: 0 auto; }
+  .content-subhead { font-family: var(--font-sans); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-warm-gold); margin-bottom: 16px; }
+  .content-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 40px; }
+  .content-grid--destinations { grid-template-columns: repeat(3, 1fr); }
+  .content-card { display: block; background: var(--color-sand); border-radius: 12px; padding: 20px; text-decoration: none; color: inherit; border: 1px solid transparent; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); }
+  .content-card:hover { transform: translateY(-3px); box-shadow: 0 4px 20px rgba(26,35,50,0.08); border-color: var(--color-warm-gold); }
+  .content-card-type { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-warm-coral); margin-bottom: 6px; }
+  .content-card--dest .content-card-type { color: var(--color-warm-gold); }
+  .content-card-title { font-family: var(--font-serif); font-size: 0.95rem; color: var(--color-deep-night); line-height: 1.35; }
+  .content-all-link { text-align: center; margin-top: 8px; }
+  .content-all-link a { font-size: 0.88rem; color: var(--color-warm-gold); font-weight: 600; text-decoration: none; transition: color 0.2s ease; }
+  .content-all-link a:hover { color: #B8935F; }
+  .email-section { padding: 64px 24px; background: var(--color-sand); }
+  .email-section-inner { max-width: 640px; margin: 0 auto; }
+  .back-section { padding: 40px 24px 64px; background: var(--color-sand); }
+  .back-inner { max-width: var(--content-lg); margin: 0 auto; text-align: center; }
+  .back-link { font-size: 0.88rem; color: var(--color-warm-gold); font-weight: 600; text-decoration: none; transition: color 0.2s ease; }
+  .back-link:hover { color: #B8935F; }
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  @media (max-width: 768px) {
+    .author-hero { padding: 120px 24px 64px; } .hero-stats { gap: 24px; } .hero-stat-num { font-size: 1.3rem; }
+    .coverage-grid { grid-template-columns: 1fr; } .content-grid { grid-template-columns: 1fr; }
+    .content-grid--destinations { grid-template-columns: 1fr 1fr; }
+    .bio-section { padding: 56px 24px 48px; } .credentials-section { padding: 48px 24px 56px; }
+    .coverage-section { padding: 56px 24px; } .content-section { padding: 56px 24px; }
+  }
+</style>

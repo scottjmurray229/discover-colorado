@@ -4,7 +4,8 @@ import type { APIContext } from 'astro';
 import knowledgeBase from '../../data/destination-knowledge.json';
 import { verifyEmailCookie } from '../../lib/email-cookie';
 import { DESTINATION_COORDS } from '../../data/destination-coords';
-import { LANDMARK_COORDS } from '../../data/landmark-coords';
+// Landmark coords removed (PH-specific data deleted during decontamination)
+const LANDMARK_COORDS: Record<string, { lat: number; lng: number }> = {};
 import { logUsage } from '../../lib/usage-tracking';
 import { checkAndAlertAbuse, alertRateLimitHit } from '../../lib/abuse-alerts';
 
@@ -106,26 +107,26 @@ function extractDestsFromText(text: string): string[] {
   const exact = KNOWN_DESTINATIONS.filter(d => lower.includes(d));
   if (exact.length > 0) return exact;
 
-  // Keyword-based fallback: map common themes to popular destinations
+  // Keyword-based fallback: map common themes to popular Colorado destinations
   const themeMap: Record<string, string[]> = {
-    'beach': ['boracay', 'el-nido', 'siargao'],
-    'island': ['el-nido', 'coron', 'boracay'],
-    'snorkel': ['cebu', 'coron', 'bohol'],
-    'dive': ['coron', 'cebu', 'bohol'],
-    'diving': ['coron', 'cebu', 'bohol'],
-    'surf': ['siargao'],
-    'culture': ['cebu', 'bohol', 'siquijor'],
-    'history': ['cebu', 'clark'],
-    'food': ['cebu', 'dumaguete', 'clark'],
-    'relax': ['siquijor', 'siargao', 'boracay'],
-    'adventure': ['el-nido', 'coron', 'siargao'],
-    'family': ['cebu', 'bohol', 'boracay'],
-    'honeymoon': ['el-nido', 'boracay', 'siargao'],
-    'romantic': ['el-nido', 'boracay', 'siquijor'],
-    'budget': ['cebu', 'dumaguete', 'siquijor'],
-    'luxury': ['boracay', 'el-nido', 'coron'],
-    'palawan': ['el-nido', 'coron', 'puerto-princesa'],
-    'visayas': ['cebu', 'bohol', 'siquijor'],
+    'ski': ['vail', 'breckenridge', 'aspen'],
+    'skiing': ['vail', 'breckenridge', 'keystone'],
+    'snowboard': ['breckenridge', 'winter-park', 'steamboat-springs'],
+    'hike': ['estes-park', 'aspen', 'telluride'],
+    'hiking': ['estes-park', 'durango', 'ouray'],
+    'national park': ['estes-park', 'mesa-verde', 'great-sand-dunes', 'black-canyon'],
+    'city': ['denver', 'boulder', 'colorado-springs'],
+    'beer': ['denver', 'fort-collins', 'boulder'],
+    'hot springs': ['glenwood-springs', 'ouray', 'steamboat-springs'],
+    'family': ['estes-park', 'breckenridge', 'colorado-springs'],
+    'adventure': ['ouray', 'telluride', 'durango'],
+    'romantic': ['aspen', 'telluride', 'steamboat-springs'],
+    'budget': ['denver', 'fort-collins', 'winter-park'],
+    'luxury': ['aspen', 'vail', 'telluride'],
+    'mountain': ['aspen', 'telluride', 'ouray'],
+    'culture': ['denver', 'boulder', 'manitou-springs'],
+    'food': ['denver', 'boulder', 'aspen'],
+    'relax': ['glenwood-springs', 'steamboat-springs', 'crested-butte'],
   };
 
   const matched = new Set<string>();
@@ -137,7 +138,7 @@ function extractDestsFromText(text: string): string[] {
   if (matched.size > 0) return [...matched].slice(0, 4);
 
   // Ultimate fallback: popular starter destinations when description exists
-  return ['cebu', 'bohol', 'el-nido'];
+  return ['denver', 'boulder', 'estes-park'];
 }
 
 async function computeHash(input: string): Promise<string> {
@@ -285,31 +286,31 @@ function buildSystemPrompt(): string {
   return `You are the Discover Colorado AI Trip Planner. You generate detailed day-by-day itineraries for Colorado travel.
 
 RULES:
-- All prices in BOTH PHP (₱) and USD ($). Use rate: $1 = ₱56.50
+- All prices in USD ($). Include estimated costs where possible.
 - Include specific restaurant names, hotel recommendations, and transport details
 - Use first-person plural voice: "we recommend...", "you'll love..."
 - Be specific: real place names, real prices, real transport options
 - Tag hotel/tour/transport items with affiliateType and affiliateSlotId for future monetization
-- affiliateSlotId format: "day{N}-{type}-{destination}" e.g. "day1-hotel-cebu"
+- affiliateSlotId format: "day{N}-{type}-{destination}" e.g. "day1-hotel-denver"
 
 SCALING BY TRIP LENGTH — this is critical to stay within output limits:
 - 1-7 days: 3-5 items per day, full descriptions (1-2 sentences each)
 - 8-14 days: 2-4 items per day, concise descriptions (1 sentence each)
-- 15+ days: 2-3 items per day, brief descriptions (under 15 words each). Group similar days (e.g. "Days 5-6: Beach days in Samar"). Only include key activities, one meal, and accommodation.
+- 15+ days: 2-3 items per day, brief descriptions (under 15 words each). Group similar days (e.g. "Days 5-6: Exploring Estes Park"). Only include key activities, one meal, and accommodation.
 
 KNOWLEDGE BASE:
 ${JSON.stringify(knowledgeBase, null, 2)}
 
 RESPONSE FORMAT — Return ONLY valid JSON matching this schema:
 {
-  "title": "string — trip title like '7-Day Visayas Island Hopping'",
+  "title": "string — trip title like '7-Day Colorado Mountain Adventure'",
   "subtitle": "string — budget + month like 'Mid-Range · March 2026'",
   "totalBudget": { "php": number, "usd": number },
   "days": [
     {
       "dayNumber": 1,
-      "title": "string — day title like 'Arrive in Cebu City'",
-      "destination": "string — slug like 'cebu'",
+      "title": "string — day title like 'Arrive in Denver'",
+      "destination": "string — slug like 'denver'",
       "items": [
         {
           "time": "string — like 'Morning' or '5:30 AM'",
@@ -319,7 +320,7 @@ RESPONSE FORMAT — Return ONLY valid JSON matching this schema:
           "category": "transport|accommodation|activity|food|ferry",
           "affiliateType": "hotel|tour|transport|null",
           "affiliateSlotId": "string_or_null",
-          "locationName": "string — specific place name for map pin, e.g. 'Nacpan Beach', 'Kawasan Falls', 'Cebu IT Park'. Use real, specific place names."
+          "locationName": "string — specific place name for map pin, e.g. 'Red Rocks Amphitheatre', 'Maroon Bells', 'Pearl Street Mall'. Use real, specific place names."
         }
       ]
     }

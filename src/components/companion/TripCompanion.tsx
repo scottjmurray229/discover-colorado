@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect } from 'react';
 import { COLORS, TAB_CONFIG } from './companion-shared';
 import type { TabId, TripData, Activity, ChangeLogEntry } from './companion-shared';
-import mockTrip from '../../data/mock-trip-palawan-family.json';
+import mockTrip from '../../data/mock-trip-denver-family.json';
 import TripTab from './tabs/TripTab';
 import EditTab from './tabs/EditTab';
 import UpdatesTab from './tabs/UpdatesTab';

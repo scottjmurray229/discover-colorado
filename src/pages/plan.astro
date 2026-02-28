@@ -31,7 +31,7 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
 ---
 <BaseLayout
   title="AI Trip Planner — Build Your Colorado Itinerary"
-  description="Tell us your dream Colorado trip and our AI builds a custom day-by-day itinerary backed by 20+ trips of real travel experience. Real prices in PHP & USD."
+  description="Tell us your dream Colorado trip and our AI builds a custom day-by-day itinerary backed by real travel experience. Real prices in USD."
 >
   <!-- ============================================================
        HERO
@@ -41,7 +41,7 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
       <source src="/videos/pillar/plan-hero.mp4" type="video/mp4" />
     </video>
     <div class="planner-hero-gradient-overlay"></div>
-    <div class="planner-hero-eyebrow">AI-Powered &middot; Any Destination &middot; Real Prices in PHP &amp; USD &middot; <span class="free-badge-inline">Free Through June 30</span></div>
+    <div class="planner-hero-eyebrow">AI-Powered &middot; Any Destination &middot; Real Prices in USD &middot; <span class="free-badge-inline">Free Through June 30</span></div>
     <h1>Plan Your Colorado Trip</h1>
     <p>Explore the map, pick your destinations, tell us your style — and our AI builds a custom day-by-day itinerary backed by 20+ trips of real Colorado experience.</p>
   </section>
@@ -73,70 +73,47 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
       <!-- REGION CARDS -->
       <div class="region-cards">
         <div class="region-card" data-region="front-range">
-          <div class="region-card-header"><div class="region-card-name">Front Range</div><div class="region-card-count">23 destinations</div></div>
-          <div class="region-card-desc">The main island. Skip Manila, fly into Clark. Mountains in the north, surfing in the east, history everywhere.</div>
+          <div class="region-card-header"><div class="region-card-name">Front Range</div><div class="region-card-count">5 destinations</div></div>
+          <div class="region-card-desc">Denver, Boulder, and the urban corridor. Craft beer, dining, hiking right outside the city.</div>
           <div class="region-dest-tags">
-            <span class="dest-chip has-video" data-dest="clark">Clark</span>
-            <span class="dest-chip has-video" data-dest="manila">Manila</span>
-            <span class="dest-chip has-video" data-dest="laoag">Laoag</span>
-            <span class="dest-chip has-video" data-dest="vigan">Vigan</span>
-            <span class="dest-chip has-video" data-dest="sagada">Sagada</span>
-            <span class="dest-chip has-video" data-dest="legazpi">Legazpi</span>
-            <span class="dest-chip has-video" data-dest="donsol">Donsol</span>
-            <span class="dest-chip has-video" data-dest="tagaytay">Tagaytay</span>
-            <span class="dest-chip" data-dest="baguio">Baguio</span>
-            <span class="dest-chip" data-dest="baler">Baler</span>
-            <span class="dest-chip" data-dest="banaue">Banaue</span>
-            <span class="dest-chip" data-dest="bataan">Bataan</span>
-            <span class="dest-chip" data-dest="batanes">Batanes</span>
-            <span class="dest-chip" data-dest="batangas">Batangas</span>
-            <span class="dest-chip" data-dest="caramoan">Caramoan</span>
-            <span class="dest-chip" data-dest="laguna">Laguna</span>
-            <span class="dest-chip" data-dest="la-union">La Union</span>
-            <span class="dest-chip" data-dest="marinduque">Marinduque</span>
-            <span class="dest-chip" data-dest="mt-pulag">Mt. Pulag</span>
-            <span class="dest-chip" data-dest="pagudpud">Pagudpud</span>
-            <span class="dest-chip" data-dest="puerto-galera">Puerto Galera</span>
-            <span class="dest-chip" data-dest="subic">Subic</span>
-            <span class="dest-chip" data-dest="zambales">Zambales</span>
+            <span class="dest-chip has-video" data-dest="denver">Denver</span>
+            <span class="dest-chip has-video" data-dest="boulder">Boulder</span>
+            <span class="dest-chip has-video" data-dest="colorado-springs">Colorado Springs</span>
+            <span class="dest-chip has-video" data-dest="fort-collins">Fort Collins</span>
+            <span class="dest-chip has-video" data-dest="manitou-springs">Manitou Springs</span>
           </div>
         </div>
         <div class="region-card" data-region="ski-country">
-          <div class="region-card-header"><div class="region-card-name">Ski Country</div><div class="region-card-count">13 destinations</div></div>
-          <div class="region-card-desc">Island-hopping paradise. Heart of Philippine beach culture with best diving, waterfalls, and mystical islands.</div>
+          <div class="region-card-header"><div class="region-card-name">Ski Country</div><div class="region-card-count">7 destinations</div></div>
+          <div class="region-card-desc">World-class ski resorts, charming mountain towns, summer hiking and biking.</div>
           <div class="region-dest-tags">
-            <span class="dest-chip has-video" data-dest="cebu">Cebu</span>
-            <span class="dest-chip has-video" data-dest="bohol">Bohol</span>
-            <span class="dest-chip has-video" data-dest="siquijor">Siquijor</span>
-            <span class="dest-chip has-video" data-dest="dumaguete">Dumaguete</span>
-            <span class="dest-chip has-video" data-dest="boracay">Boracay</span>
-            <span class="dest-chip has-video" data-dest="iloilo">Iloilo</span>
-            <span class="dest-chip has-video" data-dest="bacolod">Bacolod</span>
-            <span class="dest-chip has-video" data-dest="malapascua">Malapascua</span>
-            <span class="dest-chip" data-dest="guimaras">Guimaras</span>
-            <span class="dest-chip" data-dest="sipalay">Sipalay</span>
-            <span class="dest-chip" data-dest="biliran">Biliran</span>
-            <span class="dest-chip" data-dest="samar">Samar</span>
-            <span class="dest-chip" data-dest="tacloban">Tacloban</span>
+            <span class="dest-chip has-video" data-dest="aspen">Aspen</span>
+            <span class="dest-chip has-video" data-dest="vail">Vail</span>
+            <span class="dest-chip has-video" data-dest="breckenridge">Breckenridge</span>
+            <span class="dest-chip has-video" data-dest="keystone">Keystone</span>
+            <span class="dest-chip has-video" data-dest="winter-park">Winter Park</span>
+            <span class="dest-chip has-video" data-dest="steamboat-springs">Steamboat Springs</span>
+            <span class="dest-chip has-video" data-dest="crested-butte">Crested Butte</span>
           </div>
         </div>
-        <div class="region-card" data-region="palawan">
-          <div class="region-card-header"><div class="region-card-name">Palawan</div><div class="region-card-count">4 destinations</div></div>
-          <div class="region-card-desc">The Last Frontier. Dramatic limestone cliffs, hidden lagoons, clearest water on the planet.</div>
+        <div class="region-card" data-region="national-parks">
+          <div class="region-card-header"><div class="region-card-name">National Parks</div><div class="region-card-count">4 destinations</div></div>
+          <div class="region-card-desc">Rocky Mountain National Park, ancient cliff dwellings, towering sand dunes, and dramatic canyons.</div>
           <div class="region-dest-tags">
-            <span class="dest-chip has-video" data-dest="el-nido">El Nido</span>
-            <span class="dest-chip has-video" data-dest="coron">Coron</span>
-            <span class="dest-chip has-video" data-dest="puerto-princesa">Puerto Princesa</span>
-            <span class="dest-chip" data-dest="cuyo">Cuyo</span>
+            <span class="dest-chip has-video" data-dest="estes-park">Estes Park</span>
+            <span class="dest-chip has-video" data-dest="mesa-verde">Mesa Verde</span>
+            <span class="dest-chip has-video" data-dest="great-sand-dunes">Great Sand Dunes</span>
+            <span class="dest-chip has-video" data-dest="black-canyon">Black Canyon</span>
           </div>
         </div>
         <div class="region-card" data-region="western-slope">
-          <div class="region-card-header"><div class="region-card-name">Western Slope</div><div class="region-card-count">3 destinations</div></div>
-          <div class="region-card-desc">The road less traveled. World-class surfing in Siargao, volcanic islands in Camiguin, Davao's durian country.</div>
+          <div class="region-card-header"><div class="region-card-name">Western Slope</div><div class="region-card-count">4 destinations</div></div>
+          <div class="region-card-desc">The road less traveled. Hot springs, box canyons, and stunning mountain towns off the beaten path.</div>
           <div class="region-dest-tags">
-            <span class="dest-chip has-video" data-dest="siargao">Siargao</span>
-            <span class="dest-chip has-video" data-dest="davao">Davao</span>
-            <span class="dest-chip has-video" data-dest="camiguin">Camiguin</span>
+            <span class="dest-chip has-video" data-dest="telluride">Telluride</span>
+            <span class="dest-chip has-video" data-dest="ouray">Ouray</span>
+            <span class="dest-chip has-video" data-dest="durango">Durango</span>
+            <span class="dest-chip has-video" data-dest="glenwood-springs">Glenwood Springs</span>
           </div>
         </div>
       </div>
@@ -418,29 +395,23 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
 
   // Destination display names for affiliate URLs
   const DEST_NAMES: Record<string, string> = {
-    'siquijor':'Siquijor','cebu':'Cebu','bohol':'Bohol','boracay':'Boracay',
-    'el-nido':'El Nido Palawan','coron':'Coron Palawan','siargao':'Siargao',
-    'dumaguete':'Dumaguete','clark':'Clark Pampanga','manila':'Manila',
-    'davao':'Davao','camiguin':'Camiguin','puerto-princesa':'Puerto Princesa',
-    'palawan':'Palawan','vigan':'Vigan','sagada':'Sagada','batanes':'Batanes',
-    'legazpi':'Legazpi','tagaytay':'Tagaytay','baguio':'Baguio',
-    'bacolod':'Bacolod','iloilo':'Iloilo','malapascua':'Malapascua',
-    'la-union':'La Union','baler':'Baler','donsol':'Donsol',
-    'puerto-galera':'Puerto Galera','subic':'Subic',
+    'denver':'Denver','boulder':'Boulder','aspen':'Aspen','vail':'Vail',
+    'breckenridge':'Breckenridge','colorado-springs':'Colorado Springs',
+    'estes-park':'Estes Park','telluride':'Telluride','durango':'Durango',
+    'steamboat-springs':'Steamboat Springs','fort-collins':'Fort Collins',
+    'glenwood-springs':'Glenwood Springs','ouray':'Ouray','crested-butte':'Crested Butte',
+    'keystone':'Keystone','winter-park':'Winter Park','manitou-springs':'Manitou Springs',
+    'mesa-verde':'Mesa Verde','great-sand-dunes':'Great Sand Dunes',
+    'black-canyon':'Black Canyon',
   };
 
   // 12Go Asia slug mapping (site slug → 12Go city slug)
   const TWELVE_GO_SLUGS: Record<string, string> = {
-    'manila':'manila','cebu':'cebu','bohol':'bohol','siquijor':'siquijor',
-    'dumaguete':'dumaguete','boracay':'boracay','el-nido':'el-nido',
-    'coron':'coron','siargao':'siargao','davao':'davao',
-    'puerto-princesa':'puerto-princesa','camiguin':'camiguin',
-    'iloilo':'iloilo','bacolod':'bacolod','legazpi':'legazpi',
-    'puerto-galera':'puerto-galera','batangas':'batangas',
-    'donsol':'donsol','vigan':'vigan','baguio':'baguio',
-    'sagada':'sagada','clark':'clark','la-union':'san-fernando-la-union',
-    'baler':'baler','pagudpud':'pagudpud','subic':'subic',
-    'malapascua':'malapascua','tagaytay':'tagaytay',
+    'denver':'denver','boulder':'boulder','aspen':'aspen','vail':'vail',
+    'breckenridge':'breckenridge','colorado-springs':'colorado-springs',
+    'estes-park':'estes-park','telluride':'telluride','durango':'durango',
+    'steamboat-springs':'steamboat-springs','fort-collins':'fort-collins',
+    'glenwood-springs':'glenwood-springs','ouray':'ouray','crested-butte':'crested-butte',
   };
 
   // Parse trip form data into booking params
@@ -500,7 +471,7 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
     }
     if (type === 'transport' || type === 'ferry') {
       const slug12go = TWELVE_GO_SLUGS[destination] || destination.replace(/-/g, '-');
-      return `https://12go.asia/en/travel/${slug12go}?z=15062413&sub_id=discoverph-plan`;
+      return `https://12go.asia/en/travel/${slug12go}?z=15062413&sub_id=discoverco-plan`;
     }
     return `https://www.getyourguide.com/s/?q=${enc(destName + ' Colorado')}&partner_id=IVN6IQ3&cmp=discover-colorado`;
   }
@@ -552,12 +523,12 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
       for (const item of day.items) {
         const icon = CATEGORY_ICONS[item.category] || '';
         let priceHtml = '';
-        if (item.pricePhp) {
+        if (item.priceUsd) {
+          dayUsd += item.priceUsd;
+          priceHtml = ` <span class="day-price">$${item.priceUsd} USD</span>`;
+        } else if (item.pricePhp) {
           dayPhp += item.pricePhp;
-          if (item.priceUsd) dayUsd += item.priceUsd;
-          priceHtml = ` <span class="day-price">\u20B1${item.pricePhp.toLocaleString()}`;
-          if (item.priceUsd) priceHtml += ` <span class="day-price-usd">(~$${item.priceUsd} USD)</span>`;
-          priceHtml += `</span>`;
+          priceHtml = ` <span class="day-price">$${item.pricePhp}</span>`;
         }
         let affiliateHtml = '';
         if (item.affiliateSlotId) {
@@ -771,7 +742,8 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
         marker.addListener('click', () => {
           const icon = { transport:'🚐', accommodation:'🏨', activity:'🏄', food:'🍴', ferry:'⛴️' }[item.category] || '';
           let priceStr = '';
-          if (item.pricePhp) priceStr = ` · ₱${item.pricePhp.toLocaleString()}`;
+          if (item.priceUsd) priceStr = ` · $${item.priceUsd} USD`;
+          else if (item.pricePhp) priceStr = ` · $${item.pricePhp}`;
           itinInfoWindow!.setContent(`
             <div style="font-family:Outfit,sans-serif;max-width:220px;">
               <div style="font-size:11px;font-weight:700;color:#0D7377;">Day ${day.dayNumber} · ${escapeHtml(item.time)}</div>
@@ -899,7 +871,7 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
         <div class="chat-log" id="chatLog"></div>
         <div class="chat-rate-notice" id="chatRateNotice" style="display:none;"></div>
         <div class="chat-input-row">
-          <input type="text" class="chat-input" id="chatInput" placeholder="e.g. Swap Boracay for Siargao" maxlength="500" />
+          <input type="text" class="chat-input" id="chatInput" placeholder="e.g. Swap Vail for Telluride" maxlength="500" />
           <button class="chat-send-btn" id="chatSendBtn" aria-label="Send">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
           </button>
@@ -930,7 +902,7 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
           <span class="byg-icon">🛡️</span>
           <span class="byg-title">Before You Go: Travel Insurance</span>
         </div>
-        <p class="byg-text">A medevac flight from a remote Philippine island can cost $10,000+. We use <a href="https://safetywing.com/?referenceID=24858745&utm_source=24858745&utm_medium=Ambassador" target="_blank" rel="noopener sponsored">SafetyWing</a> for every trip — it's affordable, covers medical and evacuation, and you can sign up even after you've left home.</p>
+        <p class="byg-text">A medevac flight from a remote Colorado mountain can cost $10,000+. We use <a href="https://safetywing.com/?referenceID=24858745&utm_source=24858745&utm_medium=Ambassador" target="_blank" rel="noopener sponsored">SafetyWing</a> for every trip — it's affordable, covers medical and evacuation, and you can sign up even after you've left home.</p>
         <p class="byg-quote">"We've thankfully never had to file a claim, but having it is peace of mind every time we board that plane." — Scott</p>
         <a class="byg-btn" href="https://safetywing.com/?referenceID=24858745&utm_source=24858745&utm_medium=Ambassador" target="_blank" rel="noopener sponsored">Check SafetyWing Rates →</a>
         <p class="byg-disclosure">Affiliate link — we earn a commission at no extra cost to you. <a href="/legal/affiliate-disclosure/">Full disclosure</a>.</p>
@@ -944,9 +916,9 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
 
       <div class="transport-widget-section">
         <p class="transport-widget-heading">Book Buses, Ferries & Flights</p>
-        <p class="transport-widget-sub">Search routes between Philippine destinations — ferries, buses, vans, and domestic flights.</p>
+        <p class="transport-widget-sub">Search routes between Colorado destinations — shuttles, buses, vans, and domestic flights.</p>
         <div class="transport-widget-wrap" id="transportWidget"></div>
-        <div class="transport-widget-powered">Powered by <a href="https://12go.asia/?z=15062413&sub_id=discoverph-plan" target="_blank" rel="noopener sponsored">12Go Asia</a></div>
+        <div class="transport-widget-powered">Powered by <a href="https://12go.asia/?z=15062413&sub_id=discoverco-plan" target="_blank" rel="noopener sponsored">12Go Asia</a></div>
       </div>
     </div>`;
 
@@ -1005,7 +977,8 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
         text += `--- Day ${day.dayNumber}: ${day.title} ---\n`;
         for (const item of day.items) {
           text += `  ${item.time} \u2014 ${item.description}`;
-          if (item.pricePhp) text += ` (\u20B1${item.pricePhp.toLocaleString()})`;
+          if (item.priceUsd) text += ` ($${item.priceUsd} USD)`;
+          else if (item.pricePhp) text += ` ($${item.pricePhp})`;
           text += '\n';
         }
         text += '\n';
@@ -1078,7 +1051,7 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
       s.dataset.border = '1';
       s.dataset.radius = '8';
       s.dataset.caption = 'Find Transport in Colorado';
-      s.dataset.sub_id = 'discoverph-plan';
+      s.dataset.sub_id = 'discoverco-plan';
       s.dataset.domain = '12go.asia';
       widgetWrap.appendChild(s);
     }
@@ -1273,7 +1246,7 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
     var regionBounds = {
       front-range: { north: 21, south: 13, east: 126, west: 119.5 },
       ski-country: { north: 12.5, south: 9, east: 126, west: 121 },
-      palawan: { north: 13, south: 8.5, east: 121.5, west: 117.5 },
+      'san-luis-valley': { north: 37.9, south: 37.0, east: -105.4, west: -106.3 },
       western-slope: { north: 10.5, south: 5.5, east: 127, west: 120 },
     };
 

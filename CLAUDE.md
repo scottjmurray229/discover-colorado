@@ -56,7 +56,7 @@ Both collections use a `draft: true` default. Content status tracks: draft -> re
 ### Deployment
 
 - Domain: discovercolorado.info
-- D1 database: trip-planner-cache-colorado (ID: TODO-CREATE-D1-FOR-COLORADO)
+- D1 database: trip-planner-cache-co (ID: 182012fb-0e46-4b0f-87cc-65cdbf17c0a7)
 - Cloudflare Pages via `@astrojs/cloudflare` adapter
 
 ## Destinations (20)

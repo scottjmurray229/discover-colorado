@@ -30,14 +30,14 @@ interface Itinerary {
 }
 
 const DEST_NAMES: Record<string, string> = {
-  'siquijor': 'Siquijor', 'cebu': 'Cebu', 'bohol': 'Bohol', 'boracay': 'Boracay',
-  'el-nido': 'El Nido Palawan', 'coron': 'Coron Palawan', 'siargao': 'Siargao',
-  'dumaguete': 'Dumaguete', 'clark': 'Clark Pampanga', 'manila': 'Manila',
-  'davao': 'Davao', 'camiguin': 'Camiguin', 'puerto-princesa': 'Puerto Princesa',
-  'vigan': 'Vigan', 'sagada': 'Sagada', 'batanes': 'Batanes', 'legazpi': 'Legazpi',
-  'tagaytay': 'Tagaytay', 'baguio': 'Baguio', 'bacolod': 'Bacolod', 'iloilo': 'Iloilo',
-  'malapascua': 'Malapascua', 'la-union': 'La Union', 'baler': 'Baler', 'donsol': 'Donsol',
-  'puerto-galera': 'Puerto Galera', 'subic': 'Subic',
+  'denver': 'Denver', 'boulder': 'Boulder', 'aspen': 'Aspen', 'vail': 'Vail',
+  'breckenridge': 'Breckenridge', 'colorado-springs': 'Colorado Springs',
+  'estes-park': 'Estes Park', 'telluride': 'Telluride', 'durango': 'Durango',
+  'steamboat-springs': 'Steamboat Springs', 'fort-collins': 'Fort Collins',
+  'glenwood-springs': 'Glenwood Springs', 'ouray': 'Ouray', 'crested-butte': 'Crested Butte',
+  'keystone': 'Keystone', 'winter-park': 'Winter Park', 'manitou-springs': 'Manitou Springs',
+  'mesa-verde': 'Mesa Verde', 'great-sand-dunes': 'Great Sand Dunes',
+  'black-canyon': 'Black Canyon',
 };
 
 function esc(text: string): string {
@@ -57,7 +57,7 @@ function buildAffiliateUrl(type: string | null | undefined, destination: string,
   if (type === 'hotel') {
     // Extract hotel name from description (text before "or similar", comma, period, or dash)
     const hotelName = description.split(/\s+or\s+similar|[.,—]/)[0].replace(/^check\s*into\s*/i, '').trim();
-    const query = hotelName ? hotelName + ' ' + destName : destName + ' Colorado';
+    const query = hotelName ? hotelName + ' ' + destName : destName + ' CO';
     let url = `https://www.booking.com/searchresults.html?ss=${enc(query)}&aid=2778866&label=discovercolorado`;
     if (tp?.checkin) url += `&checkin=${tp.checkin}&checkout=${tp.checkout}`;
     url += `&group_adults=${tp?.adults || 2}&no_rooms=1`;
@@ -66,19 +66,19 @@ function buildAffiliateUrl(type: string | null | undefined, destination: string,
   }
   if (type === 'tour') {
     const query = destName + ' ' + description.split(/[.,—]/)[0].trim().slice(0, 40);
-    return `https://www.klook.com/en-PH/search/result/?query=${enc(query)}&aid=112015&sub_id=discovercolorado`;
+    return `https://www.klook.com/en-US/search/result/?query=${enc(query)}&aid=112015&sub_id=discovercolorado`;
   }
   if (type === 'transport') {
-    return `https://www.klook.com/en-PH/search/result/?query=${enc(destName + ' transport transfer')}&aid=112015&sub_id=discovercolorado`;
+    return `https://www.klook.com/en-US/search/result/?query=${enc(destName + ' transport transfer')}&aid=112015&sub_id=discovercolorado`;
   }
-  return `https://www.klook.com/en-PH/search/result/?query=${enc(destName)}&aid=112015&sub_id=discovercolorado`;
+  return `https://www.klook.com/en-US/search/result/?query=${enc(destName)}&aid=112015&sub_id=discovercolorado`;
 }
 
 function buildHotelsComUrl(destination: string, description: string): string {
   const destName = DEST_NAMES[destination] || destination.replace(/-/g, ' ');
   const hotelName = description.split(/\s+or\s+similar|[.,—]/)[0].replace(/^check\s*into\s*/i, '').trim();
   const query = hotelName || destName;
-  const landingPage = encodeURIComponent(`https://www.hotels.com/Hotel-Search?destination=${encodeURIComponent(query + ' Colorado')}`);
+  const landingPage = encodeURIComponent(`https://www.hotels.com/Hotel-Search?destination=${encodeURIComponent(query + ' CO')}`);
   return `https://hotels.com/affiliate?landingPage=${landingPage}&camref=1101l5Eohj&creativeref=1011l66481&adref=email-itinerary`;
 }
 
@@ -98,11 +98,12 @@ function buildItineraryEmail(it: Itinerary, tp?: TripParams): string {
     for (const item of day.items) {
       const icon = CATEGORY_ICONS[item.category] || '';
       let priceStr = '';
-      if (item.pricePhp) {
+      if (item.priceUsd) {
+        dayUsd += item.priceUsd;
+        priceStr = ` — $${item.priceUsd} USD`;
+      } else if (item.pricePhp) {
         dayPhp += item.pricePhp;
-        if (item.priceUsd) dayUsd += item.priceUsd;
-        priceStr = ` — ₱${item.pricePhp.toLocaleString()}`;
-        if (item.priceUsd) priceStr += ` (~$${item.priceUsd} USD)`;
+        priceStr = ` — $${item.pricePhp}`;
       }
 
       let bookLink = '';
@@ -127,7 +128,7 @@ function buildItineraryEmail(it: Itinerary, tp?: TripParams): string {
         </tr>`;
     }
 
-    const subtotalHtml = dayPhp > 0 ? `<tr><td colspan="2" style="text-align:right;font-size:12px;font-weight:600;color:#1A2332;padding-top:8px;border-top:1px solid #EBE4D8;">Day total: ₱${dayPhp.toLocaleString()} (~$${dayUsd} USD)</td></tr>` : '';
+    const subtotalHtml = dayUsd > 0 ? `<tr><td colspan="2" style="text-align:right;font-size:12px;font-weight:600;color:#1A2332;padding-top:8px;border-top:1px solid #EBE4D8;">Day total: $${dayUsd} USD</td></tr>` : '';
 
     daysHtml += `
       <div style="background:white;border-radius:12px;padding:20px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
@@ -140,7 +141,7 @@ function buildItineraryEmail(it: Itinerary, tp?: TripParams): string {
   const budgetHtml = it.totalBudget ? `
     <div style="display:flex;justify-content:space-between;align-items:center;background:#E8F4F5;border-radius:10px;padding:12px 20px;margin-bottom:20px;">
       <span style="font-size:14px;font-weight:600;color:#0D7377;">Estimated Total</span>
-      <span style="font-size:16px;font-weight:800;color:#1A2332;">₱${it.totalBudget.php?.toLocaleString() || '—'} <span style="font-size:13px;font-weight:400;color:#0D7377;">(~$${it.totalBudget.usd?.toLocaleString() || '—'} USD)</span></span>
+      <span style="font-size:16px;font-weight:800;color:#1A2332;">$${it.totalBudget.usd?.toLocaleString() || '—'} USD</span>
     </div>` : '';
 
   return `<!DOCTYPE html>

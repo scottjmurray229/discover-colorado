@@ -1,0 +1,40 @@
+{
+  "title": "Denver & Rocky Mountains Family Adventure",
+  "subtitle": "5 days exploring Colorado's Front Range",
+  "tripType": "family",
+  "days": [
+    {
+      "dayNumber": 1,
+      "title": "Arrive in Denver",
+      "destination": "denver",
+      "items": [
+        { "time": "2:00 PM", "description": "Check into The Crawford Hotel at Union Station", "priceUsd": 250, "category": "accommodation", "affiliateType": "hotel", "affiliateSlotId": "day1-hotel-denver" },
+        { "time": "4:00 PM", "description": "Walk around Larimer Square and grab coffee", "priceUsd": 15, "category": "activity" },
+        { "time": "6:30 PM", "description": "Dinner at Guard and Grace steakhouse", "priceUsd": 120, "category": "food" }
+      ]
+    },
+    {
+      "dayNumber": 2,
+      "title": "Rocky Mountain National Park",
+      "destination": "estes-park",
+      "items": [
+        { "time": "6:00 AM", "description": "Drive to Estes Park via I-25 and US-36 (1.5 hours)", "priceUsd": 30, "category": "transport" },
+        { "time": "8:00 AM", "description": "Enter RMNP — Bear Lake trailhead, hike to Dream Lake", "priceUsd": 35, "category": "activity", "affiliateType": "tour", "affiliateSlotId": "day2-tour-estes-park" },
+        { "time": "12:00 PM", "description": "Lunch at Smokin' Dave's BBQ in Estes Park", "priceUsd": 50, "category": "food" },
+        { "time": "2:00 PM", "description": "Drive Trail Ridge Road to Alpine Visitor Center", "priceUsd": 0, "category": "activity" }
+      ]
+    },
+    {
+      "dayNumber": 3,
+      "title": "Boulder & Red Rocks",
+      "destination": "boulder",
+      "items": [
+        { "time": "9:00 AM", "description": "Explore Pearl Street Mall and Dushanbe Teahouse", "priceUsd": 25, "category": "activity" },
+        { "time": "11:00 AM", "description": "Hike Chautauqua Park Flatirons trail", "priceUsd": 0, "category": "activity" },
+        { "time": "2:00 PM", "description": "Drive to Red Rocks Amphitheatre for Trading Post Trail", "priceUsd": 0, "category": "activity" },
+        { "time": "6:00 PM", "description": "Dinner in Golden at Woody's Wood Fired Pizza", "priceUsd": 60, "category": "food" }
+      ]
+    }
+  ],
+  "totalBudget": { "usd": 1850 }
+}

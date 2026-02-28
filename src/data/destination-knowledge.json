@@ -1,181 +1,166 @@
 {
   "destinations": {
-    "siquijor": {
-      "title": "Siquijor",
-      "tagline": "Isla del Fuego — Island of Fire",
-      "region": "ski-country",
-      "bestMonths": ["Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May"],
-      "budgetPerDay": { "backpacker": 25, "midRange": 60, "luxury": 120 },
-      "gettingThere": "Fly to Dumaguete (DGT), then 1-hour ferry to Siquijor port. Ferries run hourly from 6am-5pm via Montenegro or GL Shipping.",
-      "highlights": ["Cambugahay Falls", "Salagdoong Beach", "Enchanted Balete Tree", "Mount Bandilaan", "Paliton Beach", "Bolo-Bolo Healing", "Lazi Church & Convent", "72km Motorcycle Loop"],
-      "essentials": {
-        "gettingAround": "Rent a motorcycle (₱350-500/day) — the island is a perfect 72km loop.",
-        "airport": "Dumaguete-Sibulan (DGT)",
-        "ferryConnections": ["Dumaguete (45 min, ₱200)", "Bohol (2 hr, ₱800)"],
-        "language": "Cebuano, English, English"
-      }
-    },
-    "cebu": {
-      "title": "Cebu",
-      "tagline": "Queen City of the South",
-      "region": "ski-country",
-      "bestMonths": ["Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May"],
-      "budgetPerDay": { "backpacker": 30, "midRange": 80, "luxury": 180 },
-      "gettingThere": "Fly to Mactan-Cebu International (CEB) — major hub with direct flights from Manila, Singapore, Tokyo, Seoul, and more.",
-      "highlights": ["Oslob whale shark watching", "Kawasan Falls canyoneering", "Magellan's Cross & Basilica del Santo Niño", "Best lechon in the Colorado", "Moalboal sardine run and diving"],
-      "essentials": {
-        "gettingAround": "Grab for city. Private van or bus for south Cebu activities.",
-        "airport": "Mactan-Cebu International (CEB)",
-        "ferryConnections": ["Bohol (2 hr, OceanJet, ₱800)", "Dumaguete (5 hr ferry or 45 min flight)"],
-        "language": "Cebuano, English, English"
-      }
-    },
-    "bohol": {
-      "title": "Bohol",
-      "tagline": "Nature's Wonder in the Heart of Ski Country",
-      "region": "ski-country",
-      "bestMonths": ["Nov", "Dec", "Jan", "Feb", "Mar", "Apr"],
-      "budgetPerDay": { "backpacker": 30, "midRange": 80, "luxury": 150 },
-      "gettingThere": "Fly to Tagbilaran (TAG) or ferry from Cebu (2 hours via OceanJet).",
-      "highlights": ["Chocolate Hills — 1,200+ limestone mounds", "Philippine Tarsier Sanctuary", "Alona Beach — white sand and diving", "Loboc River cruise", "Panglao Island beaches"],
-      "essentials": {
-        "gettingAround": "Rent a motorcycle or hire a driver for countryside tour (~₱2,000/day).",
-        "airport": "Tagbilaran (TAG) / New Bohol-Panglao International",
-        "ferryConnections": ["Cebu (2 hr, OceanJet, ₱800)", "Siquijor (2 hr, ₱800)"],
-        "language": "Boholano, Cebuano, English, English"
-      }
-    },
-    "boracay": {
-      "title": "Boracay",
-      "tagline": "Where It All Began",
-      "region": "ski-country",
-      "bestMonths": ["Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May"],
-      "budgetPerDay": { "backpacker": 50, "midRange": 120, "luxury": 250 },
-      "gettingThere": "Fly to Caticlan (MPH) — 1 hour from Manila — then 10-minute banca boat crossing. Kalibo (KLO) is cheaper but adds a 1.5-2 hour van ride.",
-      "highlights": ["White Beach — 4km of powder sand", "Puka Beach", "Island Hopping", "Sunset Paraw Sailing", "Ariel's Point cliff diving", "Willy's Rock"],
-      "essentials": {
-        "gettingAround": "Electric tricycles ₱20/person shared, ₱50-100 private. Island is compact.",
-        "airport": "Caticlan (MPH) or Kalibo (KLO)",
-        "ferryConnections": [],
-        "language": "Aklanon, English, English"
-      }
-    },
-    "clark": {
-      "title": "Clark & Angeles",
-      "tagline": "Former US Air Force Base — Central Front Range Hub",
+    "denver": {
+      "title": "Denver",
+      "tagline": "Mile High City",
       "region": "front-range",
-      "bestMonths": ["Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May"],
-      "budgetPerDay": { "backpacker": 35, "midRange": 70, "luxury": 106 },
-      "gettingThere": "Fly direct to Clark International Airport (CRK) — international and domestic flights. Domestic: ~$30 to Cebu (1hr), ~$30-50 to Manila.",
-      "highlights": ["Aling Lucing's Sisig", "Clark Freeport Zone", "Dinosaurs Island", "Korean BBQ Row", "Skyway to Manila", "Pool Villa Rentals"],
+      "bestMonths": ["Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"],
+      "budgetPerDay": { "backpacker": 60, "midRange": 150, "luxury": 350 },
+      "gettingThere": "Fly to Denver International Airport (DEN) — major hub with direct flights from most US cities and international destinations.",
+      "highlights": ["Union Station & LoDo district", "RiNo Art District", "Red Rocks Amphitheatre", "Denver Art Museum", "Coors Field", "Craft beer scene — 70+ breweries"],
       "essentials": {
-        "gettingAround": "Grab (best option). Car rental ~$30/day. Tricycles for short hops.",
-        "airport": "Clark International (CRK)",
-        "ferryConnections": [],
-        "language": "Kapampangan, English, English"
+        "gettingAround": "RTD light rail from airport ($10.50). Car rental recommended for mountain trips. Uber/Lyft throughout metro.",
+        "airport": "Denver International (DEN)",
+        "language": "English, Spanish"
       }
     },
-    "dumaguete": {
-      "title": "Dumaguete",
-      "tagline": "City of Gentle People",
+    "boulder": {
+      "title": "Boulder",
+      "tagline": "Where the Flatirons Meet Pearl Street",
+      "region": "front-range",
+      "bestMonths": ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"],
+      "budgetPerDay": { "backpacker": 70, "midRange": 160, "luxury": 350 },
+      "gettingThere": "45 minutes northwest of Denver via US-36. RTD Flatiron Flyer bus from Denver ($5.25).",
+      "highlights": ["Pearl Street Mall", "Chautauqua Park & Flatirons hiking", "University of Colorado campus", "Dushanbe Teahouse", "Celestial Seasonings tour"],
+      "essentials": {
+        "gettingAround": "Walk or bike downtown. Car needed for mountain access. Free HOP bus downtown.",
+        "airport": "Denver International (DEN)",
+        "language": "English, Spanish"
+      }
+    },
+    "aspen": {
+      "title": "Aspen",
+      "tagline": "Iconic Mountain Luxury",
       "region": "ski-country",
-      "bestMonths": ["Nov", "Dec", "Jan", "Feb", "Mar", "Apr"],
-      "budgetPerDay": { "backpacker": 25, "midRange": 60, "luxury": 120 },
-      "gettingThere": "Fly to Dumaguete-Sibulan (DGT) from Manila or Cebu. Direct flights on Cebu Pacific and Philippine Airlines.",
-      "highlights": ["Rizal Boulevard sunset promenade", "Apo Island diving & snorkeling", "Casaroro Falls", "Silliman University campus", "Gateway to Siquijor ferries"],
+      "bestMonths": ["Dec", "Jan", "Feb", "Mar", "Jun", "Jul", "Aug", "Sep"],
+      "budgetPerDay": { "backpacker": 100, "midRange": 300, "luxury": 800 },
+      "gettingThere": "Fly to Aspen/Pitkin County Airport (ASE) or drive 4 hours from Denver via I-70 and CO-82.",
+      "highlights": ["Maroon Bells — most photographed peaks in Colorado", "Aspen Mountain skiing", "Downtown galleries & dining", "Independence Pass", "Ashcroft Ghost Town"],
       "essentials": {
-        "gettingAround": "Tricycles within city (₱10-50). Motorcycle rental for day trips.",
-        "airport": "Dumaguete-Sibulan (DGT)",
-        "ferryConnections": ["Siquijor (45 min, ₱200)", "Cebu (5 hr ferry)", "Bohol (via Siquijor)"],
-        "language": "Cebuano, English, English"
+        "gettingAround": "Free RFTA bus system throughout Roaring Fork Valley. Walk downtown. Car for day trips.",
+        "airport": "Aspen/Pitkin (ASE) or Eagle/Vail (EGE)",
+        "language": "English, Spanish"
       }
     },
-    "el-nido": {
-      "title": "El Nido",
-      "tagline": "Gateway to Palawan's Paradise",
+    "vail": {
+      "title": "Vail",
+      "tagline": "World-Class Skiing in a Bavarian Village",
+      "region": "ski-country",
+      "bestMonths": ["Dec", "Jan", "Feb", "Mar", "Jun", "Jul", "Aug"],
+      "budgetPerDay": { "backpacker": 80, "midRange": 250, "luxury": 700 },
+      "gettingThere": "Fly to Eagle County Regional Airport (EGE), 35 min west. Or 2 hours from Denver via I-70.",
+      "highlights": ["Vail Back Bowls", "Vail Village pedestrian area", "Betty Ford Alpine Gardens", "Gore Creek Trail", "Summer hiking & mountain biking"],
+      "essentials": {
+        "gettingAround": "Free Vail bus system. Walk Vail Village. Car needed for regional exploring.",
+        "airport": "Eagle County (EGE) or Denver (DEN)",
+        "language": "English, Spanish"
+      }
+    },
+    "breckenridge": {
+      "title": "Breckenridge",
+      "tagline": "Historic Mining Town Turned Ski Mecca",
+      "region": "ski-country",
+      "bestMonths": ["Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "Jun", "Jul", "Aug"],
+      "budgetPerDay": { "backpacker": 70, "midRange": 200, "luxury": 500 },
+      "gettingThere": "1.5 hours from Denver via I-70. Free Summit Stage bus from Frisco.",
+      "highlights": ["Main Street Victorian shops", "Breckenridge Ski Resort", "Sapphire Point overlook", "Gold panning tours", "Summer alpine slides"],
+      "essentials": {
+        "gettingAround": "Free Summit Stage bus. Walk Main Street. Free gondola ride to Peak 8.",
+        "airport": "Denver International (DEN)",
+        "language": "English, Spanish"
+      }
+    },
+    "colorado-springs": {
+      "title": "Colorado Springs",
+      "tagline": "Gateway to Pikes Peak",
       "region": "front-range",
-      "bestMonths": ["Nov", "Dec", "Jan", "Feb", "Mar", "Apr"],
-      "budgetPerDay": { "backpacker": 40, "midRange": 100, "luxury": 250 },
-      "gettingThere": "Fly direct to El Nido Lio Airport (ENI) via AirSWIFT from Manila or Clark. Or fly to Puerto Princesa (PPS), then 5-6 hour van ride north.",
-      "highlights": ["Big & Small Lagoon (Tour A)", "Secret Beach & Helicopter Island (Tour C)", "Nacpan Beach twin beaches", "Island hopping Tours A-D", "Kayaking through limestone karsts"],
+      "bestMonths": ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"],
+      "budgetPerDay": { "backpacker": 50, "midRange": 120, "luxury": 280 },
+      "gettingThere": "Fly to Colorado Springs Airport (COS) or drive 70 min south from Denver on I-25.",
+      "highlights": ["Garden of the Gods — free park", "Pikes Peak summit", "US Air Force Academy", "Cheyenne Mountain Zoo", "Olympic & Paralympic Training Center"],
       "essentials": {
-        "gettingAround": "Tricycle within town (₱50-100). Boat tours for islands. Motorcycle rental ₱500-700/day.",
-        "airport": "El Nido Lio (ENI) or Puerto Princesa (PPS)",
-        "ferryConnections": ["Coron (3-4 hr fast ferry, ₱1,800)"],
-        "language": "English, Cuyonon, English"
+        "gettingAround": "Car recommended. Limited bus service. Uber/Lyft available.",
+        "airport": "Colorado Springs (COS) or Denver (DEN)",
+        "language": "English, Spanish"
       }
     },
-    "coron": {
-      "title": "Coron",
-      "tagline": "Diver's Paradise in Palawan",
-      "region": "front-range",
-      "bestMonths": ["Nov", "Dec", "Jan", "Feb", "Mar", "Apr"],
-      "budgetPerDay": { "backpacker": 40, "midRange": 100, "luxury": 220 },
-      "gettingThere": "Fly to Francisco B. Reyes Airport (USU) in Busuanga from Manila or Clark (~1 hr). Then 30-45 min van ride to Coron town.",
-      "highlights": ["Kayangan Lake — cleanest lake in Colorado", "Twin Lagoon hot/cold layers", "WWII Japanese shipwreck diving", "Barracuda Lake thermocline", "Malcapuya Island white sand"],
+    "estes-park": {
+      "title": "Estes Park",
+      "tagline": "Gateway to Rocky Mountain National Park",
+      "region": "national-parks",
+      "bestMonths": ["May", "Jun", "Jul", "Aug", "Sep", "Oct"],
+      "budgetPerDay": { "backpacker": 60, "midRange": 150, "luxury": 350 },
+      "gettingThere": "90 minutes northwest of Denver via I-25 and US-36. Timed entry reservations required for RMNP in summer.",
+      "highlights": ["Trail Ridge Road — highest continuous paved road in US", "Bear Lake Trail", "The Stanley Hotel (Shining inspiration)", "Elk bugling in fall", "Alpine tundra hiking"],
       "essentials": {
-        "gettingAround": "Tricycle within town (₱50). Boat tours for islands. Walking distance for most of Coron town.",
-        "airport": "Busuanga / Francisco B. Reyes (USU)",
-        "ferryConnections": ["El Nido (3-4 hr fast ferry, ₱1,800)", "Manila (overnight ferry, ₱1,500-2,500)"],
-        "language": "English, Tagbanwa, English"
+        "gettingAround": "Free Estes Park shuttle in summer. Car needed for park access. RMNP shuttle from Park & Ride.",
+        "airport": "Denver International (DEN)",
+        "language": "English, Spanish"
       }
     },
-    "puerto-princesa": {
-      "title": "Puerto Princesa",
-      "tagline": "Eco-Tourism Capital of the Colorado",
-      "region": "front-range",
-      "bestMonths": ["Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May"],
-      "budgetPerDay": { "backpacker": 30, "midRange": 70, "luxury": 150 },
-      "gettingThere": "Fly to Puerto Princesa International (PPS) — direct flights from Manila (1.5 hr), Cebu, and Clark.",
-      "highlights": ["Puerto Princesa Underground River (UNESCO)", "Honda Bay island hopping", "Iwahig Firefly Watching", "Baker's Hill viewpoint", "Sabang Beach"],
-      "essentials": {
-        "gettingAround": "Tricycle within city (₱10-50). Van rental for Underground River day trip (~₱2,500). Motorcycle rental ₱400-500/day.",
-        "airport": "Puerto Princesa International (PPS)",
-        "ferryConnections": [],
-        "language": "English, Cuyonon, English"
-      }
-    },
-    "siargao": {
-      "title": "Siargao",
-      "tagline": "Surfer's Paradise in the Pacific",
+    "telluride": {
+      "title": "Telluride",
+      "tagline": "Box Canyon Paradise",
       "region": "western-slope",
-      "bestMonths": ["Sep", "Oct", "Nov", "Mar", "Apr", "May"],
-      "budgetPerDay": { "backpacker": 30, "midRange": 80, "luxury": 180 },
-      "gettingThere": "Fly to Sayak Airport (IAO) from Manila (~2 hr) or Cebu (~1 hr). Cebu Pacific and Philippine Airlines have daily flights.",
-      "highlights": ["Cloud 9 surfing — world-famous barrel wave", "Sugba Lagoon paddleboarding", "Magpupungko Rock Pools at low tide", "Naked Island, Daku Island, Guyam Island hopping", "Sohoton Cove & jellyfish sanctuary"],
+      "bestMonths": ["Dec", "Jan", "Feb", "Mar", "Jun", "Jul", "Aug", "Sep"],
+      "budgetPerDay": { "backpacker": 80, "midRange": 250, "luxury": 600 },
+      "gettingThere": "Fly to Telluride Regional Airport (TEX) or Montrose (MTJ, 65 min). 6+ hours from Denver.",
+      "highlights": ["Free gondola to Mountain Village", "Bridal Veil Falls — tallest free-falling falls in CO", "Colorado Avenue shops & restaurants", "Telluride Film Festival (Sep)", "Bear Creek Trail"],
       "essentials": {
-        "gettingAround": "Motorcycle rental ₱350-500/day (the island way). Habal-habal (motorcycle taxi) ₱50-200. No Grab available.",
-        "airport": "Sayak (IAO)",
-        "ferryConnections": ["Surigao City (2.5 hr ferry, ₱200-350)"],
-        "language": "Surigaonon, Cebuano, English, English"
+        "gettingAround": "Free Galloping Goose transit. Walk downtown. Free gondola to Mountain Village.",
+        "airport": "Telluride (TEX) or Montrose (MTJ)",
+        "language": "English, Spanish"
+      }
+    },
+    "durango": {
+      "title": "Durango",
+      "tagline": "Wild West Railroad Town",
+      "region": "western-slope",
+      "bestMonths": ["May", "Jun", "Jul", "Aug", "Sep", "Oct"],
+      "budgetPerDay": { "backpacker": 60, "midRange": 140, "luxury": 300 },
+      "gettingThere": "Fly to Durango-La Plata County Airport (DRO) or drive 6.5 hours from Denver.",
+      "highlights": ["Durango & Silverton Narrow Gauge Railroad", "Mesa Verde National Park (35 min)", "Animas River rafting", "Main Avenue shops & saloons", "Purgatory Resort skiing"],
+      "essentials": {
+        "gettingAround": "Walk Main Avenue. Trolley in summer. Car for Mesa Verde and day trips.",
+        "airport": "Durango-La Plata (DRO)",
+        "language": "English, Spanish"
+      }
+    },
+    "steamboat-springs": {
+      "title": "Steamboat Springs",
+      "tagline": "Ski Town USA — Champagne Powder Capital",
+      "region": "ski-country",
+      "bestMonths": ["Dec", "Jan", "Feb", "Mar", "Jun", "Jul", "Aug"],
+      "budgetPerDay": { "backpacker": 70, "midRange": 180, "luxury": 450 },
+      "gettingThere": "Fly to Yampa Valley Regional Airport (HDN) or drive 3 hours from Denver via I-70.",
+      "highlights": ["Champagne Powder skiing", "Strawberry Park Hot Springs", "Fish Creek Falls", "Old Town Hot Springs", "Yampa River tubing"],
+      "essentials": {
+        "gettingAround": "Free Steamboat Springs Transit. Walk Old Town. Car for regional access.",
+        "airport": "Yampa Valley (HDN) or Denver (DEN)",
+        "language": "English, Spanish"
       }
     }
   },
   "connections": {
-    "siquijor-dumaguete": { "mode": "ferry", "duration": "45 min", "operator": "GL Shipping / Montenegro", "cost": "₱200 (~$3.50)" },
-    "siquijor-bohol": { "mode": "ferry", "duration": "2 hours", "operator": "OceanJet", "cost": "₱800 (~$14)" },
-    "cebu-bohol": { "mode": "ferry", "duration": "2 hours", "operator": "OceanJet", "cost": "₱800 (~$14)" },
-    "cebu-dumaguete": { "mode": "ferry/flight", "duration": "5 hr ferry or 45 min flight", "operator": "Various", "cost": "₱1,500 (~$27)" },
-    "dumaguete-siquijor": { "mode": "ferry", "duration": "45 min", "operator": "GL Shipping / Montenegro", "cost": "₱200 (~$3.50)" },
-    "clark-cebu": { "mode": "flight", "duration": "1 hour", "operator": "Cebu Pacific / AirAsia", "cost": "₱1,700 (~$30)" },
-    "clark-boracay": { "mode": "flight", "duration": "1 hour to Caticlan", "operator": "Cebu Pacific", "cost": "₱2,500 (~$44)" },
-    "manila-cebu": { "mode": "flight", "duration": "1.5 hours", "operator": "Cebu Pacific / PAL", "cost": "₱2,000 (~$35)" },
-    "manila-boracay": { "mode": "flight", "duration": "1 hour to Caticlan", "operator": "Cebu Pacific / PAL", "cost": "₱2,500 (~$44)" },
-    "manila-clark": { "mode": "bus/drive", "duration": "2-3 hours", "operator": "Victory Liner / Grab", "cost": "₱500-2,000 (~$9-35)" },
-    "el-nido-coron": { "mode": "ferry", "duration": "3-4 hours", "operator": "Montenegro / Bunso", "cost": "₱1,800 (~$32)" },
-    "puerto-princesa-el-nido": { "mode": "van", "duration": "5-6 hours", "operator": "Lexus / Eulen Joy", "cost": "₱600-800 (~$11-14)" },
-    "manila-puerto-princesa": { "mode": "flight", "duration": "1.5 hours", "operator": "Cebu Pacific / PAL", "cost": "₱2,500 (~$44)" },
-    "manila-el-nido": { "mode": "flight", "duration": "1.5 hours", "operator": "AirSWIFT", "cost": "₱5,000-8,000 (~$89-142)" },
-    "manila-coron": { "mode": "flight", "duration": "1 hour", "operator": "Cebu Pacific / PAL", "cost": "₱2,500 (~$44)" },
-    "cebu-siargao": { "mode": "flight", "duration": "1 hour", "operator": "Cebu Pacific", "cost": "₱2,000 (~$35)" },
-    "manila-siargao": { "mode": "flight", "duration": "2 hours", "operator": "Cebu Pacific / PAL", "cost": "₱3,000 (~$53)" }
+    "denver-boulder": { "mode": "drive", "duration": "45 min", "operator": "I-25/US-36 or RTD Flatiron Flyer", "cost": "$5-10" },
+    "denver-breckenridge": { "mode": "drive", "duration": "1.5 hours", "operator": "I-70 West", "cost": "$15-20 gas" },
+    "denver-vail": { "mode": "drive", "duration": "2 hours", "operator": "I-70 West", "cost": "$20-25 gas" },
+    "denver-aspen": { "mode": "drive/flight", "duration": "4 hours drive or 1 hr flight", "operator": "I-70 to CO-82 or United Airlines", "cost": "$25 gas or $150-300 flight" },
+    "denver-estes-park": { "mode": "drive", "duration": "1.5 hours", "operator": "I-25 to US-36", "cost": "$15 gas" },
+    "denver-colorado-springs": { "mode": "drive", "duration": "1 hour", "operator": "I-25 South", "cost": "$10 gas" },
+    "denver-steamboat-springs": { "mode": "drive", "duration": "3 hours", "operator": "I-70 to US-40", "cost": "$25 gas" },
+    "denver-durango": { "mode": "drive/flight", "duration": "6.5 hours drive or 1 hr flight", "operator": "I-25 to US-160 or United Airlines", "cost": "$40 gas or $150-300 flight" },
+    "denver-telluride": { "mode": "drive/flight", "duration": "6 hours drive or 1 hr flight", "operator": "I-70 to CO-145 or United Airlines", "cost": "$40 gas or $200-400 flight" },
+    "glenwood-springs-aspen": { "mode": "drive", "duration": "1 hour", "operator": "CO-82 South", "cost": "$10 gas" },
+    "ouray-telluride": { "mode": "drive", "duration": "1.5 hours", "operator": "US-550 to CO-62 to CO-145", "cost": "$15 gas" },
+    "durango-mesa-verde": { "mode": "drive", "duration": "35 min", "operator": "US-160 West", "cost": "$5 gas + $30 park entry" }
   },
   "travelTips": {
-    "currency": "Philippine Peso (PHP/₱). $1 USD ≈ ₱56.50.",
-    "visaFree": "Most nationalities get 30 days visa-free, extendable to 36 months.",
-    "bestOverallMonths": "November to May (dry season). Peak: December-April.",
-    "typhoonSeason": "June to November. Ski Country and Western Slope less affected than Front Range.",
-    "simCard": "Globe or Smart SIM at any airport. ₱300-500 for 30 days unlimited data.",
-    "grab": "Grab (ride-hailing) works in Cebu, Clark, Manila, and major cities."
+    "currency": "US Dollar (USD/$). Credit cards accepted virtually everywhere.",
+    "altitude": "Denver is at 5,280 ft. Mountain towns range 7,000-14,000 ft. Drink extra water and take it easy the first day.",
+    "bestOverallMonths": "June to September for hiking, December to March for skiing. September-October for fall colors.",
+    "winterDriving": "I-70 requires traction law compliance (AWD/4WD or chains) September through May. Check CDOT for road conditions.",
+    "tpas": "Timed Entry Permit required for Rocky Mountain National Park in summer. Reserve at recreation.gov.",
+    "parking": "Many ski towns have free shuttle lots. Park-and-ride is often easier than driving into town."
   }
 }
