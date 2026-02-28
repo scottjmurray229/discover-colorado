@@ -1,40 +1,351 @@
 {
-  "title": "Denver & Rocky Mountains Family Adventure",
-  "subtitle": "5 days exploring Colorado's Front Range",
-  "tripType": "family",
+  "name": "Colorado Family Adventure",
+  "subtitle": "Denver → Boulder → Estes Park → Breckenridge",
+  "dates": "Jun 15, 2025 – Jun 19, 2025",
   "days": [
     {
-      "dayNumber": 1,
+      "day": 1,
+      "date": "Sun, Jun 15",
       "title": "Arrive in Denver",
-      "destination": "denver",
+      "location": "Denver",
       "items": [
-        { "time": "2:00 PM", "description": "Check into The Crawford Hotel at Union Station", "priceUsd": 250, "category": "accommodation", "affiliateType": "hotel", "affiliateSlotId": "day1-hotel-denver" },
-        { "time": "4:00 PM", "description": "Walk around Larimer Square and grab coffee", "priceUsd": 15, "category": "activity" },
-        { "time": "6:30 PM", "description": "Dinner at Guard and Grace steakhouse", "priceUsd": 120, "category": "food" }
+        {
+          "id": "d1-1",
+          "time": "10:00 AM",
+          "icon": "✈️",
+          "type": "transport",
+          "title": "Arrive at Denver International Airport",
+          "detail": "Fly into DEN. Pick up rental car — you'll want one for the mountain drives ahead.",
+          "status": "confirmed",
+          "lat": 39.8561,
+          "lng": -104.6737
+        },
+        {
+          "id": "d1-2",
+          "time": "12:30 PM",
+          "icon": "🍚",
+          "type": "food",
+          "title": "Lunch at Union Station",
+          "detail": "Grab lunch at Denver Union Station food hall. Try Mercantile Dining or Pigtrain Coffee.",
+          "status": "confirmed",
+          "lat": 39.7527,
+          "lng": -105.0007
+        },
+        {
+          "id": "d1-3",
+          "time": "2:00 PM",
+          "icon": "🏛️",
+          "type": "activity",
+          "title": "Denver Art Museum",
+          "detail": "Explore the Denver Art Museum — free for kids under 18. The Western American Art collection is a must.",
+          "status": "confirmed",
+          "lat": 39.7372,
+          "lng": -104.9893
+        },
+        {
+          "id": "d1-4",
+          "time": "5:00 PM",
+          "icon": "🏨",
+          "type": "accommodation",
+          "title": "Check in — Downtown Denver Hotel",
+          "detail": "Check in to hotel near LoDo. Walking distance to restaurants and nightlife.",
+          "status": "confirmed",
+          "lat": 39.7502,
+          "lng": -104.9998
+        },
+        {
+          "id": "d1-5",
+          "time": "7:00 PM",
+          "icon": "🍽️",
+          "type": "food",
+          "title": "Dinner on Larimer Square",
+          "detail": "Dinner at Rioja or Osteria Marco on Larimer Square — Denver's best dining block.",
+          "status": "confirmed",
+          "lat": 39.7478,
+          "lng": -104.9997
+        }
       ]
     },
     {
-      "dayNumber": 2,
+      "day": 2,
+      "date": "Mon, Jun 16",
+      "title": "Red Rocks & Boulder",
+      "location": "Boulder",
+      "items": [
+        {
+          "id": "d2-1",
+          "time": "8:00 AM",
+          "icon": "🥞",
+          "type": "food",
+          "title": "Breakfast at Snooze",
+          "detail": "Pancake flights at Snooze — a Denver brunch institution. Get there early to beat the line.",
+          "status": "confirmed",
+          "lat": 39.7551,
+          "lng": -104.9997
+        },
+        {
+          "id": "d2-2",
+          "time": "10:00 AM",
+          "icon": "🎯",
+          "type": "activity",
+          "title": "Red Rocks Amphitheatre",
+          "detail": "Visit Red Rocks Park & Amphitheatre. Walk the Trading Post Trail and run the stadium steps — free entry when no concert.",
+          "status": "confirmed",
+          "lat": 39.6654,
+          "lng": -105.2057
+        },
+        {
+          "id": "d2-3",
+          "time": "12:30 PM",
+          "icon": "🚐",
+          "type": "transport",
+          "title": "Drive to Boulder",
+          "detail": "45-minute drive north on US-36 to Boulder. Stunning views of the Flatirons as you approach.",
+          "status": "confirmed"
+        },
+        {
+          "id": "d2-4",
+          "time": "1:30 PM",
+          "icon": "🍚",
+          "type": "food",
+          "title": "Lunch on Pearl Street",
+          "detail": "Explore the Pearl Street Mall — try The Kitchen or grab a slice at Basta. Street performers add to the vibe.",
+          "status": "confirmed",
+          "lat": 40.0176,
+          "lng": -105.2797
+        },
+        {
+          "id": "d2-5",
+          "time": "3:30 PM",
+          "icon": "🥾",
+          "type": "activity",
+          "title": "Chautauqua Park & Flatirons",
+          "detail": "Hike the Chautauqua Trail for close-up views of the Flatirons. Easy 1-mile loop or harder Royal Arch trail.",
+          "status": "confirmed",
+          "lat": 39.9988,
+          "lng": -105.2811
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "date": "Tue, Jun 17",
       "title": "Rocky Mountain National Park",
-      "destination": "estes-park",
+      "location": "Estes Park",
       "items": [
-        { "time": "6:00 AM", "description": "Drive to Estes Park via I-25 and US-36 (1.5 hours)", "priceUsd": 30, "category": "transport" },
-        { "time": "8:00 AM", "description": "Enter RMNP — Bear Lake trailhead, hike to Dream Lake", "priceUsd": 35, "category": "activity", "affiliateType": "tour", "affiliateSlotId": "day2-tour-estes-park" },
-        { "time": "12:00 PM", "description": "Lunch at Smokin' Dave's BBQ in Estes Park", "priceUsd": 50, "category": "food" },
-        { "time": "2:00 PM", "description": "Drive Trail Ridge Road to Alpine Visitor Center", "priceUsd": 0, "category": "activity" }
+        {
+          "id": "d3-1",
+          "time": "7:00 AM",
+          "icon": "🚐",
+          "type": "transport",
+          "title": "Drive to Estes Park",
+          "detail": "1.5-hour drive from Boulder to Estes Park. Make sure you have your timed entry reservation for RMNP.",
+          "status": "confirmed"
+        },
+        {
+          "id": "d3-2",
+          "time": "9:00 AM",
+          "icon": "🏞️",
+          "type": "activity",
+          "title": "Bear Lake Trail",
+          "detail": "Start at Bear Lake — easy 0.8-mile loop with stunning mountain reflections. Get there early for parking.",
+          "status": "confirmed",
+          "lat": 40.3128,
+          "lng": -105.6459
+        },
+        {
+          "id": "d3-3",
+          "time": "11:30 AM",
+          "icon": "🎯",
+          "type": "activity",
+          "title": "Trail Ridge Road",
+          "detail": "Drive Trail Ridge Road — the highest continuous paved road in the US (12,183 ft). Watch for elk and marmots.",
+          "status": "confirmed",
+          "lat": 40.3967,
+          "lng": -105.7160
+        },
+        {
+          "id": "d3-4",
+          "time": "1:00 PM",
+          "icon": "🍚",
+          "type": "food",
+          "title": "Picnic at Alpine Visitor Center",
+          "detail": "Pack a picnic lunch and enjoy it at the Alpine Visitor Center — highest visitor center in the national park system.",
+          "status": "confirmed",
+          "lat": 40.3967,
+          "lng": -105.7160
+        },
+        {
+          "id": "d3-5",
+          "time": "5:00 PM",
+          "icon": "🏨",
+          "type": "accommodation",
+          "title": "Check in — Estes Park Lodge",
+          "detail": "Settle in at a lodge in Estes Park. Walk the riverwalk and browse the shops before dinner.",
+          "status": "confirmed",
+          "lat": 40.3772,
+          "lng": -105.5217
+        },
+        {
+          "id": "d3-6",
+          "time": "7:00 PM",
+          "icon": "🍽️",
+          "type": "food",
+          "title": "Dinner with Elk Views",
+          "detail": "Dinner at Smokin' Dave's BBQ or The Dunraven Inn. Keep an eye out — elk wander through town at dusk.",
+          "status": "confirmed",
+          "lat": 40.3772,
+          "lng": -105.5217
+        }
       ]
     },
     {
-      "dayNumber": 3,
-      "title": "Boulder & Red Rocks",
-      "destination": "boulder",
+      "day": 4,
+      "date": "Wed, Jun 18",
+      "title": "Mountain Town Day",
+      "location": "Breckenridge",
       "items": [
-        { "time": "9:00 AM", "description": "Explore Pearl Street Mall and Dushanbe Teahouse", "priceUsd": 25, "category": "activity" },
-        { "time": "11:00 AM", "description": "Hike Chautauqua Park Flatirons trail", "priceUsd": 0, "category": "activity" },
-        { "time": "2:00 PM", "description": "Drive to Red Rocks Amphitheatre for Trading Post Trail", "priceUsd": 0, "category": "activity" },
-        { "time": "6:00 PM", "description": "Dinner in Golden at Woody's Wood Fired Pizza", "priceUsd": 60, "category": "food" }
+        {
+          "id": "d4-1",
+          "time": "8:00 AM",
+          "icon": "🚐",
+          "type": "transport",
+          "title": "Drive to Breckenridge via I-70",
+          "detail": "3-hour drive from Estes Park to Breckenridge through the mountains. Stop at the Eisenhower Tunnel overlook.",
+          "status": "confirmed"
+        },
+        {
+          "id": "d4-2",
+          "time": "11:30 AM",
+          "icon": "🍚",
+          "type": "food",
+          "title": "Lunch on Main Street",
+          "detail": "Explore Breckenridge's colorful Victorian Main Street. Try Downstairs at Eric's for pizza or The Canteen for tacos.",
+          "status": "confirmed",
+          "lat": 39.4817,
+          "lng": -106.0384
+        },
+        {
+          "id": "d4-3",
+          "time": "1:30 PM",
+          "icon": "🎯",
+          "type": "activity",
+          "title": "Free Gondola Ride to Peak 8",
+          "detail": "Take the free BreckConnect Gondola up to Peak 8. Summer alpine slide and activities at the Fun Park ($35/person).",
+          "status": "confirmed",
+          "lat": 39.4806,
+          "lng": -106.0669
+        },
+        {
+          "id": "d4-4",
+          "time": "4:00 PM",
+          "icon": "🎯",
+          "type": "activity",
+          "title": "Sapphire Point Overlook",
+          "detail": "Short 1-mile hike to Sapphire Point for panoramic views of Lake Dillon and the surrounding peaks. Easy and family-friendly.",
+          "status": "confirmed",
+          "lat": 39.5383,
+          "lng": -106.0814
+        },
+        {
+          "id": "d4-5",
+          "time": "7:00 PM",
+          "icon": "🍽️",
+          "type": "food",
+          "title": "Dinner in Breckenridge",
+          "detail": "Dinner at Hearthstone Restaurant in a historic Victorian home. Reservations recommended in summer.",
+          "status": "confirmed",
+          "lat": 39.4817,
+          "lng": -106.0384
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "date": "Thu, Jun 19",
+      "title": "Return to Denver",
+      "location": "Denver",
+      "items": [
+        {
+          "id": "d5-1",
+          "time": "9:00 AM",
+          "icon": "☕",
+          "type": "food",
+          "title": "Coffee & Breakfast in Breck",
+          "detail": "Grab coffee at Cool River Coffee House before hitting the road back to Denver.",
+          "status": "confirmed",
+          "lat": 39.4817,
+          "lng": -106.0384
+        },
+        {
+          "id": "d5-2",
+          "time": "10:00 AM",
+          "icon": "🚐",
+          "type": "transport",
+          "title": "Drive back to Denver",
+          "detail": "1.5-hour drive east on I-70. Stop at the Georgetown Loop scenic overlook if time allows.",
+          "status": "confirmed"
+        },
+        {
+          "id": "d5-3",
+          "time": "12:00 PM",
+          "icon": "🍺",
+          "type": "activity",
+          "title": "RiNo Art District & Brewery",
+          "detail": "Explore Denver's RiNo (River North) Art District — street art, galleries, and craft breweries. Try Ratio Beerworks.",
+          "status": "confirmed",
+          "lat": 39.7713,
+          "lng": -104.9812
+        },
+        {
+          "id": "d5-4",
+          "time": "2:30 PM",
+          "icon": "🛒",
+          "type": "activity",
+          "title": "Last-Minute Shopping",
+          "detail": "Pick up Colorado souvenirs — local honey, craft beer, or turquoise jewelry from 16th Street Mall.",
+          "status": "confirmed",
+          "lat": 39.7471,
+          "lng": -104.9946
+        },
+        {
+          "id": "d5-5",
+          "time": "5:00 PM",
+          "icon": "✈️",
+          "type": "transport",
+          "title": "Depart from DEN",
+          "detail": "Head to Denver International Airport. Allow 45 minutes for the drive from downtown.",
+          "status": "confirmed",
+          "lat": 39.8561,
+          "lng": -104.6737
+        }
       ]
     }
   ],
-  "totalBudget": { "usd": 1850 }
+  "weather": [
+    { "day": "Sun", "icon": "☀️", "high": 88, "low": 58, "rain": 10 },
+    { "day": "Mon", "icon": "⛅", "high": 85, "low": 56, "rain": 20 },
+    { "day": "Tue", "icon": "☀️", "high": 72, "low": 45, "rain": 15 },
+    { "day": "Wed", "icon": "⛅", "high": 70, "low": 42, "rain": 25 },
+    { "day": "Thu", "icon": "☀️", "high": 87, "low": 57, "rain": 5 }
+  ],
+  "contacts": [
+    { "icon": "🚨", "name": "Colorado Emergency", "role": "Emergency Services", "phone": "911" },
+    { "icon": "🏥", "name": "Colorado State Patrol", "role": "Statewide", "phone": "*277" },
+    { "icon": "🏔️", "name": "Rocky Mountain NP", "role": "Park Info", "phone": "(970) 586-1206" },
+    { "icon": "🚗", "name": "CDOT Road Conditions", "role": "Road Info", "phone": "511" }
+  ],
+  "group": [
+    { "id": "you", "name": "You", "avatar": "🧑", "role": "host", "color": "#0D7377" }
+  ],
+  "notifications": [
+    {
+      "id": 1,
+      "type": "enriched",
+      "text": "Your 5-day Colorado itinerary is ready! 26 activities across 4 destinations.",
+      "time": "Just now",
+      "read": false
+    }
+  ],
+  "changeLog": []
 }
