@@ -100,6 +100,27 @@ const topics: TopicSection[] = [
     ],
   },
   {
+    id: 'gear',
+    icon: '\uD83C\uDFA6',
+    title: 'Premium Gear Worth Packing',
+    gradient: 'linear-gradient(135deg, #1A2332 0%, #3730A3 50%, #0D7377 100%)',
+    items: [
+      { label: 'Smith Squad ChromaPop Goggles', text: 'The best investment for a Vail or Telluride ski week — <a href="https://www.amazon.com/dp/B00L8CWSM2?tag=discoverco-20" rel="nofollow sponsored">ChromaPop optics are genuinely transformative in flat light</a>. When it\'s snowing and the contrast washes out, these let you read the terrain where others are guessing.' },
+      { label: 'DJI Mini 4 Pro Drone', text: 'No landscape photography platform captures Rocky Mountain peaks like a drone at golden hour. <a href="https://www.amazon.com/dp/B0CFF1SJ3P?tag=discoverco-20" rel="nofollow sponsored">The DJI Mini 4 Pro</a> is the move — under 249g FAA registration threshold, 4K/60fps, and the Maroon Bells from 400 feet is a shot you\'ll revisit for years.' },
+      { label: 'Peak Design Travel Tripod', text: 'The <a href="https://www.amazon.com/dp/B085BQS6K4?tag=discoverco-20" rel="nofollow sponsored">Peak Design Travel Tripod</a> is purpose-built for photographing the Maroon Bells reflection — Colorado\'s most photographed vista. Packs to carry-on size, carbon fiber legs, and sets up in seconds before the light changes.' },
+      { label: 'Black Diamond Guide GORE-TEX Ski Gloves', text: 'The ski gloves worth the investment if you\'re skiing Aspen\'s back bowls seriously. <a href="https://www.amazon.com/dp/B00TUTK4A8?tag=discoverco-20" rel="nofollow sponsored">Black Diamond Guide GORE-TEX</a> — waterproof, warm to -20°F, and built to last a decade of serious skiing. Don\'t show up in Highlands Bowl with gas station gloves.' },
+      { label: 'Patagonia Better Sweater 1/4-Zip', text: 'Vail village evenings drop to 10–20°F in peak winter. <a href="https://www.amazon.com/dp/B083VHBBDL?tag=discoverco-20" rel="nofollow sponsored">This is the definitive mountain mid-layer</a> — fleece that breathes under a shell on the hill and looks sharp enough for après-ski at Matsuhisa. Colorado\'s unofficial uniform.' },
+      { label: 'CamelBak M.U.L.E. 12 Hydration Pack', text: '<a href="https://www.amazon.com/dp/B09PZ98JXB?tag=discoverco-20" rel="nofollow sponsored">The premium option for Breck\'s MTB park and Moab-adjacent Colorado trails.</a> 2L reservoir, 12L cargo for gear and layers, and a frame that keeps the weight off your lower back on technical terrain. Hydration matters more at altitude.' },
+      { label: 'Zaca Altitude Support Tablets', text: 'Arriving in Denver at 5,280ft from sea level, then driving up to 9,000ft — altitude symptoms are real within hours. <a href="https://www.amazon.com/dp/B0CFK86KFY?tag=discoverco-20" rel="nofollow sponsored">Zaca Altitude Support Tablets</a> with glutathione and B vitamins are what ski instructors hand out at check-in. Start taking them on the plane.' },
+      { label: 'Sony WH-1000XM5 Headphones', text: 'For the flight to DEN and the long scenic drives on I-70 through the Rockies. <a href="https://www.amazon.com/dp/B09XS7JWHH?tag=discoverco-20" rel="nofollow sponsored">The Sony WH-1000XM5</a> remains the benchmark for noise cancellation — essential when you\'re seated next to a group of excited powder seekers.' },
+      { label: 'Apple AirTag 4-Pack', text: 'Ski bags, checked luggage, rental car keys. <a href="https://www.amazon.com/dp/B0D54JZTHY?tag=discoverco-20" rel="nofollow sponsored">A 4-pack of AirTags</a> covers every piece of gear that matters. Lost skis at Vail\'s base area — they turn up. Checked bag delayed — you know exactly where it is.' },
+      { label: 'Anker 735 GaN Charger', text: '<a href="https://www.amazon.com/dp/B09C5RG6KV?tag=discoverco-20" rel="nofollow sponsored">A 65W GaN charger</a> that handles phone, laptop, and camera battery simultaneously from a single outlet. Mountain resort rooms rarely have enough plugs for a gear-heavy trip. This solves it.' },
+      { label: 'Manta Sleep Mask', text: '<a href="https://www.amazon.com/dp/B07PRG2CQY?tag=discoverco-20" rel="nofollow sponsored">A proper contoured sleep mask</a> for the overnight flight west and the bright-at-6am mountain mornings. The Manta has molded eye cups that don\'t press on your lids — meaningfully better than the foam strip in your amenity kit.' },
+      { label: 'Sockwell Compression Socks', text: '<a href="https://www.amazon.com/dp/B089DRF9WM?tag=discoverco-20" rel="nofollow sponsored">Compression socks</a> for the flight home after a week of skiing. Your legs will thank you. Also useful if you\'re driving the I-70 corridor through the mountains — long stretches of high-altitude sitting benefit from compression.' },
+      { label: 'Flypal Inflatable Foot Rest', text: '<a href="https://www.amazon.com/dp/B074T9CP81?tag=discoverco-20" rel="nofollow sponsored">An inflatable foot rest</a> that turns economy into something approaching business class on the red-eye home. Five days of hard skiing leaves your legs stiff — elevated feet make a real difference on a 3–4 hour flight.' },
+    ],
+  },
+  {
     id: 'faq',
     icon: '\u2753',
     title: 'Luxury Colorado Travel FAQ',
@@ -251,6 +272,11 @@ const topics: TopicSection[] = [
       </div>
     </div>
   </section>
+
+  <!-- Affiliate Disclosure -->
+  <div class="container-content ft-reveal" style="padding-bottom: 0;">
+    <p class="ft-affiliate-disclosure">Some links on this page are affiliate links — I earn a small commission if you purchase through them, at no extra cost to you. I only recommend gear I personally use or have thoroughly researched. <a href="/legal/affiliate-disclosure/">Full disclosure</a>.</p>
+  </div>
 
   <!-- Bottom CTA -->
   <section class="ft-cta-section ft-reveal">
@@ -730,6 +756,25 @@ const topics: TopicSection[] = [
 
   .ft-protips-card .scott-tips :global(a:hover) {
     text-decoration-color: #FB923C;
+  }
+
+  /* ================================================================
+     AFFILIATE DISCLOSURE
+     ================================================================ */
+  .ft-affiliate-disclosure {
+    font-size: 0.75rem;
+    color: #4A5568;
+    line-height: 1.5;
+    text-align: center;
+    padding: var(--space-4) var(--space-6);
+    background: var(--color-sky);
+    border-radius: 10px;
+    margin-bottom: var(--space-4);
+  }
+
+  .ft-affiliate-disclosure a {
+    color: var(--color-ocean-teal);
+    text-decoration: underline;
   }
 
   /* ================================================================
