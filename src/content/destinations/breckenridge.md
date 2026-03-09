@@ -3,7 +3,7 @@ title: "Breckenridge"
 description: "Plan your Breckenridge, Colorado trip. One of the top ski resorts in the US with a beautifully preserved Victorian mining town main street and excellent summer hiking."
 heroVideo: ""
 heroImage: ""
-tagline: "Victorian Gold Town at 9,600 Feet"
+tagline: "A genuinely historic gold rush Victorian town at 9,600 feet — the ski mountain is excellent and the Main Street has kept its 1880s architecture while adding world-class restaurants"
 region: "ski-country"
 bestMonths: ['Dec', 'Jan', 'Feb', 'Mar', 'Jun', 'Jul', 'Aug']
 budgetPerDay:

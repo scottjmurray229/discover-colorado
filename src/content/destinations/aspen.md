@@ -3,7 +3,7 @@ title: "Aspen"
 description: "Plan your Aspen, Colorado trip. Four ski mountains, a Victorian downtown, world-class arts and culture, and the most glamorous mountain town in America."
 heroVideo: ""
 heroImage: ""
-tagline: "Glamour and Mountains"
+tagline: "Four ski mountains, a summer music festival that attracts the world's finest musicians, and the most stylish après-ski scene in North America — at prices to match"
 region: "ski-country"
 bestMonths: ['Dec', 'Jan', 'Feb', 'Mar', 'Jun', 'Jul', 'Aug', 'Sep']
 budgetPerDay:

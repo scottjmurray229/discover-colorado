@@ -3,7 +3,7 @@ title: "Telluride"
 description: "Plan your Telluride, Colorado trip — a stunning box canyon ski resort and festival town with the world's only free public gondola, legendary steep skiing, and world-class summer events."
 heroVideo: ""
 heroImage: ""
-tagline: "A Box Canyon Jewel"
+tagline: "A box canyon with one road in and one road out, a free gondola connecting town to Mountain Village, and a film festival that makes every September worth the drive"
 region: "ski-country"
 bestMonths: ['Jan', 'Feb', 'Mar', 'Jun', 'Jul', 'Aug', 'Sep']
 budgetPerDay:

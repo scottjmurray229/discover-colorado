@@ -3,7 +3,7 @@ title: "Mesa Verde National Park"
 description: "Plan your Mesa Verde National Park trip. Explore the ancient Ancestral Puebloan cliff dwellings — the most significant archaeological site in the United States."
 heroVideo: ""
 heroImage: ""
-tagline: "Ancient Cliff Dwellings"
+tagline: "Ancestral Puebloans built 600-room cliff dwellings into canyon walls 800 years ago and then abandoned them — the ranger-guided tours of Cliff Palace are among the most memorable experiences in the American Southwest"
 region: "western-slope"
 bestMonths: ['Apr', 'May', 'Jun', 'Aug', 'Sep', 'Oct']
 budgetPerDay:

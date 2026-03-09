@@ -3,7 +3,7 @@ title: "Colorado Springs"
 description: "Plan your Colorado Springs trip. Garden of the Gods, Pikes Peak, the US Air Force Academy, and outdoor recreation at the foot of the Front Range."
 heroVideo: ""
 heroImage: ""
-tagline: "Garden City at the Front Range"
+tagline: "Pikes Peak rises 14,115 feet above the city — drive or cog railway to the summit, explore Garden of the Gods for free, and understand why the military chose to build here"
 region: "front-range"
 bestMonths: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct']
 budgetPerDay:

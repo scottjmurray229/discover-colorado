@@ -3,7 +3,7 @@ title: "Durango"
 description: "Plan your Durango, Colorado trip. Historic narrow-gauge railroad, excellent mountain biking, Four Corners access, and one of Colorado's most livable small cities."
 heroVideo: ""
 heroImage: ""
-tagline: "Southwest Colorado's Hub"
+tagline: "A narrow-gauge steam train still runs daily through the San Juan Mountains to Silverton — Durango itself is a Colorado college town with serious mountain biking and a mesa-top brewery worth making the trip for"
 region: "western-slope"
 bestMonths: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct']
 budgetPerDay:

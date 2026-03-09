@@ -3,7 +3,7 @@ title: "Ouray"
 description: "Plan your Ouray, Colorado trip. The Switzerland of America — Victorian mining town with natural hot springs, world-class ice climbing, and the Million Dollar Highway scenic drive."
 heroVideo: ""
 heroImage: ""
-tagline: "Switzerland of America"
+tagline: "The Switzerland of America is a 19th-century mining camp in a dramatic box canyon with natural hot springs, world-class ice climbing in winter, and 4WD passes to Telluride in summer"
 region: "western-slope"
 bestMonths: ['Jan', 'Feb', 'Jun', 'Jul', 'Aug', 'Sep']
 budgetPerDay:

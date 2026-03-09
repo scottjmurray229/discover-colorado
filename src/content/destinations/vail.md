@@ -3,7 +3,7 @@ title: "Vail"
 description: "Plan your Vail, Colorado trip. North America's largest ski resort with 5,289 acres of skiable terrain, a European-inspired village, and excellent summer hiking in the Gore Range."
 heroVideo: ""
 heroImage: ""
-tagline: "North America's Largest Ski Resort"
+tagline: "7,000 acres of ridiculously perfect ski terrain spread across two mountain faces — and a mountain village that somehow pulls off European alpine charm in the Colorado Rockies"
 region: "ski-country"
 bestMonths: ['Dec', 'Jan', 'Feb', 'Mar', 'Jun', 'Jul', 'Aug']
 budgetPerDay:

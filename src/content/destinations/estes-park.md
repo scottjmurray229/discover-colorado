@@ -3,7 +3,7 @@ title: "Estes Park"
 description: "Plan your Estes Park trip. The gateway to Rocky Mountain National Park with stunning valley scenery, elk watching on main street, and the haunted Stanley Hotel."
 heroVideo: ""
 heroImage: ""
-tagline: "Gateway to Rocky Mountain"
+tagline: "Gateway to Rocky Mountain National Park — elk wandering through town at dusk, Trail Ridge Road crossing the Continental Divide at 12,183 feet, and the Stanley Hotel inspiring Stephen King"
 region: "front-range"
 bestMonths: ['Jun', 'Jul', 'Aug', 'Sep', 'Oct']
 budgetPerDay:
