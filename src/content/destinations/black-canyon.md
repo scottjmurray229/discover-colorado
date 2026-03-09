@@ -3,6 +3,7 @@ title: "Black Canyon of the Gunnison"
 description: "Explore the Black Canyon of the Gunnison — one of Colorado's most dramatic and least-visited national parks with sheer walls dropping 2,000 feet to the Gunnison River."
 heroVideo: ""
 heroImage: ""
+heroAlt: "Sheer dark gneiss walls of Black Canyon of the Gunnison dropping 2,000 feet, Colorado"
 tagline: "Colorado's Most Dramatic Canyon"
 region: "western-slope"
 bestMonths: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct']

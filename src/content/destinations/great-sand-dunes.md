@@ -3,6 +3,7 @@ title: "Great Sand Dunes National Park"
 description: "Plan your Great Sand Dunes National Park trip. The tallest sand dunes in North America rising against snow-capped peaks — one of Colorado's most surreal landscapes."
 heroVideo: ""
 heroImage: ""
+heroAlt: "Towering sand dunes backed by the snow-capped Sangre de Cristo Mountains, Colorado"
 tagline: "Desert Meets Mountains"
 region: "san-luis-valley"
 bestMonths: ['Apr', 'May', 'Jun', 'Aug', 'Sep', 'Oct']

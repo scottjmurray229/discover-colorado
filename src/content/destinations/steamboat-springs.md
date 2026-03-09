@@ -3,6 +3,7 @@ title: "Steamboat Springs"
 description: "Plan your Steamboat Springs trip. Champagne powder skiing, natural hot springs, the Yampa River, and a genuine western cowboy-ski town culture."
 heroVideo: ""
 heroImage: ""
+heroAlt: "Strawberry Park Hot Springs and Steamboat ski runs at sunset, Colorado"
 tagline: "A genuine ranch town that happens to have excellent skiing — Steamboat's champagne powder is legendary, the rodeos are real, and the hot springs pools are right in the center of town"
 region: "ski-country"
 bestMonths: ['Dec', 'Jan', 'Feb', 'Mar', 'Jun', 'Jul', 'Aug']

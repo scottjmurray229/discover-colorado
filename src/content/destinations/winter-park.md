@@ -3,6 +3,7 @@ title: "Winter Park"
 description: "Plan your Winter Park, Colorado trip. The closest major ski resort to Denver, excellent intermediate terrain, and home to the National Ability Center's adaptive skiing."
 heroVideo: ""
 heroImage: ""
+heroAlt: "Fraser Valley and Winter Park Resort snow-covered ski terrain, Colorado"
 tagline: "Denver's Mountain"
 region: "ski-country"
 bestMonths: ['Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Jun', 'Jul']

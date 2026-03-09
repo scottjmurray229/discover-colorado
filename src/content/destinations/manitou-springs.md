@@ -3,6 +3,7 @@ title: "Manitou Springs"
 description: "Plan your Manitou Springs visit. Victorian spa town with natural mineral springs, Pikes Peak gateway, Cave of the Winds, and Colorado's best small-town arts scene."
 heroVideo: ""
 heroImage: ""
+heroAlt: "Manitou Incline hike and Garden of the Gods from Manitou Springs, Colorado"
 tagline: "Victorian Springs Town"
 region: "front-range"
 bestMonths: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct']

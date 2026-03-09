@@ -3,6 +3,7 @@ title: "Fort Collins"
 description: "Plan your Fort Collins trip. Colorado's craft brewing capital, Colorado State University town, Cache la Poudre River outdoor recreation, and the model for Disney's Main Street."
 heroVideo: ""
 heroImage: ""
+heroAlt: "Old Town Square historic buildings and Cache la Poudre River, Fort Collins, Colorado"
 tagline: "Colorado's Craft Beer Capital"
 region: "front-range"
 bestMonths: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct']

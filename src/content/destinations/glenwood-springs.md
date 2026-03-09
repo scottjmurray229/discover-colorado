@@ -3,6 +3,7 @@ title: "Glenwood Springs"
 description: "Plan your Glenwood Springs trip. The world's largest hot springs pool, Glenwood Canyon (one of America's most scenic drives), and Hanging Lake."
 heroVideo: ""
 heroImage: ""
+heroAlt: "Glenwood Hot Springs pool and canyon walls above the Colorado River, Colorado"
 tagline: "Hot Springs in a Canyon"
 region: "ski-country"
 bestMonths: ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct']

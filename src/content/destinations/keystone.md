@@ -3,6 +3,7 @@ title: "Keystone"
 description: "Plan your Keystone Resort trip. Family-friendly Summit County skiing, extended night skiing, and summer mountain biking 90 minutes from Denver."
 heroVideo: ""
 heroImage: ""
+heroAlt: "Keystone ski resort gondola and Continental Divide winter panorama, Colorado"
 tagline: "Family-Friendly Summit County Skiing"
 region: "ski-country"
 bestMonths: ['Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Jun', 'Jul', 'Aug']

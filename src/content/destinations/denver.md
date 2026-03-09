@@ -3,6 +3,7 @@ title: "Denver"
 description: "Discover Denver, Colorado's vibrant Mile High capital where craft beer culture, world-class dining, and Rocky Mountain access converge. Plan your trip with guides to neighborhoods, hiking, and mountain day trips."
 heroVideo: ""
 heroImage: ""
+heroAlt: "Denver city skyline and Colorado State Capitol with Rocky Mountains in the distance"
 tagline: "A mile above sea level with world-class museums, a craft beer scene that is genuinely world-class, and the Rocky Mountain skiing within 90 minutes in every direction"
 region: "front-range"
 bestMonths: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct']

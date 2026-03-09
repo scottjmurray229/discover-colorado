@@ -3,6 +3,7 @@ title: "Crested Butte"
 description: "Plan your Crested Butte trip — the wildflower capital of Colorado, uncrowded skiing, and one of the last authentic mountain towns in the Rockies."
 heroVideo: ""
 heroImage: ""
+heroAlt: "Wildflower meadows carpeting the hillsides above Crested Butte, Colorado"
 tagline: "Colorado's Wildflower Capital"
 region: "ski-country"
 bestMonths: ['Jan', 'Feb', 'Mar', 'Jun', 'Jul', 'Aug']

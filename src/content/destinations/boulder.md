@@ -3,6 +3,7 @@ title: "Boulder"
 description: "Discover Boulder, Colorado — the university town that perfected outdoor recreation, farm-to-table dining, and progressive culture at the base of the Flatirons."
 heroVideo: ""
 heroImage: ""
+heroAlt: "Flatirons rock formations looming above the University of Colorado campus, Boulder"
 tagline: "The most educated and most outdoors-obsessed small city in America — Pearl Street Mall, Chautauqua Park, world-class climbing on the Flatirons, and CU's farmers market on every corner"
 region: "front-range"
 bestMonths: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct']
