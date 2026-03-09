@@ -39,7 +39,7 @@ affiliatePicks:
     type: activity
     price: "$20-40"
     personalNote: "Breckenridge is at 9,600 feet — significant altitude. For visitors from sea level, Diamox (prescription) or over-the-counter supplements can ease the first two days of adjustment."
-    affiliateUrl: "https://www.amazon.com/s?k=altitude+sickness+prevention+supplement&tag=discovermore-20"
+    affiliateUrl: "https://www.amazon.com/s?k=altitude+sickness+prevention+supplement&tag=discoverphili-20"
     badge: "Altitude Essential"
 faqItems:
   - question: "Is Breckenridge worth visiting?"

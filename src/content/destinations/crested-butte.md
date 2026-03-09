@@ -34,12 +34,12 @@ affiliatePicks:
     type: activity
     price: "$30-80"
     personalNote: "Essential for Colorado mountain hiking — the elevation gains are significant and poles protect knees on descent."
-    affiliateUrl: "https://www.amazon.com/s?k=trekking+poles+collapsible&tag=discovermore-20"
+    affiliateUrl: "https://www.amazon.com/s?k=trekking+poles+collapsible&tag=discoverphili-20"
   - name: "Altitude Sickness Prevention"
     type: activity
     price: "$20-40"
     personalNote: "Colorado altitude is significant — visitors from sea level should drink extra water, avoid alcohol day one, and ascend gradually."
-    affiliateUrl: "https://www.amazon.com/s?k=altitude+sickness+prevention&tag=discovermore-20"
+    affiliateUrl: "https://www.amazon.com/s?k=altitude+sickness+prevention&tag=discoverphili-20"
 faqItems:
   - question: "Is Crested Butte safe?"
     answer: "Crested Butte is generally very safe. Altitude is the main consideration — Colorado mountain elevations cause altitude sickness in some visitors from sea level. Drink extra water, avoid alcohol your first day, and ascend gradually. Standard outdoor safety applies for any hiking."

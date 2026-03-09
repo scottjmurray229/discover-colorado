@@ -40,7 +40,7 @@ affiliatePicks:
     type: activity
     price: "$20-40"
     personalNote: "Pikes Peak's 14,114-foot summit causes altitude sickness in visitors from sea level. The symptoms (headache, nausea, dizziness) are significant even on a brief summit visit — hydrate heavily and eat before going up."
-    affiliateUrl: "https://www.amazon.com/s?k=altitude+sickness+pills+mountain&tag=discovermore-20"
+    affiliateUrl: "https://www.amazon.com/s?k=altitude+sickness+pills+mountain&tag=discoverphili-20"
 faqItems:
   - question: "Is Colorado Springs worth visiting?"
     answer: "Yes — Garden of the Gods alone justifies a visit. The combination of free world-class geological formations, Pikes Peak, Manitou Springs, and the Air Force Academy creates a packed day-trip or overnight itinerary. It is significantly more affordable than Denver or mountain resort towns."

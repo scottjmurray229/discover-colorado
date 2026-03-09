@@ -40,7 +40,7 @@ affiliatePicks:
     type: activity
     price: "$50-150"
     personalNote: "Essential for elk viewing — even in Estes Park where elk come into town, binoculars let you identify bulls by rack, watch behavior, and see detail from a safe distance."
-    affiliateUrl: "https://www.amazon.com/s?k=binoculars+10x42+wildlife+viewing&tag=discovermore-20"
+    affiliateUrl: "https://www.amazon.com/s?k=binoculars+10x42+wildlife+viewing&tag=discoverphili-20"
 faqItems:
   - question: "Is Estes Park worth visiting?"
     answer: "Yes as the gateway to Rocky Mountain National Park. The town itself is charming but modest — the elk watching, the Stanley Hotel, and the immediate park access are what make it worth staying overnight rather than day-tripping from Denver."

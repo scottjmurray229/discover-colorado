@@ -40,7 +40,7 @@ affiliatePicks:
     type: activity
     price: "$20-40"
     personalNote: "Aspen is at 7,900 feet (town) to 12,392 feet (Aspen Mountain summit). Spending one night in Denver at 5,280 ft before coming to Aspen helps significantly with acclimatization."
-    affiliateUrl: "https://www.amazon.com/s?k=altitude+sickness+prevention+diamox&tag=discovermore-20"
+    affiliateUrl: "https://www.amazon.com/s?k=altitude+sickness+prevention+diamox&tag=discoverphili-20"
 faqItems:
   - question: "Is Aspen worth visiting?"
     answer: "Yes for the right budget and mindset. The skiing, the cultural programming, the Maroon Bells, and the Victorian downtown create a genuinely distinctive experience. It is very expensive — the least affordable major ski resort in the US by most measures — but the quality is consistent."

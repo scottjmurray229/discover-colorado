@@ -39,7 +39,7 @@ affiliatePicks:
     type: activity
     price: "$30-80"
     personalNote: "Essential for Gore Range hiking — the terrain gains significant elevation and poles dramatically reduce knee stress on the descent."
-    affiliateUrl: "https://www.amazon.com/s?k=trekking+poles+collapsible&tag=discovermore-20"
+    affiliateUrl: "https://www.amazon.com/s?k=trekking+poles+collapsible&tag=discoverphili-20"
 faqItems:
   - question: "Is Vail worth visiting?"
     answer: "Yes — it is the benchmark American ski resort for a reason. The scale of the back bowls is unlike anything else in the US, and the pedestrian village creates an atmosphere that most resorts cannot replicate. It is expensive, but the quality is consistent."

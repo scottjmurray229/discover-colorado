@@ -39,7 +39,7 @@ affiliatePicks:
     type: activity
     price: "$40-70"
     personalNote: "Flatirons hikes gain significant elevation quickly — a hands-free hydration system makes the scrambling sections much more manageable than carrying a water bottle."
-    affiliateUrl: "https://www.amazon.com/s?k=hydration+pack+daypack+hiking&tag=discovermore-20"
+    affiliateUrl: "https://www.amazon.com/s?k=hydration+pack+daypack+hiking&tag=discoverphili-20"
 faqItems:
   - question: "Is Boulder worth visiting?"
     answer: "Yes — it is one of the most livable and most pleasurable cities to visit in the US. The combination of Pearl Street dining and culture, Chautauqua hiking at the Flatirons, and the general outdoor vitality creates an experience that people return to repeatedly."

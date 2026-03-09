@@ -22,7 +22,7 @@ export const COLORADO_CONFIG: PackingConfig = {
   currency: 'USD',
   plugType: 'Type A/B',
   plugVoltage: '120V',
-  affiliateTag: 'discovermore-20',
+  affiliateTag: 'discoverphili-20',
   destinationEssentials: COLORADO_ESSENTIALS,
   gearRecommendations: COLORADO_GEAR_RECOMMENDATIONS,
 };

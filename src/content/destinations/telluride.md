@@ -40,7 +40,7 @@ affiliatePicks:
     type: activity
     price: "$20-40"
     personalNote: "Telluride sits at 8,750 feet (town) to 13,150 feet (summit). Visitors from sea level should take altitude acclimatization seriously — spend a night in Denver or Montrose first if possible."
-    affiliateUrl: "https://www.amazon.com/s?k=altitude+sickness+prevention&tag=discovermore-20"
+    affiliateUrl: "https://www.amazon.com/s?k=altitude+sickness+prevention&tag=discoverphili-20"
 faqItems:
   - question: "Is Telluride worth visiting?"
     answer: "Yes — for the right traveler, it is the finest mountain town in Colorado. The box canyon setting, free gondola, exceptional skiing, and world-class festivals create an experience unlike any other mountain resort. It is expensive and remote, but those qualities are part of why it works."
