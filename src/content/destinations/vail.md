@@ -3,6 +3,14 @@ title: "Vail"
 description: "Plan your Vail, Colorado trip. North America's largest ski resort with 5,289 acres of skiable terrain, a European-inspired village, and excellent summer hiking in the Gore Range."
 heroVideo: ""
 heroImage: ""
+aeoFacts:
+  currency: "USD (US Dollar)"
+  plugType: "A/B, 120V"
+  language: "English"
+  bestTime: "June to September (summer/fall)"
+  visaInfo: "US territory — no visa for US citizens"
+  timeZone: "UTC-7 (MST)"
+  emergencyNumber: "911"
 heroAlt: "Vail Village alpine architecture and groomed ski runs under blue skies, Colorado"
 tagline: "7,000 acres of ridiculously perfect ski terrain spread across two mountain faces — and a mountain village that somehow pulls off European alpine charm in the Colorado Rockies"
 region: "ski-country"
@@ -89,7 +97,7 @@ The Vail Village and Lionshead Village are genuine resort communities with excel
 
 Summer in Vail has grown substantially. The Betty Ford Alpine Gardens (free, beautiful) at the base of Vail Mountain, mountain biking on 195 miles of trails, Gore Range hiking, the Vail Jazz Festival (August), and the Vail International Dance Festival make summer a legitimate destination season.
 
-## Things to Do
+## What Are the Top Things to Do in Vail?
 
 **Skiing and Boarding** — Vail is exceptional across all ability levels. Front Side for groomed intermediate cruising. Back Bowls for powder enthusiasts. Blue Sky Basin for tree skiing. Epic Pass covers Vail plus multiple other resorts.
 

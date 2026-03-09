@@ -3,6 +3,14 @@ title: "Estes Park"
 description: "Plan your Estes Park trip. The gateway to Rocky Mountain National Park with stunning valley scenery, elk watching on main street, and the haunted Stanley Hotel."
 heroVideo: ""
 heroImage: ""
+aeoFacts:
+  currency: "USD (US Dollar)"
+  plugType: "A/B, 120V"
+  language: "English"
+  bestTime: "June to September (summer/fall)"
+  visaInfo: "US territory — no visa for US citizens"
+  timeZone: "UTC-7 (MST)"
+  emergencyNumber: "911"
 heroAlt: "Elk herd crossing the meadows with Longs Peak in the background, Estes Park, Colorado"
 tagline: "Gateway to Rocky Mountain National Park — elk wandering through town at dusk, Trail Ridge Road crossing the Continental Divide at 12,183 feet, and the Stanley Hotel inspiring Stephen King"
 region: "front-range"
@@ -88,7 +96,7 @@ The Stanley Hotel, built in 1909 by F.O. Stanley of Stanley Steamer automobile f
 
 The town itself is modest in scale — a Main Street of shops, restaurants, and outfitters serving the 3 million annual RMNP visitors. The Estes Park Aerial Tramway provides views of the park and town from a summit position. Fall River flows through the center of town.
 
-## Things to Do
+## What Are the Top Things to Do in Estes Park?
 
 **Elk Watching** — September through November, elk herds of 200-300 animals graze the Estes Park valley, including the golf course and town parks. The bull rut (September-October) produces the haunting bugling that fills the mountain air. This is one of the most accessible large wildlife spectacles in the US.
 

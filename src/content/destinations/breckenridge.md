@@ -3,6 +3,14 @@ title: "Breckenridge"
 description: "Plan your Breckenridge, Colorado trip. One of the top ski resorts in the US with a beautifully preserved Victorian mining town main street and excellent summer hiking."
 heroVideo: ""
 heroImage: ""
+aeoFacts:
+  currency: "USD (US Dollar)"
+  plugType: "A/B, 120V"
+  language: "English"
+  bestTime: "June to September (summer/fall)"
+  visaInfo: "US territory — no visa for US citizens"
+  timeZone: "UTC-7 (MST)"
+  emergencyNumber: "911"
 heroAlt: "Victorian-era Main Street and blue ski runs of Breckenridge ski resort, Colorado"
 tagline: "A genuinely historic gold rush Victorian town at 9,600 feet — the ski mountain is excellent and the Main Street has kept its 1880s architecture while adding world-class restaurants"
 region: "ski-country"
@@ -88,7 +96,7 @@ The ski resort sits on five interconnected peaks with 2,908 acres of skiable ter
 
 Summer transforms Breckenridge into a hiking and mountain biking destination. Trails on the resort mountains and in the surrounding White River National Forest offer access to alpine lakes, wildflower meadows, and Continental Divide views. The Peak 8 SuperConnect gondola runs in summer, providing chairlift access to hiking terrain above treeline.
 
-## Things to Do
+## What Are the Top Things to Do in Breckenridge?
 
 **Winter:** Ski and snowboard Breckenridge Resort (lift tickets $80-200/day, book ahead for better prices). Snowshoeing at Carter Park or the Boreas Pass Road. Ice skating on the outdoor rink at Maggie Pond. Cross-country skiing on Boreas Pass.
 
@@ -96,7 +104,7 @@ Summer transforms Breckenridge into a hiking and mountain biking destination. Tr
 
 **Year-round:** Main Street walking, gallery browsing, Breckenridge Distillery tours, Noonan's Market for groceries, and Gold Pan Saloon (Colorado's oldest operating bar, opened 1879).
 
-## Where to Stay
+## Where Should I Stay in Breckenridge?
 
 **Budget ($80-120/night)** — Fireside Inn B&B, hostel-style accommodation in a Victorian house. Several budget motels in neighboring Frisco (10 minutes, dramatically lower prices).
 

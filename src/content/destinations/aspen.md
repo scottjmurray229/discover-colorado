@@ -3,6 +3,14 @@ title: "Aspen"
 description: "Plan your Aspen, Colorado trip. Four ski mountains, a Victorian downtown, world-class arts and culture, and the most glamorous mountain town in America."
 heroVideo: ""
 heroImage: ""
+aeoFacts:
+  currency: "USD (US Dollar)"
+  plugType: "A/B, 120V"
+  language: "English"
+  bestTime: "June to September (summer/fall)"
+  visaInfo: "US territory — no visa for US citizens"
+  timeZone: "UTC-7 (MST)"
+  emergencyNumber: "911"
 heroAlt: "Maroon Bells peaks reflected in an alpine lake near Aspen, Colorado"
 tagline: "Four ski mountains, a summer music festival that attracts the world's finest musicians, and the most stylish après-ski scene in North America — at prices to match"
 region: "ski-country"
@@ -88,7 +96,7 @@ The skiing spans four mountains: Aspen Mountain (Ajax), Aspen Highlands, Butterm
 
 Aspen's reputation for glamour is real. It attracts celebrities, finance, and the global wealthy in a way no other Colorado resort does. The restaurants include some of the finest dining in the Rocky Mountain region. The boutiques on Galena and Hyman are luxury retail at mountain resort prices. The energy of Aspen in peak season is genuinely unlike other ski towns.
 
-## Things to Do
+## What Are the Top Things to Do in Aspen?
 
 **Maroon Bells** — Mandatory. Take the mandatory reservation shuttle (cars restricted) to the Maroon Bells-Snowmass Wilderness area. 14,000-foot twin peaks reflected in Maroon Lake, surrounded by aspens. Best at sunrise.
 

@@ -3,6 +3,14 @@ title: "Boulder"
 description: "Discover Boulder, Colorado — the university town that perfected outdoor recreation, farm-to-table dining, and progressive culture at the base of the Flatirons."
 heroVideo: ""
 heroImage: ""
+aeoFacts:
+  currency: "USD (US Dollar)"
+  plugType: "A/B, 120V"
+  language: "English"
+  bestTime: "June to September (summer/fall)"
+  visaInfo: "US territory — no visa for US citizens"
+  timeZone: "UTC-7 (MST)"
+  emergencyNumber: "911"
 heroAlt: "Flatirons rock formations looming above the University of Colorado campus, Boulder"
 tagline: "The most educated and most outdoors-obsessed small city in America — Pearl Street Mall, Chautauqua Park, world-class climbing on the Flatirons, and CU's farmers market on every corner"
 region: "front-range"
@@ -89,7 +97,7 @@ Pearl Street Mall is Boulder's five-block pedestrian zone — the heart of the c
 
 Boulder is home to the University of Colorado, the National Center for Atmospheric Research (impressive I.M. Pei building open for tours), and a concentration of outdoor industry headquarters including REI, BioLite, and dozens of gear companies. The Boulder Farmers Market (Saturday year-round, Wednesday summer) is one of the best in Colorado.
 
-## Things to Do
+## What Are the Top Things to Do in Boulder?
 
 **Chautauqua Park Trails** — The Baseline Trail, Flatirons Loop, and Royal Arch are all excellent. The First Flatiron scramble (non-technical with good exposure) is a Boulder rite of passage for those comfortable with heights.
 

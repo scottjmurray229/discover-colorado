@@ -3,6 +3,14 @@ title: "Colorado Springs"
 description: "Plan your Colorado Springs trip. Garden of the Gods, Pikes Peak, the US Air Force Academy, and outdoor recreation at the foot of the Front Range."
 heroVideo: ""
 heroImage: ""
+aeoFacts:
+  currency: "USD (US Dollar)"
+  plugType: "A/B, 120V"
+  language: "English"
+  bestTime: "June to September (summer/fall)"
+  visaInfo: "US territory — no visa for US citizens"
+  timeZone: "UTC-7 (MST)"
+  emergencyNumber: "911"
 heroAlt: "Pikes Peak snow summit and Garden of the Gods red rock spires, Colorado"
 tagline: "Pikes Peak rises 14,115 feet above the city — drive or cog railway to the summit, explore Garden of the Gods for free, and understand why the military chose to build here"
 region: "front-range"
@@ -88,7 +96,7 @@ The city's defining natural landmarks are extraordinary. Garden of the Gods — 
 
 Cheyenne Mountain State Park, the Barr Trail (the standard Pikes Peak hiking route), Manitou Springs (a charming Victorian spa town immediately west), and the Seven Falls attraction complete the core visitor experience.
 
-## Things to Do
+## What Are the Top Things to Do in Colorado Springs?
 
 **Garden of the Gods** — Free park. The main park loop road (3 miles) and the Ridge Road provide access to all major formations. Several short hiking trails. The Trading Post at the south end sells Native American art and has interpretive displays. Kissing Camels and Cathedral Spires are the most photographed formations.
 

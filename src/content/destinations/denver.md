@@ -3,6 +3,14 @@ title: "Denver"
 description: "Discover Denver, Colorado's vibrant Mile High capital where craft beer culture, world-class dining, and Rocky Mountain access converge. Plan your trip with guides to neighborhoods, hiking, and mountain day trips."
 heroVideo: ""
 heroImage: ""
+aeoFacts:
+  currency: "USD (US Dollar)"
+  plugType: "A/B, 120V"
+  language: "English"
+  bestTime: "June to September (summer/fall)"
+  visaInfo: "US territory — no visa for US citizens"
+  timeZone: "UTC-7 (MST)"
+  emergencyNumber: "911"
 heroAlt: "Denver city skyline and Colorado State Capitol with Rocky Mountains in the distance"
 tagline: "A mile above sea level with world-class museums, a craft beer scene that is genuinely world-class, and the Rocky Mountain skiing within 90 minutes in every direction"
 region: "front-range"
@@ -88,7 +96,7 @@ The RiNo (River North) Arts District has transformed what was once industrial De
 
 For mountain access, Denver is the staging point. I-70 West heads into the heart of ski and hiking country. Breckenridge, Vail, Keystone, and Arapahoe Basin are all within 90 minutes. Rocky Mountain National Park is 75 miles north. The city itself gets underestimated as a destination in its own right.
 
-## Things to Do
+## What Are the Top Things to Do in Denver?
 
 **Red Rocks Amphitheatre and Park** — A natural amphitheatre carved from 300-foot red sandstone formations. Concerts year-round but the park itself has hiking trails free when no event is scheduled. The Trading Post Trail (1.4 miles, easy) loops through the formations with panoramic views. Free most days.
 
@@ -102,7 +110,7 @@ For mountain access, Denver is the staging point. I-70 West heads into the heart
 
 **Day trips:** Breckenridge (1.5 hrs), Rocky Mountain National Park (1.5 hrs), Boulder (45 min), Estes Park (1.25 hrs).
 
-## Where to Stay
+## Where Should I Stay in Denver?
 
 **Budget ($60-100/night)** — Hostels in Capitol Hill and RiNo. The Curtis Hotel is a fun mid-budget option at $120-150 in shoulder season.
 
@@ -110,7 +118,7 @@ For mountain access, Denver is the staging point. I-70 West heads into the heart
 
 **Luxury ($300-600/night)** — Four Seasons Denver is the top tier. The Crawford Hotel inside Union Station is the most distinctive upscale option.
 
-## Where to Eat
+## What Should I Eat in Denver?
 
 **Avanti Food & Beverage** — A multi-vendor food hall in RiNo with rotating chefs. The best single food hall experience in Denver.
 

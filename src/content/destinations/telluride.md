@@ -3,6 +3,14 @@ title: "Telluride"
 description: "Plan your Telluride, Colorado trip — a stunning box canyon ski resort and festival town with the world's only free public gondola, legendary steep skiing, and world-class summer events."
 heroVideo: ""
 heroImage: ""
+aeoFacts:
+  currency: "USD (US Dollar)"
+  plugType: "A/B, 120V"
+  language: "English"
+  bestTime: "June to September (summer/fall)"
+  visaInfo: "US territory — no visa for US citizens"
+  timeZone: "UTC-7 (MST)"
+  emergencyNumber: "911"
 heroAlt: "Bridal Veil Falls and Telluride box canyon ski gondola, Colorado"
 tagline: "A box canyon with one road in and one road out, a free gondola connecting town to Mountain Village, and a film festival that makes every September worth the drive"
 region: "ski-country"
@@ -90,7 +98,7 @@ Skiing at Telluride is for those who take the sport seriously. The resort's 2,00
 
 Summer Telluride has a different reputation: home to the prestigious Telluride Film Festival (Labor Day weekend, A-list attendance), Bluegrass Festival (June), Jazz Celebration (August), and Blues & Brews (September). The festival summer is vibrant but accommodation becomes very competitive and expensive.
 
-## Things to Do
+## What Are the Top Things to Do in Telluride?
 
 **Bridal Veil Falls** — Park at the upper Bridal Veil lot and hike 4 miles round trip to the base of the falls. The historic powerhouse at the top is the highest alternating current powerhouse in the US, still operational.
 
@@ -98,7 +106,7 @@ Summer Telluride has a different reputation: home to the prestigious Telluride F
 
 **Via Ferrata** — Telluride has one of the most accessible via ferrata routes in the US, climbing iron rungs and cables up a cliff face with the town visible below. No technical climbing experience required with a guide.
 
-## Where to Stay
+## Where Should I Stay in Telluride?
 
 **Budget ($80-120/night)** — Budget accommodation barely exists in Telluride itself. Nearby Montrose and Ridgway (30-45 minutes) have standard chain hotels.
 
