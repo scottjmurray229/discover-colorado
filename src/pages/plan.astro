@@ -163,10 +163,10 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
         <label class="form-label" for="tripStyle">Travel style</label>
         <select class="form-select" id="tripStyle">
           <option value="">Select style...</option>
-          <option>Backpacker (&#8369;1,000-2,000/day · ~$18-$35 USD)</option>
-          <option>Budget-comfortable (&#8369;2,000-4,000/day · ~$35-$71 USD)</option>
-          <option>Mid-range (&#8369;4,000-8,000/day · ~$71-$142 USD)</option>
-          <option>Luxury (&#8369;8,000+/day · ~$142+ USD)</option>
+          <option>Backpacker ($50-100/day USD)</option>
+          <option>Budget-comfortable ($100-150/day USD)</option>
+          <option>Mid-range ($150-250/day USD)</option>
+          <option>Luxury ($350+/day USD)</option>
         </select>
       </div>
       <div class="form-group">
@@ -184,8 +184,8 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
     <div class="form-group" style="margin-top: 20px;">
       <label class="form-label" for="budgetSlider">Daily budget</label>
       <div class="budget-display">
-        <input type="range" class="budget-range" id="budgetSlider" min="500" max="15000" step="250" value="3000" />
-        <div class="budget-value" id="budgetDisplay">&#8369;3,000 <span class="budget-usd">(~$53 USD)</span></div>
+        <input type="range" class="budget-range" id="budgetSlider" min="50" max="500" step="10" value="150" />
+        <div class="budget-value" id="budgetDisplay">$150 <span class="budget-usd">(per day)</span></div>
       </div>
     </div>
   </div>
@@ -260,9 +260,8 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
   const budgetDisplay = document.getElementById('budgetDisplay');
   if (slider && budgetDisplay) {
     slider.addEventListener('input', () => {
-      const php = parseInt(slider.value);
-      const usd = (php / 56.5).toFixed(0);
-      budgetDisplay.innerHTML = `\u20B1${php.toLocaleString()} <span class="budget-usd">(~$${usd} USD)</span>`;
+      const usdAmt = parseInt(slider.value);
+      budgetDisplay.innerHTML = `$${usdAmt.toLocaleString()} <span class="budget-usd">(per day)</span>`;
     });
   }
 
@@ -370,7 +369,7 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
       { icon: '🏨', text: 'Finding hotels in your budget...' },
       { icon: '🍴', text: 'Picking restaurants & local eats...' },
       { icon: '🏄', text: 'Adding activities & experiences...' },
-      { icon: '💰', text: 'Calculating prices in PHP & USD...' },
+      { icon: '💰', text: 'Calculating prices in USD...' },
     ];
     container.innerHTML = `
       <div class="itinerary-loading">
@@ -520,7 +519,7 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
       html += `
         <div class="budget-summary">
           <span class="budget-summary-label">Estimated Total</span>
-          <span class="budget-summary-value">\u20B1${it.totalBudget.php?.toLocaleString() || '—'} <span class="budget-summary-usd">(~$${it.totalBudget.usd?.toLocaleString() || '—'} USD)</span></span>
+          <span class="budget-summary-value">$${it.totalBudget.usd?.toLocaleString() || '—'} USD</span>
         </div>`;
     }
 
@@ -563,8 +562,8 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
           <div class="day-desc">${escapeHtml(item.description)}${priceHtml}${affiliateHtml}</div>
         </div>`;
       }
-      if (dayPhp > 0) {
-        html += `<div class="day-subtotal">Day total: \u20B1${dayPhp.toLocaleString()} <span class="day-subtotal-usd">(~$${dayUsd} USD)</span></div>`;
+      if (dayPhp > 0 || dayUsd > 0) {
+        html += `<div class="day-subtotal">Day total: $${(dayUsd || dayPhp).toLocaleString()} USD</div>`;
       }
       html += `</div></div>`;
     }
@@ -700,7 +699,7 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
 
     itinMap = new google.maps.Map(mapEl, {
       zoom: 7,
-      center: { lat: 11.0, lng: 122.0 },
+      center: { lat: 39.0, lng: -105.5 },
       mapTypeControl: false,
       streetViewControl: false,
       fullscreenControl: false,
@@ -984,7 +983,7 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
       const btn = document.getElementById('copyItinerary');
       const copyIt = currentItinerary || it;
       let text = copyIt.title + '\n' + copyIt.subtitle + '\n\n';
-      if (copyIt.totalBudget) text += `Estimated Total: \u20B1${copyIt.totalBudget.php?.toLocaleString()} (~$${copyIt.totalBudget.usd?.toLocaleString()} USD)\n\n`;
+      if (copyIt.totalBudget) text += `Estimated Total: $${copyIt.totalBudget.usd?.toLocaleString()} USD\n\n`;
       for (const day of copyIt.days) {
         text += `--- Day ${day.dayNumber}: ${day.title} ---\n`;
         for (const item of day.items) {
@@ -1184,7 +1183,7 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
     if (!mapEl) return;
 
     var map = new google.maps.Map(mapEl, {
-      center: { lat: 12.0, lng: 122.5 },
+      center: { lat: 39.0, lng: -105.5 },
       zoom: 5.5,
       mapTypeId: 'terrain',
       disableDefaultUI: true,
@@ -1194,7 +1193,7 @@ const MAPS_KEY = 'AIzaSyDH8mQKwqzyfCrgGZVDdP1-E-346QUiods';
       minZoom: 5,
       maxZoom: 12,
       restriction: {
-        latLngBounds: { north: 22, south: 4, east: 130, west: 115 },
+        latLngBounds: { north: 41, south: 37, east: -102, west: -110 },
         strictBounds: false,
       },
     });
