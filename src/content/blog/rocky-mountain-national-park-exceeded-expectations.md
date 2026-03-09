@@ -2,6 +2,7 @@
 title: "Why Rocky Mountain National Park Exceeded Every Expectation"
 description: "We almost skipped Rocky Mountain National Park for something more off-the-beaten-path. Huge mistake that would have been. Here's what actually surprised us."
 pubDate: 2026-03-01
+dateModified: 2026-03-08
 heroImage: ""
 heroVideo: ""
 author: "Scott"

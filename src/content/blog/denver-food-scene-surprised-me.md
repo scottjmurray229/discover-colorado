@@ -2,6 +2,7 @@
 title: "The Denver Food Scene That Surprised Me Most"
 description: "Denver has quietly become one of America's most interesting food cities. Coming from someone who had low expectations, here's what actually stood out."
 pubDate: 2026-03-01
+dateModified: 2026-03-08
 heroImage: ""
 heroVideo: ""
 author: "Scott"

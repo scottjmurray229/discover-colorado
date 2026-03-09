@@ -2,6 +2,7 @@
 title: "Colorado Altitude Sickness: How to Prevent It and What to Do"
 description: "The practical guide to acclimatizing in Colorado — what causes altitude sickness, who gets it, how to prevent it, and what to do if symptoms hit in Breckenridge, Aspen, or Telluride."
 pubDate: 2026-03-08
+dateModified: 2026-03-08
 heroImage: ""
 heroVideo: ""
 author: "Scott"

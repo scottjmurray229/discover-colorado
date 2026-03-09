@@ -2,6 +2,7 @@
 title: "Colorado Fall Foliage 2026: Best Spots and Peak Timing"
 description: "Where to see Colorado's aspen gold in 2026 — peak timing by elevation and region, the best drives and hikes, and how to plan around crowds."
 pubDate: 2026-03-08
+dateModified: 2026-03-08
 heroImage: ""
 heroVideo: ""
 author: "Scott"
