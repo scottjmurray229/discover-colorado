@@ -49,6 +49,7 @@ const sortedDestinations = [...destinations].sort((a, b) => {
   return a.data.title.localeCompare(b.data.title);
 });
 ---
+import NetworkCrossLinks from '../components/NetworkCrossLinks.astro';
 
 <BaseLayout
   title="Colorado Travel Guide"
@@ -212,4 +213,5 @@ const sortedDestinations = [...destinations].sort((a, b) => {
       />
     </div>
   </section>
+<NetworkCrossLinks currentSite="Colorado" cluster="us-west" />
 </BaseLayout>
