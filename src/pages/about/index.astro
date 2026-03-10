@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
 import scottImg from '../../images/scott-murray.jpg';
+import jeniceImg from '../../images/jenice-murray.jpg';
 ---
 
 <BaseLayout
@@ -29,20 +30,40 @@ import scottImg from '../../images/scott-murray.jpg';
   </div>
 </section>
 
-<!-- Profile Card -->
+<!-- Profile Cards -->
 <section class="bg-[#F5F0E8] py-20 px-6">
-  <div class="max-w-lg mx-auto">
-    <div class="bg-white rounded-3xl overflow-hidden shadow-lg">
-      <div class="h-48 bg-gradient-to-br from-[#0c3547] via-[#0D7377] to-[#14B8A6]"></div>
-      <Image src={scottImg} alt="Scott Murray" class="w-24 h-24 rounded-full border-4 border-white mx-auto -mt-12 relative z-10 object-cover shadow-lg" width={96} height={96} format="webp" loading="lazy" />
-      <div class="px-8 pb-8 pt-4 text-center">
-        <h2 class="font-serif text-2xl text-[#1A2332] mb-1">Scott</h2>
-        <p class="text-xs text-gray-500 mb-5">Founder · Writer · The Outsider's Perspective</p>
-        <p class="text-sm text-[#4A5568] leading-relaxed text-left font-light">Based in Southern California. Healthcare IT by day, Colorado travel obsessive by every other waking moment. Started as weekend ski trips that turned into week-long road trips covering every corner of the state. Now documenting it all — real prices, real routes, honest opinions.</p>
-        <div class="flex justify-center gap-8 pt-5 mt-5 border-t border-[#F5F0E8]">
-          <div class="text-center"><div class="font-serif text-xl text-[#1A2332]">10+</div><div class="text-[10px] text-gray-500 mt-1">Years exploring CO</div></div>
-          <div class="text-center"><div class="font-serif text-xl text-[#1A2332]">20+</div><div class="text-[10px] text-gray-500 mt-1">Trips & counting</div></div>
-          <div class="text-center"><div class="font-serif text-xl text-[#1A2332]">40+</div><div class="text-[10px] text-gray-500 mt-1">Countries traveled</div></div>
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-10">
+      <p class="text-xs font-bold tracking-[0.2em] uppercase text-[#E8654A] mb-2">Meet the Team</p>
+      <h2 class="font-serif text-3xl text-[#1A2332]">The People Behind the Pages</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="bg-white rounded-3xl overflow-hidden shadow-lg">
+        <div class="h-48 bg-gradient-to-br from-[#0c3547] via-[#0D7377] to-[#14B8A6]"></div>
+        <Image src={scottImg} alt="Scott Murray" class="w-24 h-24 rounded-full border-4 border-white mx-auto -mt-12 relative z-10 object-cover shadow-lg" width={96} height={96} format="webp" loading="lazy" />
+        <div class="px-8 pb-8 pt-4 text-center">
+          <h2 class="font-serif text-2xl text-[#1A2332] mb-1">Scott</h2>
+          <p class="text-xs text-gray-500 mb-5">Founder · Writer · The Outsider's Perspective</p>
+          <p class="text-sm text-[#4A5568] leading-relaxed text-left font-light">Based in Southern California. Healthcare IT by day, Colorado travel obsessive by every other waking moment. Started as weekend ski trips that turned into week-long road trips covering every corner of the state. Now documenting it all — real prices, real routes, honest opinions.</p>
+          <div class="flex justify-center gap-8 pt-5 mt-5 border-t border-[#F5F0E8]">
+            <div class="text-center"><div class="font-serif text-xl text-[#1A2332]">10+</div><div class="text-[10px] text-gray-500 mt-1">Years exploring CO</div></div>
+            <div class="text-center"><div class="font-serif text-xl text-[#1A2332]">20+</div><div class="text-[10px] text-gray-500 mt-1">Trips & counting</div></div>
+            <div class="text-center"><div class="font-serif text-xl text-[#1A2332]">40+</div><div class="text-[10px] text-gray-500 mt-1">Countries traveled</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white rounded-3xl overflow-hidden shadow-lg">
+        <div class="h-48 bg-gradient-to-br from-[#5C2D0E] via-[#C2410C] to-[#D4A574]"></div>
+        <Image src={jeniceImg} alt="Jenice Murray" class="w-24 h-24 rounded-full border-4 border-white mx-auto -mt-12 relative z-10 object-cover shadow-lg" width={96} height={96} format="webp" loading="lazy" />
+        <div class="px-8 pb-8 pt-4 text-center">
+          <h2 class="font-serif text-2xl text-[#1A2332] mb-1">Jenice</h2>
+          <p class="text-xs text-gray-500 mb-5">Cultural Explorer · Food Enthusiast</p>
+          <p class="text-sm text-[#4A5568] leading-relaxed text-left font-light">Born in the Philippines, based in San Diego. Cultural explorer who brings personal storytelling and food expertise to Discover Colorado. The one who finds the farm-to-table restaurant in Aspen that Scott walked right past, and brings the warmth that makes Colorado feel like more than just a ski trip.</p>
+          <div class="flex justify-center gap-8 pt-5 mt-5 border-t border-[#F5F0E8]">
+            <div class="text-center"><div class="font-serif text-xl text-[#1A2332]">Ski</div><div class="text-[10px] text-gray-500 mt-1">All major resorts</div></div>
+            <div class="text-center"><div class="font-serif text-xl text-[#1A2332]">40+</div><div class="text-[10px] text-gray-500 mt-1">Countries traveled</div></div>
+            <div class="text-center"><a href="/about/jenice/" class="text-xs text-[#D4A574] font-semibold">Full bio &rarr;</a></div>
+          </div>
         </div>
       </div>
     </div>
