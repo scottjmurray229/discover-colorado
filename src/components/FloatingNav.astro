@@ -15,10 +15,12 @@ const guideLinks = [
   { href: '/practical/', label: 'Travel Tips', icon: '🛠️' },
   { href: '/finer-things/', label: 'The Finer Things', icon: '🥃' },
   { href: '/packing-list/', label: 'Packing List', icon: '🎒' },
+  { href: '/hiking/', label: 'Hiking', icon: '🥾' },
+  { href: '/history/', label: 'History', icon: '🏛️' },
 ];
 
 const isGuidesActive = (p: string) =>
-  p.startsWith('/destinations') || p.startsWith('/cuisine') || p.startsWith('/festivals') || p.startsWith('/practical') || p.startsWith('/finer-things') || p.startsWith('/packing-list');
+  p.startsWith('/destinations') || p.startsWith('/cuisine') || p.startsWith('/festivals') || p.startsWith('/practical') || p.startsWith('/finer-things') || p.startsWith('/packing-list') || p.startsWith('/hiking') || p.startsWith('/history');
 ---
 
 <!-- Desktop: top nav bar — transparent → solid on scroll -->
