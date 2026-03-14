@@ -5,6 +5,26 @@ export const COLORADO_ESSENTIALS: PackingItem[] = [
   { id: 'col-layers', name: 'Four-Season Layering System', category: 'destination', description: 'Colorado can deliver all four seasons in one day — sunny 70°F at noon, thunderstorm at 2pm, 45°F by sunset. The only solution is layers you can add and remove through the day.', essential: true, climate: ['cold', 'alpine'], amazonSearchFallback: 'merino+wool+base+layer+thermal', affiliatePrice: '$60–100' },
   { id: 'col-hikeboots', name: 'Hiking Boots (ankle support)', category: 'destination', description: '14ers, Rocky Mountain National Park, Maroon Bells — Colorado\'s trails are serious. Loose rock, steep grades, afternoon thunderstorm risk. Ankle-supporting waterproof boots are not optional above treeline.', essential: true, amazonSearchFallback: 'waterproof+hiking+boots+ankle+support', affiliatePrice: '$100–180' },
   { id: 'col-sunprotect', name: 'High-Altitude Sun Protection', category: 'destination', description: 'Every 1,000 feet of elevation increases UV intensity by 4%. At 12,000 feet, you\'re getting 50% more UV than at sea level. SPF 50+ sunscreen and UPF 50 clothing every day outdoors.', essential: true, amazonSearchFallback: 'sunscreen+spf+50+altitude+outdoor', affiliatePrice: '$12–20' },
+  {
+    id: 'vpn-subscription',
+    name: 'VPN Subscription',
+    category: 'electronics',
+    description: 'Secure your data on public WiFi — essential for hotel, airport, and cafe networks abroad.',
+    essential: false,
+    affiliateUrl: 'https://go.nordvpn.net/aff_c?offer_id=15&aff_id=XXXXX&url_id=902',
+    affiliatePrice: '~$3/month',
+    affiliatePartner: 'NordVPN',
+  },
+  {
+    id: 'phone-gimbal',
+    name: 'Phone Gimbal for Travel Vlogging',
+    category: 'electronics',
+    description: 'Stabilized video from your phone — no editing needed.',
+    essential: false,
+    affiliateUrl: 'https://www.insta360.com/sal/flow-2-pro?utm_source=AffiliateCenter&utm_medium=copylink&utm_term=INRSG7H5RTR',
+    affiliatePrice: '~$149',
+    affiliatePartner: 'Insta360',
+  },
 ];
 
 export const COLORADO_GEAR_RECOMMENDATIONS: GearRecommendation[] = [
