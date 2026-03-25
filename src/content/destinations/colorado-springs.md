@@ -77,31 +77,104 @@ scottTips:
   localCulture: "Colorado Springs has a strong military culture (40,000 active duty personnel) that gives the city a different character than Denver or Boulder. The USAF Academy is a genuine institution worth understanding, not just a photo stop. The Broadmoor's 1918 history as a resort for the wealthy connects to the city's early development as a health destination."
 ---
 
-Colorado Springs is the gateway to Pikes Peak and home to Garden of the Gods — Colorado's most affordable Front Range city with world-class natural landmarks, the US Air Force Academy, and easy mountain access, budget $65-150/day.
+I remember standing in Garden of the Gods for the first time, watching 300-foot red sandstone fins glow in the early morning light with the snow-covered mass of Pikes Peak rising behind them, and thinking: this is free? No entrance fee, no timed entry reservation, no shuttle required — just one of the most visually stunning geological landscapes in the United States, open to anyone who shows up. That combination of world-class natural beauty and accessibility is what makes Colorado Springs one of the best values in Colorado travel. Budget $65-150/day.
 
 <div class="immersive-break-inline">
-  <video autoplay muted loop playsinline preload="metadata">
-    <source src="/videos/destinations/colorado-springs-hero.mp4" type="video/mp4" />
-  </video>
-  <div class="ib-gradient" style="background: linear-gradient(135deg, #92400e, #c2410c, #1e3a5f);"></div>
+  <div class="ib-gradient" style="background: linear-gradient(160deg, #1a1035 0%, #92400e 35%, #c2410c 65%, #1e3a5f 100%);"></div>
   <div class="ib-content">
-    <div class="ib-title">Garden at 6,000 Feet</div>
+    <h2 class="ib-title">Garden at 6,000 Feet</h2>
     <p class="ib-text">The massive red sandstone fins of Garden of the Gods rise against a backdrop of 14,114-foot Pikes Peak — one of the most dramatic geological coincidences in Colorado.</p>
   </div>
 </div>
 
-Colorado Springs sits at 6,035 feet at the foot of the Front Range, 70 miles south of Denver, dominated by the 14,114-foot mass of Pikes Peak to its west. The city is home to 40,000 military personnel (Fort Carson, NORAD, the US Air Force Academy), a significant aerospace industry, and a rapidly growing outdoor recreation economy.
+## Why Colorado Springs Belongs on Every Colorado Itinerary
 
-The city's defining natural landmarks are extraordinary. Garden of the Gods — a collection of massive red sandstone fins and formations rising 300 feet from the valley floor, with Pikes Peak as backdrop — is free to enter and one of the most visually dramatic park landscapes in the US. Pikes Peak itself, accessible by Pikes Peak Highway (fee road) or the famous Pikes Peak Cog Railway, reaches the highest summit in the southern Rocky Mountains visible from the Great Plains.
+Colorado Springs sits at 6,035 feet at the foot of the Front Range, 70 miles south of Denver. It's the second-largest city in Colorado and home to 40,000 active-duty military personnel across seven installations including Fort Carson, NORAD (yes, the mountain from the movies), and the US Air Force Academy. That military presence gives the city a character distinct from anywhere else in Colorado.
 
-Cheyenne Mountain State Park, the Barr Trail (the standard Pikes Peak hiking route), Manitou Springs (a charming Victorian spa town immediately west), and the Seven Falls attraction complete the core visitor experience.
+But for visitors, it's the natural landmarks that matter. Garden of the Gods is a collection of red sandstone formations that defy belief — 300-foot fins and towers erupted from the earth at sharp angles, framing Pikes Peak behind them in what I can only describe as geological theater. Pikes Peak itself, at 14,114 feet, is the easternmost fourteener in Colorado and the mountain that inspired "America the Beautiful" when Katharine Lee Bates saw the view from its summit in 1893.
 
-## What Are the Top Things to Do in Colorado Springs?
+The entire package — Garden of the Gods, Pikes Peak, the Air Force Academy, Manitou Springs, and excellent hiking — creates a two-day itinerary that's more varied than most mountain resort towns and significantly more affordable.
 
-**Garden of the Gods** — Free park. The main park loop road (3 miles) and the Ridge Road provide access to all major formations. Several short hiking trails. The Trading Post at the south end sells Native American art and has interpretive displays. Kissing Camels and Cathedral Spires are the most photographed formations.
+## Garden of the Gods — My Favorite Free Attraction in Colorado
 
-**Pikes Peak** — Via Pikes Peak Highway ($50/car, open year-round conditions permitting) or Cog Railway ($49 roundtrip). Summit elevation 14,114 feet. Altitude note: altitude sickness is common at the summit even in summer — eat and drink before going up.
+Garden of the Gods is a city park. That fact still amazes me. These 1,300 acres of towering red Lyons sandstone formations — tilted nearly vertical by the same geological forces that built the Rocky Mountains — are maintained by the City of Colorado Springs and are completely free to visit, drive through, and hike.
 
-**US Air Force Academy** — Free visitor center and chapel are open to the public. The 1963 Modernist chapel is architecturally extraordinary.
+The main park loop road (3 miles) lets you see all the major formations from your car, but I always park and walk. The Central Garden Trail (1.5 miles, paved, easy) passes between the most dramatic formations and offers the classic Pikes Peak backdrop views. The Siamese Twins Trail (1 mile) leads to a formation that perfectly frames Pikes Peak through a natural window — one of the most photographed spots in Colorado.
 
-**Manitou Springs** — Victorian spa town with natural mineral springs, the Cliff Dwellings museum (Ancestral Puebloan structures), and Pikes Peak Cog Railway departure.
+**When to go:** Sunrise is magical — the red rock glows orange and pink in early light and the parking lots are empty. By 10am in summer, tour buses start arriving and the lots fill. Golden hour (1-2 hours before sunset) is equally beautiful. I've been at both and slightly prefer sunrise for the solitude.
+
+**Rock climbing** at Garden of the Gods is permitted with a free registration and is world-class. Guided climbing tours ($75-120/person) teach beginners on the same sandstone that experts train on. No experience necessary.
+
+<div class="immersive-break-inline">
+  <div class="ib-gradient" style="background: linear-gradient(160deg, #0f172a 0%, #2D3A8C 35%, #1B6CA8 65%, #1a1035 100%);"></div>
+  <div class="ib-content">
+    <h2 class="ib-title">Pikes Peak — America's Mountain</h2>
+    <p class="ib-text">The 14,114-foot summit that inspired "America the Beautiful" — reach it by cog railway, scenic highway, or the grueling 13-mile Barr Trail on foot.</p>
+  </div>
+</div>
+
+## Summiting Pikes Peak
+
+There are three ways to reach the summit of Pikes Peak, and I've done two of them:
+
+**Pikes Peak Cog Railway ($49/person)** — The highest cog railway in the US climbs from Manitou Springs to the 14,114-foot summit in about 70 minutes. The new Summit House (opened 2021) has a visitor center, cafe, and observation deck. The train ride itself is spectacular — you pass through four life zones from montane forest to alpine tundra. This is the easiest and most popular option. Book online in advance; it sells out in summer.
+
+**Pikes Peak Highway ($50/car)** — A 19-mile toll road with hairpin turns and dramatic views. The drive takes about an hour each way. I drove it in summer and the views from the summit — you can see the Kansas plains to the east and the Continental Divide to the west — were worth every switchback.
+
+**Barr Trail** — The hiking route. 13 miles one way with 7,400 feet of elevation gain. This is a serious mountain hike that most people do as an overnight with a stay at Barr Camp (halfway point, $32/night bunk). I haven't done the full trail yet, but the first 3 miles to Incline Junction are an excellent day hike.
+
+**Altitude warning:** The summit is at 14,114 feet. Even if you feel fine at the base, you may experience headache, nausea, and dizziness at the top. Eat before going up, drink water, and don't linger more than 30 minutes if you start feeling symptoms. The famous summit donuts at the new Summit House are worth trying — they're made at high altitude and the recipe has been adapted for the thin air.
+
+## Manitou Springs
+
+Immediately west of Colorado Springs, Manitou Springs is a Victorian spa town built around natural mineral springs that bubble up from underground. The town has eight public springs, each with different mineral content, and you can walk between them tasting the water (bring your own cup). Some taste terrible. Some are surprisingly pleasant. It's a unique experience either way.
+
+The Manitou Cliff Dwellings ($14/adult) house relocated Ancestral Puebloan cliff dwelling structures from the Four Corners region. The Manitou Incline — 2,768 steps climbing 2,000 feet in less than a mile — is one of the most intense public hikes in the US and attracts fitness enthusiasts from across the state.
+
+Manitou Springs' main street has excellent galleries, cafes, and the kind of eccentric small-business character that chain-dominated cities have lost. I always stop at the Sahara Cafe for Mediterranean food ($12-20 entrees) and browse the Crystal Bar gallery.
+
+## US Air Force Academy
+
+The Academy campus is open to visitors and free. The 1963 Cadet Chapel — with its 17 spires of aluminum, glass, and steel — is one of the most striking pieces of Modernist architecture in the US. I'm not usually moved by military installations, but this building genuinely impressed me. The visitor center provides context on cadet life and the Academy's history. Allow 1-2 hours.
+
+<div class="immersive-break-inline">
+  <div class="ib-gradient" style="background: linear-gradient(160deg, #1a1035 0%, #065f46 35%, #1e3a5f 65%, #7c3aed 100%);"></div>
+  <div class="ib-content">
+    <h2 class="ib-title">The Broadmoor — A Century of Mountain Luxury</h2>
+    <p class="ib-text">This 1918 Italian Renaissance resort at the foot of Cheyenne Mountain has hosted presidents, celebrities, and travelers seeking Colorado's most refined retreat for over a century.</p>
+  </div>
+</div>
+
+## Where to Eat in Colorado Springs
+
+**The Broadmoor** — Even if you're not staying, the grounds are worth walking and several restaurants are open to non-guests. The Golden Bee is a genuine English pub with imported decor and sing-alongs. The Lake Terrace Dining Room offers fine dining with lake and mountain views. Dinner entrees $30-55.
+
+**Shuga's** — Creative, affordable dining in a funky downtown space. Excellent brunch, great cocktails, and a menu that changes seasonally. Entrees $14-22. My favorite casual spot in the Springs.
+
+**The Famous Steak House** — A 1953 institution with old-school steakhouse charm. Steaks $28-55. The kind of place that hasn't changed because it doesn't need to.
+
+**Pizzeria Rustica** — Outstanding wood-fired pizza on Tejon Street downtown. Pies $14-20. The margherita is textbook.
+
+**Cerberus Brewing** — The best craft brewery in Colorado Springs with a solid food menu. Pints $6-8. The taproom has a relaxed, locals-friendly atmosphere.
+
+## Where to Stay in Colorado Springs
+
+**Budget ($65-100/night)** — Numerous chain hotels along I-25 offer clean, affordable rooms. The Cheyenne Mountain State Park campground ($28/night) is beautiful and just 15 minutes from Garden of the Gods.
+
+**Mid-Range ($130-220/night)** — The Mining Exchange, a Wyndham Grand Hotel, occupies a beautifully restored 1902 mining stock exchange building downtown. The Cliff House at Pikes Peak in Manitou Springs has Victorian character and excellent location.
+
+**Luxury ($350-700/night)** — The Broadmoor is the legendary choice — a 1918 Italian Renaissance resort at the foot of Cheyenne Mountain with golf, spa, and multiple restaurants. It's worth the splurge for a special occasion. The Garden of the Gods Resort & Club offers luxury with direct park views.
+
+<div class="scott-tips">
+  <div class="scott-tips-header">&#9994; Scott's Pro Tips</div>
+  <ul>
+    <li><strong>Best time to visit:</strong> May through October for the best weather and full access to Pikes Peak Highway. Garden of the Gods with fresh snow on the formations in winter is spectacular and the crowds drop to almost zero.</li>
+    <li><strong>Getting there:</strong> Colorado Springs Airport (COS) has direct flights from major cities and is right in town. Denver (DEN) is 70 miles north on I-25, about 1.25 hours. The drive is flat and easy — no mountain passes.</li>
+    <li><strong>Budget tip:</strong> Garden of the Gods, the Academy chapel, and the Manitou Springs walking tour are all free. That's a full day of world-class experiences for $0. The Cog Railway ($49) and Pikes Peak Highway ($50/car) are the main expenses — pick one, not both.</li>
+    <li><strong>Insider tip:</strong> The Siamese Twins formation at Garden of the Gods is the best spot for Pikes Peak framing photos, but most visitors don't walk the extra 10 minutes to reach it. For Pikes Peak Highway, start by 7am to beat the afternoon thunderstorms that build almost daily in summer above treeline.</li>
+  </ul>
+</div>
+
+## How Many Days in Colorado Springs?
+
+Two days covers the essentials. Day one: Garden of the Gods at sunrise, Manitou Springs and mineral springs walking tour, afternoon at the Cliff Dwellings or Manitou Incline. Day two: Pikes Peak summit (cog railway or highway), US Air Force Academy, and a relaxed evening downtown. Add a third day for Cheyenne Mountain State Park hiking and a Broadmoor grounds visit.
